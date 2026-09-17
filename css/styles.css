@@ -6818,6 +6818,27 @@ body:has(.site-header) main {
   align-items: center;
 }
 
+@media (max-width: 640px) {
+  .services-filter-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .services-filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+  .services-filter-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
 .services-filter-pill {
   display: inline-flex;
   align-items: center;
@@ -7019,20 +7040,50 @@ body:has(.site-header) main {
 
 .civic-service-card-action {
   font-family: var(--font-title);
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--mtw-police-navy, #0B1B36);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  background: var(--bg-surface-subtle, #F1ECE1);
+  border: 1px solid var(--border-medium, #E2DDD2);
+  border-radius: 12px;
+  padding: 10px 16px;
+  text-decoration: none;
   margin-top: auto;
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  justify-content: space-between;
+  width: 100%;
   box-sizing: border-box;
+  min-height: 44px;
+  transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.civic-service-card-action::after {
+  content: "→";
+  margin-left: 8px;
+  font-weight: 700;
+  transition: transform 150ms ease;
+}
+
+.civic-service-card:hover .civic-service-card-action {
+  background: var(--mtw-police-navy, #0B1B36);
+  color: #FFFFFF;
+  border-color: var(--mtw-police-navy, #0B1B36);
+}
+
+.civic-service-card:hover .civic-service-card-action::after {
+  transform: translateX(4px);
 }
 
 [data-theme="dark"] .civic-service-card-action {
   color: var(--mtw-police-gold, #C5A880);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .civic-service-card:hover .civic-service-card-action {
+  background: var(--mtw-police-gold, #C5A880);
+  color: #0B1B36;
 }
 
 /* Empty State */
@@ -8298,4 +8349,228 @@ body:has(.site-header) main {
     right: 12px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WPD MOBILE-FIRST DESIGN & LAYOUT OVERHAUL (BETTER-LAYOUT & BETTER-UI)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Universal Tactile Scale on Press (better-ui) */
+button,
+a.btn-pill,
+a.btn-editorial-primary,
+a.btn-editorial-secondary,
+.civic-service-card-feature,
+.wpd-dock-item,
+.map-toggle-btn,
+.legend-chip {
+  transition: transform 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+button:active,
+a.btn-pill:active,
+a.btn-editorial-primary:active,
+a.btn-editorial-secondary:active,
+.civic-service-card-feature:active,
+.wpd-dock-item:active,
+.map-toggle-btn:active,
+.legend-chip:active {
+  transform: scale(0.96) !important;
+}
+
+/* 2. Concentric Border Geometry & Image Depth Outlines (better-ui) */
+img.civic-editorial-img,
+.civic-photo-card img,
+.civic-editorial-lead-figure img,
+.civic-floating-seal img {
+  outline: 1px solid oklch(0 0 0 / 0.1);
+  outline-offset: -1px;
+}
+[data-theme="dark"] img.civic-editorial-img,
+[data-theme="dark"] .civic-photo-card img,
+[data-theme="dark"] .civic-editorial-lead-figure img,
+[data-theme="dark"] .civic-floating-seal img {
+  outline: 1px solid oklch(1 0 0 / 0.1);
+}
+
+/* 3. Top Command Bar Mobile Froced Glass Blur Shield */
+.civic-floating-bar-shield {
+  display: none;
+}
+@media (max-width: 768px) {
+  .civic-floating-bar-shield {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(68px + env(safe-area-inset-top, 0px));
+    background: rgba(250, 248, 245, 0.90);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(226, 221, 210, 0.7);
+    z-index: 1040;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .civic-floating-bar-shield {
+    background: rgba(11, 27, 54, 0.90);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 4. Resident Services Search & Horizontal Filter Scroll */
+.wpd-search-box {
+  position: relative;
+  width: 100%;
+  margin: var(--space-4) 0;
+}
+.wpd-search-box input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 18px;
+  font-size: 16px !important;
+  border-radius: 14px;
+  border: 1px solid var(--border-medium, #E2DDD2);
+  background: var(--bg-surface, #FFFFFF);
+  color: var(--text-primary, #0B1B36);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.wpd-search-box input:focus {
+  border-color: var(--accent-primary, #0B1B36);
+  box-shadow: 0 0 0 3px rgba(11, 27, 54, 0.08);
+}
+.wpd-filter-chips-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 2px 12px 2px;
+}
+.wpd-filter-chips-scroll::-webkit-scrollbar {
+  display: none;
+}
+.wpd-filter-chips-scroll .filter-chip {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* 5. Touch Target Upgrades (WCAG 2.2 AA Compliance >= 44x44px) */
+@media (max-width: 768px) {
+  .map-toggle-btn {
+    min-height: 44px !important;
+    padding: 10px 14px !important;
+    font-size: 0.84rem !important;
+  }
+  .legend-chip {
+    min-height: 44px !important;
+    padding: 8px 14px !important;
+  }
+  .civic-btn-top {
+    min-height: 40px !important;
+    min-width: 44px !important;
+  }
+}
+
+/* 6. Recruitment 3-Tier Bento Grid */
+.wpd-recruitment-bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+@media (max-width: 768px) {
+  .wpd-recruitment-bento {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+.wpd-bento-item {
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-medium, #E2DDD2);
+  border-radius: 18px;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(11, 27, 54, 0.03);
+  transition: transform 150ms cubic-bezier(0.2, 0, 0, 1), box-shadow 150ms ease;
+}
+.wpd-bento-item:hover {
+  box-shadow: 0 8px 24px rgba(11, 27, 54, 0.08);
+}
+[data-theme="dark"] .wpd-bento-item {
+  background: #0E1A2E;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 7. Action Drawers (Native Mobile Bottom-Sheet Affordances) */
+@media (max-width: 768px) {
+  .action-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 90vh !important;
+    background: var(--bg-surface, #FAF8F5) !important;
+    border-top-left-radius: 24px !important;
+    border-top-right-radius: 24px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 16px)) !important;
+    box-shadow: 0 -16px 40px rgba(11, 27, 54, 0.25) !important;
+  }
+  [data-theme="dark"] .action-drawer {
+    background: #0E1A2E !important;
+  }
+  .drawer-close-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    border-radius: 50% !important;
+    font-size: 1.15rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .action-drawer-footer {
+    display: flex !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: var(--space-6) !important;
+  }
+  .action-drawer-footer button,
+  .action-drawer-footer a {
+    flex: 1 !important;
+    min-height: 48px !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .action-drawer input,
+  .action-drawer select,
+  .action-drawer textarea {
+    font-size: 16px !important;
+    min-height: 46px !important;
+  }
+}
+
+/* 8. CAD Telemetry Grid Responsive Layout */
+.cad-hud-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  font-size: 0.78rem;
+}
+@media (max-width: 480px) {
+  .cad-hud-telemetry-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 

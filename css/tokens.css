@@ -1,0 +1,363 @@
+/* ==========================================================================
+   CITY OF WASHINGTON, ILLINOIS — 2026 MASTER DESIGN & TYPOGRAPHY SYSTEM
+   Linear & Better Stack Minimalism • 8pt Spacing Scale • Tabular Numerals
+   ========================================================================== */
+
+:root {
+  /* ── Rothfinder Architecture Design Tokens ── */
+  --color-bone: #fbf7ef;         /* Exact Rothfinder canvas background */
+  --color-black: #000000;        /* Exact Rothfinder pure obsidian ink */
+  --color-sand: #c3b591;         /* Warm archival sand */
+  --color-ltbeige: #ebe3d4;      /* Soft architectural beige */
+  --color-forest: #2a5b40;       /* Rich evergreen */
+  --color-lime: #3ab91a;         /* High-visibility active accent */
+  --color-periwinkle: #899bff;   /* Electric interactive periwinkle */
+  --color-charcoal: #141413;     /* Deep slate charcoal */
+
+  /* ── Canvas & Surface Colors (Rothfinder Bone Foundation) ── */
+  --bg-app: var(--color-bone);
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F5EFE4;  /* Warm architectural surface */
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-sand: #EBE3D4;
+  --bg-overlay: rgba(15, 23, 42, 0.6);
+  --bg-glass: rgba(251, 247, 239, 0.92);
+  --bg-glass-scrolled: rgba(251, 247, 239, 0.98);
+
+  /* ── Living Conceptual Sketch Design Tokens ── */
+  --paper-ground: #FAF6ED;          /* Warm sketchbook cream paper */
+  --paper-ground-subtle: #F3ECE0;   /* Lightly shaded notebook page */
+  --paper-surface: #FFFDF8;         /* Primary sketch card surface */
+  --paper-surface-warm: #FBF8F1;    /* Secondary drawing area */
+  --graphite-dark: #1E1E1E;         /* 4B dark graphite stroke */
+  --graphite-medium: #424242;       /* 2B medium graphite stroke */
+  --graphite-light: #737373;        /* HB light pencil stroke */
+  --graphite-faint: #A3A3A3;        /* Faint construction line */
+  --graphite-smudge: rgba(30, 30, 30, 0.11); /* Soft pencil smudge shadow */
+  --graphite-hatch: rgba(30, 30, 30, 0.08);  /* Diagonal pencil hatching */
+  --graphite-wash: rgba(30, 30, 30, 0.04);   /* Soft graphite wash */
+  
+  --marker-amber: #D97706;          /* Architectural marker highlighter */
+  --marker-amber-wash: rgba(217, 119, 6, 0.12); /* Translucent marker wash */
+  --marker-blue: #2563EB;           /* Fountain pen drafting blue */
+  --marker-blue-wash: rgba(37, 99, 235, 0.10);  /* Translucent drafting wash */
+  --marker-crimson: #DC2626;        /* Emergency red ink */
+  --marker-crimson-wash: rgba(220, 38, 38, 0.14); /* Red ink wash */
+
+  --font-editorial: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-title: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-serif-body: 'Spectral', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sketch: 'Spectral', Georgia, serif;
+  --font-note: 'Plus Jakarta Sans', sans-serif;
+  --font-hand: 'Spectral', Georgia, serif;
+  --font-draft: 'JetBrains Mono', monospace;
+  --font-display: var(--font-title);
+
+  /* ── Mapping The Way / Civic Editorial Tokens ── */
+  --mtw-bg-tertiary: #F1EDE2;      /* Warm limestone / tertiary-200 */
+  --mtw-neutral-dark: #231F20;     /* Deep charcoal / obsidian text */
+  --mtw-primary-crimson: #D31245;  /* Authority / alert crimson */
+  --mtw-police-navy: #0B1B36;      /* Official command navy */
+  --mtw-police-navy-dark: #060F1E;
+  --mtw-police-gold: #C5A880;      /* Insignia / seal gold */
+  --mtw-card-bg: #FFFFFF;
+  --mtw-card-border: rgba(35, 31, 32, 0.09);
+  --mtw-card-shadow: 0 2px 6px rgba(11, 27, 54, 0.04), 0 10px 24px -4px rgba(11, 27, 54, 0.08), 0 20px 40px -8px rgba(11, 27, 54, 0.04);
+  --mtw-card-shadow-hover: 0 4px 10px rgba(11, 27, 54, 0.06), 0 16px 36px -4px rgba(11, 27, 54, 0.14), 0 32px 64px -8px rgba(11, 27, 54, 0.08);
+
+  /* Fluid Editorial Typography */
+  --text-hero: clamp(2.6rem, 5vw + 1rem, 5rem);
+  --text-h1: clamp(2.2rem, 3.5vw + 1rem, 3.75rem);
+  --text-h2: clamp(1.65rem, 2.2vw + 0.5rem, 2.5rem);
+  --text-h3: clamp(1.25rem, 1.4vw + 0.4rem, 1.75rem);
+  
+  --sketch-ink-black: #111111;
+  --sketch-ink-shadow: #0A0A0A;
+  --sketch-solid-shadow: #000000;
+  
+  /* ── Streamline Sketch Style Tokens ── */
+  --sketch-radius-1: 255px 15px 225px 15px/15px 225px 15px 255px;
+  --sketch-radius-2: 15px 225px 15px 255px/255px 15px 225px 15px;
+  --sketch-radius-pill: 255px 25px 225px 25px/25px 225px 25px 255px;
+  --sketch-border-width: 1.8px;
+  --sketch-ink: var(--sketch-ink-black, #111111);
+  --sketch-hard-shadow: 3px 3px 0px var(--sketch-ink-black, #111111);
+  --sketch-hard-shadow-hover: 5px 5px 0px var(--sketch-ink-black, #111111);
+  --sketch-subtle-hatch: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(17, 17, 17, 0.04) 5px, rgba(17, 17, 17, 0.04) 6px);
+  
+  /* ── Borders & Structural Highlights ── */
+  --border-subtle: rgba(0, 0, 0, 0.12);
+  --border-medium: rgba(0, 0, 0, 0.28);
+  --border-strong: #000000;
+  --border-focus: #000000;
+  --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  
+  /* ── Text & Typography Contrast System ── */
+  --text-primary: #000000;       /* Exact Rothfinder pure black text */
+  --text-secondary: #2E3338;     /* High contrast slate charcoal */
+  --text-muted: #575D65;         /* Crisp muted metadata */
+  --text-inverse: #FFFFFF;
+  
+  /* ── Better Stack & 21st.dev Brand / Functional Colors ── */
+  --accent-primary: #0F172A;
+  --accent-primary-hover: #1E293B;
+  --brand-periwinkle: #6366F1;   /* Better Stack Signature Periwinkle */
+  --brand-periwinkle-subtle: #EEF2FF;
+  --brand-periwinkle-border: #C7D2FE;
+  
+  --accent-blue: #2563EB;
+  --accent-blue-subtle: #EFF6FF;
+  --accent-blue-border: #DBEAFE;
+  
+  --accent-emerald: #10B981;     /* Operational / Uptime Green */
+  --accent-emerald-subtle: #ECFDF5;
+  --accent-emerald-border: #A7F3D0;
+  
+  --accent-amber: #F59E0B;       /* Notice / Road Advisory Amber */
+  --accent-amber-subtle: #FFFBEB;
+  --accent-amber-border: #FDE68A;
+  
+  --accent-rose: #EF4444;        /* Urgent / Boil Order Rose */
+  --accent-rose-subtle: #FEF2F2;
+  --accent-rose-border: #FECACA;
+  
+  /* ── Magic UI / 21st.dev Visual Effects ── */
+  --beam-color-from: #6366F1;
+  --beam-color-to: #10B981;
+  --spotlight-glow: rgba(99, 102, 241, 0.08);
+
+  /* ── Police Department Visual Tokens ── */
+  --police-navy: #0A192F;
+  --police-navy-surface: #0F203B;
+  --police-gold: #D4AF37;
+  --police-gold-subtle: rgba(212, 175, 55, 0.12);
+  --police-gold-border: rgba(212, 175, 55, 0.35);
+  --district-1-color: #2563EB;
+  --district-2-color: #059669;
+  --district-3-color: #7C3AED;
+  --police-badge-border: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #8C6510 100%);
+
+  /* ── Geometry & Radii ── */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+  
+  /* ── Systematic 8pt Spacing Scale ── */
+  --space-1: 4px;                /* Micro: inline pip offset, badge tag */
+  --space-2: 8px;                /* Tight: icon-to-text, label-to-input */
+  --space-3: 12px;               /* Compact: subtext, button icon, chip gap */
+  --space-4: 16px;               /* Standard: paragraph-to-heading, field gap */
+  --space-5: 20px;               /* Comfortable: card header margin, group gap */
+  --space-6: 24px;               /* Medium: grid gap, card padding tier 1 */
+  --space-8: 32px;               /* Large: card padding tier 2, component gap */
+  --space-10: 40px;              /* Section-sm: feature card padding tier 3 */
+  --space-12: 48px;              /* Section-md: section-to-section gap */
+  --space-16: 64px;              /* Section-lg: major section separation */
+  --space-20: 80px;              /* Section-xl: pre-footer / bento separation */
+  --space-24: 96px;              /* Section-2xl: hero vertical padding */
+  --space-32: 128px;             /* Extreme: page separation */
+
+  /* ── Standardized Card Padding Tiers ── */
+  --pad-card-compact: var(--space-4);           /* 16px */
+  --pad-card-standard: var(--space-8);          /* 32px desktop (20px mobile) */
+  --pad-card-feature: var(--space-10);          /* 40px desktop (24px mobile) */
+
+  /* ── Standardized Section Vertical Rhythm ── */
+  --section-gap-compact: var(--space-10);       /* 40px */
+  --section-gap-standard: var(--space-16);      /* 64px */
+  --section-gap-hero: var(--space-20);          /* 80px */
+
+  /* ── Shadows: Ultra-Clean Ambient & Precision Glow ── */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.02);
+  --shadow-float: 0 24px 56px -12px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-dropdown: 0 20px 45px -8px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  
+  /* ── Typography Stacks & Font Features ── */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Monaco, monospace;
+  --font-features: "cv02", "cv03", "cv04", "cv11";
+  --font-features-tabular: "tnum", "cv02", "cv03", "cv04";
+  
+  /* ── Complete 8-Tier Mathematical Type Scale ── */
+  --type-display-hero: clamp(2.4rem, 5.0vw, 4.0rem);  /* Hero statement */
+  --type-display-page: clamp(2.0rem, 3.8vw, 2.75rem); /* Subpage title */
+  --type-section: clamp(1.6rem, 2.8vw, 2.2rem);       /* Major section title */
+  --type-card: clamp(1.125rem, 1.6vw, 1.35rem);       /* Bento & Card title */
+  --type-lead: clamp(1.05rem, 1.4vw, 1.2rem);         /* Value prop lead text */
+  --type-body: 0.9375rem;                              /* 15px standard body */
+  --type-body-sm: 0.8125rem;                           /* 13px supporting body */
+  --type-ui: 0.875rem;                                 /* 14px buttons & inputs */
+  --type-meta: 0.75rem;                                /* 12px tags, timestamps */
+  --type-eyebrow: 0.6875rem;                           /* 11px uppercase category */
+
+  /* ── Line Heights & Optical Tracking ── */
+  --leading-tightest: 1.14;    /* Hero titles: open vertical breathing room */
+  --leading-tight: 1.16;       /* Section headings */
+  --leading-snug: 1.26;        /* Card titles */
+  --leading-normal: 1.45;      /* UI elements, inputs */
+  --leading-relaxed: 1.65;     /* Body copy */
+  --leading-loose: 1.78;       /* Editorial longform */
+
+  --tracking-tighter: -0.032em; /* Display hero: crisp letterforms */
+  --tracking-tight: -0.024em;   /* Section headings */
+  --tracking-snug: -0.012em;    /* Card titles */
+  --tracking-normal: 0em;       /* Body */
+  --tracking-wide: 0.04em;      /* Subtitles & metadata */
+  --tracking-widest: 0.08em;    /* Eyebrow uppercase tags */
+
+  /* ── Line Length & Reading Constraints ── */
+  --max-w-hero-headline: 960px;
+  --max-w-lead-text: 640px;
+  --max-w-body-text: 680px;
+
+  /* ── Motion Dynamics & Scrollytelling Tokens (Phase 1 & 2) ── */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-apple-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snappy: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-press: cubic-bezier(0.2, 0, 0, 1);
+
+  --duration-micro: 120ms;
+  --duration-card: 220ms;
+  --duration-reveal: 420ms;
+  --duration-stage: 480ms;
+  --duration-fast: 140ms;
+  --duration-normal: 220ms;
+  --duration-slow: 380ms;
+
+  --reveal-translate-y: 18px;
+  
+  /* ── Hardware Double-Bezel & Specularity Tokens ── */
+  --bezel-outer-bg: rgba(11, 27, 54, 0.035);
+  --bezel-outer-border: rgba(11, 27, 54, 0.08);
+  --specular-inner: inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  --spotlight-color: rgba(197, 168, 128, 0.16);
+  
+  /* ── Screen & Layout ── */
+  --max-w-screen: 1240px;
+  --header-height: 64px;
+
+  /* ── Mobile Ergonomics & Safe-Area Insets (WCAG 2.2 AA) ── */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --touch-target-min: 44px;
+}
+
+/* ── Dark Theme (Better Stack Dark Obsidian Canvas) ── */
+[data-theme="dark"] {
+  --bg-app: #080C14;
+  --bg-surface: #0E1420;
+  --bg-surface-subtle: #141C2C;
+  --bg-surface-elevated: #1A2438;
+  --bg-overlay: rgba(0, 0, 0, 0.85);
+  --bg-glass: rgba(14, 20, 32, 0.88);
+  --bg-glass-scrolled: rgba(14, 20, 32, 0.96);
+
+  /* ── Inverted Charcoal Drafting Sheet Tokens ── */
+  --paper-ground: #16181B;
+  --paper-ground-subtle: #1C2024;
+  --paper-surface: #22262B;
+  --paper-surface-warm: #282D34;
+  --graphite-dark: #E6EDF3;
+  --graphite-medium: #CBD5E1;
+  --graphite-light: #94A3B8;
+  --graphite-faint: #64748B;
+  --graphite-smudge: rgba(0, 0, 0, 0.5);
+  --graphite-hatch: rgba(255, 255, 255, 0.08);
+  --graphite-wash: rgba(255, 255, 255, 0.04);
+  
+  --marker-amber: #FBBF24;
+  --marker-amber-wash: rgba(251, 191, 36, 0.18);
+  --marker-blue: #60A5FA;
+  --marker-blue-wash: rgba(96, 165, 250, 0.16);
+  --marker-crimson: #EF4444;
+  --marker-crimson-wash: rgba(239, 68, 68, 0.22);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.25);
+  --border-focus: #FFFFFF;
+  --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-inverse: #090D16;
+  
+  --accent-primary: #F8FAFC;
+  --accent-primary-hover: #E2E8F0;
+  --brand-periwinkle: #818CF8;
+  --brand-periwinkle-subtle: rgba(99, 102, 241, 0.15);
+  --brand-periwinkle-border: rgba(99, 102, 241, 0.3);
+  
+  --accent-blue: #60A5FA;
+  --accent-blue-subtle: rgba(59, 130, 246, 0.15);
+  --accent-blue-border: rgba(59, 130, 246, 0.3);
+  
+  --accent-emerald: #34D399;
+  --accent-emerald-subtle: rgba(16, 185, 129, 0.15);
+  --accent-emerald-border: rgba(16, 185, 129, 0.3);
+  
+  --accent-amber: #FBBF24;
+  --accent-amber-subtle: rgba(245, 158, 11, 0.15);
+  --accent-amber-border: rgba(245, 158, 11, 0.3);
+  
+  --accent-rose: #F87171;
+  --accent-rose-subtle: rgba(239, 68, 68, 0.15);
+  --accent-rose-border: rgba(239, 68, 68, 0.3);
+
+  --spotlight-glow: rgba(99, 102, 241, 0.14);
+  
+  /* ── Hardware Double-Bezel & Specularity Dark Tokens ── */
+  --bezel-outer-bg: rgba(255, 255, 255, 0.035);
+  --bezel-outer-border: rgba(255, 255, 255, 0.08);
+  --specular-inner: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  --spotlight-color: rgba(129, 140, 248, 0.20);
+  
+  /* ── Police Department Dark Tokens ── */
+  --police-navy: #0E1A2E;
+  --police-navy-surface: #14243F;
+  --police-gold: #F2C94C;
+
+  /* ── Mapping The Way / Civic Editorial Dark Tokens ── */
+  --mtw-bg-tertiary: #13171F;
+  --mtw-neutral-dark: #F8FAFC;
+  --mtw-primary-crimson: #EF4444;
+  --mtw-police-navy: #14243F;
+  --mtw-police-navy-dark: #0A1220;
+  --mtw-police-gold: #F2C94C;
+  --mtw-card-bg: #18202E;
+  --mtw-card-border: rgba(255, 255, 255, 0.08);
+  --mtw-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --mtw-card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.45);
+
+  --police-gold-subtle: rgba(242, 201, 76, 0.15);
+  --police-gold-border: rgba(242, 201, 76, 0.4);
+  --district-1-color: #60A5FA;
+  --district-2-color: #34D399;
+  --district-3-color: #A78BFA;
+  
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.7);
+  --shadow-float: 0 24px 56px -12px rgba(0, 0, 0, 0.8);
+  --shadow-dropdown: 0 20px 45px -8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  /* ── Streamline Sketch Style Dark Tokens ── */
+  --sketch-ink: #F0EEE9;
+  --sketch-hard-shadow: 3px 3px 0px rgba(240, 238, 233, 0.85);
+  --sketch-hard-shadow-hover: 5px 5px 0px rgba(240, 238, 233, 0.95);
+  --sketch-subtle-hatch: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.04) 5px, rgba(255, 255, 255, 0.04) 6px);
+}

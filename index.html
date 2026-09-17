@@ -26,6 +26,9 @@
 
 
 
+    <!-- Frosted Glass Mobile Shield for Header Clearance -->
+    <div class="civic-floating-bar-shield" aria-hidden="true"></div>
+
     <!-- ========================================================================
          FLOATING STICKY CIVIC COMMAND NAVIGATION
          Tactile, elevated square buttons (Antigravity & Better-UI architecture)
@@ -417,7 +420,7 @@
 
                   <!-- Real-Time CAD Telemetry HUD Display -->
                   <div style="padding: 12px 18px; background: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle);">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 0.78rem;">
+                    <div class="cad-hud-telemetry-grid">
                       <div>
                         <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Active Sector</div>
                         <strong id="cad-hud-district" style="color: var(--text-primary); font-family: var(--font-draft);">District 1 (East)</strong>
@@ -892,26 +895,30 @@
             The Washington Police Department offers strong community backing, competitive union-negotiated compensation, modern equipment, lateral transfer incentives, and comprehensive pension and health benefits.
           </p>
 
-          <div class="civic-metrics-grid">
-            <div class="civic-metric-card spotlight-card">
+          <div class="wpd-recruitment-bento">
+            <div class="wpd-bento-item spotlight-card">
               <div class="civic-metric-label">STARTING SALARY RANGE</div>
-              <div class="civic-metric-val">$68,500 – $84,200</div>
-              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">PBLC contract scale with lateral transfer credit</div>
+              <div class="civic-metric-val" style="font-size: 1.75rem; font-weight: 700; color: var(--accent-primary, #0B1B36); margin: 6px 0;">$68,500 – $84,200</div>
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">PBLC union contract scale with lateral step transfer credit for certified officers.</div>
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-subtle); font-size: 0.74rem; font-family: var(--font-mono); color: var(--mtw-police-gold, #8A6D3B); font-weight: 600;">STEP ADVANCEMENT • OVERTIME</div>
             </div>
-            <div class="civic-metric-card spotlight-card">
+            <div class="wpd-bento-item spotlight-card">
               <div class="civic-metric-label">HEALTH & DENTAL BENEFITS</div>
-              <div class="civic-metric-val">100% City-Paid Options</div>
-              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">Comprehensive family coverage packages</div>
+              <div class="civic-metric-val" style="font-size: 1.75rem; font-weight: 700; color: var(--accent-primary, #0B1B36); margin: 6px 0;">100% City-Paid Options</div>
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">Comprehensive health, dental, and vision insurance packages for officers and families.</div>
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-subtle); font-size: 0.74rem; font-family: var(--font-mono); color: var(--mtw-police-gold, #8A6D3B); font-weight: 600;">FULL FAMILY COVERAGE</div>
             </div>
-            <div class="civic-metric-card spotlight-card">
+            <div class="wpd-bento-item spotlight-card">
               <div class="civic-metric-label">RETIREMENT PENSION</div>
-              <div class="civic-metric-val">Article 3 Pension</div>
-              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">Illinois Tier 2 Municipal Police Pension Fund</div>
+              <div class="civic-metric-val" style="font-size: 1.75rem; font-weight: 700; color: var(--accent-primary, #0B1B36); margin: 6px 0;">Article 3 Pension</div>
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">Illinois Downstate Police Pension Fund Tier 2 statutory defined benefit plan.</div>
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-subtle); font-size: 0.74rem; font-family: var(--font-mono); color: var(--mtw-police-gold, #8A6D3B); font-weight: 600;">DOWNSTATE PENSION BOARD</div>
             </div>
-            <div class="civic-metric-card spotlight-card">
+            <div class="wpd-bento-item spotlight-card">
               <div class="civic-metric-label">FLEET & EQUIPMENT</div>
-              <div class="civic-metric-val">Individual Patrol Rifles</div>
-              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">Body cameras and marked Ford Interceptor fleet</div>
+              <div class="civic-metric-val" style="font-size: 1.75rem; font-weight: 700; color: var(--accent-primary, #0B1B36); margin: 6px 0;">Assigned Equipment</div>
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">Take-home cruiser program, individual patrol rifles, and Axon body-worn camera suites.</div>
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-subtle); font-size: 0.74rem; font-family: var(--font-mono); color: var(--mtw-police-gold, #8A6D3B); font-weight: 600;">MODERN TACTICAL GEAR</div>
             </div>
           </div>
 
