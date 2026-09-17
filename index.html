@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Washington Police Department / Serve with Honor, Protect with Purpose, Lead with Integrity</title>
+  <meta name="description" content="Official website of the Washington, Illinois Police Department. 24/7 emergency response, community policing, interactive district map, vacation checks, overnight parking, records, and crime prevention." />
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  
+  <!-- Fonts -->
+  <!-- Fonts: Technical Drafting, Architectural Handwriting & Editorial Display Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/tokens.css?v=20260917-mobile-v1" />
+  <link rel="stylesheet" href="css/styles.css?v=20260917-mobile-v1" />
+</head>
+<body id="wpd-experience-root">
+
+
+
+    <!-- ========================================================================
+         FLOATING STICKY CIVIC COMMAND NAVIGATION
+         Tactile, elevated square buttons (Antigravity & Better-UI architecture)
+         ======================================================================== -->
+    <header class="civic-floating-bar" id="globalHeader" role="banner">
+      <div class="container civic-floating-inner">
+        
+        <!-- Left: Floating Official Brand (Extracted Transparent Seal + Department Text) -->
+        <div class="civic-floating-left">
+          <a href="index.html" class="civic-float-brand" aria-label="Washington Police Department Home" title="Washington Police Department">
+            <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" />
+            <div class="civic-float-brand-text">
+              <span class="civic-brand-title">Washington Police</span>
+              <span class="civic-brand-dept">Department</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: Floating Action Glass Island Capsule -->
+        <div class="civic-floating-right civic-floating-capsule">
+          <a href="tel:3094442313" class="civic-float-pill-btn civic-float-dispatch" aria-label="24/7 Police Dispatch Line (309) 444-2313" title="24/7 Police Dispatch: (309) 444-2313">
+            <span class="status-pip status-pip-emerald" style="margin-right: 8px;"></span>
+            <span class="float-btn-phone">(309) 444-2313</span>
+          </a>
+          <a href="tel:911" class="civic-float-pill-btn civic-float-911" aria-label="Call 911 Emergency" title="Emergency: Dial 911">
+            <span class="float-btn-911-beacon"></span>
+            <span class="float-btn-main">DIAL 911</span>
+          </a>
+          <button type="button" class="civic-float-pill-btn civic-float-menu" id="global-menu-toggle" data-open-drawer="drawer-nav-menu" aria-label="Open departmental navigation menu" aria-expanded="false" aria-haspopup="true" title="Department Navigation Menu">
+            <span class="float-btn-menu-text">MENU</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         EDITORIAL SPLIT HERO BANNER
+         Inspired by Mapping The Way (.hero-banner & .post-card architecture)
+         ======================================================================== -->
+    <section class="hero-editorial-section" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-editorial-grid">
+          
+          <!-- LEFT COLUMN: Authentic High-Definition Photograph -->
+          <div class="hero-editorial-image-frame double-bezel scroll-reveal" style="padding: 8px;">
+            <div class="hero-editorial-image-inner double-bezel-inner">
+              <img src="assets/wpd_police_department.jpg" alt="Washington Illinois Police Department Headquarters facility at 115 W Jefferson Street" class="hero-editorial-image" fetchpriority="high" />
+              <div class="hero-editorial-image-badge">
+                Washington Police Department Headquarters • 115 W. Jefferson St
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Authoritative Civic Typography & Panic-Safe Actions -->
+          <div class="hero-editorial-content">
+            
+            <h1 id="hero-heading" class="hero-editorial-title">
+              <span>Protecting with Purpose,</span><br>
+              <span>Serving with Honor,</span><br>
+              <span class="text-accent-editorial"><em>Leading with Integrity.</em></span>
+            </h1>
+
+            <p class="hero-editorial-lead prog-copy">
+              <strong class="prog-lead">24-hour continuous protection:</strong> The Washington Police Department delivers proactive neighborhood patrol, tactical readiness, and rapid emergency dispatch across 16,000+ residents. Grounded in community trust, professional excellence, and transparent constitutional service.
+            </p>
+
+            <div class="hero-editorial-actions">
+              <a href="tel:911" class="btn-editorial-primary btn-editorial-911" aria-label="Call 911 Emergency">
+                Emergency: Dial 911
+              </a>
+              <a href="tel:3094442313" class="btn-editorial-secondary" title="24/7 Police Dispatch">
+                Non-Emergency: (309) 444-2313
+              </a>
+              <a href="#services" class="btn-editorial-secondary">
+                Resident Services
+              </a>
+              <a href="#districts" class="btn-editorial-secondary">
+                District Map
+              </a>
+            </div>
+
+            <!-- Authentic Operational Metadata Strip -->
+            <div class="hero-editorial-meta-strip">
+              <div class="hero-editorial-meta-pill">
+                <span class="meta-pill-label">Station Window:</span>
+                <span class="meta-pill-value">Mon–Fri 8:00 AM – 4:30 PM</span>
+              </div>
+              <div class="hero-editorial-meta-pill">
+                <span class="meta-pill-label">Patrol Response:</span>
+                <span class="meta-pill-value">24/7/365 Continuous</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         EMERGENCY VS. NON-EMERGENCY PATHWAYS (CALM CIVIC ARCHITECTURE)
+         Inspired by Mapping The Way 50/50 editorial cards
+         ======================================================================== -->
+    <section class="page-section" style="padding-top: var(--space-8); padding-bottom: var(--space-8);" aria-label="Emergency and Non-Emergency Routing">
+      <div class="container">
+        <div class="civic-pathway-grid">
+          
+          <!-- Emergency Pathway Card -->
+          <article class="civic-pathway-card civic-pathway-card-emergency">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                <span class="chip chip-gold" style="font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em; background: rgba(197, 168, 128, 0.15); color: #8A6D3B; border: 1px solid rgba(197, 168, 128, 0.4);">IMMEDIATE DANGER • LIFE SAFETY</span>
+                <span class="mono-code" style="color: var(--mtw-police-navy, #0B1B36); font-weight: 800; font-size: 0.90rem;">DIAL 911</span>
+              </div>
+              <h2 class="civic-card-title" style="font-size: 1.65rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
+                Emergency Dispatch
+              </h2>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                Call 911 immediately for crimes in progress, medical emergencies, active motor vehicle accidents with injuries, physical violence, weapons, or fires.
+              </p>
+              <ul style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 28px; padding-left: 20px; line-height: 1.7;">
+                <li>Immediate tactical, life-saving, or medical dispatch</li>
+                <li>Direct link to Tazewell County PSAP Dispatchers</li>
+                <li>Free call from any mobile or landline device</li>
+              </ul>
+            </div>
+            <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="width: 100%; justify-content: center; text-align: center;">
+              Call 911 Direct
+            </a>
+          </article>
+
+          <!-- Non-Emergency Pathway Card -->
+          <article class="civic-pathway-card civic-pathway-card-non-emergency">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                <span class="chip chip-blue" style="font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em;">NON-EMERGENCY ASSISTANCE</span>
+                <span class="mono-code" style="color: var(--accent-blue); font-weight: 800; font-size: 0.90rem;">(309) 444-2313</span>
+              </div>
+              <h2 class="civic-card-title" style="font-size: 1.65rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
+                24/7 Police Dispatch Line
+              </h2>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                Contact our on-duty dispatcher for crimes not in progress, past property damage, noise disturbances, animal control calls, or to speak directly with a patrol officer.
+              </p>
+              <ul style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 28px; padding-left: 20px; line-height: 1.7;">
+                <li>Routine officer dispatch to your Washington location</li>
+                <li>File an incident report or speak with a watch supervisor</li>
+                <li>Available 24 hours a day, 7 days a week, 365 days a year</li>
+              </ul>
+            </div>
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-align: center;">
+              Call (309) 444-2313
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         1-CLICK RESIDENT ACTION HUB (EDITORIAL SERVICE DIRECTORY)
+         Inspired by Mapping The Way quick-links and collection cards
+         ======================================================================== -->
+    <section class="page-section" id="services" aria-labelledby="services-heading" style="padding-top: var(--space-4);">
+      <div class="container">
+        
+        <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+          <div class="eyebrow" style="color: var(--mtw-police-gold, #8A6D3B);">DIRECT CITIZEN SERVICES</div>
+          <h2 id="services-heading" class="civic-section-title" style="font-size: 2.2rem; font-weight: 400; margin: 4px 0 12px 0;">
+            One-Click Resident Action Hub
+          </h2>
+          <p class="section-lead" style="max-width: 720px; font-size: 1.05rem; line-height: 1.6; color: var(--text-secondary);">
+            Every resident service completes in a single direct interaction. Transparent municipal operations with zero bureaucratic barriers.
+          </p>
+        </div>
+
+        <!-- Live Services Directory Controls (Search & Filter Pills) -->
+        <div class="services-control-bar">
+          <div class="services-search-wrapper">
+            <input type="text" id="services-search-input" class="services-search-input" placeholder="Search services, vacation house checks, parking waivers, crash reports, records..." aria-label="Search resident services directory" autocomplete="off" />
+          </div>
+          <div class="services-filter-pills" role="tablist" aria-label="Filter resident services by category">
+            <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (8)</button>
+            <button type="button" class="services-filter-pill" data-filter="portals" role="tab" aria-selected="false">Resident Portals</button>
+            <button type="button" class="services-filter-pill" data-filter="records" role="tab" aria-selected="false">Records &amp; Legal</button>
+            <button type="button" class="services-filter-pill" data-filter="safety" role="tab" aria-selected="false">Safety &amp; Prevention</button>
+          </div>
+        </div>
+
+        <div class="civic-services-grid" id="services-grid-container">
+          
+          <!-- 1. Vacation House Check (Feature Bento Card) -->
+          <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-vacation-check" data-category="portals" data-keywords="vacation house check residential property travel away inspection patrol officer security home" role="button" tabindex="0" aria-haspopup="dialog">
+            <div>
+              <div class="feature-card-header">
+                <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE RESIDENTIAL SERVICE</span>
+                <span class="feature-status-badge">
+                  <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+                  DIRECT CAD DISPATCH CHECK
+                </span>
+              </div>
+              <h3 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Vacation House Watch &amp; Property Check</h3>
+              <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
+                <strong class="prog-lead">Physical exterior security inspections:</strong> Request active patrol checks of your residence while you are traveling away from Washington. Uniformed officers verify perimeter doors, windows, and premises integrity daily.
+              </p>
+              <ul class="feature-specs-list">
+                <li class="feature-spec-item">CAD Dispatch Patrol Integration</li>
+                <li class="feature-spec-item">Daily Exterior Perimeter Checks</li>
+                <li class="feature-spec-item">Immediate Emergency Keyholder Contact</li>
+              </ul>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Request Vacation Check</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Instant Online Submission</span>
+            </div>
+          </div>
+
+          <!-- 2. Overnight Parking Permission (Feature Bento Card) -->
+          <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-parking-permission" data-category="portals" data-keywords="overnight parking exemption street permit license plate vehicle car 2am 6am ordinance waiver" role="button" tabindex="0" aria-haspopup="dialog">
+            <div>
+              <div class="feature-card-header">
+                <span class="civic-service-card-tag" style="margin-bottom: 0;">INSTANT MUNICIPAL EXEMPTION</span>
+                <span class="feature-status-badge">
+                  <span class="status-pip status-pip-blue" aria-hidden="true"></span>
+                  2:00 AM – 6:00 AM ORDINANCE
+                </span>
+              </div>
+              <h3 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Overnight Street Parking Permission</h3>
+              <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
+                <strong class="prog-lead">Immediate digital street exemption:</strong> Register your vehicle for an authorization from Washington's 2:00 AM – 6:00 AM street parking restriction, synced directly with active patrol cruisers.
+              </p>
+              <ul class="feature-specs-list">
+                <li class="feature-spec-item">Instant Plate CAD Authorization</li>
+                <li class="feature-spec-item">Zero Processing Fee</li>
+                <li class="feature-spec-item">Valid up to 3 Consecutive Nights</li>
+              </ul>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Register Vehicle Exemption</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Real-Time Patrol Logging</span>
+            </div>
+          </div>
+
+          <!-- 3. Police Records & FOIA -->
+          <div class="civic-service-card spotlight-card" data-open-drawer="drawer-police-records" data-category="records" data-keywords="police records foia statutory public freedom information incident accident report" role="button" tabindex="0" aria-haspopup="dialog">
+            <div>
+              <div class="civic-service-card-tag">STATUTORY PUBLIC RECORDS</div>
+              <h3 class="civic-service-card-title">Police Records &amp; FOIA</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Official statutory filings:</strong> Submit Illinois Freedom of Information Act requests or request verified incident report copies.
+              </p>
+            </div>
+            <div class="civic-service-card-action">
+              Submit Records Request
+            </div>
+          </div>
+
+          <!-- 4. Accident & Crash Reports -->
+          <a href="https://www.buycrash.com" target="_blank" rel="noopener noreferrer" class="civic-service-card spotlight-card" data-category="records" data-keywords="accident crash reports buycrash collision traffic records state portal online" style="text-decoration: none;">
+            <div>
+              <div class="civic-service-card-tag">STATE TRAFFIC PORTAL</div>
+              <h3 class="civic-service-card-title">Accident &amp; Crash Reports</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Certified traffic collision records:</strong> Look up and order official State of Illinois traffic crash reports online.
+              </p>
+            </div>
+            <div class="civic-service-card-action">
+              Search Crash Portal
+            </div>
+          </a>
+
+          <!-- 5. Submit an Anonymous Tip -->
+          <div class="civic-service-card spotlight-card" data-open-drawer="drawer-anonymous-tip" data-category="safety" data-keywords="anonymous crime tip confidential narcotics drugs report investigation tip411" role="button" tabindex="0" aria-haspopup="dialog">
+            <div>
+              <div class="civic-service-card-tag">100% CONFIDENTIAL</div>
+              <h3 class="civic-service-card-title">Anonymous Crime Tip</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Secure encrypted transmission:</strong> Submit confidential intelligence regarding narcotics or open investigations safely.
+              </p>
+            </div>
+            <div class="civic-service-card-action">
+              Send Confidential Tip
+            </div>
+          </div>
+
+          <!-- 6. Child Safety Seat Inspection -->
+          <div class="civic-service-card spotlight-card" data-open-drawer="drawer-child-seat" data-category="safety" data-keywords="child safety seat car seat inspection certified technician installation family appointment" role="button" tabindex="0" aria-haspopup="dialog">
+            <div>
+              <div class="civic-service-card-tag">CERTIFIED INSPECTION</div>
+              <h3 class="civic-service-card-title">Child Seat Inspection</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">State-certified safety technicians:</strong> Book a free infant or child car seat installation check with certified officers.
+              </p>
+            </div>
+            <div class="civic-service-card-action">
+              Book Inspection Appointment
+            </div>
+          </div>
+
+          <!-- 7. Commend an Officer -->
+          <div class="civic-service-card spotlight-card" data-open-drawer="drawer-commendation" data-category="safety" data-keywords="commend officer recognition feedback compliment contact command staff leadership" role="button" tabindex="0" aria-haspopup="dialog">
+            <div>
+              <div class="civic-service-card-tag">COMMUNITY FEEDBACK</div>
+              <h3 class="civic-service-card-title">Commend an Officer</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Direct commendation routing:</strong> Recognize courteous assistance, professional dedication, or exemplary field service.
+              </p>
+            </div>
+            <div class="civic-service-card-action">
+              Submit Officer Commendation
+            </div>
+          </div>
+
+          <!-- 8. CodeRED Emergency Alerts -->
+          <a href="https://public.coderedweb.com/CNE/en-US/BF8738F9B6E9" target="_blank" rel="noopener noreferrer" class="civic-service-card spotlight-card" data-category="safety" data-keywords="codered alerts emergency notification weather tornado severe boil order road closure phone" style="text-decoration: none;">
+            <div>
+              <div class="civic-service-card-tag">CITIZEN ENROLLMENT</div>
+              <h3 class="civic-service-card-title">CodeRED Community Alerts</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">High-priority citizen notifications:</strong> Enroll to receive critical severe weather warnings, road closures, and municipal advisories.
+              </p>
+            </div>
+            <div class="civic-service-card-action">
+              Enroll in CodeRED
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Zero-Results Empty State -->
+        <div id="services-empty-state" class="services-empty-state" style="display: none;">
+          <h3 style="font-family: var(--font-title); font-size: 1.3rem; margin-bottom: 8px; color: var(--text-primary);">No Matching Services Found</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto;">
+            We couldn't find any departmental services matching your search. Try searching for "vacation", "parking", "crash", or "records".
+          </p>
+          <button type="button" class="btn-editorial-secondary" id="services-clear-search">Reset Filter</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         INTERACTIVE POLICE DISTRICT MAP (OFFICIAL GIS CARTOGRAPHY)
+         Inspired by Mapping The Way geographic landscape section
+         ======================================================================== -->
+    <section class="page-section" id="districts" aria-labelledby="districts-heading">
+      <div class="container">
+        
+        <div class="double-bezel scrolly-wrapper spotlight-card" style="margin-top: var(--space-8); padding: 8px; overflow: visible;">
+          <div class="double-bezel-inner scrolly-wrapper-inner civic-map-card" style="margin-top: 0; border: none; border-radius: 18px; box-shadow: none; overflow: visible;">
+            
+            <div class="civic-map-toolbar">
+              <div>
+                <div class="eyebrow" style="color: var(--mtw-police-gold, #8A6D3B); font-size: 0.72rem; letter-spacing: 0.1em;">OFFICIAL MUNICIPAL GIS DATA &amp; CAD INCIDENT LIFECYCLE</div>
+                <h2 id="districts-heading" class="civic-section-title" style="font-size: 1.85rem; font-weight: 500; margin: 2px 0 6px 0;">
+                  Patrol Districts &amp; Incident Dispatch Lifecycle
+                </h2>
+                <p class="prog-copy" style="max-width: 680px; margin: 0;">
+                  <strong class="prog-lead">From 911 call ingestion to on-scene resolution:</strong> Washington Police Department maintains continuous patrol coverage across three primary geographic sectors. Scroll the 3-phase dispatch storyboard below to track CAD routing, sector unit geolocation, and on-scene body-worn camera activation in real time.
+                </p>
+              </div>
+            </div>
+
+            <div class="scrolly-container" style="padding: var(--space-6);">
+              
+              <!-- STICKY STAGE (LEFT COLUMN) -->
+              <div class="scrolly-stage-column">
+                <div class="scrolly-sticky-stage district-map-card" style="box-shadow: none; border: 1px solid var(--border-subtle); border-radius: 16px;">
+                  <!-- Map Controls & Status -->
+                  <div class="district-map-toolbar">
+                    <div class="district-map-title-row">
+                      <span class="status-pip status-pip-emerald" aria-hidden="true" id="cad-hud-pip"></span>
+                      <span class="district-map-badge" id="cad-hud-phase">PHASE 01 // INGESTION</span>
+                      <span class="district-map-scale mono-code" id="cad-hud-timer">00:00:12</span>
+                    </div>
+                    <div class="district-view-toggle" role="group" aria-label="Map display mode">
+                      <button type="button" class="map-toggle-btn active" id="map-btn-osm">Street Map</button>
+                      <button type="button" class="map-toggle-btn" id="map-btn-tactical">Tactical CAD</button>
+                      <button type="button" class="map-toggle-btn" id="map-btn-reset">Reset View</button>
+                    </div>
+                  </div>
+
+                  <!-- Leaflet Map Canvas -->
+                  <div id="real-district-leaflet-map" role="region" aria-label="Official interactive patrol district map of Washington, Illinois"></div>
+
+                  <!-- Real-Time CAD Telemetry HUD Display -->
+                  <div style="padding: 12px 18px; background: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle);">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 0.78rem;">
+                      <div>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Active Sector</div>
+                        <strong id="cad-hud-district" style="color: var(--text-primary); font-family: var(--font-draft);">District 1 (East)</strong>
+                      </div>
+                      <div>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Assigned Unit</div>
+                        <strong id="cad-hud-unit" style="color: var(--text-primary); font-family: var(--font-draft);">Sector Car 101</strong>
+                      </div>
+                      <div>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">CAD Status</div>
+                        <strong id="cad-hud-status" style="color: var(--accent-emerald, #059669); font-family: var(--font-draft);">DISPATCH QUEUED</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Quick Interactive Legend / Selector -->
+                  <div class="district-map-legend">
+                    <button type="button" class="legend-chip legend-chip-d1" data-district-jump="1">
+                      <span class="legend-dot dot-d1"></span>
+                      <span><strong>District 1 (East)</strong> • 434 Ac</span>
+                    </button>
+                    <button type="button" class="legend-chip legend-chip-d2" data-district-jump="2">
+                      <span class="legend-dot dot-d2"></span>
+                      <span><strong>District 2 (West)</strong> • 1,681 Ac</span>
+                    </button>
+                    <button type="button" class="legend-chip legend-chip-d3" data-district-jump="3">
+                      <span class="legend-dot dot-d3"></span>
+                      <span><strong>District 3 (North)</strong> • 1,477 Ac</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCROLLING NARRATIVE BEATS (RIGHT COLUMN) -->
+              <div class="scrolly-beats-column">
+                
+                <!-- Beat 1: CAD Ingestion & Priority Classification -->
+                <article class="scrolly-step active" data-step="1" data-district="1" data-time="00:00:12" data-phase="PHASE 01 // INGESTION" data-status="CAD QUEUED" data-unit="Sector Car 101" data-distname="District 1 (East)">
+                  <div class="scrolly-step-pip">
+                    <span class="status-pip status-pip-blue"></span>
+                    <span>Phase 01 • <span class="scrolly-step-timer">00:00:12</span></span>
+                  </div>
+                  <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
+                    911 CAD Ingestion &amp; Priority Triage
+                  </h3>
+                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-4);">
+                    <strong class="prog-lead">Tazewell County 911 (TC3)</strong> ingests incoming emergency telemetry, validates caller location via GIS cell-tower trilateration, and queues CAD event #2026-WPD-0842 with automated shift supervisor broadcast.
+                  </p>
+                  <div class="scrolly-telemetry-hud">
+                    <div class="hud-item">
+                      <span class="hud-label">Classification</span>
+                      <span class="hud-val">Priority 2</span>
+                    </div>
+                    <div class="hud-item">
+                      <span class="hud-label">Queue Latency</span>
+                      <span class="hud-val tabular-nums">&lt;14s</span>
+                    </div>
+                    <div class="hud-item">
+                      <span class="hud-label">Sector Assigned</span>
+                      <span class="hud-val">District 1</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Beat 2: Sector Geolocation & Priority Transit -->
+                <article class="scrolly-step" data-step="2" data-district="2" data-time="00:01:45" data-phase="PHASE 02 // TRANSIT" data-status="EN ROUTE" data-unit="Sector Car 102" data-distname="District 2 (West)">
+                  <div class="scrolly-step-pip">
+                    <span class="status-pip status-pip-emerald"></span>
+                    <span>Phase 02 • <span class="scrolly-step-timer">00:01:45</span></span>
+                  </div>
+                  <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
+                    Patrol Sector Geolocation &amp; En-Route Transit
+                  </h3>
+                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-4);">
+                    <strong class="prog-lead">Sector Car 102 acknowledges CAD dispatch</strong> from Route 24 staging. Vehicle mobile data terminal (MDT) calculates optimal arterial corridor routing with GPS telemetry streaming at 1Hz.
+                  </p>
+                  <div class="scrolly-telemetry-hud">
+                    <div class="hud-item">
+                      <span class="hud-label">Cruiser Unit</span>
+                      <span class="hud-val">Unit 3 (Ford PIU)</span>
+                    </div>
+                    <div class="hud-item">
+                      <span class="hud-label">Calculated ETA</span>
+                      <span class="hud-val tabular-nums">3.2 Min</span>
+                    </div>
+                    <div class="hud-item">
+                      <span class="hud-label">Corridor Speed</span>
+                      <span class="hud-val">Arterial Patrol</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Beat 3: On-Scene Arrival & Crisis De-escalation -->
+                <article class="scrolly-step" data-step="3" data-district="3" data-time="00:04:10" data-phase="PHASE 03 // ON-SCENE" data-status="SCENE SECURED" data-unit="Sector Car 103" data-distname="District 3 (North)">
+                  <div class="scrolly-step-pip">
+                    <span class="status-pip status-pip-amber"></span>
+                    <span>Phase 03 • <span class="scrolly-step-timer">00:04:10</span></span>
+                  </div>
+                  <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
+                    On-Scene Arrival &amp; Crisis De-escalation
+                  </h3>
+                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-4);">
+                    <strong class="prog-lead">Axon Body 4 system auto-buffers</strong> as officer vehicle arrives in North Sector. Officers implement verbal containment and de-escalation protocols while Northern Tazewell Fire/EMS remains on mutual standby.
+                  </p>
+                  <div class="scrolly-telemetry-hud">
+                    <div class="hud-item">
+                      <span class="hud-label">Camera Status</span>
+                      <span class="hud-val">Active / Synced</span>
+                    </div>
+                    <div class="hud-item">
+                      <span class="hud-label">Mutual Aid</span>
+                      <span class="hud-val">EMS Standby</span>
+                    </div>
+                    <div class="hud-item">
+                      <span class="hud-label">Scene Integrity</span>
+                      <span class="hud-val">Stabilized</span>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         COMMUNITY POLICING IN ACTION (EDITORIAL CIVIC PHOTOGRAPHY & PROGRAMS)
+         Inspired by Mapping The Way full-width story banner & 50/50 cards
+         ======================================================================== -->
+    <section class="page-section" id="community" aria-labelledby="community-heading">
+      <div class="container">
+        
+        <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+          <div class="hero-editorial-eyebrow">COMMUNITY PARTNERSHIP • POLICING WITH PURPOSE</div>
+          <h2 id="community-heading" class="hero-editorial-title" style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-top: 6px;">
+            Authentic Community Connection
+          </h2>
+          <p class="hero-editorial-lead" style="max-width: 780px;">
+            True public safety is founded on shared respect, proactive communication, and genuine human partnerships between officers and the residents, shopkeepers, and students we serve every day.
+          </p>
+        </div>
+
+        <!-- Full-Width Panoramic Story Banner -->
+        <div class="civic-story-banner">
+          <img src="assets/wpd_washington_square_panorama.jpg" alt="Panoramic authentic photo of the Washington Illinois historic square, gazebo, and American flag" class="civic-story-banner-img" loading="lazy" />
+          <div class="civic-story-banner-scrim"></div>
+          <div class="civic-story-banner-content">
+            <div style="font-family: var(--font-body); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mtw-police-gold, #C5A880); margin-bottom: 10px;">
+              HISTORIC WASHINGTON SQUARE • CIVIC HEART
+            </div>
+            <h3 style="font-family: var(--font-title); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.25; margin-bottom: 14px;">
+              Where Tradition, Commerce, and Safety Meet
+            </h3>
+            <p style="font-size: 1rem; line-height: 1.6; color: #E2E8F0; margin-bottom: 22px; max-width: 680px;">
+              From Good Neighbor Days festivals to summer concerts at the pavilion, school parades, and daily foot patrols, Washington Police officers are actively woven into the fabric of downtown life in Tazewell County.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button type="button" class="btn-editorial-primary" data-open-drawer="drawer-vacation-check">
+                Vacation House Watch
+              </button>
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-commendation" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4);">
+                Commend an Officer
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Column Editorial Story Grid -->
+        <div class="civic-story-grid">
+          
+          <!-- Story 1: Historic Square & Badge Heritage -->
+          <article class="civic-story-card spotlight-card">
+            <img src="assets/wpd_washington_square_fountain.jpg" alt="Washington Square park and central fountain depicted on Washington Police badge" class="civic-story-card-img" loading="lazy" />
+            <div class="civic-story-card-body">
+              <span class="civic-service-card-tag" style="color: var(--mtw-police-gold, #C5A880);">HISTORIC BADGE HERITAGE</span>
+              <h3 class="civic-service-card-title" style="font-size: 1.25rem;">
+                The Fountain at the Center of Our Badge
+              </h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Centennial civic symbol:</strong> The historic fountain at Washington Square—featured directly in the medallion of the official department seal—is the living heart of our community. Officers maintain daily foot patrols here to connect personally with downtown shopkeepers and families.
+              </p>
+            </div>
+          </article>
+
+          <!-- Story 2: Marked Patrol Fleet Operations -->
+          <article class="civic-story-card spotlight-card">
+            <img src="assets/wpd_patrol_squad_unit3.jpg" alt="Washington Police marked Ford Interceptor SUV Unit 3" class="civic-story-card-img" loading="lazy" />
+            <div class="civic-story-card-body">
+              <span class="civic-service-card-tag">24/7 MARKED PATROL FLEET</span>
+              <h3 class="civic-service-card-title" style="font-size: 1.25rem;">
+                High-Visibility Neighborhood Patrol
+              </h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Continuous roving deterrence:</strong> Marked Interceptor cruisers maintain continuous roving patrols across all three city sectors. Equipped with mobile digital terminals, dash cams, and medical AED units, officers are equipped to respond anywhere in Washington in minutes.
+              </p>
+            </div>
+          </article>
+
+          <!-- Story 3: Leadership & Civilian Partnership -->
+          <article class="civic-story-card spotlight-card">
+            <img src="assets/wpd_chief_jeff_stevens.jpg" alt="Chief Jeff Stevens and Washington City Council with Mayor Lilija Stevens" class="civic-story-card-img" loading="lazy" />
+            <div class="civic-story-card-body">
+              <span class="civic-service-card-tag" style="color: var(--accent-blue, #2563EB);">CIVILIAN PARTNERSHIP</span>
+              <h3 class="civic-service-card-title" style="font-size: 1.25rem;">
+                Accountability & Mayoral Governance
+              </h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Elected civilian alignment:</strong> Chief Jeff Stevens works hand-in-hand with Mayor Lilija Stevens, City Council members, and the independent Board of Police Commissioners to ensure department policies reflect community values and open municipal transparency.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Community Outreach & Education Programs -->
+        <div class="civic-services-grid" style="margin-top: 36px;">
+          
+          <div class="civic-service-card spotlight-card">
+            <div>
+              <div class="civic-service-card-tag">CITIZEN ACADEMY • 10-WEEK PROGRAM</div>
+              <h3 class="civic-service-card-title">Citizen Police Academy</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Civic transparency immersion:</strong> Go behind the badge: experience firearms simulations, patrol ride-alongs, CSI forensics collection, and municipal court legal operations.
+              </p>
+            </div>
+            <a href="https://www.ci.washington.il.us/egov/apps/document/center.egov?view=item&id=1357" target="_blank" rel="noopener noreferrer" class="civic-service-card-action">
+              Download Application (PDF)
+            </a>
+          </div>
+
+          <div class="civic-service-card spotlight-card">
+            <div>
+              <div class="civic-service-card-tag" style="color: var(--accent-emerald, #059669);">YOUTH SAFETY • 5TH GRADE CURRICULUM</div>
+              <h3 class="civic-service-card-title">D.A.R.E. Prevention Program</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">School resource engagement:</strong> Evidence-based substance abuse and positive decision-making curriculum taught by certified Washington police officers across all elementary schools.
+              </p>
+            </div>
+            <span class="civic-service-card-action" style="text-decoration: none; color: var(--text-muted); cursor: default;">
+              Active in All Elementary Schools
+            </span>
+          </div>
+
+          <div class="civic-service-card spotlight-card">
+            <div>
+              <div class="civic-service-card-tag" style="color: var(--accent-blue, #2563EB);">COMMUNITY CARE • CRISIS RELIEF</div>
+              <h3 class="civic-service-card-title">Comfort Unit & Relief Services</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Compassionate field support:</strong> Providing comfort stuffed animals to distressed children on calls, alongside emergency travel assistance in partnership with local civic organizations.
+              </p>
+            </div>
+            <span class="civic-service-card-action" style="text-decoration: none; color: var(--text-muted); cursor: default;">
+              Compassionate Municipal Service
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SPECIALIZED TEAMS & REGIONAL READINESS
+         ======================================================================== -->
+    <section class="page-section" style="background: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" aria-labelledby="teams-heading">
+      <div class="container">
+        
+        <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+          <div class="hero-editorial-eyebrow">REGIONAL READINESS & CAPABILITY</div>
+          <h2 id="teams-heading" class="hero-editorial-title" style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-top: 6px;">
+            Specialized Regional Divisions
+          </h2>
+          <p class="hero-editorial-lead" style="max-width: 760px;">
+            Beyond routine municipal patrol, Washington Police officers are deployed across elite inter-agency tactical teams, digital forensics task forces, and community support units.
+          </p>
+        </div>
+
+        <div class="civic-divisions-grid">
+          
+          <!-- 1. CIERT Tactical SWAT -->
+          <div class="civic-division-card spotlight-card">
+            <div>
+              <div class="division-badge-row">
+                <span class="civic-service-card-tag" style="margin-bottom: 0;">TACTICAL SPECIAL WEAPONS</span>
+                <span class="division-tactical-tag tag-ciert">CIERT SWAT</span>
+              </div>
+              <h3 class="civic-service-card-title" style="font-size: 1.35rem; margin-top: 8px;">Central Illinois Emergency Response Team</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Multi-agency tactical operator cadre:</strong> Six Washington police officers are cross-trained and assigned to CIERT as tactical operators and crisis negotiators for high-risk search warrants, barricaded subjects, and critical regional incidents.
+              </p>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;">
+                <span class="feature-spec-item">Tactical Operator Cadre</span>
+                <span class="feature-spec-item">Crisis Negotiation</span>
+                <span class="feature-spec-item">Multi-Agency Rapid Callout</span>
+              </div>
+            </div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">
+              Multi-Jurisdictional Rapid Response
+            </div>
+          </div>
+
+          <!-- 2. Cyber ICAC Task Force -->
+          <div class="civic-division-card spotlight-card">
+            <div>
+              <div class="division-badge-row">
+                <span class="civic-service-card-tag" style="margin-bottom: 0;">DIGITAL FORENSICS</span>
+                <span class="division-tactical-tag tag-icac">HSI &bull; ICAC</span>
+              </div>
+              <h3 class="civic-service-card-title" style="font-size: 1.35rem; margin-top: 8px;">HSI Cyber &amp; ICAC Task Forces</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Federal and state forensic shield:</strong> Specialized detectives partner with Homeland Security Investigations and the Illinois Attorney General’s Internet Crimes Against Children Task Force on digital forensics, cyber exploitation, and technology crime cases.
+              </p>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;">
+                <span class="feature-spec-item">Federal Task Force Officers</span>
+                <span class="feature-spec-item">Digital Forensics Lab</span>
+                <span class="feature-spec-item">Child Protection Shield</span>
+              </div>
+            </div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">
+              Federal &amp; State Inter-Agency Shield
+            </div>
+          </div>
+
+          <!-- 3. Part-Time & Auxiliary Police Unit -->
+          <div class="civic-division-card spotlight-card">
+            <div>
+              <div class="division-badge-row">
+                <span class="civic-service-card-tag" style="margin-bottom: 0;">SWORN SUPPORT CADRE</span>
+                <span class="division-tactical-tag tag-auxiliary">AUXILIARY UNIT</span>
+              </div>
+              <h3 class="civic-service-card-title" style="font-size: 1.35rem; margin-top: 8px;">Part-Time Police Unit</h3>
+              <p class="civic-service-card-desc prog-copy">
+                <strong class="prog-lead">Sworn municipal reserve force:</strong> Fully sworn and state-certified officers who provide flexible operational staffing during summer festivals, Washington Square community events, high school athletics, and emergency traffic control.
+              </p>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;">
+                <span class="feature-spec-item">ILETSB Certified Officers</span>
+                <span class="feature-spec-item">Square Event Support</span>
+                <span class="feature-spec-item">Emergency Surge Staffing</span>
+              </div>
+            </div>
+            <div style="padding-top: 12px; border-top: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">
+              Certified Municipal Support Force
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PATROL SHIFT TRANSPARENCY & OPERATIONAL RIGOR
+         ======================================================================== -->
+    <section class="page-section" id="operations" aria-labelledby="ops-heading">
+      <div class="container">
+        
+        <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+          <div class="hero-editorial-eyebrow">OPERATIONAL ARCHITECTURE & READINESS</div>
+          <h2 id="ops-heading" class="hero-editorial-title" style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-top: 6px;">
+            Continuous 24/7 Patrol Architecture
+          </h2>
+          <p class="hero-editorial-lead" style="max-width: 760px;">
+            Washington Police operates continuous 24/7/365 active emergency coverage through three dedicated shifts, supported by bi-annual seniority bidding and round-the-clock supervisory oversight.
+          </p>
+        </div>
+
+        <div class="civic-ops-grid">
+          
+          <!-- Shift Architecture Panel -->
+          <div class="civic-panel-card spotlight-card">
+            <span class="civic-service-card-tag" style="color: var(--accent-blue, #2563EB);">SUPERVISORY PATROL STRUCTURE</span>
+            <h3 class="civic-service-card-title" style="margin-bottom: 8px;">
+              Patrol Watch Schedule & Shift Coverage
+            </h3>
+            <p class="civic-service-card-desc prog-copy" style="margin-bottom: 24px;">
+              <strong class="prog-lead">Continuous 24/7/365 field presence:</strong> Three dedicated watches ensure that certified officers and field supervisors are always on active patrol across all Washington sectors.
+            </p>
+
+            <div class="civic-watch-item watch-1">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong style="font-size: 0.96rem; color: var(--text-primary);">Watch 1 (Day Shift)</strong>
+                <span style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--accent-blue, #2563EB);">07:00 – 15:00</span>
+              </div>
+              <div style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5;">
+                Focus: School arrival zones, downtown business district, municipal court appearances, and morning commuter corridors.
+              </div>
+            </div>
+
+            <div class="civic-watch-item watch-2">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong style="font-size: 0.96rem; color: var(--text-primary);">Watch 2 (Afternoon Shift)</strong>
+                <span style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--accent-emerald, #059669);">15:00 – 23:00</span>
+              </div>
+              <div style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5;">
+                Focus: School dismissal crossings, evening retail corridors, park patrols, high school athletic events, and peak traffic management.
+              </div>
+            </div>
+
+            <div class="civic-watch-item watch-3">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong style="font-size: 0.96rem; color: var(--text-primary);">Watch 3 (Midnight Shift)</strong>
+                <span style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--district-3-color, #7C3AED);">23:00 – 07:00</span>
+              </div>
+              <div style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5;">
+                Focus: Commercial business security door checks, overnight residential patrols, targeted radar speed enforcement, and vacation house checks.
+              </div>
+            </div>
+
+            <div style="font-size: 0.80rem; color: var(--text-muted); line-height: 1.5; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              * Shift rotations and regular days off are bid by department seniority twice annually (November and May) under the PBLC Collective Bargaining Agreement.
+            </div>
+          </div>
+
+          <!-- Standards & Readiness Panel -->
+          <div class="civic-panel-card spotlight-card">
+            <span class="civic-service-card-tag" style="color: var(--mtw-police-gold, #C5A880);">TACTICAL & CONSTITUTIONAL RIGOR</span>
+            <h3 class="civic-service-card-title" style="margin-bottom: 8px;">
+              State-Certified Training & Equipment
+            </h3>
+            <p class="civic-service-card-desc prog-copy" style="margin-bottom: 20px;">
+              <strong class="prog-lead">Professional standard of care:</strong> Washington Police Department maintains rigorous continuous qualification standards that exceed state minimums.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <div style="border-left: 2px solid var(--border-medium); padding-left: 14px;">
+                <strong style="font-size: 0.90rem; color: var(--text-primary); display: block;">Quarterly Duty Weapon Qualifications</strong>
+                <span style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">Sworn officers qualify with primary duty sidearms four times per calendar year.</span>
+              </div>
+              <div style="border-left: 2px solid var(--border-medium); padding-left: 14px;">
+                <strong style="font-size: 0.90rem; color: var(--text-primary); display: block;">Individually Issued Patrol Rifles</strong>
+                <span style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">Every patrol officer is individually issued a dedicated patrol rifle with mandatory annual tactical recertification.</span>
+              </div>
+              <div style="border-left: 2px solid var(--border-medium); padding-left: 14px;">
+                <strong style="font-size: 0.90rem; color: var(--text-primary); display: block;">State-Certified Master Range Instructors</strong>
+                <span style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">In-house range masters certified by the Illinois Law Enforcement Training and Standards Board.</span>
+              </div>
+              <div style="border-left: 2px solid var(--border-medium); padding-left: 14px;">
+                <strong style="font-size: 0.90rem; color: var(--text-primary); display: block;">Crisis De-Escalation & Mental Health Intervention</strong>
+                <span style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">Continuous certified training in crisis intervention, procedural justice, and trauma-informed response.</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-surface-subtle); border-radius: 12px; padding: 16px 20px; font-size: 0.84rem; border: 1px solid var(--border-subtle); margin-top: auto;">
+              <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">Public Records Window:</div>
+              <div style="color: var(--text-secondary); margin-bottom: 8px;">Monday – Friday 8:00 AM – 4:30 PM (115 W. Jefferson St)</div>
+              <div style="font-weight: 700; color: var(--accent-emerald, #059669);">Emergency Dispatch & Patrol: Continuous 24/7/365</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         RECRUITMENT & CAREERS ("LEAD WITH INTEGRITY")
+         ======================================================================== -->
+    <section class="page-section" id="recruitment" aria-labelledby="careers-heading">
+      <div class="container">
+        
+        <div class="civic-recruitment-box">
+          <div class="hero-editorial-eyebrow">CAREERS & RECRUITMENT • POLICE OFFICER TESTING</div>
+          <h2 id="careers-heading" class="hero-editorial-title" style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-top: 6px;">
+            Build Your Law Enforcement Career in Washington
+          </h2>
+          <p class="hero-editorial-lead" style="max-width: 820px;">
+            The Washington Police Department offers strong community backing, competitive union-negotiated compensation, modern equipment, lateral transfer incentives, and comprehensive pension and health benefits.
+          </p>
+
+          <div class="civic-metrics-grid">
+            <div class="civic-metric-card spotlight-card">
+              <div class="civic-metric-label">STARTING SALARY RANGE</div>
+              <div class="civic-metric-val">$68,500 – $84,200</div>
+              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">PBLC contract scale with lateral transfer credit</div>
+            </div>
+            <div class="civic-metric-card spotlight-card">
+              <div class="civic-metric-label">HEALTH & DENTAL BENEFITS</div>
+              <div class="civic-metric-val">100% City-Paid Options</div>
+              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">Comprehensive family coverage packages</div>
+            </div>
+            <div class="civic-metric-card spotlight-card">
+              <div class="civic-metric-label">RETIREMENT PENSION</div>
+              <div class="civic-metric-val">Article 3 Pension</div>
+              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">Illinois Tier 2 Municipal Police Pension Fund</div>
+            </div>
+            <div class="civic-metric-card spotlight-card">
+              <div class="civic-metric-label">FLEET & EQUIPMENT</div>
+              <div class="civic-metric-val">Individual Patrol Rifles</div>
+              <div style="font-size: 0.80rem; color: var(--text-muted); margin-top: 4px;">Body cameras and marked Ford Interceptor fleet</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="https://www.ci.washington.il.us/egov/apps/document/center.egov?view=item&id=2040" target="_blank" rel="noopener noreferrer" class="btn-editorial-primary">
+              Full-Time Officer Application (PDF)
+            </a>
+            <a href="https://www.ci.washington.il.us/egov/apps/document/center.egov?view=item&id=2074" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary">
+              Part-Time Officer Application (PDF)
+            </a>
+            <a href="https://ciwashington.aaimtrack.com/jobs/" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary">
+              Official City Job Listings Portal
+            </a>
+            <a href="https://www.ci.washington.il.us/egov/apps/document/center.egov?view=item&id=2569" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary">
+              Labor Agreement (PDF)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         LEADERSHIP & CIVILIAN OVERSIGHT
+         ======================================================================== -->
+    <section class="page-section" id="leadership" aria-labelledby="leadership-heading">
+      <div class="container">
+        
+        <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+          <div class="hero-editorial-eyebrow">LEADERSHIP & GOVERNANCE • ETHICAL SERVICE</div>
+          <h2 id="leadership-heading" class="hero-editorial-title" style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-top: 6px;">
+            Accountability and Leadership
+          </h2>
+          <p class="hero-editorial-lead" style="max-width: 760px;">
+            Guiding our sworn and civilian personnel with experienced leadership, personal accountability, and independent statutory civilian oversight.
+          </p>
+        </div>
+
+        <!-- Chief Jeff Stevens Leadership Feature -->
+        <div class="civic-ops-grid" style="grid-template-columns: 1.15fr 0.85fr; margin-bottom: 32px;">
+          
+          <div class="double-bezel spotlight-card scroll-reveal" style="padding: 8px;">
+            <div class="double-bezel-inner civic-panel-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: none; box-shadow: none; border-radius: 18px;">
+              <div style="position: relative; height: 320px; overflow: hidden;">
+                <img src="assets/wpd_chief_hq_squad.jpg" alt="Washington Police Chief Jeff Stevens in front of headquarters and marked patrol cruiser" style="width: 100%; height: 100%; object-fit: cover; object-position: 62% 20%; display: block;" loading="lazy" />
+                <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(11, 27, 54, 0.85); backdrop-filter: blur(4px); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.15); padding: 6px 14px; border-radius: 6px; font-size: 0.74rem; font-weight: 700; font-family: var(--font-mono);">
+                  HEADQUARTERS • 115 W. JEFFERSON ST
+                </div>
+              </div>
+
+              <div style="padding: clamp(24px, 4vw, 36px); display: flex; flex-direction: column; flex-grow: 1;">
+                <div class="civic-service-card-tag" style="color: var(--mtw-police-gold, #C5A880);">EXECUTIVE COMMAND • 25+ YEARS OF SERVICE</div>
+                <h3 class="civic-service-card-title" style="font-size: 1.6rem; margin-bottom: 8px;">
+                  Chief Jeff Stevens
+                </h3>
+                <p class="civic-service-card-desc prog-copy" style="margin-bottom: 16px;">
+                  <strong class="prog-lead">Executive command and community stewardship:</strong> With over 25 years of service to the City of Washington, Chief Jeff Stevens leads our department with an unwavering commitment to community-oriented policing, high-visibility readiness, transparency, and continuous technological modernization.
+                </p>
+                
+                <blockquote class="civic-quote">
+                  “Our uniform is a sacred trust with the families of Washington: to serve with honor, protect with relentless purpose, and lead with uncompromising integrity.”
+                </blockquote>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: auto; padding-top: 12px;">
+                  <a href="tel:3094442313" class="btn-editorial-secondary">
+                    Direct Line: (309) 444-2313
+                  </a>
+                  <button type="button" class="btn-editorial-primary" data-open-drawer="drawer-commendation">
+                    Commend an Officer
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Civilian Oversight & City Council Collaboration -->
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            
+            <div class="civic-panel-card spotlight-card" style="padding: 28px; flex: 1;">
+              <div class="civic-service-card-tag" style="color: var(--accent-blue, #2563EB);">CIVILIAN & MAYORAL PARTNERSHIP</div>
+              <h4 class="civic-service-card-title" style="font-size: 1.25rem;">
+                City Council & Mayoral Partnership
+              </h4>
+              <p class="civic-service-card-desc prog-copy" style="margin-bottom: 16px;">
+                <strong class="prog-lead">Municipal alignment:</strong> Chief Stevens collaborates closely with Mayor Lilija Stevens and the Washington City Council to ensure policy transparency, departmental budgeting, and public safety priorities that mirror community values.
+              </p>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">
+                Bi-monthly Public Council Meetings • City Hall Chambers
+              </div>
+            </div>
+
+            <div class="civic-panel-card spotlight-card" style="padding: 28px; flex: 1;">
+              <div class="civic-service-card-tag" style="color: var(--mtw-police-gold, #8A6D3B);">INDEPENDENT STATUTORY OVERSIGHT</div>
+              <h4 class="civic-service-card-title" style="font-size: 1.25rem;">
+                Board of Police Commissioners
+              </h4>
+              <p class="civic-service-card-desc prog-copy" style="margin-bottom: 20px;">
+                <strong class="prog-lead">Statutory civilian governance:</strong> The City of Washington Board of Police Commissioners is an independent, civilian-appointed body responsible for conducting competitive entry examinations, promotional testing, and independent grievance oversight.
+              </p>
+              <a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary" style="align-self: flex-start;">
+                Commission Agendas & Minutes (City Portal)
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       DEPARTMENT NAVIGATION DRAWER
+       ======================================================================== -->
+  <div class="action-drawer-backdrop" id="drawer-nav-menu" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+    <div class="action-drawer" style="max-width: 520px;">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="civic-service-card-tag" style="margin-bottom: 2px;">DEPARTMENT DIRECTORY</span>
+          <h3 id="menu-drawer-title" style="font-family: var(--font-title); font-size: 1.35rem; font-weight: 700; margin: 4px 0 0; color: var(--text-primary);">
+            Washington Police Department
+          </h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        
+        <!-- Primary Department Navigation (Moved from Top Bar) -->
+        <div style="margin-bottom: var(--space-6);">
+          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+            Department Navigation
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#services" class="civic-nav-link" data-close-drawer>
+              <span>Resident Services</span>
+              <span class="civic-nav-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#districts" class="civic-nav-link" data-close-drawer>
+              <span>Patrol Districts &amp; GIS Map</span>
+              <span class="civic-nav-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#community" class="civic-nav-link" data-close-drawer>
+              <span>Community Policing &amp; Historic Square</span>
+              <span class="civic-nav-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#operations" class="civic-nav-link" data-close-drawer>
+              <span>Operations &amp; Marked Fleet</span>
+              <span class="civic-nav-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#leadership" class="civic-nav-link" data-close-drawer>
+              <span>Chief Jeff Stevens &amp; Leadership</span>
+              <span class="civic-nav-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#recruitment" class="civic-nav-link" data-close-drawer>
+              <span>Officer Recruitment &amp; Testing</span>
+              <span class="civic-nav-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="https://ciwashington.aaimtrack.com/jobs/" target="_blank" rel="noopener noreferrer" class="civic-nav-link" data-close-drawer>
+              <span>Join WPD / Careers</span>
+              <span class="civic-nav-badge" aria-hidden="true">Apply ↗</span>
+            </a>
+            <a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-nav-link" data-close-drawer>
+              <span>City of Washington Official Portal</span>
+              <span class="civic-nav-badge" aria-hidden="true">ci.washington.il.us ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--space-6);">
+          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+            Emergency & Dispatch Direct Lines
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="width: 100%; justify-content: center; padding: 12px 16px;">
+              Emergency Response: Dial 911
+            </a>
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; padding: 12px 16px;">
+              <span class="status-pip status-pip-emerald" style="margin-right: 8px;"></span>
+              24/7 Police Dispatch: (309) 444-2313
+            </a>
+            <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); text-align: center;">
+              Headquarters: 115 W. Jefferson St, Washington, IL 61571
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+            Resident 1-Click Digital Portals
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-vacation-check" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+              Vacation Watch
+            </button>
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-parking-permission" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+              Overnight Parking
+            </button>
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-police-records" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+              Records / FOIA
+            </button>
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-anonymous-tip" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+              Submit Crime Tip
+            </button>
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-child-seat" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+              Car Seat Check
+            </button>
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-commendation" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+              Commend Officer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 1: Vacation House Check -->
+  <div class="action-drawer-backdrop" id="drawer-vacation-check" role="dialog" aria-modal="true" aria-labelledby="vacation-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-emerald" style="font-size: 0.72rem;">FREE RESIDENTIAL SERVICE</span>
+          <h3 id="vacation-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Vacation House Check</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Vacation House Check">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            Patrol officers will periodically inspect the exterior doors and windows of your home while you are away.
+          </p>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="vhc-name">Full Name *</label>
+            <input type="text" id="vhc-name" class="drawer-form-input" required placeholder="Jane Doe" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="vhc-address">Washington Residence Address *</label>
+            <input type="text" id="vhc-address" class="drawer-form-input" required placeholder="123 Centennial Dr, Washington, IL" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="vhc-depart">Departure Date *</label>
+              <input type="date" id="vhc-depart" class="drawer-form-input" required />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="vhc-return">Return Date *</label>
+              <input type="date" id="vhc-return" class="drawer-form-input" required />
+            </div>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="vhc-phone">Emergency Contact Phone *</label>
+            <input type="tel" id="vhc-phone" class="drawer-form-input" required placeholder="(309) 555-0192" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="vhc-lights">Lights / Timers or Keyholder Info</label>
+            <textarea id="vhc-lights" class="drawer-form-textarea" placeholder="Timer on living room lamp; keyholder neighbor John at 309-555-1234."></textarea>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">
+              Submit Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 2: Overnight Parking Permission -->
+  <div class="action-drawer-backdrop" id="drawer-parking-permission" role="dialog" aria-modal="true" aria-labelledby="parking-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-blue" style="font-size: 0.72rem;">INSTANT EXEMPTION</span>
+          <h3 id="parking-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Overnight Street Parking</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Overnight Parking Registration">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            Parking on Washington city streets is prohibited between 2:00 AM and 6:00 AM. Register for single-night exemption for guests or driveway paving.
+          </p>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="opp-name">Resident Name *</label>
+            <input type="text" id="opp-name" class="drawer-form-input" required placeholder="Robert Smith" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="opp-location">Street Location Parked In Front Of *</label>
+            <input type="text" id="opp-location" class="drawer-form-input" required placeholder="405 Devonshire Dr" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="opp-plate">License Plate # *</label>
+              <input type="text" id="opp-plate" class="drawer-form-input" required placeholder="IL 742 9182" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="opp-date">Night Of Exemption *</label>
+              <input type="date" id="opp-date" class="drawer-form-input" required />
+            </div>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="opp-vehicle">Vehicle Make, Model & Color *</label>
+            <input type="text" id="opp-vehicle" class="drawer-form-input" required placeholder="Silver Honda CR-V" />
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">
+              Submit Exemption
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 3: Police Records & FOIA -->
+  <div class="action-drawer-backdrop" id="drawer-police-records" role="dialog" aria-modal="true" aria-labelledby="records-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-neutral" style="font-size: 0.72rem;">STATUTORY PUBLIC RECORDS</span>
+          <h3 id="records-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Police Records & FOIA</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Police Records FOIA Request">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            Under the Illinois Freedom of Information Act, public records will be provided within 5 business days (or 21 days for commercial requests).
+          </p>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="foia-name">Requester Name *</label>
+            <input type="text" id="foia-name" class="drawer-form-input" required placeholder="Alex Taylor" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="foia-email">Email Address *</label>
+            <input type="email" id="foia-email" class="drawer-form-input" required placeholder="alex@example.com" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="foia-case">Incident / Case Report # (if known)</label>
+            <input type="text" id="foia-case" class="drawer-form-input" placeholder="e.g. 26-WPD-01492" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="foia-desc">Description of Records Requested *</label>
+            <textarea id="foia-desc" class="drawer-form-textarea" required placeholder="Specify date, location, names, and documents requested."></textarea>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">
+              Submit FOIA Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 4: Anonymous Crime Tip -->
+  <div class="action-drawer-backdrop" id="drawer-anonymous-tip" role="dialog" aria-modal="true" aria-labelledby="tip-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-rose" style="font-size: 0.72rem;">100% CONFIDENTIAL</span>
+          <h3 id="tip-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Anonymous Crime Tip</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Anonymous Crime Tip">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            No personal identifying information is collected. Your tip is routed directly to the Washington Police Investigations Division.
+          </p>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="tip-type">Category of Activity *</label>
+            <select id="tip-type" class="drawer-form-select" required>
+              <option value="suspicious">Suspicious Activity / Persons</option>
+              <option value="narcotics">Illegal Narcotics Activity</option>
+              <option value="theft">Theft / Burglary Information</option>
+              <option value="vandalism">Vandalism / Property Damage</option>
+              <option value="traffic">Dangerous Driving / Speeding Pattern</option>
+              <option value="other">Other Information</option>
+            </select>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="tip-loc">Location / Address / Neighborhood *</label>
+            <input type="text" id="tip-loc" class="drawer-form-input" required placeholder="Street address or intersection" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="tip-details">Tip Details *</label>
+            <textarea id="tip-details" class="drawer-form-textarea" required placeholder="Describe what you observed: times, vehicles, license plates, suspect descriptions, etc."></textarea>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">
+              Send Encrypted Tip
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 5: Child Safety Seat Inspection -->
+  <div class="action-drawer-backdrop" id="drawer-child-seat" role="dialog" aria-modal="true" aria-labelledby="seat-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-emerald" style="font-size: 0.72rem;">FREE APPOINTMENT</span>
+          <h3 id="seat-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Child Safety Seat Check</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Child Seat Inspection Appointment">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            Certified child passenger safety technicians will inspect and demonstrate proper installation at the police department (115 W. Jefferson St).
+          </p>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="css-name">Parent / Guardian Name *</label>
+            <input type="text" id="css-name" class="drawer-form-input" required placeholder="Sarah Miller" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="css-phone">Phone Number *</label>
+              <input type="tel" id="css-phone" class="drawer-form-input" required placeholder="(309) 555-9831" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="css-date">Preferred Date *</label>
+              <input type="date" id="css-date" class="drawer-form-input" required />
+            </div>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="css-car">Vehicle Make, Model & Car Seat Brand *</label>
+            <input type="text" id="css-car" class="drawer-form-input" required placeholder="e.g. 2024 Toyota Highlander / Graco 4Ever DLX" />
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">
+              Book Appointment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 6: Commend an Officer -->
+  <div class="action-drawer-backdrop" id="drawer-commendation" role="dialog" aria-modal="true" aria-labelledby="commend-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-amber" style="font-size: 0.72rem;">OFFICER COMMENDATION</span>
+          <h3 id="commend-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Commend an Officer</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">✕</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Officer Commendation">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            Your commendation will be placed in the officer's official file and presented by Chief Stevens.
+          </p>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="com-name">Your Name</label>
+            <input type="text" id="com-name" class="drawer-form-input" placeholder="Optional (Leave blank to remain anonymous)" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="com-officer">Officer Name or Badge # (if known)</label>
+            <input type="text" id="com-officer" class="drawer-form-input" placeholder="e.g. Officer Jenkins or Badge #12" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="com-date">Date & Approximate Location *</label>
+            <input type="text" id="com-date" class="drawer-form-input" required placeholder="e.g. Yesterday at Washington Square" />
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="com-story">Commendation Details *</label>
+            <textarea id="com-story" class="drawer-form-textarea" required placeholder="Tell us how the officer went above and beyond..."></textarea>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">
+              Submit Commendation
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DIGNIFIED CIVIC EDITORIAL FOOTER (CONTENTINFO)
+       Inspired by Mapping The Way authoritative civic footer architecture
+       ======================================================================== -->
+  <footer class="civic-footer" role="contentinfo">
+    <div class="container">
+      
+      <!-- Top Telemetry & Rapid Contact Strip -->
+      <div class="civic-footer-telemetry">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+          <div>
+            <div style="font-family: var(--font-body); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;">
+              WPD COMMUNICATIONS & DISPATCH CENTER
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.74rem; color: #94A3B8;">
+              TAZEWELL COUNTY CONSOLIDATED 911 • CONTINUOUS 24/7/365 DISPATCH
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="padding: 8px 18px; font-size: 0.84rem;">
+            Emergency: Dial 911
+          </a>
+          <a href="tel:3094442313" class="btn-editorial-secondary" style="padding: 8px 18px; font-size: 0.84rem; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3);">
+            24/7 Dispatch: (309) 444-2313
+          </a>
+        </div>
+      </div>
+
+      <!-- 4-Column Directory Grid -->
+      <div class="civic-footer-grid">
+        
+        <!-- Column 1: Identity & Station Info -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+            <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Emblem" width="48" height="48" style="border-radius: 50%;" />
+            <div>
+              <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 700; color: #FFFFFF; line-height: 1.2;">
+                Washington Police
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.70rem; color: var(--mtw-police-gold, #C5A880);">
+                CITY OF WASHINGTON, IL • EST. 1825
+              </div>
+            </div>
+          </div>
+
+          <p style="font-family: var(--font-editorial, 'Spectral', serif); font-style: italic; font-size: 0.95rem; color: var(--mtw-police-gold, #C5A880); margin-bottom: 12px;">
+            “Serve with Honor, Protect with Purpose, Lead with Integrity.”
+          </p>
+
+          <p style="font-size: 0.84rem; line-height: 1.6; color: #94A3B8; margin-bottom: 18px;">
+            A full-service, community-anchored municipal law enforcement agency providing 24/7 emergency patrol, investigative forensics, and crime prevention for over 16,000 residents across Tazewell County.
+          </p>
+
+          <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px; font-size: 0.80rem; color: #CBD5E1; line-height: 1.6;">
+            <div><strong style="color: #FFFFFF;">Headquarters:</strong> 115 W. Jefferson St, Washington, IL 61571</div>
+            <div><strong style="color: #FFFFFF;">Records Window:</strong> Mon–Fri 8:00 AM – 4:30 PM</div>
+            <div><strong style="color: var(--accent-emerald, #10B981);">Patrol Operations:</strong> Continuous 24/7/365</div>
+          </div>
+        </div>
+
+        <!-- Column 2: 1-Click Resident Portals -->
+        <div>
+          <h4 class="civic-footer-col-title">Resident Services</h4>
+          <ul class="civic-footer-links">
+            <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-vacation-check" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Vacation House Watch</button></li>
+            <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-parking-permission" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Overnight Street Parking</button></li>
+            <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-police-records" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Police FOIA Records</button></li>
+            <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-anonymous-tip" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Submit Anonymous Crime Tip</button></li>
+            <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-child-seat" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Child Safety Seat Check</button></li>
+            <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-commendation" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Commend an Officer</button></li>
+            <li><a href="https://www.buycrash.com" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Crash Report Portal (BuyCrash)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Operations & Sectors -->
+        <div>
+          <h4 class="civic-footer-col-title">Patrol Operations</h4>
+          <ul class="civic-footer-links">
+            <li><a href="#districts" class="civic-footer-link">District 1 • East Sector (434 Acres)</a></li>
+            <li><a href="#districts" class="civic-footer-link">District 2 • West Sector (1,681 Acres)</a></li>
+            <li><a href="#districts" class="civic-footer-link">District 3 • North Sector (1,477 Acres)</a></li>
+            <li><a href="#operations" class="civic-footer-link">Continuous 24/7 Watch Architecture</a></li>
+            <li><a href="#teams" class="civic-footer-link">CIERT Tactical Regional SWAT</a></li>
+            <li><a href="#teams" class="civic-footer-link">Cybercrime & ICAC Task Forces</a></li>
+            <li><a href="#recruitment" class="civic-footer-link">Police Officer Careers & Testing</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Civic Governance & Partners -->
+        <div>
+          <h4 class="civic-footer-col-title">Civic Partners</h4>
+          <ul class="civic-footer-links">
+            <li><a href="https://washington-il-redesign.vercel.app/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">City of Washington Municipal Platform</a></li>
+            <li><a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-footer-link">City of Washington Official Website (ci.washington.il.us)</a></li>
+            <li><a href="https://washington-il-redesign.vercel.app/code.html" target="_blank" rel="noopener noreferrer" class="civic-footer-link">City Code of Ordinances</a></li>
+            <li><a href="https://washington-il-redesign.vercel.app/departments.html" target="_blank" rel="noopener noreferrer" class="civic-footer-link">All Municipal Departments</a></li>
+            <li><a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Board of Police Commissioners</a></li>
+            <li><a href="https://www.tazewellcountysheriff.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Tazewell County Sheriff</a></li>
+            <li><a href="https://washingtonfd.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Washington Fire & EMS</a></li>
+            <li><a href="https://isp.illinois.gov/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Illinois State Police (District 8)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Compliance & Legal Ribbon -->
+      <div class="civic-footer-bottom">
+        <div>
+          © 2026 City of Washington, Illinois Police Department. 115 W. Jefferson St, Washington, IL 61571.
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <span>WCAG 2.2 AA Certified</span>
+          <span>•</span>
+          <span>Illinois FOIA (5 ILCS 140)</span>
+          <span>•</span>
+          <span>TC3 911 Dispatch Interfaced</span>
+          <button type="button" class="civic-btn-top" id="footer-back-to-top" aria-label="Scroll back to top">
+            TOP
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       WPD NATIVE APP-GRADE FLOATING MOBILE ACTION DOCK (THUMB ZONE)
+       Tactile, instantaneous mobile access to 911, dispatch, tips, & directory
+       ======================================================================== -->
+  <nav class="wpd-mobile-dock" id="wpdMobileDock" aria-label="Police Mobile Command Dock">
+    <a href="tel:911" class="wpd-dock-item wpd-dock-911" aria-label="Emergency: Dial 911">
+      <span class="wpd-dock-dot" aria-hidden="true"></span>
+      <span class="wpd-dock-label">DIAL 911</span>
+    </a>
+    <a href="tel:3094442313" class="wpd-dock-item" aria-label="24/7 Police Dispatch Line: (309) 444-2313" title="Call 24/7 Dispatch">
+      <span class="wpd-dock-icon" aria-hidden="true">📞</span>
+      <span class="wpd-dock-label">Dispatch</span>
+    </a>
+    <button type="button" class="wpd-dock-item" data-open-drawer="drawer-anonymous-tip" aria-label="Submit Anonymous Crime Tip" title="Anonymous Crime Tip">
+      <span class="wpd-dock-icon" aria-hidden="true">🛡️</span>
+      <span class="wpd-dock-label">Report Tip</span>
+    </button>
+    <button type="button" class="wpd-dock-item" data-open-drawer="drawer-nav-menu" aria-label="Open Department Directory and Services" title="Department Directory">
+      <span class="wpd-dock-icon" aria-hidden="true">☰</span>
+      <span class="wpd-dock-label">Directory</span>
+    </button>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/wpd-districts.js"></script>
+  <script src="js/app.js?v=20260917-mobile-v1"></script>
+  <!-- Agentation Visual Feedback Toolbar (Local Development Machine Only) -->
+  <script src="js/agentation-loader.js"></script>
+</body>
+</html>

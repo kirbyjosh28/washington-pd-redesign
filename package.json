@@ -1,0 +1,17 @@
+{
+  "name": "washington-pd-redesign",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Washington Police Department (WPD) Official Portal & Public Safety Platform",
+  "scripts": {
+    "build:agentation": "esbuild src/agentation-entry.jsx --bundle --minify --define:process.env.NODE_ENV='\"development\"' --outfile=js/agentation.bundle.js"
+  },
+  "dependencies": {
+    "agentation": "^3.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
