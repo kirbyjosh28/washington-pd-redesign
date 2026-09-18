@@ -254,52 +254,49 @@
   --touch-target-min: 44px;
 }
 
-/* ── Dark Theme (Washington Police Navy Canvas & Sovereign Gold Typography) ── */
+/* ── Dark Theme (Better Stack Dark Obsidian Canvas) ── */
 [data-theme="dark"] {
-  --bg-app: #08111F;
-  --bg-surface: #0E1E38;
-  --bg-surface-subtle: #132442;
-  --bg-surface-elevated: #182B4D;
-  --bg-surface-sand: #162846;
-  --bg-overlay: rgba(4, 8, 16, 0.85);
-  --bg-glass: rgba(10, 22, 40, 0.92);
-  --bg-glass-scrolled: rgba(10, 22, 40, 0.98);
+  --bg-app: #080C14;
+  --bg-surface: #0E1420;
+  --bg-surface-subtle: #141C2C;
+  --bg-surface-elevated: #1A2438;
+  --bg-overlay: rgba(0, 0, 0, 0.85);
+  --bg-glass: rgba(14, 20, 32, 0.88);
+  --bg-glass-scrolled: rgba(14, 20, 32, 0.96);
 
-  /* ── Police Navy Ground Tokens ── */
-  --paper-ground: #08111F;
-  --paper-ground-subtle: #0B172A;
-  --paper-surface: #0E1E38;
-  --paper-surface-warm: #132442;
-  --graphite-dark: #F5D77F;
-  --graphite-medium: #E2CA90;
-  --graphite-light: #B89E6C;
-  --graphite-faint: #786544;
-  --graphite-smudge: rgba(0, 0, 0, 0.6);
-  --graphite-hatch: rgba(245, 215, 127, 0.08);
-  --graphite-wash: rgba(245, 215, 127, 0.04);
+  /* ── Inverted Charcoal Drafting Sheet Tokens ── */
+  --paper-ground: #16181B;
+  --paper-ground-subtle: #1C2024;
+  --paper-surface: #22262B;
+  --paper-surface-warm: #282D34;
+  --graphite-dark: #E6EDF3;
+  --graphite-medium: #CBD5E1;
+  --graphite-light: #94A3B8;
+  --graphite-faint: #64748B;
+  --graphite-smudge: rgba(0, 0, 0, 0.5);
+  --graphite-hatch: rgba(255, 255, 255, 0.08);
+  --graphite-wash: rgba(255, 255, 255, 0.04);
   
-  --marker-amber: #F5D77F;
-  --marker-amber-wash: rgba(245, 215, 127, 0.18);
+  --marker-amber: #FBBF24;
+  --marker-amber-wash: rgba(251, 191, 36, 0.18);
   --marker-blue: #60A5FA;
   --marker-blue-wash: rgba(96, 165, 250, 0.16);
   --marker-crimson: #EF4444;
   --marker-crimson-wash: rgba(239, 68, 68, 0.22);
   
-  /* ── Sovereign Gold Borders & Highlights ── */
-  --border-subtle: rgba(245, 215, 127, 0.16);
-  --border-medium: rgba(245, 215, 127, 0.30);
-  --border-strong: rgba(245, 215, 127, 0.55);
-  --border-focus: #F5D77F;
-  --inner-highlight: inset 0 1px 0 0 rgba(245, 215, 127, 0.20);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.25);
+  --border-focus: #FFFFFF;
+  --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   
-  /* ── Sovereign Gold Typography Palette (WCAG 2.2 AA Compliant) ── */
-  --text-primary: #F5D77F;       /* Radiant Sovereign Gold: H1, H2, H3, Headings (12:1+ contrast) */
-  --text-secondary: #E2CA90;     /* Warm Champagne Gold: Paragraphs, descriptive copy (10:1+ contrast) */
-  --text-muted: #B89E6C;         /* Antique Refined Gold: Eyebrows, tags, metadata, timestamps (6:1+ contrast) */
-  --text-inverse: #08111F;       /* Deep Police Navy: For text sitting on solid gold surfaces */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-inverse: #090D16;
   
-  --accent-primary: #F5D77F;
-  --accent-primary-hover: #E5C158;
+  --accent-primary: #F8FAFC;
+  --accent-primary-hover: #E2E8F0;
   --brand-periwinkle: #818CF8;
   --brand-periwinkle-subtle: rgba(99, 102, 241, 0.15);
   --brand-periwinkle-border: rgba(99, 102, 241, 0.3);
@@ -312,56 +309,55 @@
   --accent-emerald-subtle: rgba(16, 185, 129, 0.15);
   --accent-emerald-border: rgba(16, 185, 129, 0.3);
   
-  --accent-amber: #F5D77F;
-  --accent-amber-subtle: rgba(245, 215, 127, 0.15);
-  --accent-amber-border: rgba(245, 215, 127, 0.3);
+  --accent-amber: #FBBF24;
+  --accent-amber-subtle: rgba(245, 158, 11, 0.15);
+  --accent-amber-border: rgba(245, 158, 11, 0.3);
   
   --accent-rose: #F87171;
   --accent-rose-subtle: rgba(239, 68, 68, 0.15);
   --accent-rose-border: rgba(239, 68, 68, 0.3);
 
-  --spotlight-glow: rgba(245, 215, 127, 0.12);
+  --spotlight-glow: rgba(99, 102, 241, 0.14);
   
   /* ── Hardware Double-Bezel & Specularity Dark Tokens ── */
-  --bezel-outer-bg: rgba(245, 215, 127, 0.035);
-  --bezel-outer-border: rgba(245, 215, 127, 0.18);
-  --specular-inner: inset 0 1px 1px rgba(245, 215, 127, 0.22);
-  --spotlight-color: rgba(245, 215, 127, 0.16);
+  --bezel-outer-bg: rgba(255, 255, 255, 0.035);
+  --bezel-outer-border: rgba(255, 255, 255, 0.08);
+  --specular-inner: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  --spotlight-color: rgba(129, 140, 248, 0.20);
   
-  /* ── Police Department Navy & Gold Tokens ── */
-  --police-navy: #08111F;
-  --police-navy-surface: #0E1E38;
-  --police-gold: #F5D77F;
-  --police-gold-subtle: rgba(245, 215, 127, 0.15);
-  --police-gold-border: rgba(245, 215, 127, 0.40);
-  --police-badge-border: linear-gradient(135deg, #FFF0B8 0%, #F5D77F 50%, #B89E6C 100%);
+  /* ── Police Department Dark Tokens ── */
+  --police-navy: #0E1A2E;
+  --police-navy-surface: #14243F;
+  --police-gold: #F2C94C;
 
   /* ── Mapping The Way / Civic Editorial Dark Tokens ── */
-  --mtw-bg-tertiary: #0B172A;
-  --mtw-neutral-dark: #F5D77F;
+  --mtw-bg-tertiary: #13171F;
+  --mtw-neutral-dark: #F8FAFC;
   --mtw-primary-crimson: #EF4444;
-  --mtw-police-navy: #0E1E38;
-  --mtw-police-navy-dark: #060D18;
-  --mtw-police-gold: #F5D77F;
-  --mtw-card-bg: #0E1E38;
-  --mtw-card-border: rgba(245, 215, 127, 0.18);
-  --mtw-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.50);
-  --mtw-card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.70);
+  --mtw-police-navy: #14243F;
+  --mtw-police-navy-dark: #0A1220;
+  --mtw-police-gold: #F2C94C;
+  --mtw-card-bg: #18202E;
+  --mtw-card-border: rgba(255, 255, 255, 0.08);
+  --mtw-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --mtw-card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.45);
 
+  --police-gold-subtle: rgba(242, 201, 76, 0.15);
+  --police-gold-border: rgba(242, 201, 76, 0.4);
   --district-1-color: #60A5FA;
   --district-2-color: #34D399;
   --district-3-color: #A78BFA;
   
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.45);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.55);
-  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.65);
-  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.75);
-  --shadow-float: 0 24px 56px -12px rgba(0, 0, 0, 0.85);
-  --shadow-dropdown: 0 20px 45px -8px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(245, 215, 127, 0.15);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.7);
+  --shadow-float: 0 24px 56px -12px rgba(0, 0, 0, 0.8);
+  --shadow-dropdown: 0 20px 45px -8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
 
   /* ── Streamline Sketch Style Dark Tokens ── */
-  --sketch-ink: #F5D77F;
-  --sketch-hard-shadow: 3px 3px 0px rgba(245, 215, 127, 0.35);
-  --sketch-hard-shadow-hover: 5px 5px 0px rgba(245, 215, 127, 0.55);
-  --sketch-subtle-hatch: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(245, 215, 127, 0.04) 5px, rgba(245, 215, 127, 0.04) 6px);
+  --sketch-ink: #F0EEE9;
+  --sketch-hard-shadow: 3px 3px 0px rgba(240, 238, 233, 0.85);
+  --sketch-hard-shadow-hover: 5px 5px 0px rgba(240, 238, 233, 0.95);
+  --sketch-subtle-hatch: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.04) 5px, rgba(255, 255, 255, 0.04) 6px);
 }

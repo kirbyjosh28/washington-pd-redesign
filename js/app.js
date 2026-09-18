@@ -35,90 +35,15 @@
   }
 
   /* --------------------------------------------------------------------------
-     1. Theme Engine (Light / Dark Navy & Gold with Multi-Toggle Sync)
+     1. Theme Engine (Strict Municipal White Paper Light Mode)
      -------------------------------------------------------------------------- */
   function initTheme() {
-    const headerToggleBtn = document.getElementById('theme-toggle-btn');
-    const drawerToggleBtn = document.getElementById('drawer-theme-toggle-btn');
-    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('wash_theme') || (systemDark ? 'dark' : 'light');
-
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    syncThemeUI(savedTheme);
-
-    function syncThemeUI(theme) {
-      if (headerToggleBtn) {
-        const textSpan = headerToggleBtn.querySelector('#theme-toggle-text');
-        if (textSpan) {
-          textSpan.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
-        } else {
-          headerToggleBtn.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
-        }
-        headerToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-        headerToggleBtn.setAttribute('title', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Navy & Gold Dark Mode');
-      }
-
-      if (drawerToggleBtn) {
-        const label = drawerToggleBtn.querySelector('#drawer-theme-label');
-        const badge = drawerToggleBtn.querySelector('#drawer-theme-badge');
-        if (label) {
-          label.textContent = theme === 'dark' ? 'Theme: Police Navy & Gold (Dark)' : 'Theme: White Paper (Light)';
-        }
-        if (badge) {
-          badge.textContent = theme === 'dark' ? 'SWITCH TO LIGHT' : 'SWITCH TO DARK';
-        }
-        drawerToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-      }
+    try {
+      localStorage.removeItem('wash_theme');
+    } catch (e) {
+      /* ignore */
     }
-
-    function toggleTheme() {
-      // Suppress CSS transitions temporarily to prevent visual smearing
-      const css = document.createElement('style');
-      css.appendChild(
-        document.createTextNode(
-          `*, *::before, *::after { -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; -ms-transition: none !important; transition: none !important; }`
-        )
-      );
-      document.head.appendChild(css);
-
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('wash_theme', next);
-      syncThemeUI(next);
-
-      if (window.showToast) {
-        window.showToast(next === 'dark' ? 'Switched to Police Navy & Gold Dark Mode' : 'Switched to Light Mode', 'info');
-      }
-
-      // Re-trigger layout and remove transition suppression
-      void document.body.offsetHeight;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          if (css.parentNode) {
-            css.parentNode.removeChild(css);
-          }
-        });
-      });
-    }
-
-    if (headerToggleBtn) {
-      headerToggleBtn.addEventListener('click', toggleTheme);
-    }
-    if (drawerToggleBtn) {
-      drawerToggleBtn.addEventListener('click', toggleTheme);
-    }
-
-    // Listen to OS scheme changes if user hasn't explicitly set localStorage
-    if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('wash_theme')) {
-          const newTheme = e.matches ? 'dark' : 'light';
-          document.documentElement.setAttribute('data-theme', newTheme);
-          syncThemeUI(newTheme);
-        }
-      });
-    }
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 
   /* --------------------------------------------------------------------------
