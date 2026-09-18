@@ -491,9 +491,9 @@
 
     const districtPolys = {};
     const districtConfig = {
-      1: { name: "District 1 (East Sector)", color: "#2563EB", acres: "434 Acres" },
+      1: { name: "District 1 (Historic Core & East)", color: "#2563EB", acres: "434 Acres" },
       2: { name: "District 2 (West Sector)", color: "#059669", acres: "1,681 Acres" },
-      3: { name: "District 3 (North Sector / Devonshire)", color: "#7C3AED", acres: "1,477 Acres" }
+      3: { name: "District 3 (North Sector / Bypass)", color: "#7C3AED", acres: "1,477 Acres" }
     };
 
     if (typeof window.WPD_REAL_DISTRICTS_GEOJSON !== 'undefined' && Array.isArray(window.WPD_REAL_DISTRICTS_GEOJSON.features)) {
@@ -557,8 +557,8 @@
         <div class="wpd-map-popup-title" style="color: #0A192F;">Washington Police Headquarters</div>
         <div class="wpd-map-popup-desc">
           <strong>115 W. Jefferson St., Washington, IL 61571</strong><br>
-          24/7 Continuous Emergency Dispatch & Patrol Station<br>
-          Administrative / Lobby Window: Mon–Fri 8:00 AM – 4:30 PM<br>
+          District 1 Civic Core Beat • 24/7 Dispatch Station<br>
+          Administrative Window: Mon–Fri 8:00 AM – 4:30 PM<br>
           Emergency: <strong>911</strong> | Non-Emergency: <strong>(309) 444-2313</strong>
         </div>
       `);
@@ -568,7 +568,7 @@
       .bindPopup(`
         <div class="wpd-map-popup-title">Historic Washington Square</div>
         <div class="wpd-map-popup-desc">
-          Central Commercial & Civic District • Central Fountain<br>
+          District 1 Sector Heart • Central Fountain & Commercial Core<br>
           Daily Foot Patrols & Walk-and-Talk Community Policing
         </div>
       `);
@@ -578,7 +578,7 @@
       .bindPopup(`
         <div class="wpd-map-popup-title">Washington Community High School (District 308)</div>
         <div class="wpd-map-popup-desc">
-          115 Bondurant St. • Home of the Panthers<br>
+          115 Bondurant St. • District 1 Sector<br>
           Dedicated School Resource Officer (SRO) Safety Station
         </div>
       `);
@@ -589,16 +589,16 @@
         <div class="wpd-map-popup-title">Five Points Washington</div>
         <div class="wpd-map-popup-desc">
           360 N. Wilmor Rd. • Community & Performing Arts Center<br>
-          District 1 Sector Patrol Coordination Area
+          District 3 Sector Patrol Coordination Area
         </div>
       `);
 
     L.marker([40.7225, -89.4120], { icon: createMapPin('NP', 'pin-retail') })
       .addTo(map)
       .bindPopup(`
-        <div class="wpd-map-popup-title">Devonshire Plaza & US-24 Retail Corridor</div>
+        <div class="wpd-map-popup-title">US-24 Bypass Commercial Corridor</div>
         <div class="wpd-map-popup-desc">
-          North Sector Commercial Corridor<br>
+          District 3 North Sector Commercial Corridor<br>
           Sector Car 103 Proactive Patrol Area
         </div>
       `);
