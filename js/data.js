@@ -1,6 +1,6 @@
 /* ==========================================================================
-   WASHINGTON POLICE DEPARTMENT — CIVIC DATASET & KNOWLEDGE ENGINE
-   Districts, Street Mapping, 24/7 Patrol Watch Architecture & 1-Click Services
+   WASHINGTON POLICE DEPARTMENT: CIVIC DATASET & DIRECTORY
+   Districts, Street Mapping, 24/7 Patrol Operations & Resident Services
    ========================================================================== */
 
 const WPD_DATA = {

@@ -1,7 +1,7 @@
 /**
- * Washington Police Department (WPD) — Official Interaction Engine
+ * Washington Police Department (WPD): Official Interaction Engine
  * Clean Authoritative Typography • 24/7 CAD Dispatch Telemetry • WCAG 2.2 AA Compliance
- * Zero Icons • Pure Typographic Architecture
+ * Zero Icons • Typographic Design System
  */
 
 (function () {
@@ -903,7 +903,7 @@
       }
     }
 
-    // Robust event delegation for opening drawers
+    // Event delegation for opening action drawers
     document.addEventListener('click', (e) => {
       const trigger = e.target.closest('[data-open-drawer]');
       if (!trigger) return;
