@@ -211,6 +211,7 @@
         <div class="services-control-bar">
           <div class="services-search-wrapper">
             <input type="text" id="services-search-input" class="services-search-input" placeholder="Search services, vacation house checks, parking waivers, crash reports, records..." aria-label="Search resident services directory" autocomplete="off" />
+            <button type="button" id="services-search-clear" class="services-search-clear" aria-label="Clear search text" style="display: none;">CLEAR</button>
           </div>
           <div class="services-filter-pills" role="tablist" aria-label="Filter resident services by category">
             <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (8)</button>
@@ -405,11 +406,6 @@
                       <span class="status-pip status-pip-emerald" aria-hidden="true" id="cad-hud-pip"></span>
                       <span class="district-map-badge" id="cad-hud-phase">PHASE 01 // INGESTION</span>
                       <span class="district-map-scale mono-code" id="cad-hud-timer">00:00:12</span>
-                    </div>
-                    <div class="district-view-toggle" role="group" aria-label="Map display mode">
-                      <button type="button" class="map-toggle-btn active" id="map-btn-osm">Street Map</button>
-                      <button type="button" class="map-toggle-btn" id="map-btn-tactical">Tactical CAD</button>
-                      <button type="button" class="map-toggle-btn" id="map-btn-reset">Reset View</button>
                     </div>
                   </div>
 

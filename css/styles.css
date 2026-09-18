@@ -6919,6 +6919,45 @@ body:has(.site-header) main {
   box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.20);
 }
 
+.services-search-clear {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-medium, #CBD5E1);
+  background: var(--bg-surface-subtle, #F8FAFC);
+  color: var(--text-secondary, #475569);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-search-clear:hover {
+  background: var(--mtw-navy, #0B1B36);
+  color: #FFFFFF;
+  border-color: var(--mtw-navy, #0B1B36);
+}
+
+[data-theme="dark"] .services-search-clear {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .services-search-clear:hover {
+  background: var(--mtw-police-gold, #C5A880);
+  color: #0B1B36;
+}
+
 .services-filter-pills {
   display: flex;
   gap: 10px;
@@ -8427,6 +8466,18 @@ img.civic-editorial-img,
 
 /* 5. Touch Target Upgrades (WCAG 2.2 AA Compliance >= 44x44px) */
 @media (max-width: 768px) {
+  .civic-float-pill-btn {
+    position: relative;
+  }
+  .civic-float-pill-btn::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    bottom: -6px;
+    left: -2px;
+    right: -2px;
+    pointer-events: auto;
+  }
   .map-toggle-btn {
     min-height: 44px !important;
     padding: 10px 14px !important;
@@ -8437,8 +8488,16 @@ img.civic-editorial-img,
     padding: 8px 14px !important;
   }
   .civic-btn-top {
-    min-height: 40px !important;
+    min-height: 44px !important;
     min-width: 44px !important;
+    height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .services-search-input {
+    padding-right: 76px !important;
+    font-size: 16px !important;
   }
 }
 
@@ -8956,17 +9015,27 @@ img.civic-editorial-img,
   }
 
   .scrolly-telemetry-hud {
-    gap: 4px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
     margin-top: 8px !important;
-    padding: 6px 8px !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+  }
+
+  .hud-item {
+    flex: 1 1 calc(33.333% - 6px) !important;
+    min-width: 80px !important;
   }
 
   .hud-item .hud-label {
-    font-size: 0.62rem !important;
+    font-size: 0.64rem !important;
+    white-space: nowrap !important;
   }
 
   .hud-item .hud-val {
-    font-size: 0.76rem !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
   }
 
   /* Community Stories Horizontal Swipe Track */
