@@ -708,9 +708,9 @@
       if (cadHudUnit) cadHudUnit.textContent = dist.sectorCar;
       if (cadHudStatus) {
         cadHudStatus.textContent = 'SECTOR ACTIVE';
-        if (String(id) === '1') cadHudStatus.style.color = '#2563EB';
-        else if (String(id) === '3') cadHudStatus.style.color = '#7C3AED';
-        else cadHudStatus.style.color = '#059669';
+        if (String(id) === '1') cadHudStatus.style.color = '#60A5FA';
+        else if (String(id) === '3') cadHudStatus.style.color = '#C084FC';
+        else cadHudStatus.style.color = '#34D399';
       }
       if (cadHudPhase) cadHudPhase.textContent = `DISTRICT ${id} // SECTOR PATROL`;
       if (cadHudTimer && dist.acres) cadHudTimer.textContent = dist.acres.toUpperCase();

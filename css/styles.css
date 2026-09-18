@@ -5100,8 +5100,8 @@ body:has(.site-header) main {
 
 .district-map-toolbar {
   padding: 14px 20px;
-  background: var(--bg-surface-subtle, #F7F5F0);
-  border-bottom: 1px solid var(--border-subtle, #E2DDD2);
+  background: var(--mtw-police-navy, #0B1B36);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.35);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5112,8 +5112,8 @@ body:has(.site-header) main {
 }
 
 [data-theme="dark"] .district-map-toolbar {
-  background: #13171F;
-  border-bottom-color: rgba(255, 255, 255, 0.10);
+  background: #08101E;
+  border-bottom-color: rgba(197, 168, 128, 0.30);
 }
 
 .district-map-title-row {
@@ -5130,7 +5130,7 @@ body:has(.site-header) main {
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--mtw-police-navy, #0B1B36);
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .district-map-badge {
@@ -5139,9 +5139,30 @@ body:has(.site-header) main {
 
 .district-map-scale {
   font-size: 0.72rem;
-  color: var(--text-muted, #64748B);
+  color: var(--mtw-police-gold, #C5A880);
   font-family: var(--font-mono, monospace);
   word-break: break-word;
+}
+
+/* CAD Telemetry Container (Deep Police Navy HUD) */
+.cad-hud-telemetry-container {
+  padding: 12px 18px;
+  background: var(--mtw-police-navy, #0B1B36);
+  border-top: 1px solid rgba(197, 168, 128, 0.35);
+  box-shadow: 0 -2px 10px rgba(11, 27, 54, 0.08);
+}
+
+.cad-hud-telemetry-container .cad-hud-label {
+  font-size: 0.65rem;
+  color: var(--mtw-police-gold, #C5A880);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cad-hud-telemetry-container strong {
+  color: #FFFFFF;
+  font-family: var(--font-draft, monospace);
 }
 
 .district-view-toggle {
@@ -6263,18 +6284,21 @@ body:has(.site-header) main {
   line-height: 1;
 }
 
-/* 3. Department Menu Pill */
+/* 3. Department Menu Pill (Solid Police Command Navy) */
 .civic-float-pill-btn.civic-float-menu {
-  background: rgba(11, 27, 54, 0.05);
-  color: var(--mtw-police-navy, #0B1B36);
-  border-color: rgba(11, 27, 54, 0.08);
+  background: var(--mtw-police-navy, #0B1B36);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(197, 168, 128, 0.45);
   padding: 0 18px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(11, 27, 54, 0.20);
 }
 
 .civic-float-pill-btn.civic-float-menu:hover {
-  background: var(--mtw-navy, #0B1B36);
-  color: #FFFFFF;
-  border-color: var(--mtw-navy, #0B1B36);
+  background: #142B52;
+  color: #FFFFFF !important;
+  border-color: var(--mtw-police-gold, #C5A880);
+  box-shadow: 0 6px 16px rgba(11, 27, 54, 0.30);
 }
 
 [data-theme="dark"] .civic-float-pill-btn.civic-float-menu {
@@ -6700,6 +6724,95 @@ body:has(.site-header) main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* ── Hero Left Column Layout & Official Seal Insignia Card ── */
+.hero-editorial-media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.hero-editorial-seal-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--mtw-police-navy, #0B1B36);
+  border: 1.5px solid rgba(197, 168, 128, 0.40);
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 24px -4px rgba(11, 27, 54, 0.20), 0 2px 6px rgba(11, 27, 54, 0.08);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.hero-editorial-seal-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--mtw-police-gold, #C5A880);
+  box-shadow: 0 16px 36px -4px rgba(11, 27, 54, 0.28), 0 4px 10px rgba(11, 27, 54, 0.12);
+}
+
+.hero-seal-badge-frame {
+  width: 66px;
+  height: 66px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #FFFFFF;
+  padding: 3px;
+  box-shadow: 0 0 0 2px rgba(197, 168, 128, 0.60), 0 4px 14px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hero-seal-badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.hero-seal-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.hero-seal-badge-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mtw-police-gold, #C5A880);
+}
+
+.hero-seal-badge-title {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.hero-seal-badge-motto {
+  font-family: var(--font-editorial);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #E2CA90;
+  line-height: 1.35;
+}
+
+.hero-seal-badge-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
 .hero-editorial-content {
   display: flex;
   flex-direction: column;
@@ -6788,27 +6901,30 @@ body:has(.site-header) main {
 }
 
 .btn-editorial-secondary {
-  background: var(--bg-surface);
-  color: var(--text-primary) !important;
+  background: var(--bg-surface, #FFFFFF);
+  color: var(--mtw-police-navy, #0B1B36) !important;
   font-family: var(--font-title);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 12px 24px;
   min-height: 44px;
   box-sizing: border-box;
   justify-content: center;
   border-radius: 9999px;
   text-decoration: none;
-  border: 1px solid var(--border-medium);
+  border: 1.5px solid rgba(11, 27, 54, 0.18);
   display: inline-flex;
   align-items: center;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  box-shadow: 0 2px 6px rgba(11, 27, 54, 0.04);
 }
 
 .btn-editorial-secondary:hover {
-  background: var(--bg-surface-subtle);
-  border-color: var(--text-primary);
+  background: rgba(11, 27, 54, 0.04);
+  border-color: var(--mtw-police-navy, #0B1B36);
+  color: var(--mtw-police-navy, #0B1B36) !important;
   transform: translateY(-1.5px);
+  box-shadow: 0 6px 14px rgba(11, 27, 54, 0.10);
 }
 
 .hero-editorial-meta-strip {
@@ -7106,6 +7222,7 @@ body:has(.site-header) main {
   grid-column: span 2;
   background: var(--bg-surface, #FFFFFF);
   border: 1px solid rgba(11, 27, 54, 0.12);
+  border-top: 4px solid var(--mtw-police-navy, #0B1B36);
   border-radius: 20px;
   padding: 32px 30px;
   box-shadow: 
@@ -7317,6 +7434,7 @@ body:has(.site-header) main {
 .civic-division-card {
   background: var(--bg-surface, #FFFFFF);
   border: 1px solid rgba(11, 27, 54, 0.10);
+  border-top: 4px solid var(--mtw-police-navy, #0B1B36);
   border-radius: 20px;
   padding: 32px 26px;
   box-shadow: 
@@ -7355,9 +7473,9 @@ body:has(.site-header) main {
 }
 
 .tag-ciert {
-  background: rgba(11, 27, 54, 0.08);
-  color: var(--mtw-police-navy, #0B1B36);
-  border: 1px solid rgba(11, 27, 54, 0.15);
+  background: var(--mtw-police-navy, #0B1B36);
+  color: #FFFFFF;
+  border: 1px solid var(--mtw-police-gold, #C5A880);
 }
 
 .tag-icac {
@@ -7653,15 +7771,69 @@ body:has(.site-header) main {
   margin-bottom: 14px;
 }
 
-/* ── Civic Recruitment Banner ── */
+/* ── Civic Recruitment Banner (Police Command Navy Bento) ── */
 .civic-recruitment-box {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(155deg, #0B1B36 0%, #060F1E 100%);
+  border: 1.5px solid rgba(197, 168, 128, 0.40);
   border-radius: 20px;
   padding: clamp(32px, 5vw, 64px);
-  box-shadow: var(--mtw-card-shadow);
+  box-shadow: 0 16px 44px -8px rgba(11, 27, 54, 0.35), 0 4px 14px rgba(11, 27, 54, 0.15);
   position: relative;
   overflow: hidden;
+  color: #FFFFFF;
+}
+
+.civic-recruitment-box .hero-editorial-eyebrow {
+  color: var(--mtw-police-gold, #C5A880) !important;
+}
+
+.civic-recruitment-box .hero-editorial-title {
+  color: #FFFFFF !important;
+}
+
+.civic-recruitment-box .hero-editorial-lead {
+  color: #CBD5E1 !important;
+}
+
+.civic-recruitment-box .wpd-bento-item {
+  background: #102242;
+  border: 1px solid rgba(197, 168, 128, 0.28);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.civic-recruitment-box .wpd-bento-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--mtw-police-gold, #C5A880);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.40);
+}
+
+.civic-recruitment-box .civic-metric-label {
+  color: var(--mtw-police-gold, #C5A880);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.civic-recruitment-box .civic-metric-val {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
+}
+
+.civic-recruitment-box .wpd-bento-item div[style*="color: var(--text-secondary)"] {
+  color: #CBD5E1 !important;
+}
+
+.civic-recruitment-box .wpd-bento-item div[style*="border-top"] {
+  border-top: 1px solid rgba(197, 168, 128, 0.25) !important;
+  color: var(--mtw-police-gold, #C5A880) !important;
 }
 
 .civic-metrics-grid {
@@ -7672,8 +7844,8 @@ body:has(.site-header) main {
 }
 
 .civic-metric-card {
-  background: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
+  background: #102242;
+  border: 1px solid rgba(197, 168, 128, 0.28);
   border-radius: 12px;
   padding: 20px;
 }
@@ -7684,7 +7856,7 @@ body:has(.site-header) main {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--mtw-police-gold, #C5A880);
   margin-bottom: 6px;
 }
 
@@ -7694,6 +7866,7 @@ body:has(.site-header) main {
   font-weight: 700;
   color: var(--text-primary);
 }
+
 .wpd-recruitment-actions {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -7701,7 +7874,28 @@ body:has(.site-header) main {
   margin-top: var(--space-6);
 }
 
-.wpd-recruitment-actions .btn-editorial-primary,
+.wpd-recruitment-actions .btn-editorial-primary {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  box-sizing: border-box;
+  background: var(--mtw-police-gold, #C5A880);
+  color: #0B1B36 !important;
+  border: 1px solid #DFC49D;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.30);
+}
+
+.wpd-recruitment-actions .btn-editorial-primary:hover {
+  background: #DFC49D;
+  color: #060F1E !important;
+  border-color: #FFFFFF;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
 .wpd-recruitment-actions .btn-editorial-secondary {
   width: 100%;
   justify-content: center;
@@ -7709,6 +7903,18 @@ body:has(.site-header) main {
   padding: 12px 14px;
   font-size: 0.88rem;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(197, 168, 128, 0.40);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+.wpd-recruitment-actions .btn-editorial-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--mtw-police-gold, #C5A880);
+  color: #FFFFFF !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
 }
 
 @media (max-width: 1024px) {
@@ -8099,8 +8305,11 @@ body:has(.site-header) main {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-2);
   margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border-subtle);
+  padding: 12px 16px;
+  background: var(--mtw-police-navy, #0B1B36);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(11, 27, 54, 0.12);
 }
 
 .hud-item {
@@ -8109,17 +8318,17 @@ body:has(.site-header) main {
   gap: 2px;
 }
 .hud-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--text-muted);
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--mtw-police-gold, #C5A880);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 .hud-val {
   font-family: var(--font-draft, monospace);
-  font-size: 0.88rem;
+  font-size: 0.90rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #FFFFFF;
   font-variant-numeric: tabular-nums;
 }
 
@@ -9310,6 +9519,10 @@ img.civic-editorial-img,
   }
 
   /* Recruitment Horizontal Swipe Bento */
+  .civic-recruitment-box {
+    padding: 24px 16px !important;
+  }
+
   .wpd-recruitment-bento {
     display: flex !important;
     flex-direction: row !important;
@@ -9325,10 +9538,10 @@ img.civic-editorial-img,
   }
 
   .wpd-bento-item {
-    flex: 0 0 78% !important;
-    max-width: 270px !important;
+    flex: 0 0 82% !important;
+    max-width: 285px !important;
     scroll-snap-align: start !important;
-    padding: 14px 12px !important;
+    padding: 16px 14px !important;
     border-radius: 14px !important;
   }
 

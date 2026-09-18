@@ -72,12 +72,27 @@
       <div class="container">
         <div class="hero-editorial-grid">
           
-          <!-- LEFT COLUMN: Authentic High-Definition Photograph -->
-          <div class="hero-editorial-image-frame double-bezel scroll-reveal" style="padding: 8px;">
-            <div class="hero-editorial-image-inner double-bezel-inner">
-              <img src="assets/wpd_police_department.jpg" alt="Washington Illinois Police Department Headquarters facility at 115 W Jefferson Street" class="hero-editorial-image" fetchpriority="high" />
-              <div class="hero-editorial-image-badge">
-                Washington Police Department Headquarters • 115 W. Jefferson St
+          <!-- LEFT COLUMN: Department Headquarters Image & Official Emblem -->
+          <div class="hero-editorial-media-col scroll-reveal">
+            <div class="hero-editorial-image-frame double-bezel" style="padding: 8px;">
+              <div class="hero-editorial-image-inner double-bezel-inner">
+                <img src="assets/wpd_police_department.jpg" alt="Washington Illinois Police Department Headquarters facility at 115 W Jefferson Street" class="hero-editorial-image" fetchpriority="high" />
+                <div class="hero-editorial-image-badge">
+                  Washington Police Department Headquarters • 115 W. Jefferson St
+                </div>
+              </div>
+            </div>
+
+            <!-- Official Washington PD Emblem Card (Directly Below Image) -->
+            <div class="hero-editorial-seal-card">
+              <div class="hero-seal-badge-frame">
+                <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="hero-seal-badge-img" />
+              </div>
+              <div class="hero-seal-badge-text">
+                <div class="hero-seal-badge-eyebrow">OFFICIAL MUNICIPAL EMBLEM</div>
+                <div class="hero-seal-badge-title">City of Washington Police Department</div>
+                <div class="hero-seal-badge-motto">“Protect with Purpose • Serve with Honor • Lead with Integrity”</div>
+                <div class="hero-seal-badge-sub">Tazewell County, Illinois • Incorporated 1825</div>
               </div>
             </div>
           </div>
@@ -406,19 +421,19 @@
                   <div id="real-district-leaflet-map" role="region" aria-label="Official interactive patrol district map of Washington, Illinois"></div>
 
                   <!-- Real-Time CAD Telemetry HUD Display -->
-                  <div style="padding: 12px 18px; background: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle);">
+                  <div class="cad-hud-telemetry-container">
                     <div class="cad-hud-telemetry-grid">
                       <div>
-                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Active Sector</div>
-                        <strong id="cad-hud-district" style="color: var(--text-primary); font-family: var(--font-draft);">District 1 (Core & East)</strong>
+                        <div class="cad-hud-label">Active Sector</div>
+                        <strong id="cad-hud-district">District 1 (Core &amp; East)</strong>
                       </div>
                       <div>
-                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Assigned Unit</div>
-                        <strong id="cad-hud-unit" style="color: var(--text-primary); font-family: var(--font-draft);">Sector Car 101</strong>
+                        <div class="cad-hud-label">Assigned Unit</div>
+                        <strong id="cad-hud-unit">Sector Car 101</strong>
                       </div>
                       <div>
-                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Patrol Status</div>
-                        <strong id="cad-hud-status" style="color: var(--accent-periwinkle, #2563EB); font-family: var(--font-draft);">SECTOR ACTIVE</strong>
+                        <div class="cad-hud-label">Patrol Status</div>
+                        <strong id="cad-hud-status" style="color: #60A5FA;">SECTOR ACTIVE</strong>
                       </div>
                     </div>
                   </div>
