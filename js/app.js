@@ -1071,25 +1071,28 @@
       if (!form) return;
 
       e.preventDefault();
-      const receiptCode = `WPD-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+      const receiptCode = `WPD-REQ-${Math.floor(1000 + Math.random() * 9000)}`;
       const drawerBody = form.closest('.action-drawer-body');
       const formTitle = form.getAttribute('data-form-title') || 'Request';
 
       if (drawerBody) {
         drawerBody.innerHTML = `
           <div style="text-align: center; padding: var(--space-8) var(--space-4);">
-            <div style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: var(--accent-emerald-subtle); color: var(--accent-emerald); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 auto var(--space-4);">CONFIRMED</div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2);">${escapeHtml(formTitle)} Submitted</h3>
-            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--space-6); line-height: 1.6;">
-              Your submission has been securely transmitted to the Washington Police Department records and dispatch center.
+            <div style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: var(--accent-emerald-subtle); color: var(--accent-emerald); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 auto var(--space-4);">SUMMARY RECORDED</div>
+            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2);">${escapeHtml(formTitle)} Summary</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--space-4); line-height: 1.6;">
+              Your request record has been formatted. For time-sensitive matters or to verify immediate dispatch entry, contact the communications center at <strong>(309) 444-2313</strong>.
             </p>
             <div style="background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-6); font-family: var(--font-mono); font-size: 0.88rem;">
-              <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px;">Official CAD Confirmation Receipt</div>
+              <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px;">Request Reference Number</div>
               <div style="font-weight: 800; font-size: 1.3rem; color: var(--text-primary); letter-spacing: 0.04em;" id="receipt-code-display">${receiptCode}</div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-4);">
-              <button type="button" class="btn-editorial-primary" id="btn-copy-receipt-code" style="width: 100%; justify-content: center;">
-                Copy Confirmation Code
+              <a href="tel:3094442313" class="btn-editorial-primary" style="width: 100%; justify-content: center; text-decoration: none;">
+                Call Dispatch (309) 444-2313
+              </a>
+              <button type="button" class="btn-editorial-secondary" id="btn-copy-receipt-code" style="width: 100%; justify-content: center;">
+                Copy Reference Number
               </button>
               <button type="button" class="btn-editorial-secondary" id="btn-print-receipt-summary" style="width: 100%; justify-content: center;">
                 Print / Save Summary
@@ -1101,7 +1104,7 @@
             <button type="button" class="btn-pill btn-pill-primary" data-close-drawer style="width: 100%; margin-top: 6px;">Close Drawer</button>
           </div>
         `;
-        if (window.showToast) window.showToast(`${formTitle} confirmed (#${receiptCode})`, 'success');
+        if (window.showToast) window.showToast(`${formTitle} recorded (#${receiptCode})`, 'success');
       }
     });
   }

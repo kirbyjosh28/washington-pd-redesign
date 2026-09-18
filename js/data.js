@@ -48,7 +48,7 @@ const WPD_DATA = {
       startHour: 23,
       endHour: 7,
       supervisor: "On-Duty Patrol Sergeant",
-      focus: "Commercial business security checks, residential neighborhood patrols, overnight parking enforcement"
+      focus: "Commercial business security checks, residential neighborhood patrols, traffic safety, and vacation house checks"
     }
   ],
 
@@ -163,12 +163,12 @@ const WPD_DATA = {
       drawerId: "drawer-vacation-check"
     },
     {
-      id: "parking-permission",
-      title: "Overnight Parking Permission",
-      badge: "Instant Approval",
-      desc: "City code restricts parking on city streets 2am–6am. Register your vehicle for overnight street permission.",
-      actionText: "Request Parking Exemption",
-      drawerId: "drawer-parking-permission"
+      id: "drug-disposal",
+      title: "Safe Medication Disposal",
+      badge: "Lobby Drop Box",
+      desc: "Dispose of expired or unused prescription medications safely and anonymously in our permanent 24/7 headquarters lobby drop box.",
+      actionText: "Disposal Guidelines",
+      drawerId: "drawer-drug-disposal"
     },
     {
       id: "police-records",
@@ -214,7 +214,7 @@ const WPD_DATA = {
     {
       id: "codered-alerts",
       title: "CodeRED Emergency Alerts",
-      badge: "Vital Alerts",
+      badge: "Emergency Alerts",
       desc: "Receive urgent emergency notifications, weather warnings, and critical safety updates directly to your phone.",
       actionText: "Register for CodeRED",
       isExternal: true,
@@ -244,8 +244,14 @@ const WPD_DATA = {
     {
       name: "Part-Time Police Unit",
       code: "COMMUNITY SUPPORT",
-      desc: "Fully certified sworn officers providing flexible reinforcement for special community events, Washington Square festivals, and high-visibility seasonal park bicycle patrols.",
-      officersAssigned: "Auxiliary Unit"
+      desc: "10 state-certified sworn officers who augment full-time personnel, providing event security, Washington Square festival patrols, park safety, and emergency surge staffing.",
+      officersAssigned: "10 Sworn Officers"
+    },
+    {
+      name: "Canine Unit (K-9)",
+      code: "SPECIALIZED PATROL",
+      desc: "Dual-purpose police service dog team trained in narcotics detection, tracking, area searches, and handler protection.",
+      officersAssigned: "K-9 Team"
     }
   ],
 
