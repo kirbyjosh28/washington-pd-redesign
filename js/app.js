@@ -594,6 +594,16 @@
         </div>
       `);
 
+    L.marker([40.718057, -89.407216], { icon: createMapPin('MS', 'pin-school') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Washington Middle School (District 52)</div>
+        <div class="wpd-map-popup-desc">
+          1100 N. Main St. • District 1 Core & East Sector<br>
+          Dedicated School Resource Officer (SRO) & Campus Safety
+        </div>
+      `);
+
     L.marker([40.709767, -89.410749], { icon: createMapPin('LS', 'pin-school') })
       .addTo(map)
       .bindPopup(`
@@ -605,13 +615,13 @@
       `);
 
     // --- District 2 Markers (West Sector) ---
-    L.marker([40.704741, -89.461382], { icon: createMapPin('MS', 'pin-school') })
+    L.marker([40.702889, -89.423556], { icon: createMapPin('AL', 'pin-retail') })
       .addTo(map)
       .bindPopup(`
-        <div class="wpd-map-popup-title">Washington Middle School (District 52)</div>
+        <div class="wpd-map-popup-title">ALDI & Peoria Street Commercial Center</div>
         <div class="wpd-map-popup-desc">
-          1100 Centennial Dr. • District 2 West Sector<br>
-          Dedicated School Resource Officer (SRO) & Zone Safety
+          1110 Peoria St. • District 2 West Commercial Hub<br>
+          Retail Loss Deterrence & Commercial Traffic Calming
         </div>
       `);
 
