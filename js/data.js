@@ -80,10 +80,10 @@ const WPD_DATA = {
       color: "#059669",
       coverage: "West Washington, Freedom Parkway Hub, ALDI Commercial Corridor & Western Subdivisions",
       acres: "1,681.4 Acres",
-      boundaries: "Territory south of Washington Road (Business 24) from Wilmor Road west to Cummings Lane, and extending across the entire western municipal boundaries west of Cummings Lane, including Freedom Parkway retail corridor, ALDI commercial center (1110 Peoria St), Centennial Drive, and Meadow Valley Park.",
+      boundaries: "Territory south of Washington Road (Business 24) from Wilmor Road west to Cummings Lane, and extending across the entire western municipal boundaries west of Cummings Lane, including Freedom Parkway retail corridor, ALDI, Centennial Drive, and Meadow Valley Park.",
       landmarks: [
         "Freedom Parkway Retail Center & Walmart Supercenter",
-        "ALDI Commercial Center (1110 Peoria St / Washington Plaza)",
+        "ALDI (1110 Peoria St / Washington Plaza)",
         "Meadow Valley Park (525 Ernest St)",
         "Peoria Street Western Commercial Corridor",
         "South Cummings Lane Corridor",
