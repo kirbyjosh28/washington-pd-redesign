@@ -24,8 +24,8 @@ const WPD_DATA = {
 
   watches: [
     {
-      id: "watch-1",
-      name: "Watch 1 (Day Watch)",
+      id: "shift-day",
+      name: "Day Shift",
       hours: "07:00 – 15:00",
       startHour: 7,
       endHour: 15,
@@ -33,8 +33,8 @@ const WPD_DATA = {
       focus: "School zones, business district patrols, traffic safety, municipal court details"
     },
     {
-      id: "watch-2",
-      name: "Watch 2 (Afternoon Watch)",
+      id: "shift-afternoon",
+      name: "Afternoon Shift",
       hours: "15:00 – 23:00",
       startHour: 15,
       endHour: 23,
@@ -42,8 +42,8 @@ const WPD_DATA = {
       focus: "School dismissal, rush hour traffic flow, commercial retail corridors, park checks"
     },
     {
-      id: "watch-3",
-      name: "Watch 3 (Midnight Watch)",
+      id: "shift-night",
+      name: "Night Shift",
       hours: "23:00 – 07:00",
       startHour: 23,
       endHour: 7,

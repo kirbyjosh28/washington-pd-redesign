@@ -7643,22 +7643,10 @@ body:has(.site-header) main {
 
 .civic-watch-item {
   background: var(--bg-surface-subtle);
-  border-left: 4px solid var(--mtw-police-navy);
+  border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: 16px 20px;
   margin-bottom: 14px;
-}
-
-.civic-watch-item.watch-1 {
-  border-left-color: var(--accent-blue, #2563EB);
-}
-
-.civic-watch-item.watch-2 {
-  border-left-color: var(--accent-emerald, #059669);
-}
-
-.civic-watch-item.watch-3 {
-  border-left-color: var(--district-3-color, #7C3AED);
 }
 
 /* ── Civic Recruitment Banner ── */

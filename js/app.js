@@ -297,7 +297,7 @@
     const hour = now.getHours();
     const day = now.getDay(); // 0 is Sunday, 6 is Saturday
 
-    let activeWatch = WPD_DATA.watches[0]; // default Watch 1
+    let activeWatch = WPD_DATA.watches[0]; // default Day Shift
     if (hour >= 7 && hour < 15) {
       activeWatch = WPD_DATA.watches[0];
     } else if (hour >= 15 && hour < 23) {
