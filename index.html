@@ -20,7 +20,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/tokens.css?v=20260917-mobile-v1" />
-  <link rel="stylesheet" href="css/styles.css?v=20260917-mobile-v5" />
+  <link rel="stylesheet" href="css/styles.css?v=20260918-districts-v1" />
 </head>
 <body id="wpd-experience-root">
 
@@ -140,9 +140,8 @@
           <!-- Emergency Pathway Card -->
           <article class="civic-pathway-card civic-pathway-card-emergency">
             <div>
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+              <div style="display: flex; align-items: center; margin-bottom: 14px;">
                 <span class="chip chip-gold" style="font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em; background: rgba(197, 168, 128, 0.15); color: #8A6D3B; border: 1px solid rgba(197, 168, 128, 0.4);">IMMEDIATE DANGER • LIFE SAFETY</span>
-                <span class="mono-code" style="color: var(--mtw-police-navy, #0B1B36); font-weight: 800; font-size: 0.90rem;">DIAL 911</span>
               </div>
               <h2 class="civic-card-title" style="font-size: 1.65rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
                 Emergency Dispatch
@@ -164,9 +163,8 @@
           <!-- Non-Emergency Pathway Card -->
           <article class="civic-pathway-card civic-pathway-card-non-emergency">
             <div>
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+              <div style="display: flex; align-items: center; margin-bottom: 14px;">
                 <span class="chip chip-blue" style="font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em;">NON-EMERGENCY ASSISTANCE</span>
-                <span class="mono-code" style="color: var(--accent-blue); font-weight: 800; font-size: 0.90rem;">(309) 444-2313</span>
               </div>
               <h2 class="civic-card-title" style="font-size: 1.65rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
                 24/7 Police Dispatch Line
@@ -227,10 +225,6 @@
             <div>
               <div class="feature-card-header">
                 <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE RESIDENTIAL SERVICE</span>
-                <span class="feature-status-badge">
-                  <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
-                  DIRECT CAD DISPATCH CHECK
-                </span>
               </div>
               <h3 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Vacation House Watch &amp; Property Check</h3>
               <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
@@ -384,12 +378,12 @@
             
             <div class="civic-map-toolbar">
               <div>
-                <div class="eyebrow" style="color: var(--mtw-police-gold, #8A6D3B); font-size: 0.72rem; letter-spacing: 0.1em;">OFFICIAL MUNICIPAL GIS DATA &amp; CAD INCIDENT LIFECYCLE</div>
+                <div class="eyebrow" style="color: var(--mtw-police-gold, #8A6D3B); font-size: 0.72rem; letter-spacing: 0.1em;">OFFICIAL MUNICIPAL GIS DATA &amp; PATROL SECTORS</div>
                 <h2 id="districts-heading" class="civic-section-title" style="font-size: 1.85rem; font-weight: 500; margin: 2px 0 6px 0;">
-                  Patrol Districts &amp; Incident Dispatch Lifecycle
+                  Patrol Districts &amp; Geographic Coverage
                 </h2>
                 <p class="prog-copy" style="max-width: 680px; margin: 0;">
-                  <strong class="prog-lead">From 911 call ingestion to on-scene resolution:</strong> Washington Police Department maintains continuous patrol coverage across three primary geographic sectors. Scroll the 3-phase dispatch storyboard below to track CAD routing, sector unit geolocation, and on-scene body-worn camera activation in real time.
+                  <strong class="prog-lead">24/7 dedicated sector patrol coverage:</strong> The City of Washington is divided into three distinct operational patrol sectors. Explore each district below to view primary boundaries, assigned sector units, key community facilities, and tactical priorities.
                 </p>
               </div>
             </div>
@@ -402,9 +396,9 @@
                   <!-- Map Controls & Status -->
                   <div class="district-map-toolbar">
                     <div class="district-map-title-row">
-                      <span class="status-pip status-pip-emerald" aria-hidden="true" id="cad-hud-pip"></span>
-                      <span class="district-map-badge" id="cad-hud-phase">PHASE 01 // INGESTION</span>
-                      <span class="district-map-scale mono-code" id="cad-hud-timer">00:00:12</span>
+                      <span class="status-pip status-pip-blue" aria-hidden="true" id="cad-hud-pip"></span>
+                      <span class="district-map-badge" id="cad-hud-phase">DISTRICT 1 // EAST SECTOR</span>
+                      <span class="district-map-scale mono-code" id="cad-hud-timer">434 ACRES</span>
                     </div>
                   </div>
 
@@ -423,8 +417,8 @@
                         <strong id="cad-hud-unit" style="color: var(--text-primary); font-family: var(--font-draft);">Sector Car 101</strong>
                       </div>
                       <div>
-                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">CAD Status</div>
-                        <strong id="cad-hud-status" style="color: var(--accent-emerald, #059669); font-family: var(--font-draft);">DISPATCH QUEUED</strong>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Patrol Status</div>
+                        <strong id="cad-hud-status" style="color: var(--accent-periwinkle, #2563EB); font-family: var(--font-draft);">SECTOR ACTIVE</strong>
                       </div>
                     </div>
                   </div>
@@ -450,86 +444,101 @@
               <!-- SCROLLING NARRATIVE BEATS (RIGHT COLUMN) -->
               <div class="scrolly-beats-column">
                 
-                <!-- Beat 1: CAD Ingestion & Priority Classification -->
-                <article class="scrolly-step active" data-step="1" data-district="1" data-time="00:00:12" data-phase="PHASE 01 // INGESTION" data-status="CAD QUEUED" data-unit="Sector Car 101" data-distname="District 1 (East)">
+                <!-- Beat 1: District 1 (East Sector) -->
+                <article class="scrolly-step active" data-step="1" data-district="1" data-time="434 ACRES" data-phase="DISTRICT 1 // EAST SECTOR" data-status="EAST ACTIVE" data-unit="Sector Car 101" data-distname="District 1 (East)">
                   <div class="scrolly-step-pip">
                     <span class="status-pip status-pip-blue"></span>
-                    <span>Phase 01 • <span class="scrolly-step-timer">00:00:12</span></span>
+                    <span>District 1 • <span class="scrolly-step-timer">East Sector (434 Acres)</span></span>
                   </div>
                   <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
-                    911 CAD Ingestion &amp; Priority Triage
+                    District 1 — East Sector Patrol
                   </h3>
-                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-4);">
-                    <strong class="prog-lead">Tazewell County 911 (TC3)</strong> ingests incoming emergency telemetry, validates caller location via GIS cell-tower trilateration, and queues CAD event #2026-WPD-0842 with automated shift supervisor broadcast.
+                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-3);">
+                    <strong class="prog-lead">East Municipal Limits &amp; Route 24 Corridor:</strong> Covers eastern Washington from Main and Wood Street east to city limits. Patrol officers prioritize school zone traffic safety around the high school campus, recreation center monitoring, and eastern commercial corridors.
                   </p>
+                  <ul class="feature-specs-list" style="margin: 10px 0 16px; gap: 6px;">
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">WCHS Campus (Dist 308)</li>
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">Five Points Washington</li>
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">Farmdale Park Border &amp; East Subdivisions</li>
+                  </ul>
                   <div class="scrolly-telemetry-hud">
                     <div class="hud-item">
-                      <span class="hud-label">Classification</span>
-                      <span class="hud-val">Priority 2</span>
+                      <span class="hud-label">Sector Unit</span>
+                      <span class="hud-val">Sector Car 101</span>
                     </div>
                     <div class="hud-item">
-                      <span class="hud-label">Queue Latency</span>
-                      <span class="hud-val tabular-nums">&lt;14s</span>
+                      <span class="hud-label">Supervision</span>
+                      <span class="hud-val">East Sector Sgt</span>
                     </div>
                     <div class="hud-item">
-                      <span class="hud-label">Sector Assigned</span>
-                      <span class="hud-val">District 1</span>
+                      <span class="hud-label">Municipal Area</span>
+                      <span class="hud-val tabular-nums">434 Acres</span>
                     </div>
                   </div>
                 </article>
 
-                <!-- Beat 2: Sector Geolocation & Priority Transit -->
-                <article class="scrolly-step" data-step="2" data-district="2" data-time="00:01:45" data-phase="PHASE 02 // TRANSIT" data-status="EN ROUTE" data-unit="Sector Car 102" data-distname="District 2 (West)">
+                <!-- Beat 2: District 2 (West Sector) -->
+                <article class="scrolly-step" data-step="2" data-district="2" data-time="1,681 ACRES" data-phase="DISTRICT 2 // WEST SECTOR" data-status="WEST ACTIVE" data-unit="Sector Car 102" data-distname="District 2 (West)">
                   <div class="scrolly-step-pip">
                     <span class="status-pip status-pip-emerald"></span>
-                    <span>Phase 02 • <span class="scrolly-step-timer">00:01:45</span></span>
+                    <span>District 2 • <span class="scrolly-step-timer">West Sector (1,681 Acres)</span></span>
                   </div>
                   <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
-                    Patrol Sector Geolocation &amp; En-Route Transit
+                    District 2 — West Sector &amp; Historic Square
                   </h3>
-                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-4);">
-                    <strong class="prog-lead">Sector Car 102 acknowledges CAD dispatch</strong> from Route 24 staging. Vehicle mobile data terminal (MDT) calculates optimal arterial corridor routing with GPS telemetry streaming at 1Hz.
+                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-3);">
+                    <strong class="prog-lead">Civic Core &amp; Peoria Street Artery:</strong> Encompasses Washington's historic Downtown Square, municipal complex, WPD Police Headquarters, Central Primary, and Washington Middle School. Focuses on pedestrian safety, retail business checks, and community engagements.
                   </p>
+                  <ul class="feature-specs-list" style="margin: 10px 0 16px; gap: 6px;">
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">Historic Downtown Square &amp; City Hall</li>
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">WPD Police Headquarters (115 W Jefferson)</li>
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">Central Primary &amp; Washington Middle School</li>
+                  </ul>
                   <div class="scrolly-telemetry-hud">
                     <div class="hud-item">
-                      <span class="hud-label">Cruiser Unit</span>
-                      <span class="hud-val">Unit 3 (Ford PIU)</span>
+                      <span class="hud-label">Sector Unit</span>
+                      <span class="hud-val">Sector Car 102</span>
                     </div>
                     <div class="hud-item">
-                      <span class="hud-label">Calculated ETA</span>
-                      <span class="hud-val tabular-nums">3.2 Min</span>
+                      <span class="hud-label">Supervision</span>
+                      <span class="hud-val">West Sector Sgt</span>
                     </div>
                     <div class="hud-item">
-                      <span class="hud-label">Corridor Speed</span>
-                      <span class="hud-val">Arterial Patrol</span>
+                      <span class="hud-label">Municipal Area</span>
+                      <span class="hud-val tabular-nums">1,681 Acres</span>
                     </div>
                   </div>
                 </article>
 
-                <!-- Beat 3: On-Scene Arrival & Crisis De-escalation -->
-                <article class="scrolly-step" data-step="3" data-district="3" data-time="00:04:10" data-phase="PHASE 03 // ON-SCENE" data-status="SCENE SECURED" data-unit="Sector Car 103" data-distname="District 3 (North)">
+                <!-- Beat 3: District 3 (North Sector / Bypass) -->
+                <article class="scrolly-step" data-step="3" data-district="3" data-time="1,477 ACRES" data-phase="DISTRICT 3 // NORTH SECTOR" data-status="NORTH ACTIVE" data-unit="Sector Car 103" data-distname="District 3 (North)">
                   <div class="scrolly-step-pip">
-                    <span class="status-pip status-pip-amber"></span>
-                    <span>Phase 03 • <span class="scrolly-step-timer">00:04:10</span></span>
+                    <span class="status-pip status-pip-purple"></span>
+                    <span>District 3 • <span class="scrolly-step-timer">North Sector (1,477 Acres)</span></span>
                   </div>
                   <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
-                    On-Scene Arrival &amp; Crisis De-escalation
+                    District 3 — North Sector &amp; Route 24 Bypass
                   </h3>
-                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-4);">
-                    <strong class="prog-lead">Axon Body 4 system auto-buffers</strong> as officer vehicle arrives in North Sector. Officers implement verbal containment and de-escalation protocols while Northern Tazewell Fire/EMS remains on mutual standby.
+                  <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-3);">
+                    <strong class="prog-lead">Devonshire Growth Area &amp; Retail Hubs:</strong> Encompasses all residential subdivisions and major shopping destinations north of the US Route 24 Bypass. Operations focus on commercial corridor security, retail loss deterrence, and neighborhood traffic calming along Cruger and Dallas Road.
                   </p>
+                  <ul class="feature-specs-list" style="margin: 10px 0 16px; gap: 6px;">
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">Devonshire Subdivision &amp; North Growth Areas</li>
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">US Route 24 Commercial &amp; Retail Centers</li>
+                    <li class="feature-spec-item" style="font-size: 0.74rem;">Cruger Road &amp; Dallas Road Corridors</li>
+                  </ul>
                   <div class="scrolly-telemetry-hud">
                     <div class="hud-item">
-                      <span class="hud-label">Camera Status</span>
-                      <span class="hud-val">Active / Synced</span>
+                      <span class="hud-label">Sector Unit</span>
+                      <span class="hud-val">Sector Car 103</span>
                     </div>
                     <div class="hud-item">
-                      <span class="hud-label">Mutual Aid</span>
-                      <span class="hud-val">EMS Standby</span>
+                      <span class="hud-label">Supervision</span>
+                      <span class="hud-val">North Sector Sgt</span>
                     </div>
                     <div class="hud-item">
-                      <span class="hud-label">Scene Integrity</span>
-                      <span class="hud-val">Stabilized</span>
+                      <span class="hud-label">Municipal Area</span>
+                      <span class="hud-val tabular-nums">1,477 Acres</span>
                     </div>
                   </div>
                 </article>
@@ -1536,7 +1545,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/data.js"></script>
   <script src="js/wpd-districts.js"></script>
-  <script src="js/app.js?v=20260917-mobile-v2"></script>
+  <script src="js/app.js?v=20260918-districts-v1"></script>
   <!-- Agentation Visual Feedback Toolbar (Local Development Machine Only) -->
   <script src="js/agentation-loader.js"></script>
 </body>

@@ -368,6 +368,12 @@ body, #wpd-experience-root {
 .status-pip-blue::after {
   background-color: rgba(99, 102, 241, 0.4);
 }
+.status-pip-purple {
+  background-color: #7C3AED;
+}
+.status-pip-purple::after {
+  background-color: rgba(124, 58, 237, 0.4);
+}
 
 @keyframes pulsePip {
   0% { transform: scale(0.8); opacity: 0.9; }
@@ -8042,6 +8048,33 @@ body:has(.site-header) main {
   box-shadow: 0 12px 36px -6px rgba(184, 134, 11, 0.18), 0 0 0 1px rgba(184, 134, 11, 0.2);
 }
 
+.scrolly-step[data-district="1"].active {
+  border-color: #2563EB;
+  box-shadow: 0 12px 36px -6px rgba(37, 99, 235, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+.scrolly-step[data-district="1"].active .scrolly-step-pip {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563EB;
+}
+
+.scrolly-step[data-district="2"].active {
+  border-color: #059669;
+  box-shadow: 0 12px 36px -6px rgba(5, 150, 105, 0.18), 0 0 0 1px rgba(5, 150, 105, 0.2);
+}
+.scrolly-step[data-district="2"].active .scrolly-step-pip {
+  background: rgba(5, 150, 105, 0.12);
+  color: #059669;
+}
+
+.scrolly-step[data-district="3"].active {
+  border-color: #7C3AED;
+  box-shadow: 0 12px 36px -6px rgba(124, 58, 237, 0.18), 0 0 0 1px rgba(124, 58, 237, 0.2);
+}
+.scrolly-step[data-district="3"].active .scrolly-step-pip {
+  background: rgba(124, 58, 237, 0.12);
+  color: #7C3AED;
+}
+
 .scrolly-step-pip {
   display: inline-flex;
   align-items: center;
@@ -9123,6 +9156,21 @@ img.civic-editorial-img,
     font-size: 0.80rem !important;
     line-height: 1.35 !important;
     margin-bottom: var(--space-2) !important;
+  }
+
+  .scrolly-step .feature-specs-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    margin: 6px 0 10px !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .scrolly-step .feature-spec-item {
+    font-size: 0.68rem !important;
+    padding: 2px 7px !important;
+    border-radius: 5px !important;
   }
 
   .scrolly-telemetry-hud {

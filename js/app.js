@@ -641,22 +641,66 @@
       const cadHudDist = document.getElementById('cad-hud-district');
       const cadHudUnit = document.getElementById('cad-hud-unit');
       const cadHudStatus = document.getElementById('cad-hud-status');
+      const cadHudPhase = document.getElementById('cad-hud-phase');
+      const cadHudTimer = document.getElementById('cad-hud-timer');
+      const cadHudPip = document.getElementById('cad-hud-pip');
+
       if (cadHudDist) cadHudDist.textContent = dist.name;
       if (cadHudUnit) cadHudUnit.textContent = dist.sectorCar;
-      if (cadHudStatus) cadHudStatus.textContent = 'SECTOR ACTIVE';
+      if (cadHudStatus) {
+        cadHudStatus.textContent = 'SECTOR ACTIVE';
+        if (String(id) === '1') cadHudStatus.style.color = '#2563EB';
+        else if (String(id) === '3') cadHudStatus.style.color = '#7C3AED';
+        else cadHudStatus.style.color = '#059669';
+      }
+      if (cadHudPhase) cadHudPhase.textContent = `DISTRICT ${id} // SECTOR PATROL`;
+      if (cadHudTimer && dist.acres) cadHudTimer.textContent = dist.acres.toUpperCase();
+      if (cadHudPip) {
+        cadHudPip.className = 'status-pip ' + 
+          (String(id) === '1' ? 'status-pip-blue' : (String(id) === '3' ? 'status-pip-purple' : 'status-pip-emerald'));
+      }
     }
+
+    let isProgrammaticScrolling = false;
+    let scrollTimeout = null;
+    let currentScrollyStep = null;
+    const scrollySteps = document.querySelectorAll('.scrolly-step');
+    const hudTimer = document.getElementById('cad-hud-timer');
+    const hudPhase = document.getElementById('cad-hud-phase');
+    const hudStatus = document.getElementById('cad-hud-status');
+    const hudDistrict = document.getElementById('cad-hud-district');
+    const hudUnit = document.getElementById('cad-hud-unit');
+    const hudPip = document.getElementById('cad-hud-pip');
 
     tabBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-district');
+        isProgrammaticScrolling = true;
+        currentScrollyStep = String(id);
+        scrollySteps.forEach(s => s.classList.toggle('active', s.getAttribute('data-district') === String(id)));
         selectDistrict(id, true);
+        const targetStep = document.querySelector(`.scrolly-step[data-district="${id}"]`);
+        if (targetStep) targetStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isProgrammaticScrolling = false;
+        }, 800);
       });
     });
 
     legendChips.forEach((chip) => {
       chip.addEventListener('click', () => {
         const id = chip.getAttribute('data-district-jump');
+        isProgrammaticScrolling = true;
+        currentScrollyStep = String(id);
+        scrollySteps.forEach(s => s.classList.toggle('active', s.getAttribute('data-district') === String(id)));
         selectDistrict(id, true);
+        const targetStep = document.querySelector(`.scrolly-step[data-district="${id}"]`);
+        if (targetStep) targetStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isProgrammaticScrolling = false;
+        }, 800);
       });
     });
 
@@ -691,7 +735,16 @@
         } else {
           map.setView([40.7075, -89.4120], 13);
         }
-        selectDistrict(2, false);
+        isProgrammaticScrolling = true;
+        currentScrollyStep = '1';
+        scrollySteps.forEach(s => s.classList.toggle('active', s.getAttribute('data-district') === '1'));
+        selectDistrict(1, false);
+        const targetStep = document.querySelector(`.scrolly-step[data-district="1"]`);
+        if (targetStep) targetStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isProgrammaticScrolling = false;
+        }, 800);
       });
     }
 
@@ -699,20 +752,11 @@
       selectDistrict(id, true);
     };
 
-    // CAD Incident Lifecycle Scrollytelling Orchestrator
-    const scrollySteps = document.querySelectorAll('.scrolly-step');
-    const hudTimer = document.getElementById('cad-hud-timer');
-    const hudPhase = document.getElementById('cad-hud-phase');
-    const hudStatus = document.getElementById('cad-hud-status');
-    const hudDistrict = document.getElementById('cad-hud-district');
-    const hudUnit = document.getElementById('cad-hud-unit');
-    const hudPip = document.getElementById('cad-hud-pip');
-
+    // District Sector Scrollytelling Orchestrator
     if (scrollySteps.length) {
-      let currentScrollyStep = null;
-
       const scrollyObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          if (isProgrammaticScrolling) return;
           if (entry.isIntersecting) {
             const stepEl = entry.target;
             const stepId = stepEl.getAttribute('data-step');
@@ -721,26 +765,26 @@
 
             scrollySteps.forEach(s => s.classList.toggle('active', s === stepEl));
 
-            const time = stepEl.getAttribute('data-time') || '00:00:00';
-            const phase = stepEl.getAttribute('data-phase') || `PHASE 0${stepId}`;
-            const status = stepEl.getAttribute('data-status') || 'ACTIVE';
+            const time = stepEl.getAttribute('data-time') || '434 ACRES';
+            const phase = stepEl.getAttribute('data-phase') || `DISTRICT 0${stepId}`;
+            const status = stepEl.getAttribute('data-status') || 'SECTOR ACTIVE';
             const unit = stepEl.getAttribute('data-unit') || 'WPD UNIT';
             const distName = stepEl.getAttribute('data-distname') || 'Patrol District';
-            const distId = stepEl.getAttribute('data-district') || '2';
+            const distId = stepEl.getAttribute('data-district') || '1';
 
             if (hudTimer) hudTimer.textContent = time;
             if (hudPhase) hudPhase.textContent = phase;
             if (hudStatus) {
               hudStatus.textContent = status;
-              if (stepId === '1') hudStatus.style.color = 'var(--accent-periwinkle, #2563EB)';
-              else if (stepId === '3') hudStatus.style.color = 'var(--accent-amber, #D97706)';
-              else hudStatus.style.color = 'var(--accent-emerald, #059669)';
+              if (distId === '1') hudStatus.style.color = '#2563EB';
+              else if (distId === '3') hudStatus.style.color = '#7C3AED';
+              else hudStatus.style.color = '#059669';
             }
             if (hudDistrict) hudDistrict.textContent = distName;
             if (hudUnit) hudUnit.textContent = unit;
             if (hudPip) {
               hudPip.className = 'status-pip ' + 
-                (stepId === '1' ? 'status-pip-blue' : (stepId === '3' ? 'status-pip-amber' : 'status-pip-emerald'));
+                (distId === '1' ? 'status-pip-blue' : (distId === '3' ? 'status-pip-purple' : 'status-pip-emerald'));
             }
 
             selectDistrict(distId, true);
@@ -754,7 +798,7 @@
       scrollySteps.forEach(step => scrollyObserver.observe(step));
     }
 
-    selectDistrict(2, false);
+    selectDistrict(1, false);
 
     setTimeout(() => {
       const allLayers = Object.values(districtPolys);
