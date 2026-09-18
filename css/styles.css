@@ -6286,169 +6286,277 @@ body:has(.site-header) main {
   text-transform: uppercase;
 }
 
-/* ── Responsive Scaling for Capsule Navigation ── */
+/* ── Responsive Scaling for Capsule Navigation (Fixed Top, Zero-Icon, Full Branding) ── */
 @media (max-width: 768px) {
   .civic-floating-bar {
-    top: 10px;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(226, 221, 210, 0.85) !important;
+    box-shadow: 0 4px 20px rgba(11, 27, 54, 0.08) !important;
+    z-index: 1050 !important;
+    pointer-events: auto !important;
+    padding-top: max(6px, env(safe-area-inset-top, 6px)) !important;
+    padding-bottom: 6px !important;
+    box-sizing: border-box !important;
+  }
+  [data-theme="dark"] .civic-floating-bar {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.50) !important;
   }
   .civic-floating-inner {
-    padding: 0 12px;
+    padding: 0 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+  .civic-floating-left,
+  .civic-floating-right {
+    display: flex !important;
+    align-items: center !important;
   }
   .civic-float-brand {
-    height: 52px;
-    padding: 4px 14px 4px 8px;
-    gap: 10px;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+  .civic-float-brand:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
   .civic-float-seal-img {
-    width: 38px;
-    height: 38px;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+    filter: drop-shadow(0 2px 4px rgba(11, 27, 54, 0.15)) !important;
+  }
+  .civic-float-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.1 !important;
   }
   .civic-brand-title {
-    font-size: 0.88rem;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    color: var(--mtw-navy, #0B1B36) !important;
+    white-space: nowrap !important;
+    letter-spacing: -0.01em !important;
+  }
+  [data-theme="dark"] .civic-brand-title {
+    color: #F8FAFC !important;
   }
   .civic-brand-dept {
-    font-size: 0.62rem;
+    display: block !important;
+    font-size: 0.50rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--mtw-police-gold, #8A6D3B) !important;
+    white-space: nowrap !important;
+  }
+  [data-theme="dark"] .civic-brand-dept {
+    color: var(--mtw-police-gold, #C5A880) !important;
   }
   .civic-floating-capsule {
-    height: 52px;
-    padding: 3px 4px;
-    gap: 4px;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+    padding: 2px 3px !important;
+    background: rgba(11, 27, 54, 0.04) !important;
+    border-radius: 9999px !important;
+    border: 1px solid rgba(11, 27, 54, 0.08) !important;
+    height: auto !important;
+    box-shadow: none !important;
+    flex-shrink: 0 !important;
+  }
+  [data-theme="dark"] .civic-floating-capsule {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
   }
   .civic-float-pill-btn {
-    height: 44px;
-    padding: 0 12px;
-  }
-  .civic-float-dispatch .float-btn-phone {
-    font-size: 0.84rem;
-  }
-  .civic-float-pill-btn.civic-float-911 {
-    font-size: 0.88rem;
-    padding: 0 14px;
-  }
-  .civic-float-911 .float-btn-main {
-    font-size: 0.90rem;
-  }
-  .civic-float-menu .float-btn-menu-text {
-    font-size: 0.84rem;
-  }
-}
-
-@media (max-width: 540px) {
-  .civic-floating-inner {
-    padding: 0 8px;
+    height: 34px !important;
+    min-height: 34px !important;
+    border-radius: 9999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+    box-sizing: border-box !important;
   }
   .civic-float-dispatch {
-    display: none;
+    display: inline-flex !important;
+    background: #FFFFFF !important;
+    color: var(--mtw-navy, #0B1B36) !important;
+    border: 1px solid rgba(11, 27, 54, 0.08) !important;
+    padding: 0 6px !important;
   }
-  .civic-brand-dept {
-    display: none;
+  [data-theme="dark"] .civic-float-dispatch {
+    background: rgba(255, 255, 255, 0.10) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #F8FAFC !important;
   }
-  .civic-float-brand {
-    padding: 4px 10px 4px 6px;
-    gap: 8px;
-    max-width: 155px;
+  .civic-float-dispatch .float-btn-phone {
+    font-size: 0.64rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
   }
-  .civic-float-seal-img {
-    width: 34px;
-    height: 34px;
-  }
-  .civic-brand-title {
-    font-size: 0.80rem;
+  .status-pip {
+    margin-right: 4px !important;
+    width: 6px !important;
+    height: 6px !important;
   }
   .civic-float-pill-btn.civic-float-911 {
-    padding: 0 10px;
-    font-size: 0.84rem;
+    display: inline-flex !important;
+    background: linear-gradient(135deg, #D31245 0%, #9B0028 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid #D31245 !important;
+    padding: 0 8px !important;
+    gap: 4px !important;
+    box-shadow: 0 2px 8px rgba(211, 18, 69, 0.35) !important;
+  }
+  .civic-float-911 .float-btn-main {
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+  }
+  .float-btn-911-beacon {
+    width: 5px !important;
+    height: 5px !important;
   }
   .civic-float-pill-btn.civic-float-menu {
-    padding: 0 10px;
-    font-size: 0.84rem;
+    display: inline-flex !important;
+    background: var(--mtw-navy, #0B1B36) !important;
+    color: #FFFFFF !important;
+    border: 1px solid var(--mtw-navy, #0B1B36) !important;
+    padding: 0 8px !important;
+  }
+  [data-theme="dark"] .civic-float-pill-btn.civic-float-menu {
+    background: var(--mtw-police-gold, #C5A880) !important;
+    color: #0B1B36 !important;
+    border-color: var(--mtw-police-gold, #C5A880) !important;
+  }
+  .civic-float-menu .float-btn-menu-text {
+    display: inline !important;
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
+  }
+  .hero-editorial-section {
+    padding-top: calc(64px + env(safe-area-inset-top, 6px)) !important;
   }
 }
 
-@media (max-width: 420px) {
-  .civic-floating-bar {
-    top: calc(8px + var(--safe-top, 0px));
-  }
+@media (max-width: 480px) {
   .civic-floating-inner {
-    padding: 0 6px;
+    padding: 0 6px !important;
   }
   .civic-float-brand {
-    height: 48px;
-    padding: 3px 8px 3px 6px;
-    gap: 6px;
-    max-width: 140px;
+    gap: 5px !important;
   }
   .civic-float-seal-img {
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important;
   }
   .civic-brand-title {
-    font-size: 0.74rem;
-    letter-spacing: -0.01em;
+    font-size: 0.70rem !important;
+  }
+  .civic-brand-dept {
+    font-size: 0.48rem !important;
+    letter-spacing: 0.06em !important;
   }
   .civic-floating-capsule {
-    height: 48px;
-    padding: 2px;
-    gap: 3px;
+    gap: 2px !important;
+    padding: 2px !important;
   }
   .civic-float-pill-btn {
-    height: 44px;
-    padding: 0 8px;
+    height: 32px !important;
+    min-height: 32px !important;
+  }
+  .civic-float-dispatch {
+    padding: 0 5px !important;
+  }
+  .civic-float-dispatch .float-btn-phone {
+    font-size: 0.60rem !important;
+  }
+  .status-pip {
+    margin-right: 3px !important;
+    width: 5px !important;
+    height: 5px !important;
   }
   .civic-float-pill-btn.civic-float-911 {
-    padding: 0 8px;
-  }
-  .civic-float-pill-btn.civic-float-menu {
-    padding: 0 8px;
+    padding: 0 7px !important;
   }
   .civic-float-911 .float-btn-main {
-    font-size: 0.80rem;
+    font-size: 0.65rem !important;
+  }
+  .civic-float-pill-btn.civic-float-menu {
+    padding: 0 7px !important;
+  }
+  .civic-float-menu .float-btn-menu-text {
+    font-size: 0.63rem !important;
   }
 }
 
 @media (max-width: 360px) {
-  .civic-floating-bar .civic-floating-inner,
-  .container.civic-floating-inner {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+  .civic-floating-inner {
+    padding: 0 4px !important;
   }
   .civic-float-brand {
-    padding: 2px 6px !important;
-    gap: 5px !important;
-    max-width: 125px;
-    height: 44px !important;
+    gap: 4px !important;
   }
   .civic-float-seal-img {
     width: 26px !important;
     height: 26px !important;
   }
   .civic-brand-title {
-    font-size: 0.68rem !important;
+    font-size: 0.65rem !important;
   }
-  .civic-floating-capsule {
-    height: 48px !important;
-    gap: 3px !important;
-    padding: 2px !important;
+  .civic-brand-dept {
+    font-size: 0.44rem !important;
+    letter-spacing: 0.05em !important;
   }
   .civic-float-pill-btn {
-    height: 44px !important;
+    height: 30px !important;
+    min-height: 30px !important;
   }
-  .civic-float-menu .float-btn-menu-text {
-    display: none !important;
+  .civic-float-dispatch {
+    padding: 0 4px !important;
   }
-  .civic-float-menu {
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    padding: 0 !important;
-    justify-content: center !important;
+  .civic-float-dispatch .float-btn-phone {
+    font-size: 0.56rem !important;
   }
-  .civic-float-911 {
-    padding: 0 8px !important;
-    font-size: 0.76rem !important;
+  .civic-float-pill-btn.civic-float-911 {
+    padding: 0 5px !important;
   }
   .civic-float-911 .float-btn-main {
-    font-size: 0.76rem !important;
+    font-size: 0.60rem !important;
+  }
+  .civic-float-pill-btn.civic-float-menu {
+    padding: 0 5px !important;
+  }
+  .civic-float-menu .float-btn-menu-text {
+    font-size: 0.58rem !important;
   }
 }
 
@@ -7950,138 +8058,7 @@ body:has(.site-header) main {
    - Tactile haptic feedback physics (:active scale transitions)
    ========================================================================== */
 
-/* ── Mobile Top Header Blur Shield ── */
-@media (max-width: 768px) {
-  .civic-floating-bar {
-    top: max(8px, env(safe-area-inset-top, 8px)) !important;
-  }
-  .civic-floating-bar::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: calc(76px + env(safe-area-inset-top, 0px));
-    background: linear-gradient(to bottom, rgba(248, 246, 240, 0.96) 0%, rgba(248, 246, 240, 0.88) 70%, rgba(248, 246, 240, 0) 100%);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    z-index: -1;
-    pointer-events: none;
-  }
-  [data-theme="dark"] .civic-floating-bar::before {
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.88) 70%, rgba(15, 23, 42, 0) 100%);
-  }
-  .civic-floating-capsule {
-    gap: 6px !important;
-  }
-}
 
-/* ── WPD Flutter-Grade Mobile Action Dock (Thumb Zone) ── */
-.wpd-mobile-dock {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  body#wpd-experience-root {
-    padding-bottom: calc(76px + env(safe-area-inset-bottom, 12px)) !important;
-  }
-
-  .wpd-mobile-dock {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1050;
-    padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 10px)) 12px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-top: 1px solid var(--mtw-border, #E2DDD2);
-    box-shadow: 0 -8px 24px rgba(11, 27, 54, 0.08);
-    gap: 8px;
-  }
-
-  [data-theme="dark"] .wpd-mobile-dock {
-    background: rgba(15, 23, 42, 0.95);
-    border-top-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
-  }
-
-  .wpd-dock-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    height: 50px;
-    border-radius: 12px;
-    text-decoration: none !important;
-    color: var(--text-secondary);
-    font-family: var(--font-body);
-    font-size: 0.70rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    border: 1px solid transparent;
-    background: transparent;
-    cursor: pointer;
-    padding: 4px 6px;
-    transition: all 0.15s cubic-bezier(0.2, 0, 0, 1);
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .wpd-dock-item:active {
-    transform: scale(0.94);
-    background: rgba(0, 0, 0, 0.05);
-  }
-
-  .wpd-dock-icon {
-    font-size: 1.15rem;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .wpd-dock-label {
-    line-height: 1.1;
-    white-space: nowrap;
-  }
-
-  .wpd-dock-item.wpd-dock-911 {
-    flex: 1.25;
-    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
-    color: #FFFFFF !important;
-    border: 1px solid #EF4444;
-    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
-    font-weight: 800;
-    letter-spacing: 0.04em;
-  }
-
-  .wpd-dock-item.wpd-dock-911:active {
-    background: linear-gradient(135deg, #B91C1C 0%, #991B1B 100%);
-    transform: scale(0.95);
-    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
-  }
-
-  .wpd-dock-911 .wpd-dock-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 0 8px #FFFFFF;
-    animation: dockBeacon 1.6s ease-in-out infinite;
-  }
-
-  @keyframes dockBeacon {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(0.75); }
-  }
-}
 
 /* ── Mobile Bottom Sheet Modal Affordances ── */
 .sheet-grabber {
@@ -8122,27 +8099,44 @@ body:has(.site-header) main {
   }
 
   .drawer-close-btn {
-    width: 38px !important;
-    height: 38px !important;
-    padding: 0 !important;
-    border-radius: 50% !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    min-width: 64px !important;
+    width: auto !important;
+    padding: 0 14px !important;
+    border-radius: 9999px !important;
+    font-family: var(--font-mono, monospace) !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    background: var(--bg-surface-subtle) !important;
+    border: 1px solid var(--border-medium) !important;
+    color: var(--text-secondary) !important;
+    cursor: pointer !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
-    background: var(--bg-surface-subtle) !important;
-    border: 1px solid var(--border-subtle) !important;
-    color: var(--text-secondary) !important;
-    cursor: pointer !important;
     line-height: 1 !important;
     box-sizing: border-box;
     transition: all 0.15s ease;
   }
 
+  .drawer-close-btn:hover {
+    background: var(--mtw-navy, #0B1B36) !important;
+    color: #FFFFFF !important;
+    border-color: var(--mtw-navy, #0B1B36) !important;
+  }
+
   .drawer-close-btn:active {
-    transform: scale(0.92);
-    background: var(--border-subtle) !important;
+    transform: scale(0.95);
+    background: var(--border-medium) !important;
+  }
+
+  [data-theme="dark"] .drawer-close-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #F8FAFC !important;
   }
 
   .action-drawer-body {
@@ -8360,7 +8354,6 @@ a.btn-pill,
 a.btn-editorial-primary,
 a.btn-editorial-secondary,
 .civic-service-card-feature,
-.wpd-dock-item,
 .map-toggle-btn,
 .legend-chip {
   transition: transform 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
@@ -8371,7 +8364,6 @@ a.btn-pill:active,
 a.btn-editorial-primary:active,
 a.btn-editorial-secondary:active,
 .civic-service-card-feature:active,
-.wpd-dock-item:active,
 .map-toggle-btn:active,
 .legend-chip:active {
   transform: scale(0.96) !important;
@@ -8392,30 +8384,7 @@ img.civic-editorial-img,
   outline: 1px solid oklch(1 0 0 / 0.1);
 }
 
-/* 3. Top Command Bar Mobile Froced Glass Blur Shield */
-.civic-floating-bar-shield {
-  display: none;
-}
-@media (max-width: 768px) {
-  .civic-floating-bar-shield {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: calc(68px + env(safe-area-inset-top, 0px));
-    background: rgba(250, 248, 245, 0.90);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(226, 221, 210, 0.7);
-    z-index: 1040;
-    pointer-events: none;
-  }
-  [data-theme="dark"] .civic-floating-bar-shield {
-    background: rgba(11, 27, 54, 0.90);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-}
+
 
 /* 4. Resident Services Search & Horizontal Filter Scroll */
 .wpd-search-box {
@@ -8524,17 +8493,7 @@ img.civic-editorial-img,
   [data-theme="dark"] .action-drawer {
     background: #0E1A2E !important;
   }
-  .drawer-close-btn {
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
-    border-radius: 50% !important;
-    font-size: 1.15rem !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
+
   .action-drawer-footer {
     display: flex !important;
     gap: 12px !important;
