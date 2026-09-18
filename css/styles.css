@@ -6346,8 +6346,8 @@ body:has(.site-header) main {
     box-shadow: none !important;
   }
   .civic-float-seal-img {
-    width: 32px !important;
-    height: 32px !important;
+    width: 36px !important;
+    height: 36px !important;
     border-radius: 50% !important;
     display: block !important;
     flex-shrink: 0 !important;
@@ -6359,18 +6359,18 @@ body:has(.site-header) main {
     line-height: 1.1 !important;
   }
   .civic-brand-title {
-    font-size: 0.72rem !important;
+    font-size: 0.78rem !important;
     font-weight: 800 !important;
     color: var(--mtw-navy, #0B1B36) !important;
     white-space: nowrap !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: -0.015em !important;
   }
   [data-theme="dark"] .civic-brand-title {
     color: #F8FAFC !important;
   }
   .civic-brand-dept {
     display: block !important;
-    font-size: 0.50rem !important;
+    font-size: 0.52rem !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
@@ -6384,7 +6384,7 @@ body:has(.site-header) main {
     display: inline-flex !important;
     align-items: center !important;
     gap: 3px !important;
-    padding: 2px 3px !important;
+    padding: 3px !important;
     background: rgba(11, 27, 54, 0.04) !important;
     border-radius: 9999px !important;
     border: 1px solid rgba(11, 27, 54, 0.08) !important;
@@ -6397,15 +6397,15 @@ body:has(.site-header) main {
     border-color: rgba(255, 255, 255, 0.12) !important;
   }
   .civic-float-pill-btn {
-    height: 34px !important;
-    min-height: 34px !important;
+    height: 38px !important;
+    min-height: 38px !important;
     border-radius: 9999px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
     cursor: pointer !important;
-    transition: all 0.15s ease !important;
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.18s ease !important;
     box-sizing: border-box !important;
   }
   .civic-float-dispatch {
@@ -6413,7 +6413,7 @@ body:has(.site-header) main {
     background: #FFFFFF !important;
     color: var(--mtw-navy, #0B1B36) !important;
     border: 1px solid rgba(11, 27, 54, 0.08) !important;
-    padding: 0 6px !important;
+    padding: 0 7px !important;
   }
   [data-theme="dark"] .civic-float-dispatch {
     background: rgba(255, 255, 255, 0.10) !important;
@@ -6421,9 +6421,9 @@ body:has(.site-header) main {
     color: #F8FAFC !important;
   }
   .civic-float-dispatch .float-btn-phone {
-    font-size: 0.64rem !important;
+    font-size: 0.68rem !important;
     font-weight: 700 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: -0.015em !important;
   }
   .status-pip {
     margin-right: 4px !important;
@@ -6435,12 +6435,12 @@ body:has(.site-header) main {
     background: linear-gradient(135deg, #D31245 0%, #9B0028 100%) !important;
     color: #FFFFFF !important;
     border: 1px solid #D31245 !important;
-    padding: 0 8px !important;
+    padding: 0 9px !important;
     gap: 4px !important;
     box-shadow: 0 2px 8px rgba(211, 18, 69, 0.35) !important;
   }
   .civic-float-911 .float-btn-main {
-    font-size: 0.68rem !important;
+    font-size: 0.72rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.04em !important;
   }
@@ -6453,7 +6453,7 @@ body:has(.site-header) main {
     background: var(--mtw-navy, #0B1B36) !important;
     color: #FFFFFF !important;
     border: 1px solid var(--mtw-navy, #0B1B36) !important;
-    padding: 0 8px !important;
+    padding: 0 9px !important;
   }
   [data-theme="dark"] .civic-float-pill-btn.civic-float-menu {
     background: var(--mtw-police-gold, #C5A880) !important;
@@ -6462,31 +6462,35 @@ body:has(.site-header) main {
   }
   .civic-float-menu .float-btn-menu-text {
     display: inline !important;
-    font-size: 0.65rem !important;
+    font-size: 0.70rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.06em !important;
   }
   .hero-editorial-section {
-    padding-top: calc(64px + env(safe-area-inset-top, 6px)) !important;
+    padding-top: calc(70px + env(safe-area-inset-top, 6px)) !important;
   }
 }
 
 @media (max-width: 480px) {
+  .civic-floating-bar {
+    padding: calc(6px + env(safe-area-inset-top, 0px)) 5px 6px 5px !important;
+  }
   .civic-floating-inner {
-    padding: 0 6px !important;
+    padding: 0 2px !important;
   }
   .civic-float-brand {
     gap: 5px !important;
   }
   .civic-float-seal-img {
-    width: 30px !important;
-    height: 30px !important;
+    width: 35px !important;
+    height: 35px !important;
   }
   .civic-brand-title {
-    font-size: 0.70rem !important;
+    font-size: 0.76rem !important;
+    letter-spacing: -0.02em !important;
   }
   .civic-brand-dept {
-    font-size: 0.48rem !important;
+    font-size: 0.50rem !important;
     letter-spacing: 0.06em !important;
   }
   .civic-floating-capsule {
@@ -6494,14 +6498,69 @@ body:has(.site-header) main {
     padding: 2px !important;
   }
   .civic-float-pill-btn {
-    height: 32px !important;
-    min-height: 32px !important;
+    height: 38px !important;
+    min-height: 38px !important;
   }
   .civic-float-dispatch {
     padding: 0 5px !important;
   }
   .civic-float-dispatch .float-btn-phone {
-    font-size: 0.60rem !important;
+    font-size: 0.65rem !important;
+    letter-spacing: -0.025em !important;
+  }
+  .civic-float-pill-btn.civic-float-911 {
+    padding: 0 7px !important;
+    gap: 3px !important;
+  }
+  .civic-float-911 .float-btn-main {
+    font-size: 0.70rem !important;
+  }
+  .civic-float-pill-btn.civic-float-menu {
+    padding: 0 7px !important;
+  }
+  .civic-float-menu .float-btn-menu-text {
+    font-size: 0.68rem !important;
+  }
+  .hero-editorial-section {
+    padding-top: calc(68px + env(safe-area-inset-top, 6px)) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .civic-floating-bar {
+    padding: calc(5px + env(safe-area-inset-top, 0px)) 4px 5px 4px !important;
+  }
+  .civic-floating-inner {
+    padding: 0 1px !important;
+    gap: 3px !important;
+  }
+  .civic-float-brand {
+    gap: 5px !important;
+  }
+  .civic-float-seal-img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .civic-brand-title {
+    font-size: 0.72rem !important;
+  }
+  .civic-brand-dept {
+    font-size: 0.48rem !important;
+  }
+  .civic-floating-capsule {
+    padding: 2px !important;
+    gap: 2px !important;
+  }
+  .civic-float-pill-btn {
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+  .civic-float-dispatch {
+    padding: 0 4px !important;
+  }
+  .civic-float-dispatch .float-btn-phone {
+    font-size: 0.61rem !important;
+    letter-spacing: -0.03em !important;
   }
   .status-pip {
     margin-right: 3px !important;
@@ -6509,58 +6568,56 @@ body:has(.site-header) main {
     height: 5px !important;
   }
   .civic-float-pill-btn.civic-float-911 {
-    padding: 0 7px !important;
+    padding: 0 6px !important;
+    gap: 3px !important;
   }
   .civic-float-911 .float-btn-main {
-    font-size: 0.65rem !important;
+    font-size: 0.67rem !important;
   }
   .civic-float-pill-btn.civic-float-menu {
-    padding: 0 7px !important;
+    padding: 0 6px !important;
   }
   .civic-float-menu .float-btn-menu-text {
-    font-size: 0.63rem !important;
+    font-size: 0.65rem !important;
+  }
+  .hero-editorial-section {
+    padding-top: calc(66px + env(safe-area-inset-top, 6px)) !important;
   }
 }
 
-@media (max-width: 360px) {
-  .civic-floating-inner {
-    padding: 0 4px !important;
-  }
-  .civic-float-brand {
-    gap: 4px !important;
-  }
+@media (max-width: 350px) {
   .civic-float-seal-img {
-    width: 26px !important;
-    height: 26px !important;
+    width: 28px !important;
+    height: 28px !important;
   }
   .civic-brand-title {
-    font-size: 0.65rem !important;
+    font-size: 0.66rem !important;
   }
   .civic-brand-dept {
     font-size: 0.44rem !important;
     letter-spacing: 0.05em !important;
   }
   .civic-float-pill-btn {
-    height: 30px !important;
-    min-height: 30px !important;
+    height: 34px !important;
+    min-height: 34px !important;
   }
   .civic-float-dispatch {
     padding: 0 4px !important;
   }
   .civic-float-dispatch .float-btn-phone {
-    font-size: 0.56rem !important;
+    font-size: 0.58rem !important;
   }
   .civic-float-pill-btn.civic-float-911 {
     padding: 0 5px !important;
   }
   .civic-float-911 .float-btn-main {
-    font-size: 0.60rem !important;
+    font-size: 0.64rem !important;
   }
   .civic-float-pill-btn.civic-float-menu {
     padding: 0 5px !important;
   }
   .civic-float-menu .float-btn-menu-text {
-    font-size: 0.58rem !important;
+    font-size: 0.62rem !important;
   }
 }
 
