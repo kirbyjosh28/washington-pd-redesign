@@ -593,6 +593,16 @@
         </div>
       `);
 
+    L.marker([40.7070, -89.4293], { icon: createMapPin('CP', 'pin-civic') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Central Primary School (District 51)</div>
+        <div class="wpd-map-popup-desc">
+          1408 Eagle Ave. • District 3 North Sector<br>
+          Dedicated School Resource Officer (SRO) & D.A.R.E. Program
+        </div>
+      `);
+
     L.marker([40.7225, -89.4120], { icon: createMapPin('NP', 'pin-retail') })
       .addTo(map)
       .bindPopup(`

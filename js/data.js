@@ -72,7 +72,7 @@ const WPD_DATA = {
       coverage: "West Washington & Peoria Street Commercial Corridor",
       acres: "1,681.4 Acres",
       boundaries: "Peoria St (Business US-24) corridor West to municipal limits, including South Cummings Lane, Freedom Parkway retail hub, and western neighborhoods.",
-      landmarks: ["Peoria Street Commercial Artery (Business 24)", "Freedom Parkway & Retail Center", "Washington Middle School & Central Primary", "South Cummings Lane Corridor"],
+      landmarks: ["Peoria Street Commercial Artery (Business 24)", "Freedom Parkway & Retail Center", "Washington Middle School (District 52)", "South Cummings Lane Corridor"],
       sectorCar: "Sector Car 102",
       supervisor: "West Sector Sergeant",
       priority: "Peoria Street commercial traffic safety, school corridors, retail corridor checks, western residential neighborhood patrols"
@@ -84,7 +84,7 @@ const WPD_DATA = {
       coverage: "Five Points & Route 24 Bypass Corridor",
       acres: "1,476.7 Acres",
       boundaries: "Northern residential subdivisions and commercial centers along the US Route 24 Bypass, Cruger Road, Dallas Road, and Five Points Washington.",
-      landmarks: ["Five Points Washington Community Center", "US Route 24 Bypass Commercial Corridor", "West Cruger Road Corridor", "Dallas Road Residential Corridor", "Northpoint Commercial District"],
+      landmarks: ["Central Primary School (District 51 / Eagle Ave)", "Five Points Washington Community Center", "US Route 24 Bypass Commercial Corridor", "West Cruger Road Corridor", "Dallas Road Residential Corridor"],
       sectorCar: "Sector Car 103",
       supervisor: "North Sector Sergeant",
       priority: "Bypass traffic safety, Five Points community presence, northern subdivision patrols, proactive business deterrence"
@@ -116,6 +116,7 @@ const WPD_DATA = {
     { name: "Freedom Pkwy", district: 2, area: "Freedom Pkwy Commercial" },
     { name: "Centennial Dr", district: 2, area: "Middle School / West Artery" },
     { name: "School St", district: 2, area: "West Residential / School" },
+    { name: "Eagle Ave", district: 3, area: "Central Primary School Corridor" },
     { name: "North Wilmor Rd", district: 3, area: "Five Points / North Wilmor" },
     { name: "Cruger Rd", district: 3, area: "North Cruger Bypass Corridor" },
     { name: "Dallas Rd", district: 3, area: "North Residential Corridor" },
