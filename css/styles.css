@@ -9440,6 +9440,659 @@ img.civic-editorial-img,
   }
 }
 
+/* ==========================================================================
+   POLICE NAVY & SOVEREIGN GOLD DARK THEME SYSTEM
+   User Requirement: "specifically Navy with gold text throughout the whole website"
+   ========================================================================== */
 
+/* ── Floating Capsule Theme Toggle Pill ── */
+.civic-float-pill-btn.civic-float-theme {
+  background: rgba(11, 27, 54, 0.05);
+  color: var(--mtw-police-navy, #0B1B36);
+  border-color: rgba(11, 27, 54, 0.10);
+  padding: 0 16px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
 
+.civic-float-pill-btn.civic-float-theme:hover {
+  background: rgba(11, 27, 54, 0.10);
+  border-color: var(--mtw-police-gold, #C5A880);
+}
 
+[data-theme="dark"] .civic-float-pill-btn.civic-float-theme {
+  background: #132442 !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.35) !important;
+}
+
+[data-theme="dark"] .civic-float-pill-btn.civic-float-theme:hover {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+}
+
+.civic-float-theme .float-btn-theme-text {
+  font-family: var(--font-title, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Mobile Header Capsule Scaling for Theme Toggle */
+@media (max-width: 640px) {
+  .civic-float-pill-btn.civic-float-theme {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .civic-float-pill-btn.civic-float-theme {
+    display: inline-flex !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 8px !important;
+    font-size: 0.68rem !important;
+  }
+  .civic-float-theme .float-btn-theme-text {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.04em !important;
+  }
+}
+
+/* ── Universal Page Foundation & Global Elements ── */
+[data-theme="dark"] body,
+[data-theme="dark"] #wpd-experience-root {
+  background-color: #08111F !important;
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span:not(.float-btn-911-beacon):not(.badge-crimson):not(.status-pip-emerald):not(.dot-d1):not(.dot-d2):not(.dot-d3) {
+  color: inherit;
+}
+
+/* ── Header & Capsule HUD ── */
+[data-theme="dark"] .civic-floating-bar {
+  background: transparent;
+}
+
+[data-theme="dark"] .civic-float-brand {
+  background: rgba(14, 30, 56, 0.94) !important;
+  border-color: rgba(245, 215, 127, 0.25) !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.60) !important;
+}
+
+[data-theme="dark"] .civic-brand-title {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-brand-dept {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .civic-floating-capsule {
+  background: rgba(14, 30, 56, 0.92) !important;
+  border-color: rgba(245, 215, 127, 0.25) !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.65) !important;
+}
+
+[data-theme="dark"] .civic-float-pill-btn.civic-float-dispatch {
+  background: #132442 !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+}
+
+[data-theme="dark"] .civic-float-pill-btn.civic-float-dispatch:hover {
+  background: #182B4D !important;
+  border-color: #F5D77F !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-float-pill-btn.civic-float-menu {
+  background: #132442 !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+}
+
+[data-theme="dark"] .civic-float-pill-btn.civic-float-menu:hover {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+}
+
+/* Mobile Navigation Bar Dark Mode */
+@media (max-width: 768px) {
+  [data-theme="dark"] .civic-floating-bar {
+    background: rgba(8, 17, 31, 0.96) !important;
+    border-bottom-color: rgba(245, 215, 127, 0.20) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.70) !important;
+  }
+  [data-theme="dark"] .civic-floating-capsule {
+    background: rgba(19, 36, 66, 0.60) !important;
+    border-color: rgba(245, 215, 127, 0.20) !important;
+  }
+}
+
+/* ── Editorial Hero Split Banner ── */
+[data-theme="dark"] .hero-editorial-section {
+  background: #08111F !important;
+  background-image: 
+    radial-gradient(circle at 18% 30%, rgba(245, 215, 127, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 82% 38%, rgba(14, 30, 56, 0.50) 0%, transparent 60%) !important;
+  border-bottom-color: rgba(245, 215, 127, 0.16) !important;
+}
+
+[data-theme="dark"] .hero-editorial-image-frame {
+  background: rgba(14, 30, 56, 0.75) !important;
+  border-color: rgba(245, 215, 127, 0.22) !important;
+  box-shadow: inset 0 1px 1px rgba(245, 215, 127, 0.15), 0 20px 48px -10px rgba(0, 0, 0, 0.65) !important;
+}
+
+[data-theme="dark"] .hero-editorial-image-badge {
+  background: rgba(8, 17, 31, 0.92) !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.28) !important;
+}
+
+[data-theme="dark"] .hero-editorial-eyebrow {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .hero-editorial-title {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .hero-editorial-lead {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .hero-editorial-meta-pill,
+[data-theme="dark"] .hero-editorial-meta-item {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.22) !important;
+  color: #F5D77F !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.40) !important;
+}
+
+[data-theme="dark"] .hero-editorial-meta-pill:hover,
+[data-theme="dark"] .hero-editorial-meta-item:hover {
+  border-color: #F5D77F !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-theme="dark"] .meta-pill-label {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .meta-pill-value {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .btn-editorial-primary:not(.btn-editorial-911) {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(245, 215, 127, 0.25) !important;
+}
+
+[data-theme="dark"] .btn-editorial-primary:not(.btn-editorial-911):hover {
+  background: #E5C158 !important;
+  color: #08111F !important;
+  border-color: #E5C158 !important;
+  box-shadow: 0 6px 20px rgba(245, 215, 127, 0.35) !important;
+}
+
+[data-theme="dark"] .btn-editorial-secondary {
+  background: #0E1E38 !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.35) !important;
+}
+
+[data-theme="dark"] .btn-editorial-secondary:hover {
+  background: #132442 !important;
+  border-color: #F5D77F !important;
+  color: #F5D77F !important;
+}
+
+/* ── Civic Telemetry & Briefing Bar ── */
+[data-theme="dark"] .civic-telemetry-bar {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-theme="dark"] .civic-telemetry-label {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .civic-telemetry-val {
+  color: #F5D77F !important;
+}
+
+/* ── Civic Services & Bento Matrix ── */
+[data-theme="dark"] .services-search-input {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #F5D77F !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.40) !important;
+}
+
+[data-theme="dark"] .services-search-input::placeholder {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .services-search-input:focus {
+  border-color: #F5D77F !important;
+  box-shadow: 0 0 0 3px rgba(245, 215, 127, 0.25) !important;
+}
+
+[data-theme="dark"] .services-search-clear {
+  background: #132442 !important;
+  color: #E2CA90 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+}
+
+[data-theme="dark"] .services-search-clear:hover {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+}
+
+[data-theme="dark"] .services-filter-pill {
+  background: #0E1E38 !important;
+  color: #E2CA90 !important;
+  border-color: rgba(245, 215, 127, 0.25) !important;
+}
+
+[data-theme="dark"] .services-filter-pill:hover {
+  border-color: #F5D77F !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .services-filter-pill.active {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+  box-shadow: 0 4px 12px rgba(245, 215, 127, 0.30) !important;
+}
+
+[data-theme="dark"] .civic-service-card-feature,
+[data-theme="dark"] .civic-service-card,
+[data-theme="dark"] .civic-division-card,
+[data-theme="dark"] .civic-pathway-card {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.50) !important;
+}
+
+[data-theme="dark"] .civic-service-card-feature:hover,
+[data-theme="dark"] .civic-service-card:hover,
+[data-theme="dark"] .civic-division-card:hover,
+[data-theme="dark"] .civic-pathway-card:hover {
+  border-color: #F5D77F !important;
+  box-shadow: 0 16px 44px -4px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(245, 215, 127, 0.30) !important;
+}
+
+[data-theme="dark"] .civic-service-card-tag {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .civic-service-card-title {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-service-card-desc {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .feature-status-badge {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.25) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .feature-spec-item {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .civic-service-card-action {
+  background: #132442 !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+}
+
+[data-theme="dark"] .civic-service-card:hover .civic-service-card-action,
+[data-theme="dark"] .civic-service-card-feature:hover .civic-service-card-action {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+}
+
+[data-theme="dark"] .services-empty-state {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #E2CA90 !important;
+}
+
+/* ── GIS Scrollytelling & Leaflet Map ── */
+[data-theme="dark"] #real-district-leaflet-map {
+  background: #08111F !important;
+}
+
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(190deg) brightness(0.75) contrast(1.25) !important;
+}
+
+[data-theme="dark"] .district-map-card {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.60) !important;
+}
+
+[data-theme="dark"] .district-map-toolbar {
+  background: #132442 !important;
+  border-bottom-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .district-map-badge {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .district-map-scale {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .district-search-input {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .district-search-input:focus {
+  border-color: #F5D77F !important;
+  box-shadow: 0 0 0 3px rgba(245, 215, 127, 0.25) !important;
+}
+
+[data-theme="dark"] .district-map-legend {
+  background: #132442 !important;
+  border-top-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .legend-chip {
+  background: #0E1E38 !important;
+  color: #F5D77F !important;
+  border-color: rgba(245, 215, 127, 0.25) !important;
+}
+
+[data-theme="dark"] .legend-chip:hover {
+  border-color: #F5D77F !important;
+}
+
+[data-theme="dark"] .scrolly-step {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-theme="dark"] .scrolly-step.is-active,
+[data-theme="dark"] .scrolly-step:hover {
+  border-color: #F5D77F !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(245, 215, 127, 0.35) !important;
+}
+
+[data-theme="dark"] .prog-beat-title {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .prog-beat-hud {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .prog-copy {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .prog-spec-item {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .prog-spec-item strong {
+  color: #F5D77F !important;
+}
+
+/* ── Operations, Shifts & Fleet ── */
+[data-theme="dark"] .civic-panel-card {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.50) !important;
+}
+
+[data-theme="dark"] .civic-panel-card h3 {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-panel-card p {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .civic-watch-item {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.22) !important;
+}
+
+[data-theme="dark"] .civic-watch-item strong {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-watch-item span {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .civic-recruitment-box {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-theme="dark"] .civic-metric-card {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .civic-metric-label {
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .civic-metric-val {
+  color: #F5D77F !important;
+}
+
+/* ── Leadership & Chief Jeff Stevens ── */
+[data-theme="dark"] .wpd-leader-card-bezel {
+  background: rgba(14, 30, 56, 0.70) !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .wpd-leader-card-inner {
+  background: #0E1E38 !important;
+}
+
+[data-theme="dark"] .wpd-leader-badge {
+  background: rgba(8, 17, 31, 0.92) !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .wpd-leader-name {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .wpd-leader-bio {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .wpd-leader-quote {
+  background: #132442 !important;
+  border-left-color: #F5D77F !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .wpd-oversight-card {
+  background: #0E1E38 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .wpd-oversight-card h3 {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .wpd-oversight-card p {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .wpd-oversight-meta {
+  color: #B89E6C !important;
+}
+
+/* ── Interactive Modal Drawers ── */
+[data-theme="dark"] .action-drawer-backdrop {
+  background: rgba(4, 8, 16, 0.85) !important;
+}
+
+[data-theme="dark"] .action-drawer {
+  background: #0E1E38 !important;
+  border-left: 1px solid rgba(245, 215, 127, 0.25) !important;
+  color: #E2CA90 !important;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.80) !important;
+}
+
+[data-theme="dark"] .action-drawer-header {
+  background: #0E1E38 !important;
+  border-bottom-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .action-drawer-header h3 {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .drawer-close-btn {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .drawer-close-btn:hover {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+}
+
+[data-theme="dark"] .action-drawer-footer {
+  background: #0E1E38 !important;
+  border-top-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .drawer-form-label {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .drawer-form-input,
+[data-theme="dark"] .drawer-form-select,
+[data-theme="dark"] .drawer-form-textarea,
+[data-theme="dark"] .action-drawer input,
+[data-theme="dark"] .action-drawer select,
+[data-theme="dark"] .action-drawer textarea {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .drawer-form-input:focus,
+[data-theme="dark"] .drawer-form-select:focus,
+[data-theme="dark"] .drawer-form-textarea:focus,
+[data-theme="dark"] .action-drawer input:focus,
+[data-theme="dark"] .action-drawer select:focus,
+[data-theme="dark"] .action-drawer textarea:focus {
+  border-color: #F5D77F !important;
+  box-shadow: 0 0 0 3px rgba(245, 215, 127, 0.25) !important;
+}
+
+[data-theme="dark"] .civic-nav-link {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.20) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-nav-link:hover {
+  background: rgba(245, 215, 127, 0.15) !important;
+  border-color: #F5D77F !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-nav-badge {
+  background: #F5D77F !important;
+  color: #08111F !important;
+}
+
+[data-theme="dark"] .submission-summary-box {
+  background: #132442 !important;
+  border-color: rgba(245, 215, 127, 0.30) !important;
+  color: #E2CA90 !important;
+}
+
+/* ── Civic Footer ── */
+[data-theme="dark"] .civic-footer {
+  background: #08111F !important;
+  border-top-color: rgba(245, 215, 127, 0.20) !important;
+}
+
+[data-theme="dark"] .civic-footer-telemetry {
+  border-bottom-color: rgba(245, 215, 127, 0.16) !important;
+}
+
+[data-theme="dark"] .civic-footer-col-title {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-footer-link {
+  color: #E2CA90 !important;
+}
+
+[data-theme="dark"] .civic-footer-link:hover {
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-footer-bottom {
+  border-top-color: rgba(245, 215, 127, 0.16) !important;
+  color: #B89E6C !important;
+}
+
+[data-theme="dark"] .civic-btn-top {
+  background: #132442 !important;
+  border: 1px solid rgba(245, 215, 127, 0.30) !important;
+  color: #F5D77F !important;
+}
+
+[data-theme="dark"] .civic-btn-top:hover {
+  background: #F5D77F !important;
+  color: #08111F !important;
+  border-color: #F5D77F !important;
+}
