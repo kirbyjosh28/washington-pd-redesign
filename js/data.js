@@ -72,7 +72,7 @@ const WPD_DATA = {
       ],
       sectorCar: "Sector Car 101",
       supervisor: "East & Core Sector Sergeant",
-      priority: "Downtown Square foot patrols, school zone transit safety, Devonshire community presence, East Route 24 coordination"
+      priority: "Downtown commercial district, school zone transit safety, Devonshire neighborhood coverage, East Route 24 coordination"
     },
     2: {
       id: 2,

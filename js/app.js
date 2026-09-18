@@ -570,7 +570,7 @@
         <div class="wpd-map-popup-title">Historic Washington Square</div>
         <div class="wpd-map-popup-desc">
           District 1 Sector Heart • Central Fountain & Commercial Core<br>
-          Daily Foot Patrols & Walk-and-Talk Community Policing
+          Historic Downtown Commercial District & Community Center
         </div>
       `);
 
@@ -590,7 +590,7 @@
         <div class="wpd-map-popup-title">Devonshire Estates</div>
         <div class="wpd-map-popup-desc">
           Devonshire Road Corridor • District 1 Sector<br>
-          Proactive Neighborhood Patrols & Community Presence
+          Devonshire Neighborhood Area & Residential Sector
         </div>
       `);
 
@@ -610,7 +610,7 @@
         <div class="wpd-map-popup-title">Lincoln Grade School</div>
         <div class="wpd-map-popup-desc">
           375 W. Peoria St. • District 1 Sector<br>
-          School Zone Crossing Safety & Recreational Trail Beat
+          School Zone Safety & Recreational Trail Connection
         </div>
       `);
 
@@ -631,7 +631,7 @@
         <div class="wpd-map-popup-title">Freedom Parkway Commercial Center</div>
         <div class="wpd-map-popup-desc">
           1980 Freedom Pkwy • District 2 West Sector Hub<br>
-          Walmart Supercenter & Retail Loss Prevention Patrols
+          Walmart Supercenter & Retail Commercial Corridor
         </div>
       `);
 
@@ -641,7 +641,7 @@
         <div class="wpd-map-popup-title">Meadow Valley Park</div>
         <div class="wpd-map-popup-desc">
           525 Ernest St. • District 2 West Sector<br>
-          Park District Patrols & Trail Safety Checks
+          Washington Park District Facility & Recreation Area
         </div>
       `);
 
