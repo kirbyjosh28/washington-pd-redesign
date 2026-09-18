@@ -8573,4 +8573,686 @@ img.civic-editorial-img,
   }
 }
 
+/* ==========================================================================
+   MOBILE-FIRST SCROLL OPTIMIZATION & LEADERSHIP RESPONSIVE ARCHITECTURE
+   ========================================================================== */
+
+/* ── 1. Leadership & Civilian Oversight Responsive Grid ── */
+.wpd-leadership-header {
+  text-align: left;
+  margin-bottom: var(--space-8);
+}
+
+.wpd-leadership-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  margin-top: 6px;
+}
+
+.wpd-leadership-lead {
+  max-width: 760px;
+}
+
+.wpd-leadership-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 28px;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+  align-items: stretch;
+}
+
+.wpd-leader-card-bezel {
+  padding: 8px;
+  height: 100%;
+}
+
+.wpd-leader-card-inner {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 18px;
+  height: 100%;
+}
+
+.wpd-leader-photo-frame {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wpd-leader-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 20%;
+  display: block;
+}
+
+.wpd-leader-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(11, 27, 54, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.wpd-leader-body {
+  padding: clamp(24px, 3.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.wpd-leader-name {
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.wpd-leader-bio {
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.wpd-leader-quote {
+  font-family: var(--font-editorial, 'Spectral', serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  border-left: 3px solid var(--mtw-police-gold, #C5A880);
+  padding: 12px 18px;
+  margin: 16px 0 20px;
+  background: var(--bg-surface-subtle);
+  border-radius: 0 8px 8px 0;
+}
+
+.wpd-leader-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.wpd-leader-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.wpd-oversight-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wpd-oversight-card {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wpd-oversight-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.wpd-oversight-action {
+  align-self: flex-start;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile Collapse for Leadership Section */
+@media (max-width: 992px) {
+  .wpd-leadership-header {
+    margin-bottom: var(--space-2) !important;
+  }
+
+  .wpd-leadership-title {
+    font-size: 1.55rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .wpd-leadership-lead {
+    font-size: 0.86rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .wpd-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .wpd-leader-card-bezel {
+    padding: 4px !important;
+  }
+
+  .wpd-leader-photo-frame {
+    height: 150px;
+  }
+
+  .wpd-leader-body {
+    padding: 14px 12px;
+  }
+
+  .wpd-leader-name {
+    font-size: 1.35rem;
+    margin-bottom: 4px;
+  }
+
+  .wpd-leader-bio {
+    font-size: 0.86rem;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+
+  .wpd-leader-quote {
+    font-size: 0.86rem;
+    line-height: 1.4;
+    padding: 6px 10px;
+    margin: 8px 0 10px;
+  }
+
+  .wpd-leader-actions {
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .wpd-leader-btn {
+    flex: 1;
+    min-height: 44px;
+    padding: 8px 8px;
+    font-size: 0.80rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .wpd-oversight-column {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 10px !important;
+    padding: 2px 2px 8px 2px !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .wpd-oversight-card {
+    flex: 0 0 88% !important;
+    max-width: 310px !important;
+    scroll-snap-align: start !important;
+    min-height: auto !important;
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .wpd-oversight-card .civic-service-card-title {
+    font-size: 1.10rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .wpd-oversight-card .civic-service-card-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .wpd-oversight-action {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.78rem;
+    padding: 8px 10px;
+  }
+}
+
+/* ── 2. Native Mobile Horizontal Swipe Tracks (flutter-expert & master-web-design) ── */
+@media (max-width: 768px) {
+  /* Hero Compact Layout on Mobile */
+  .hero-editorial-section {
+    padding-top: 72px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero-editorial-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .hero-editorial-actions a,
+  .hero-editorial-actions button {
+    min-height: 44px !important;
+    padding: 8px 8px !important;
+    font-size: 0.80rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Emergency Pathways Horizontal Swipe Track on Mobile */
+  .civic-pathway-section {
+    padding-top: var(--space-3) !important;
+    padding-bottom: var(--space-3) !important;
+  }
+
+  .civic-pathway-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding: 4px 2px 10px 2px !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .civic-pathway-card {
+    flex: 0 0 88% !important;
+    max-width: 320px !important;
+    scroll-snap-align: start !important;
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+    min-height: auto !important;
+  }
+
+  .civic-pathway-card h2.civic-card-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .civic-pathway-card p {
+    font-size: 0.84rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .civic-pathway-card ul {
+    display: none !important;
+  }
+
+  .civic-pathway-card a {
+    min-height: 44px !important;
+    font-size: 0.84rem !important;
+    padding: 8px 12px !important;
+  }
+
+  /* Services Grid 2-Column Responsive Bento */
+  .civic-services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: var(--space-3) !important;
+  }
+
+  .civic-service-card-feature {
+    grid-column: 1 / -1 !important;
+    min-height: auto !important;
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .civic-service-card-feature .feature-specs-list {
+    display: none !important;
+  }
+
+  .civic-service-card-feature .civic-service-card-title {
+    font-size: 1.25rem !important;
+  }
+
+  .civic-service-card {
+    min-height: auto !important;
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .civic-service-card-title {
+    font-size: 0.94rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .civic-service-card-tag {
+    font-size: 0.62rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .civic-service-card-desc {
+    margin-bottom: 8px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .civic-service-card-action {
+    font-size: 0.74rem !important;
+    margin-top: auto !important;
+    min-height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  /* Districts Scrolly Beats Horizontal Swipe Track */
+  .scrolly-beats-column {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding: 4px 2px 14px 2px !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .scrolly-step {
+    flex: 0 0 88% !important;
+    max-width: 320px !important;
+    scroll-snap-align: start !important;
+    min-height: auto !important;
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .scrolly-step .civic-card-title {
+    font-size: 1.05rem !important;
+  }
+
+  .scrolly-step p.prog-copy {
+    font-size: 0.80rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: var(--space-2) !important;
+  }
+
+  .scrolly-telemetry-hud {
+    gap: 4px !important;
+    margin-top: 8px !important;
+    padding: 6px 8px !important;
+  }
+
+  .hud-item .hud-label {
+    font-size: 0.62rem !important;
+  }
+
+  .hud-item .hud-val {
+    font-size: 0.76rem !important;
+  }
+
+  /* Community Stories Horizontal Swipe Track */
+  .civic-story-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 14px !important;
+    padding: 4px 2px 14px 2px !important;
+    margin-top: var(--space-3) !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .civic-story-card {
+    flex: 0 0 85% !important;
+    max-width: 310px !important;
+    scroll-snap-align: start !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 10px rgba(11, 27, 54, 0.06) !important;
+  }
+
+  .civic-story-card-img {
+    height: 150px !important;
+  }
+
+  .civic-story-card-body {
+    padding: 14px 12px !important;
+  }
+
+  .civic-story-card-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Community Outreach & Education Programs Horizontal Swipe Track */
+  .wpd-community-programs-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding: 4px 2px 14px 2px !important;
+    margin-top: var(--space-4) !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .wpd-community-programs-grid .civic-service-card {
+    flex: 0 0 85% !important;
+    max-width: 310px !important;
+    scroll-snap-align: start !important;
+    min-height: auto !important;
+    padding: 14px 12px !important;
+  }
+
+  /* Specialized Regional Divisions Horizontal Swipe Track */
+  .civic-divisions-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 14px !important;
+    padding: 4px 2px 14px 2px !important;
+    margin-top: var(--space-3) !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .civic-division-card {
+    flex: 0 0 85% !important;
+    max-width: 310px !important;
+    scroll-snap-align: start !important;
+    min-height: auto !important;
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .civic-division-card .civic-service-card-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Operations Shift & Standards Horizontal Swipe Track */
+  #operations .civic-ops-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 14px !important;
+    padding: 4px 2px 14px 2px !important;
+    margin-top: var(--space-3) !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  #operations .civic-panel-card {
+    flex: 0 0 88% !important;
+    max-width: 320px !important;
+    scroll-snap-align: start !important;
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .civic-watch-item {
+    padding: 8px 10px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Recruitment Horizontal Swipe Bento */
+  .wpd-recruitment-bento {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding: 4px 2px 14px 2px !important;
+    margin-top: var(--space-3) !important;
+    margin-bottom: var(--space-3) !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .wpd-bento-item {
+    flex: 0 0 78% !important;
+    max-width: 270px !important;
+    scroll-snap-align: start !important;
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .wpd-bento-item .civic-metric-val {
+    font-size: 1.20rem !important;
+    margin: 2px 0 !important;
+  }
+
+  .wpd-bento-item .civic-metric-label {
+    font-size: 0.65rem !important;
+  }
+
+  .wpd-bento-item > div:nth-child(3) {
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .wpd-bento-item > div:nth-child(4) {
+    margin-top: 8px !important;
+    padding-top: 6px !important;
+    font-size: 0.65rem !important;
+  }
+
+  .wpd-recruitment-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-top: var(--space-3) !important;
+  }
+
+  .wpd-recruitment-actions a {
+    min-height: 44px !important;
+    padding: 8px 8px !important;
+    font-size: 0.76rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  /* Section Padding Clamping: Eliminate dead vertical whitespace */
+  .page-section {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .page-section-hero {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2) !important;
+  }
+
+  /* Mobile Footer Compact Space-Saver */
+  .civic-footer {
+    padding: 24px 0 16px !important;
+    margin-top: var(--space-4) !important;
+  }
+
+  .civic-footer-telemetry {
+    padding-bottom: 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .civic-footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 10px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .civic-footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  .civic-footer-grid > div:first-child p {
+    font-size: 0.80rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .civic-footer-grid > div:first-child div[style*="padding: 14px"] {
+    padding: 8px 10px !important;
+    font-size: 0.74rem !important;
+  }
+
+  .civic-footer-col-title {
+    font-size: 0.88rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .civic-footer-links li {
+    margin-bottom: 2px !important;
+  }
+
+  .civic-footer-link {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .civic-footer-bottom {
+    padding-top: 10px !important;
+    font-size: 0.70rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .civic-services-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+
 
