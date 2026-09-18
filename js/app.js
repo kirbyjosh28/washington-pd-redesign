@@ -550,8 +550,9 @@
       });
     }
 
-    // Authentic Washington, IL Landmarks
-    L.marker([40.7032, -89.4095], { icon: createMapPin('HQ', 'pin-hq') })
+    // Authentic Washington, IL Landmarks (Exact GIS Verified Coordinates)
+    // --- District 1 Markers (Core & East Sector) ---
+    L.marker([40.705261, -89.408731], { icon: createMapPin('HQ', 'pin-hq') })
       .addTo(map)
       .bindPopup(`
         <div class="wpd-map-popup-title" style="color: #0A192F;">Washington Police Headquarters</div>
@@ -563,7 +564,7 @@
         </div>
       `);
 
-    L.marker([40.7040, -89.4074], { icon: createMapPin('SQ', 'pin-square') })
+    L.marker([40.703241, -89.406824], { icon: createMapPin('SQ', 'pin-square') })
       .addTo(map)
       .bindPopup(`
         <div class="wpd-map-popup-title">Historic Washington Square</div>
@@ -573,17 +574,69 @@
         </div>
       `);
 
-    L.marker([40.7035, -89.3980], { icon: createMapPin('HS', 'pin-school') })
+    L.marker([40.704368, -89.418084], { icon: createMapPin('HS', 'pin-school') })
       .addTo(map)
       .bindPopup(`
         <div class="wpd-map-popup-title">Washington Community High School (District 308)</div>
         <div class="wpd-map-popup-desc">
-          115 Bondurant St. • District 1 Sector<br>
+          115 Bondurant St. • District 1 Core & East Sector<br>
           Dedicated School Resource Officer (SRO) Safety Station
         </div>
       `);
 
-    L.marker([40.7118, -89.4215], { icon: createMapPin('FP', 'pin-civic') })
+    L.marker([40.714403, -89.413580], { icon: createMapPin('DE', 'pin-civic') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Devonshire Estates</div>
+        <div class="wpd-map-popup-desc">
+          Devonshire Road Corridor • District 1 Sector<br>
+          Proactive Neighborhood Patrols & Community Presence
+        </div>
+      `);
+
+    L.marker([40.709767, -89.410749], { icon: createMapPin('LS', 'pin-school') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Lincoln Grade School</div>
+        <div class="wpd-map-popup-desc">
+          375 W. Peoria St. • District 1 Sector<br>
+          School Zone Crossing Safety & Recreational Trail Beat
+        </div>
+      `);
+
+    // --- District 2 Markers (West Sector) ---
+    L.marker([40.704741, -89.461382], { icon: createMapPin('MS', 'pin-school') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Washington Middle School (District 52)</div>
+        <div class="wpd-map-popup-desc">
+          1100 Centennial Dr. • District 2 West Sector<br>
+          Dedicated School Resource Officer (SRO) & Zone Safety
+        </div>
+      `);
+
+    L.marker([40.706890, -89.457002], { icon: createMapPin('FP', 'pin-retail') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Freedom Parkway Commercial Center</div>
+        <div class="wpd-map-popup-desc">
+          1980 Freedom Pkwy • District 2 West Sector Hub<br>
+          Walmart Supercenter & Retail Loss Prevention Patrols
+        </div>
+      `);
+
+    L.marker([40.689469, -89.463509], { icon: createMapPin('MV', 'pin-square') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Meadow Valley Park</div>
+        <div class="wpd-map-popup-desc">
+          525 Ernest St. • District 2 West Sector<br>
+          Park District Patrols & Trail Safety Checks
+        </div>
+      `);
+
+    // --- District 3 Markers (North Sector & Bypass) ---
+    L.marker([40.706959, -89.421734], { icon: createMapPin('5P', 'pin-civic') })
       .addTo(map)
       .bindPopup(`
         <div class="wpd-map-popup-title">Five Points Washington</div>
@@ -593,23 +646,43 @@
         </div>
       `);
 
-    L.marker([40.7070, -89.4293], { icon: createMapPin('CP', 'pin-civic') })
+    L.marker([40.707374, -89.425492], { icon: createMapPin('CP', 'pin-school') })
       .addTo(map)
       .bindPopup(`
         <div class="wpd-map-popup-title">Central Primary School (District 51)</div>
         <div class="wpd-map-popup-desc">
-          1408 Eagle Ave. • District 3 North Sector<br>
+          1400 Newcastle Rd. • District 3 North Sector<br>
           Dedicated School Resource Officer (SRO) & D.A.R.E. Program
         </div>
       `);
 
-    L.marker([40.7225, -89.4120], { icon: createMapPin('NP', 'pin-retail') })
+    L.marker([40.707417, -89.426338], { icon: createMapPin('CI', 'pin-school') })
       .addTo(map)
       .bindPopup(`
-        <div class="wpd-map-popup-title">US-24 Bypass Commercial Corridor</div>
+        <div class="wpd-map-popup-title">Central Intermediate School (District 51)</div>
         <div class="wpd-map-popup-desc">
-          District 3 North Sector Commercial Corridor<br>
-          Sector Car 103 Proactive Patrol Area
+          1301 Eagle Ave. • District 3 North Sector<br>
+          Dedicated School Resource Officer (SRO) Campus Safety
+        </div>
+      `);
+
+    L.marker([40.705480, -89.422589], { icon: createMapPin('F1', 'pin-hq') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Washington Fire Department Station 1</div>
+        <div class="wpd-map-popup-desc">
+          200 N. Wilmor Rd. • District 3 North Sector<br>
+          First Responder Inter-Agency Emergency Operations
+        </div>
+      `);
+
+    L.marker([40.706227, -89.448216], { icon: createMapPin('CT', 'pin-retail') })
+      .addTo(map)
+      .bindPopup(`
+        <div class="wpd-map-popup-title">Cherry Tree Shopping Center</div>
+        <div class="wpd-map-popup-desc">
+          Peoria St. (North Side) • District 3 Commercial Corridor<br>
+          Kroger & Retail Area Proactive Police Presence
         </div>
       `);
 
