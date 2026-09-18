@@ -6413,7 +6413,7 @@ body:has(.site-header) main {
     background: #FFFFFF !important;
     color: var(--mtw-navy, #0B1B36) !important;
     border: 1px solid rgba(11, 27, 54, 0.08) !important;
-    padding: 0 7px !important;
+    padding: 0 9px !important;
   }
   [data-theme="dark"] .civic-float-dispatch {
     background: rgba(255, 255, 255, 0.10) !important;
@@ -6421,14 +6421,9 @@ body:has(.site-header) main {
     color: #F8FAFC !important;
   }
   .civic-float-dispatch .float-btn-phone {
-    font-size: 0.68rem !important;
+    font-size: 0.70rem !important;
     font-weight: 700 !important;
     letter-spacing: -0.015em !important;
-  }
-  .status-pip {
-    margin-right: 4px !important;
-    width: 6px !important;
-    height: 6px !important;
   }
   .civic-float-pill-btn.civic-float-911 {
     display: inline-flex !important;
@@ -6502,21 +6497,21 @@ body:has(.site-header) main {
     min-height: 38px !important;
   }
   .civic-float-dispatch {
-    padding: 0 5px !important;
+    padding: 0 7px !important;
   }
   .civic-float-dispatch .float-btn-phone {
-    font-size: 0.65rem !important;
-    letter-spacing: -0.025em !important;
+    font-size: 0.67rem !important;
+    letter-spacing: -0.02em !important;
   }
   .civic-float-pill-btn.civic-float-911 {
-    padding: 0 7px !important;
+    padding: 0 8px !important;
     gap: 3px !important;
   }
   .civic-float-911 .float-btn-main {
     font-size: 0.70rem !important;
   }
   .civic-float-pill-btn.civic-float-menu {
-    padding: 0 7px !important;
+    padding: 0 8px !important;
   }
   .civic-float-menu .float-btn-menu-text {
     font-size: 0.68rem !important;
@@ -6556,16 +6551,11 @@ body:has(.site-header) main {
     min-height: 36px !important;
   }
   .civic-float-dispatch {
-    padding: 0 4px !important;
+    padding: 0 6px !important;
   }
   .civic-float-dispatch .float-btn-phone {
-    font-size: 0.61rem !important;
-    letter-spacing: -0.03em !important;
-  }
-  .status-pip {
-    margin-right: 3px !important;
-    width: 5px !important;
-    height: 5px !important;
+    font-size: 0.63rem !important;
+    letter-spacing: -0.025em !important;
   }
   .civic-float-pill-btn.civic-float-911 {
     padding: 0 6px !important;
