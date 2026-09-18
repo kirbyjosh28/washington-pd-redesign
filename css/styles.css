@@ -7641,8 +7641,12 @@ body:has(.site-header) main {
   flex-direction: column;
 }
 
+.civic-panel-card .civic-service-card-tag {
+  color: var(--text-secondary);
+}
+
 .civic-watch-item {
-  background: var(--bg-surface-subtle);
+  background: var(--bg-surface, #ffffff);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: 16px 20px;
