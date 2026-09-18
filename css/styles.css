@@ -5197,6 +5197,10 @@ body:has(.site-header) main {
   z-index: 1;
 }
 
+#real-district-leaflet-map .leaflet-control-zoom {
+  display: none !important;
+}
+
 .district-map-legend {
   padding: 12px 18px;
   background: var(--bg-surface-subtle, #F7F5F0);

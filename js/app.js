@@ -463,7 +463,7 @@
       center: [40.7075, -89.4074],
       zoom: 13,
       scrollWheelZoom: false,
-      zoomControl: true,
+      zoomControl: false,
       preferCanvas: true,
       tap: false
     });
