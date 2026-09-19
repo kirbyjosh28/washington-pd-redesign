@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Patrol Districts &amp; GIS Map • City of Washington Police Department</title>
+  <meta name="description" content="Official City of Washington Police Department patrol district cartography, Tazewell County GIS sectors, assigned sector units, and neighborhood coverage." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css?v=20260918-multipage-v1" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Floating Command Header Capsule -->
+  <header class="site-header civic-floating-bar" role="banner">
+    <div class="container civic-floating-container">
+      <div class="civic-floating-capsule">
+        <a href="index.html" class="civic-float-brand" aria-label="Return to Washington Police Department Home" title="Washington Police Department Home">
+          <img src="assets/wpd_official_seal.png" alt="" class="civic-float-brand-seal" width="34" height="34" />
+          <span class="civic-float-brand-name">Washington Police</span>
+        </a>
+        <a href="tel:3094442313" class="civic-float-pill-btn civic-float-phone" title="24/7 Police Dispatch Line">
+          <span class="civic-float-phone-label">(309) 444-2313</span>
+        </a>
+        <a href="tel:911" class="civic-float-pill-btn civic-float-911" aria-label="Call 911 Emergency">
+          <span class="float-btn-911-beacon" aria-hidden="true"></span>
+          <span>DIAL 911</span>
+        </a>
+        <button type="button" class="civic-float-pill-btn civic-float-menu" data-open-drawer="drawer-nav-menu" aria-label="Open Department Navigation Menu" aria-controls="drawer-nav-menu">
+          <span class="civic-float-menu-text">MENU</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Background Canvas -->
+  <div id="wpd-experience-root">
+    
+    <div class="civic-navy-bg-canvas" aria-hidden="true">
+      <div class="silk-ambient-glow silk-glow-hero-navy"></div>
+      <div class="silk-ambient-glow silk-glow-hero-gold"></div>
+      <div class="silk-ambient-glow silk-glow-mid-navy"></div>
+      <div class="silk-ambient-glow silk-glow-ops-gold"></div>
+
+      <svg class="civic-silk-waves-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 3600" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="goldRimGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C5A880" stop-opacity="0.5" />
+            <stop offset="25%" stop-color="#F5E4B8" stop-opacity="0.95" />
+            <stop offset="45%" stop-color="#FFF9EC" stop-opacity="1" />
+            <stop offset="65%" stop-color="#D4AF37" stop-opacity="0.95" />
+            <stop offset="85%" stop-color="#E2C98A" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#9E7D4B" stop-opacity="0.4" />
+          </linearGradient>
+          <linearGradient id="silkWaveDistricts" x1="90%" y1="10%" x2="10%" y2="90%">
+            <stop offset="0%" stop-color="#0B1B36" stop-opacity="0.30" />
+            <stop offset="30%" stop-color="#16294A" stop-opacity="0.18" />
+            <stop offset="65%" stop-color="#E2EAF4" stop-opacity="0.06" />
+            <stop offset="100%" stop-color="#0B1B36" stop-opacity="0.22" />
+          </linearGradient>
+          <linearGradient id="platinumRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
+            <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="50%" stop-color="#FFFDF7" stop-opacity="1" />
+            <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.25" />
+          </linearGradient>
+        </defs>
+
+        <path d="M1650,1450 C1380,1620 1060,1480 780,1660 C480,1840 220,2180 -50,2280"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M1650,1450 C1380,1620 1060,1480 780,1660 C480,1840 220,2180 -50,2280"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
+        <path d="M-50,20 C280,180 620,420 920,340 C1220,260 1440,-20 1650,140 L1650,1450 C1380,1620 1060,1480 780,1660 C480,1840 220,2180 -50,2280 Z"
+              fill="url(#silkWaveDistricts)" />
+        <path d="M-50,20 C280,180 620,420 920,340 C1220,260 1440,-20 1650,140"
+              fill="none" stroke="#D4AF37" stroke-width="7" stroke-opacity="0.22" stroke-linecap="round" />
+        <path d="M-50,20 C280,180 620,420 920,340 C1220,260 1440,-20 1650,140"
+              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3" stroke-linecap="round" />
+        <path d="M-50,20 C280,180 620,420 920,340 C1220,260 1440,-20 1650,140"
+              fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.95" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="civic-breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="civic-breadcrumb-list">
+            <li class="civic-breadcrumb-item">
+              <a href="index.html" class="civic-breadcrumb-link">Home</a>
+            </li>
+            <li class="civic-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="civic-breadcrumb-item" aria-current="page">
+              <span class="civic-breadcrumb-current">Patrol Districts &amp; GIS Map</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Subpage Hero -->
+      <header class="subpage-hero-banner">
+        <div class="container">
+          <div class="subpage-hero-inner">
+            <div class="subpage-hero-eyebrow">GEOGRAPHIC SECTOR CARTOGRAPHY</div>
+            <h1 class="subpage-hero-title">
+              Patrol Districts &amp; Sector Coverage
+            </h1>
+            <p class="subpage-hero-lead">
+              The City of Washington is organized into three dedicated operational patrol sectors spanning 3,592 municipal acres. Explore assigned units, district boundaries, and key landmarks below.
+            </p>
+            <div class="subpage-hero-meta-row">
+              <div class="subpage-hero-meta-pill">
+                <strong>District 1:</strong> Historic Core &amp; East (434 Acres)
+              </div>
+              <div class="subpage-hero-meta-pill">
+                <strong>District 2:</strong> West Sector (1,681 Acres)
+              </div>
+              <div class="subpage-hero-meta-pill">
+                <strong>District 3:</strong> North Sector (1,477 Acres)
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Map Section -->
+      <section class="page-section" id="districts" aria-labelledby="districts-heading" style="padding-top: 0;">
+        <div class="container">
+          
+          <div class="double-bezel scrolly-wrapper spotlight-card" style="margin-top: 0; padding: 8px; overflow: visible;">
+            <div class="double-bezel-inner scrolly-wrapper-inner civic-map-card" style="margin-top: 0; border: none; border-radius: 18px; box-shadow: none; overflow: visible;">
+              
+              <div class="civic-map-toolbar">
+                <div>
+                  <div class="eyebrow" style="color: var(--mtw-police-gold, #8A6D3B); font-size: 0.72rem; letter-spacing: 0.1em;">OFFICIAL MUNICIPAL GIS DATA &amp; PATROL SECTORS</div>
+                  <h2 id="districts-heading" class="civic-section-title" style="font-size: 1.85rem; font-weight: 500; margin: 2px 0 6px 0;">
+                    Interactive GIS Tactical Sector Map
+                  </h2>
+                  <p class="prog-copy" style="max-width: 680px; margin: 0;">
+                    <strong class="prog-lead">24/7 dedicated sector patrol coverage:</strong> Explore each sector below to view street boundaries, assigned sector car units, school zones, and retail corridors.
+                  </p>
+                </div>
+              </div>
+
+              <div class="scrolly-container" style="padding: var(--space-6);">
+                
+                <!-- STICKY STAGE (LEFT COLUMN) -->
+                <div class="scrolly-stage-column">
+                  <div class="scrolly-sticky-stage district-map-card" style="box-shadow: none; border: 1px solid var(--border-subtle); border-radius: 16px;">
+                    <!-- Map Controls & Status -->
+                    <div class="district-map-toolbar">
+                      <div class="district-map-title-row">
+                        <span class="status-pip status-pip-blue" aria-hidden="true" id="cad-hud-pip"></span>
+                        <span class="district-map-badge" id="cad-hud-phase">DISTRICT 1 // CORE &amp; EAST SECTOR</span>
+                        <span class="district-map-scale mono-code" id="cad-hud-timer">434 ACRES</span>
+                      </div>
+                    </div>
+
+                    <!-- Leaflet Map Canvas -->
+                    <div id="real-district-leaflet-map" role="region" aria-label="Official interactive patrol district map of Washington, Illinois"></div>
+
+                    <!-- Real-Time CAD Telemetry HUD Display -->
+                    <div class="cad-hud-telemetry-container">
+                      <div class="cad-hud-telemetry-grid">
+                        <div>
+                          <div class="cad-hud-label">Active Sector</div>
+                          <strong id="cad-hud-district">District 1 (Core &amp; East)</strong>
+                        </div>
+                        <div>
+                          <div class="cad-hud-label">Assigned Unit</div>
+                          <strong id="cad-hud-unit">Sector Car 101</strong>
+                        </div>
+                        <div>
+                          <div class="cad-hud-label">Patrol Status</div>
+                          <strong id="cad-hud-status" style="color: #60A5FA;">SECTOR ACTIVE</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Quick Interactive Legend / Selector -->
+                    <div class="district-map-legend">
+                      <button type="button" class="legend-chip legend-chip-d1" data-district-jump="1">
+                        <span class="legend-dot dot-d1"></span>
+                        <span><strong>District 1 (Core &amp; East)</strong> • 434 Ac</span>
+                      </button>
+                      <button type="button" class="legend-chip legend-chip-d2" data-district-jump="2">
+                        <span class="legend-dot dot-d2"></span>
+                        <span><strong>District 2 (West)</strong> • 1,681 Ac</span>
+                      </button>
+                      <button type="button" class="legend-chip legend-chip-d3" data-district-jump="3">
+                        <span class="legend-dot dot-d3"></span>
+                        <span><strong>District 3 (North)</strong> • 1,477 Ac</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SCROLLING NARRATIVE BEATS (RIGHT COLUMN) -->
+                <div class="scrolly-beats-column">
+                  
+                  <!-- Beat 1: District 1 -->
+                  <article class="scrolly-step active" data-step="1" data-district="1" data-time="434 ACRES" data-phase="DISTRICT 1 // CORE &amp; EAST SECTOR" data-status="EAST ACTIVE" data-unit="Sector Car 101" data-distname="District 1 (Core &amp; East)">
+                    <div class="scrolly-step-pip">
+                      <span class="status-pip status-pip-blue"></span>
+                      <span>District 1 • <span class="scrolly-step-timer">Historic Core &amp; East (434 Acres)</span></span>
+                    </div>
+                    <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
+                      District 1: Historic Core &amp; East Sector Patrol
+                    </h3>
+                    <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-3);">
+                      <strong class="prog-lead">Downtown Historic Square, Devonshire &amp; North Main Campus:</strong> Encompasses Washington's historic Downtown Square, municipal complex, WPD Police Headquarters, Devonshire Estates, Washington Middle School (District 52 on North Main), Lincoln Grade School, and the Washington Community High School (District 308) campus. Covers downtown commercial properties, school traffic zones, and surrounding residential neighborhoods.
+                    </p>
+                    <ul class="feature-specs-list" style="margin: 10px 0 16px; gap: 6px;">
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Historic Downtown Square, City Hall &amp; WPD HQ (115 W Jefferson)</li>
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Devonshire Estates &amp; Devonshire Road Residential Corridor</li>
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Washington Middle School (District 52 on North Main) &amp; WCHS</li>
+                    </ul>
+                    <div class="scrolly-telemetry-hud">
+                      <div class="hud-item">
+                        <span class="hud-label">Sector Unit</span>
+                        <span class="hud-val">Sector Car 101</span>
+                      </div>
+                      <div class="hud-item">
+                        <span class="hud-label">Supervision</span>
+                        <span class="hud-val">Core &amp; East Sgt</span>
+                      </div>
+                      <div class="hud-item">
+                        <span class="hud-label">Municipal Area</span>
+                        <span class="hud-val tabular-nums">434 Acres</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- Beat 2: District 2 -->
+                  <article class="scrolly-step" data-step="2" data-district="2" data-time="1,681 ACRES" data-phase="DISTRICT 2 // WEST SECTOR" data-status="WEST ACTIVE" data-unit="Sector Car 102" data-distname="District 2 (West)">
+                    <div class="scrolly-step-pip">
+                      <span class="status-pip status-pip-emerald"></span>
+                      <span>District 2 • <span class="scrolly-step-timer">West Sector (1,681 Acres)</span></span>
+                    </div>
+                    <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
+                      District 2: West Sector &amp; Freedom Parkway Hub
+                    </h3>
+                    <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-3);">
+                      <strong class="prog-lead">Freedom Parkway Retail Hub &amp; Peoria Street Corridor:</strong> Encompasses western Washington from South Cummings Lane and Centennial Drive west to municipal boundaries, including the Freedom Parkway retail center (Walmart Supercenter), ALDI, and Meadow Valley Park. Focuses on retail loss deterrence, Peoria Street traffic calming, and western residential neighborhood presence.
+                    </p>
+                    <ul class="feature-specs-list" style="margin: 10px 0 16px; gap: 6px;">
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Freedom Parkway Retail Center &amp; Walmart Supercenter</li>
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">ALDI Commercial Corridor (1110 Peoria St / Bus 24)</li>
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Meadow Valley Park &amp; Western Residential Neighborhoods</li>
+                    </ul>
+                    <div class="scrolly-telemetry-hud">
+                      <div class="hud-item">
+                        <span class="hud-label">Sector Unit</span>
+                        <span class="hud-val">Sector Car 102</span>
+                      </div>
+                      <div class="hud-item">
+                        <span class="hud-label">Supervision</span>
+                        <span class="hud-val">West Sector Sgt</span>
+                      </div>
+                      <div class="hud-item">
+                        <span class="hud-label">Municipal Area</span>
+                        <span class="hud-val tabular-nums">1,681 Acres</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- Beat 3: District 3 -->
+                  <article class="scrolly-step" data-step="3" data-district="3" data-time="1,477 ACRES" data-phase="DISTRICT 3 // NORTH SECTOR" data-status="NORTH ACTIVE" data-unit="Sector Car 103" data-distname="District 3 (North)">
+                    <div class="scrolly-step-pip">
+                      <span class="status-pip status-pip-purple"></span>
+                      <span>District 3 • <span class="scrolly-step-timer">North Sector (1,477 Acres)</span></span>
+                    </div>
+                    <h3 class="civic-card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-2);">
+                      District 3: North Sector &amp; Route 24 Bypass
+                    </h3>
+                    <p class="prog-copy" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: var(--space-3);">
+                      <strong class="prog-lead">Five Points, Central School Campus &amp; Bypass Corridor:</strong> Encompasses northern Washington along the US Route 24 Bypass, Five Points Washington on North Wilmor, Central Primary School (1400 Newcastle Rd), Central Intermediate School (1301 Eagle Ave), Cherry Tree Shopping Center, and West Cruger Road. Operations prioritize school arrival safety, community center security, and highway corridor traffic management.
+                    </p>
+                    <ul class="feature-specs-list" style="margin: 10px 0 16px; gap: 6px;">
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Five Points Washington &amp; Fire Station 1 (N Wilmor Rd)</li>
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">Central Primary &amp; Central Intermediate Schools (District 51)</li>
+                      <li class="feature-spec-item" style="font-size: 0.74rem;">US Route 24 Bypass Corridor &amp; Cherry Tree Center</li>
+                    </ul>
+                    <div class="scrolly-telemetry-hud">
+                      <div class="hud-item">
+                        <span class="hud-label">Sector Unit</span>
+                        <span class="hud-val">Sector Car 103</span>
+                      </div>
+                      <div class="hud-item">
+                        <span class="hud-label">Supervision</span>
+                        <span class="hud-val">North Sector Sgt</span>
+                      </div>
+                      <div class="hud-item">
+                        <span class="hud-label">Municipal Area</span>
+                        <span class="hud-val tabular-nums">1,477 Acres</span>
+                      </div>
+                    </div>
+                  </article>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Navigation Drawer -->
+    <div class="action-drawer-backdrop" id="drawer-nav-menu" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="action-drawer" style="max-width: 520px;">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="civic-service-card-tag" style="margin-bottom: 2px;">DEPARTMENT DIRECTORY</span>
+            <h3 id="menu-drawer-title" style="font-family: var(--font-title); font-size: 1.35rem; font-weight: 700; margin: 4px 0 0; color: var(--text-primary);">
+              Washington Police Department
+            </h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <div style="margin-bottom: var(--space-6);">
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+              Department Navigation
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <a href="index.html" class="civic-nav-link" data-close-drawer>
+                <span>Home / Overview</span>
+              </a>
+              <a href="services.html" class="civic-nav-link" data-close-drawer>
+                <span>Resident Services &amp; Portals</span>
+              </a>
+              <a href="districts.html" class="civic-nav-link is-active" aria-current="page" data-close-drawer>
+                <span>Patrol Districts &amp; GIS Map</span>
+              </a>
+              <a href="community.html" class="civic-nav-link" data-close-drawer>
+                <span>Community Policing &amp; Academy</span>
+              </a>
+              <a href="teams.html" class="civic-nav-link" data-close-drawer>
+                <span>Specialized Divisions &amp; SWAT</span>
+              </a>
+              <a href="operations.html" class="civic-nav-link" data-close-drawer>
+                <span>Patrol Operations &amp; Shift Schedule</span>
+              </a>
+              <a href="recruitment.html" class="civic-nav-link" data-close-drawer>
+                <span>Careers &amp; Officer Recruitment</span>
+              </a>
+              <a href="leadership.html" class="civic-nav-link" data-close-drawer>
+                <span>Chief Stevens &amp; Leadership</span>
+              </a>
+              <a href="https://ciwashington.aaimtrack.com/jobs/" target="_blank" rel="noopener noreferrer" class="civic-nav-link" data-close-drawer>
+                <span>Join WPD / City Job Listings</span>
+                <span class="civic-nav-badge" aria-hidden="true">APPLY</span>
+              </a>
+              <a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-nav-link" data-close-drawer>
+                <span>City of Washington Official Portal</span>
+                <span class="civic-nav-badge" aria-hidden="true">PORTAL</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Common Civic Footer -->
+    <footer class="civic-footer" role="contentinfo">
+      <div class="container">
+        <div class="civic-footer-telemetry">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+            <div>
+              <div style="font-family: var(--font-body); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;">
+                WPD COMMUNICATIONS &amp; DISPATCH CENTER
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.74rem; color: #94A3B8;">
+                TAZEWELL COUNTY CONSOLIDATED 911 • CONTINUOUS 24/7/365 DISPATCH
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="padding: 8px 18px; font-size: 0.84rem;">
+              Emergency: Dial 911
+            </a>
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="padding: 8px 18px; font-size: 0.84rem; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3);">
+              24/7 Dispatch: (309) 444-2313
+            </a>
+          </div>
+        </div>
+
+        <div class="civic-footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+              <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Emblem" width="48" height="48" style="border-radius: 50%;" />
+              <div>
+                <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 700; color: #FFFFFF; line-height: 1.2;">
+                  Washington Police
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.70rem; color: var(--mtw-police-gold, #C5A880);">
+                  CITY OF WASHINGTON, IL • EST. 1825
+                </div>
+              </div>
+            </div>
+            <p style="font-family: var(--font-editorial, 'Spectral', serif); font-style: italic; font-size: 0.95rem; color: var(--mtw-police-gold, #C5A880); margin-bottom: 12px;">
+              “Serve with Honor, Protect with Purpose, Lead with Integrity.”
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px; font-size: 0.80rem; color: #CBD5E1; line-height: 1.6;">
+              <div><strong style="color: #FFFFFF;">Headquarters:</strong> 115 W. Jefferson St, Washington, IL 61571</div>
+              <div><strong style="color: #FFFFFF;">Records Window:</strong> Mon–Fri 8:00 AM – 4:30 PM</div>
+              <div><strong style="color: var(--accent-emerald, #10B981);">Patrol Operations:</strong> Continuous 24/7/365</div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Department Pages</h4>
+            <ul class="civic-footer-links">
+              <li><a href="index.html" class="civic-footer-link">Home Overview</a></li>
+              <li><a href="services.html" class="civic-footer-link">Resident Services &amp; Action Center</a></li>
+              <li><a href="districts.html" class="civic-footer-link">Patrol Districts &amp; GIS Map</a></li>
+              <li><a href="community.html" class="civic-footer-link">Community Programs &amp; Academy</a></li>
+              <li><a href="teams.html" class="civic-footer-link">Specialized Divisions &amp; SWAT</a></li>
+              <li><a href="operations.html" class="civic-footer-link">Patrol Operations &amp; Shift Schedule</a></li>
+              <li><a href="recruitment.html" class="civic-footer-link">Careers &amp; Officer Recruitment</a></li>
+              <li><a href="leadership.html" class="civic-footer-link">Department Leadership &amp; Ethics</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Patrol Operations</h4>
+            <ul class="civic-footer-links">
+              <li><a href="districts.html" class="civic-footer-link">District 1 • Historic Core &amp; East (434 Acres)</a></li>
+              <li><a href="districts.html" class="civic-footer-link">District 2 • West Sector (1,681 Acres)</a></li>
+              <li><a href="districts.html" class="civic-footer-link">District 3 • North Sector (1,477 Acres)</a></li>
+              <li><a href="operations.html" class="civic-footer-link">Patrol Operations &amp; Shift Schedule</a></li>
+              <li><a href="teams.html" class="civic-footer-link">CIERT Tactical Regional SWAT</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Civic Partners</h4>
+            <ul class="civic-footer-links">
+              <li><a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-footer-link">City of Washington Official Portal</a></li>
+              <li><a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Board of Police Commissioners</a></li>
+              <li><a href="https://www.tazewellcountysheriff.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Tazewell County Sheriff</a></li>
+              <li><a href="https://washingtonfd.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Washington Fire &amp; EMS</a></li>
+              <li><a href="https://isp.illinois.gov/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Illinois State Police (District 8)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="civic-footer-bottom">
+          <div>
+            © 2026 City of Washington, Illinois Police Department. 115 W. Jefferson St, Washington, IL 61571.
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <span>WCAG 2.2 AA Certified</span>
+            <span>•</span>
+            <span>Illinois FOIA (5 ILCS 140)</span>
+            <span>•</span>
+            <span>TC3 911 Dispatch Interfaced</span>
+            <button type="button" class="civic-btn-top" id="footer-back-to-top" aria-label="Scroll back to top">TOP</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/wpd-districts.js"></script>
+  <script src="js/app.js?v=20260918-multipage-v1"></script>
+  <script src="js/agentation-loader.js"></script>
+</body>
+</html>

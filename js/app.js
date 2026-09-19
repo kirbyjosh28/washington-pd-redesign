@@ -242,6 +242,7 @@
     const root = document.getElementById('wpd-experience-root');
     if (!root && !document.querySelector('.hero-editorial-section')) return;
 
+    initActiveNavLinks();
     initWatchTelemetry();
     initCoinTactile();
     initServicesFilter();
@@ -249,6 +250,21 @@
     initActionDrawers();
     initFooterActions();
     initCardCursorSpotlight();
+  }
+
+  function initActiveNavLinks() {
+    let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentFile === '' || currentFile === '/') currentFile = 'index.html';
+    document.querySelectorAll('.civic-nav-link').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href === currentFile || href.split('#')[0] === currentFile)) {
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('is-active');
+        link.removeAttribute('aria-current');
+      }
+    });
   }
 
   function initWatchTelemetry() {

@@ -6178,6 +6178,7 @@ body:has(.site-header) main {
   user-select: none;
   height: 68px;
   box-sizing: border-box;
+  pointer-events: auto;
 }
 
 .civic-float-brand:hover {
@@ -6260,6 +6261,7 @@ body:has(.site-header) main {
     0 24px 48px -12px rgba(11, 27, 54, 0.08);
   height: 68px;
   box-sizing: border-box;
+  pointer-events: auto;
 }
 
 [data-theme="dark"] .civic-floating-capsule {
@@ -9693,6 +9695,452 @@ img.civic-editorial-img,
   }
 }
 
+/* ==========================================================================
+   MULTI-PAGE ARCHITECTURAL SYSTEM (Better UI & High-End Visual Design)
+   ========================================================================== */
 
+/* ── 1. Floating Header Brand Pill ── */
+.civic-float-brand {
+  height: 56px;
+  padding: 0 16px 0 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: rgba(11, 27, 54, 0.04);
+  border: 1px solid rgba(11, 27, 54, 0.08);
+  color: var(--mtw-navy, #0B1B36);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+}
 
+.civic-float-brand:hover {
+  transform: translateY(-2px);
+  background: rgba(11, 27, 54, 0.08);
+  border-color: var(--mtw-police-gold, #C5A880);
+}
 
+.civic-float-brand:active {
+  transform: scale(0.96) !important;
+}
+
+.civic-float-brand-seal {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(11, 27, 54, 0.15));
+}
+
+.civic-float-brand-name {
+  font-family: var(--font-title, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--mtw-navy, #0B1B36);
+}
+
+@media (max-width: 640px) {
+  .civic-float-brand-name {
+    display: none;
+  }
+  .civic-float-brand {
+    padding: 0 10px;
+  }
+}
+
+/* ── 2. Breadcrumb Navigation ── */
+.civic-breadcrumb-nav {
+  padding: 24px 0 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.civic-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.civic-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.civic-breadcrumb-link {
+  color: var(--text-muted, #64748B);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.civic-breadcrumb-link:hover {
+  color: var(--mtw-navy, #0B1B36);
+}
+
+.civic-breadcrumb-separator {
+  color: var(--border-medium, #CBD5E1);
+  user-select: none;
+}
+
+.civic-breadcrumb-current {
+  color: var(--mtw-police-navy, #0B1B36);
+  font-weight: 800;
+}
+
+/* ── 3. Subpage Hero Banner ── */
+.subpage-hero-banner {
+  padding: 24px 0 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.subpage-hero-inner {
+  max-width: 920px;
+}
+
+.subpage-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #8A6D3B);
+  background: rgba(197, 168, 128, 0.14);
+  border: 1px solid rgba(197, 168, 128, 0.40);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.subpage-hero-title {
+  font-family: var(--font-title, serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--text-primary, #0B1B36);
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.subpage-hero-lead {
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--text-secondary, #334155);
+  margin: 0 0 24px;
+  max-width: 820px;
+}
+
+.subpage-hero-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.subpage-hero-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.10));
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(11, 27, 54, 0.04);
+  font-size: 0.84rem;
+  color: var(--text-secondary, #334155);
+}
+
+/* ── 4. Homepage Department Directory Bento Grid ── */
+.dept-directory-section {
+  padding: 72px 0 96px;
+  position: relative;
+  z-index: 2;
+}
+
+.dept-directory-header {
+  margin-bottom: 48px;
+  max-width: 840px;
+}
+
+.dept-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+/* Bento Column Spans */
+.dept-card-span-7 {
+  grid-column: span 7;
+}
+
+.dept-card-span-5 {
+  grid-column: span 5;
+}
+
+.dept-card-span-6 {
+  grid-column: span 6;
+}
+
+.dept-card-span-4 {
+  grid-column: span 4;
+}
+
+.dept-card-span-12 {
+  grid-column: span 12;
+}
+
+/* Double-Bezel Card Architecture */
+.dept-card {
+  position: relative;
+  border-radius: 28px;
+  background: rgba(11, 27, 54, 0.03);
+  border: 1px solid rgba(11, 27, 54, 0.07);
+  padding: 8px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(11, 27, 54, 0.04);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
+}
+
+.dept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 36px -6px rgba(11, 27, 54, 0.12),
+    0 4px 12px rgba(11, 27, 54, 0.04);
+  border-color: rgba(197, 168, 128, 0.40);
+}
+
+.dept-card:active {
+  transform: scale(0.98) !important;
+}
+
+.dept-card-inner {
+  background: var(--bg-surface, #FFFFFF);
+  border-radius: 22px;
+  border: 1px solid rgba(11, 27, 54, 0.06);
+  padding: 32px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.dept-card-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.dept-card-eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #8A6D3B);
+}
+
+.dept-card-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(11, 27, 54, 0.05);
+  color: var(--mtw-navy, #0B1B36);
+  border: 1px solid rgba(11, 27, 54, 0.08);
+}
+
+.dept-card-title {
+  font-family: var(--font-title, serif);
+  font-size: clamp(1.45rem, 1.8vw, 1.75rem);
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+
+.dept-card-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #334155);
+  margin: 0 0 24px;
+}
+
+.dept-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  padding-top: 18px;
+  margin-top: auto;
+}
+
+.dept-card-stat {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  color: var(--text-muted, #64748B);
+  font-weight: 500;
+}
+
+/* Button-in-Button CTA Trailing Icon Architecture */
+.dept-btn-in-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 8px 18px;
+  border-radius: 9999px;
+  background: rgba(11, 27, 54, 0.06);
+  border: 1px solid rgba(11, 27, 54, 0.10);
+  color: var(--mtw-navy, #0B1B36);
+  font-family: var(--font-title, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.dept-btn-icon-wrapper {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--mtw-navy, #0B1B36);
+  box-shadow: 0 2px 6px rgba(11, 27, 54, 0.12);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease, color 0.18s ease;
+}
+
+.dept-card:hover .dept-btn-in-btn {
+  background: var(--mtw-navy, #0B1B36);
+  border-color: var(--mtw-navy, #0B1B36);
+  color: #FFFFFF;
+}
+
+.dept-card:hover .dept-btn-icon-wrapper {
+  transform: translate(2px, -2px) scale(1.08);
+  background: var(--mtw-police-gold, #C5A880);
+  color: var(--mtw-navy, #0B1B36);
+}
+
+/* Distinct Police Command Navy Bento Card (Recruitment Highlight) */
+.dept-card-navy {
+  background: rgba(11, 27, 54, 0.96);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  box-shadow: 
+    0 12px 32px -4px rgba(11, 27, 54, 0.30),
+    0 4px 12px rgba(11, 27, 54, 0.15);
+}
+
+.dept-card-navy .dept-card-inner {
+  background: linear-gradient(155deg, #0E2242 0%, #08152B 100%);
+  border-color: rgba(197, 168, 128, 0.20);
+}
+
+.dept-card-navy .dept-card-title {
+  color: #FFFFFF;
+}
+
+.dept-card-navy .dept-card-desc {
+  color: #CBD5E1;
+}
+
+.dept-card-navy .dept-card-eyebrow {
+  color: var(--mtw-police-gold, #F5D77F);
+}
+
+.dept-card-navy .dept-card-badge {
+  background: rgba(197, 168, 128, 0.16);
+  color: #F5D77F;
+  border-color: rgba(197, 168, 128, 0.30);
+}
+
+.dept-card-navy .dept-card-stat {
+  color: #94A3B8;
+}
+
+.dept-card-navy .dept-btn-in-btn {
+  background: var(--mtw-police-gold, #C5A880);
+  border-color: var(--mtw-police-gold, #C5A880);
+  color: #0B1B36;
+}
+
+.dept-card-navy .dept-btn-icon-wrapper {
+  background: #0B1B36;
+  color: #FFFFFF;
+}
+
+.dept-card-navy:hover .dept-btn-in-btn {
+  background: #F5D77F;
+  border-color: #F5D77F;
+  color: #0B1B36;
+}
+
+.dept-card-navy:hover .dept-btn-icon-wrapper {
+  background: #0B1B36;
+  color: #F5D77F;
+}
+
+/* ── 5. Responsive Breakpoints for Bento Grid ── */
+@media (max-width: 980px) {
+  .dept-card-span-7,
+  .dept-card-span-5,
+  .dept-card-span-6,
+  .dept-card-span-4 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 720px) {
+  .dept-directory-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .dept-card-span-7,
+  .dept-card-span-5,
+  .dept-card-span-6,
+  .dept-card-span-4,
+  .dept-card-span-12 {
+    grid-column: span 1;
+  }
+
+  .dept-card-inner {
+    padding: 24px 20px;
+  }
+
+  .dept-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .dept-btn-in-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

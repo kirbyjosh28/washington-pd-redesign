@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Resident Online Services • City of Washington Police Department</title>
+  <meta name="description" content="Official City of Washington Police Department online resident action center: vacation house checks, prescription medication disposal kiosk, FOIA public records, and anonymous crime tips." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css?v=20260918-multipage-v1" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       FLOATING COMMAND HEADER CAPSULE
+       ======================================================================== -->
+  <header class="site-header civic-floating-bar" role="banner">
+    <div class="container civic-floating-container">
+      <div class="civic-floating-capsule">
+        <a href="index.html" class="civic-float-brand" aria-label="Return to Washington Police Department Home" title="Washington Police Department Home">
+          <img src="assets/wpd_official_seal.png" alt="" class="civic-float-brand-seal" width="34" height="34" />
+          <span class="civic-float-brand-name">Washington Police</span>
+        </a>
+        <a href="tel:3094442313" class="civic-float-pill-btn civic-float-phone" title="24/7 Police Dispatch Line">
+          <span class="civic-float-phone-label">(309) 444-2313</span>
+        </a>
+        <a href="tel:911" class="civic-float-pill-btn civic-float-911" aria-label="Call 911 Emergency">
+          <span class="float-btn-911-beacon" aria-hidden="true"></span>
+          <span>DIAL 911</span>
+        </a>
+        <button type="button" class="civic-float-pill-btn civic-float-menu" data-open-drawer="drawer-nav-menu" aria-label="Open Department Navigation Menu" aria-controls="drawer-nav-menu">
+          <span class="civic-float-menu-text">MENU</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN WRAPPER & 60FPS HARDWARE-COMPOSITED SILK WAVE BACKGROUND
+       ======================================================================== -->
+  <div id="wpd-experience-root">
+    
+    <div class="civic-navy-bg-canvas" aria-hidden="true">
+      <div class="silk-ambient-glow silk-glow-hero-navy"></div>
+      <div class="silk-ambient-glow silk-glow-hero-gold"></div>
+      <div class="silk-ambient-glow silk-glow-mid-navy"></div>
+      <div class="silk-ambient-glow silk-glow-ops-gold"></div>
+      <div class="silk-ambient-glow silk-glow-recruitment-navy"></div>
+
+      <svg class="civic-silk-waves-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 3600" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="goldRimGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C5A880" stop-opacity="0.5" />
+            <stop offset="25%" stop-color="#F5E4B8" stop-opacity="0.95" />
+            <stop offset="45%" stop-color="#FFF9EC" stop-opacity="1" />
+            <stop offset="65%" stop-color="#D4AF37" stop-opacity="0.95" />
+            <stop offset="85%" stop-color="#E2C98A" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#9E7D4B" stop-opacity="0.4" />
+          </linearGradient>
+          <linearGradient id="goldRimGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#9E7D4B" stop-opacity="0.4" />
+            <stop offset="25%" stop-color="#D4AF37" stop-opacity="0.95" />
+            <stop offset="50%" stop-color="#FFF9EC" stop-opacity="1" />
+            <stop offset="75%" stop-color="#F5E4B8" stop-opacity="0.95" />
+            <stop offset="100%" stop-color="#C5A880" stop-opacity="0.5" />
+          </linearGradient>
+          <linearGradient id="platinumRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
+            <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="50%" stop-color="#FFFDF7" stop-opacity="1" />
+            <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.25" />
+          </linearGradient>
+          <linearGradient id="silkWaveServices" x1="20%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%" stop-color="#0B1B36" stop-opacity="0.24" />
+            <stop offset="35%" stop-color="#122545" stop-opacity="0.14" />
+            <stop offset="70%" stop-color="#EDF3FA" stop-opacity="0.04" />
+            <stop offset="100%" stop-color="#0B1B36" stop-opacity="0.20" />
+          </linearGradient>
+        </defs>
+
+        <path d="M-50,850 C240,720 540,860 840,780 C1140,700 1380,480 1650,620"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M-50,850 C240,720 540,860 840,780 C1140,700 1380,480 1650,620"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
+        <path d="M1650,-50 C1340,150 1080,380 780,320 C480,260 220,50 -50,180 L-50,1350 C240,1220 540,1360 840,1280 C1140,1200 1380,980 1650,1120 Z"
+              fill="url(#silkWaveServices)" />
+        <path d="M1650,-50 C1340,150 1080,380 780,320 C480,260 220,50 -50,180"
+              fill="none" stroke="#D4AF37" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" />
+        <path d="M1650,-50 C1340,150 1080,380 780,320 C480,260 220,50 -50,180"
+              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.8" stroke-linecap="round" />
+        <path d="M1650,-50 C1340,150 1080,380 780,320 C480,260 220,50 -50,180"
+              fill="none" stroke="#FFF8E7" stroke-width="1.1" stroke-opacity="0.9" stroke-linecap="round" />
+        <path d="M-50,1350 C240,1220 540,1360 840,1280 C1140,1200 1380,980 1650,1120"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="4" stroke-opacity="0.28" stroke-linecap="round" />
+        <path d="M-50,1350 C240,1220 540,1360 840,1280 C1140,1200 1380,980 1650,1120"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2.2" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <!-- ========================================================================
+         MAIN CONTENT AREA
+         ======================================================================== -->
+    <main id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="civic-breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="civic-breadcrumb-list">
+            <li class="civic-breadcrumb-item">
+              <a href="index.html" class="civic-breadcrumb-link">Home</a>
+            </li>
+            <li class="civic-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="civic-breadcrumb-item" aria-current="page">
+              <span class="civic-breadcrumb-current">Resident Services</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Subpage Hero -->
+      <header class="subpage-hero-banner">
+        <div class="container">
+          <div class="subpage-hero-inner">
+            <div class="subpage-hero-eyebrow">ONLINE CITIZEN ACTION CENTER</div>
+            <h1 class="subpage-hero-title">
+              Resident Services &amp; Public Inquiries
+            </h1>
+            <p class="subpage-hero-lead">
+              Direct access to municipal security watch programs, permanent prescription drop kiosk guidelines, official police records, and confidential crime reporting with transparent city procedures.
+            </p>
+            <div class="subpage-hero-meta-row">
+              <div class="subpage-hero-meta-pill">
+                <strong>Station Window:</strong> Mon–Fri 8:00 AM – 4:30 PM
+              </div>
+              <div class="subpage-hero-meta-pill">
+                <strong>HQ Records:</strong> 115 W. Jefferson St
+              </div>
+              <div class="subpage-hero-meta-pill">
+                <strong>Dispatch Inquiries:</strong> (309) 444-2313
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Services Directory Section -->
+      <section class="page-section" id="services" aria-labelledby="services-heading" style="padding-top: 0;">
+        <div class="container">
+
+          <!-- Search & Filter Controls -->
+          <div class="services-control-bar">
+            <div class="services-search-wrapper">
+              <input type="text" id="services-search-input" class="services-search-input" placeholder="Search services, vacation house checks, medication drop box, crash reports, records..." aria-label="Search resident services directory" autocomplete="off" />
+              <button type="button" id="services-search-clear" class="services-search-clear" aria-label="Clear search text" style="display: none;">CLEAR</button>
+            </div>
+            <div class="services-filter-pills" role="tablist" aria-label="Filter resident services by category">
+              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (8)</button>
+              <button type="button" class="services-filter-pill" data-filter="portals" role="tab" aria-selected="false">Resident Portals</button>
+              <button type="button" class="services-filter-pill" data-filter="records" role="tab" aria-selected="false">Records &amp; Legal</button>
+              <button type="button" class="services-filter-pill" data-filter="safety" role="tab" aria-selected="false">Safety &amp; Prevention</button>
+            </div>
+          </div>
+
+          <!-- Services Grid -->
+          <div class="civic-services-grid" id="services-grid-container">
+            
+            <!-- 1. Vacation House Check -->
+            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-vacation-check" data-category="portals" data-keywords="vacation house check residential property travel away inspection patrol officer security home" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="feature-card-header">
+                  <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE RESIDENTIAL SERVICE</span>
+                </div>
+                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Vacation House Watch &amp; Property Check</h2>
+                <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
+                  <strong class="prog-lead">Residential exterior security checks:</strong> Request perimeter security checks of your residence while you are traveling away from Washington. When call volume permits, uniformed officers inspect visible exterior doors, windows, and property integrity.
+                </p>
+                <ul class="feature-specs-list">
+                  <li class="feature-spec-item">Free Service for Washington Residents</li>
+                  <li class="feature-spec-item">Periodic Exterior Property Checks</li>
+                  <li class="feature-spec-item">Direct Telecommunications Enrollment</li>
+                </ul>
+              </div>
+              <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Request Vacation Check</span>
+                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Free Residential Service</span>
+              </div>
+            </div>
+
+            <!-- 2. Safe Medication Disposal -->
+            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-drug-disposal" data-category="safety" data-keywords="safe medication disposal drop box prescription drugs pills medicine pharmacy waste 115 w jefferson" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="feature-card-header">
+                  <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE PUBLIC SAFETY SERVICE</span>
+                  <span class="feature-status-badge">
+                    <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+                    24/7 LOBBY DROP BOX
+                  </span>
+                </div>
+                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Safe Medication &amp; Prescription Disposal</h2>
+                <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
+                  <strong class="prog-lead">Permanent lobby collection kiosk:</strong> Dispose of expired, unused, or unwanted prescription and over-the-counter medications safely and anonymously in the secure drop box inside the Washington Police Headquarters lobby at 115 W. Jefferson St.
+                </p>
+                <ul class="feature-specs-list">
+                  <li class="feature-spec-item">Permanent Drop Box at 115 W. Jefferson St</li>
+                  <li class="feature-spec-item">100% Anonymous with No Questions Asked</li>
+                  <li class="feature-spec-item">Prevents Youth Misuse &amp; Groundwater Contamination</li>
+                </ul>
+              </div>
+              <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">View Disposal Guidelines</span>
+                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Free Community Drop-Off</span>
+              </div>
+            </div>
+
+            <!-- 3. Police Records & FOIA -->
+            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-police-records" data-category="records" data-keywords="police records foia statutory public freedom information incident accident report" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="civic-service-card-tag">STATUTORY PUBLIC RECORDS</div>
+                <h3 class="civic-service-card-title">Police Records &amp; FOIA</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Official statutory filings:</strong> Submit Illinois Freedom of Information Act requests or request verified incident report copies.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Submit Records Request
+              </div>
+            </div>
+
+            <!-- 4. Accident & Crash Reports -->
+            <a href="https://www.buycrash.com" target="_blank" rel="noopener noreferrer" class="civic-service-card spotlight-card" data-category="records" data-keywords="accident crash reports buycrash collision traffic records state portal online" style="text-decoration: none;">
+              <div>
+                <div class="civic-service-card-tag">STATE TRAFFIC PORTAL</div>
+                <h3 class="civic-service-card-title">Accident &amp; Crash Reports</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Certified traffic collision records:</strong> Look up and order official State of Illinois traffic crash reports online.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Search Crash Portal
+              </div>
+            </a>
+
+            <!-- 5. Submit an Anonymous Tip -->
+            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-anonymous-tip" data-category="safety" data-keywords="anonymous crime tip confidential narcotics drugs report investigation tip411" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="civic-service-card-tag">100% CONFIDENTIAL</div>
+                <h3 class="civic-service-card-title">Anonymous Crime Tip</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Secure encrypted transmission:</strong> Submit confidential intelligence regarding narcotics or open investigations safely.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Send Confidential Tip
+              </div>
+            </div>
+
+            <!-- 6. Child Safety Seat Inspection -->
+            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-child-seat" data-category="safety" data-keywords="child safety seat car seat inspection certified technician installation family appointment" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="civic-service-card-tag">CERTIFIED INSPECTION</div>
+                <h3 class="civic-service-card-title">Child Seat Inspection</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">State-certified safety technicians:</strong> Book a free infant or child car seat installation check with certified officers.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Book Inspection Appointment
+              </div>
+            </div>
+
+            <!-- 7. Commend an Officer -->
+            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-commendation" data-category="safety" data-keywords="commend officer recognition feedback compliment contact command staff leadership" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="civic-service-card-tag">COMMUNITY FEEDBACK</div>
+                <h3 class="civic-service-card-title">Commend an Officer</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Direct commendation routing:</strong> Recognize courteous assistance, professional dedication, or exemplary field service.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Submit Officer Commendation
+              </div>
+            </div>
+
+            <!-- 8. CodeRED Emergency Alerts -->
+            <a href="https://public.coderedweb.com/CNE/en-US/BF8738F9B6E9" target="_blank" rel="noopener noreferrer" class="civic-service-card spotlight-card" data-category="safety" data-keywords="codered alerts emergency notification weather tornado severe boil order road closure phone" style="text-decoration: none;">
+              <div>
+                <div class="civic-service-card-tag">CITIZEN ENROLLMENT</div>
+                <h3 class="civic-service-card-title">CodeRED Community Alerts</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">High-priority citizen notifications:</strong> Enroll to receive critical severe weather warnings, road closures, and municipal advisories.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Enroll in CodeRED
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Zero-Results Empty State -->
+          <div id="services-empty-state" class="services-empty-state" style="display: none;">
+            <h3 style="font-family: var(--font-title); font-size: 1.3rem; margin-bottom: 8px; color: var(--text-primary);">No Matching Services Found</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto;">
+              We couldn't find any departmental services matching your search. Try searching for "vacation", "medication", "crash", or "records".
+            </p>
+            <button type="button" class="btn-editorial-secondary" id="services-clear-search">Reset Filter</button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========================================================================
+         DEPARTMENT NAVIGATION DRAWER
+         ======================================================================== -->
+    <div class="action-drawer-backdrop" id="drawer-nav-menu" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="action-drawer" style="max-width: 520px;">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="civic-service-card-tag" style="margin-bottom: 2px;">DEPARTMENT DIRECTORY</span>
+            <h3 id="menu-drawer-title" style="font-family: var(--font-title); font-size: 1.35rem; font-weight: 700; margin: 4px 0 0; color: var(--text-primary);">
+              Washington Police Department
+            </h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          
+          <div style="margin-bottom: var(--space-6);">
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+              Department Navigation
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <a href="index.html" class="civic-nav-link" data-close-drawer>
+                <span>Home / Overview</span>
+              </a>
+              <a href="services.html" class="civic-nav-link is-active" aria-current="page" data-close-drawer>
+                <span>Resident Services &amp; Portals</span>
+              </a>
+              <a href="districts.html" class="civic-nav-link" data-close-drawer>
+                <span>Patrol Districts &amp; GIS Map</span>
+              </a>
+              <a href="community.html" class="civic-nav-link" data-close-drawer>
+                <span>Community Policing &amp; Academy</span>
+              </a>
+              <a href="teams.html" class="civic-nav-link" data-close-drawer>
+                <span>Specialized Divisions &amp; SWAT</span>
+              </a>
+              <a href="operations.html" class="civic-nav-link" data-close-drawer>
+                <span>Patrol Operations &amp; Shift Schedule</span>
+              </a>
+              <a href="recruitment.html" class="civic-nav-link" data-close-drawer>
+                <span>Careers &amp; Officer Recruitment</span>
+              </a>
+              <a href="leadership.html" class="civic-nav-link" data-close-drawer>
+                <span>Chief Stevens &amp; Leadership</span>
+              </a>
+              <a href="https://ciwashington.aaimtrack.com/jobs/" target="_blank" rel="noopener noreferrer" class="civic-nav-link" data-close-drawer>
+                <span>Join WPD / City Job Listings</span>
+                <span class="civic-nav-badge" aria-hidden="true">APPLY</span>
+              </a>
+              <a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-nav-link" data-close-drawer>
+                <span>City of Washington Official Portal</span>
+                <span class="civic-nav-badge" aria-hidden="true">PORTAL</span>
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-bottom: var(--space-6);">
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+              Emergency &amp; Dispatch Direct Lines
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="width: 100%; justify-content: center; padding: 12px 16px;">
+                Emergency Response: Dial 911
+              </a>
+              <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; padding: 12px 16px;">
+                <span class="status-pip status-pip-emerald" style="margin-right: 8px;"></span>
+                24/7 Police Dispatch: (309) 444-2313
+              </a>
+              <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); text-align: center;">
+                Headquarters: 115 W. Jefferson St, Washington, IL 61571
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-3); border-bottom: 1px solid var(--border-medium); padding-bottom: 4px;">
+              Quick Online Actions
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-vacation-check" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+                Vacation Watch
+              </button>
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-drug-disposal" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+                Medication Drop Box
+              </button>
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-police-records" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+                Records / FOIA
+              </button>
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-anonymous-tip" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+                Submit Crime Tip
+              </button>
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-child-seat" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+                Car Seat Check
+              </button>
+              <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-commendation" style="justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+                Commend Officer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 1: Vacation House Check -->
+    <div class="action-drawer-backdrop" id="drawer-vacation-check" role="dialog" aria-modal="true" aria-labelledby="vacation-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-emerald" style="font-size: 0.72rem;">FREE RESIDENTIAL SERVICE</span>
+            <h3 id="vacation-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Vacation House Check</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Vacation House Check">
+            <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              <strong style="color: var(--text-primary);">Official Enrollment:</strong> To guarantee immediate dispatch logging, call the 24/7 communications center at <strong>(309) 444-2313</strong> or enroll via the <a href="https://www.ci.washington.il.us/egov/apps/action/center.egov" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue, #2563EB); text-decoration: underline;">City Action Center</a>. You may also complete this form to generate a request summary.
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              When call volume permits, patrol officers periodically inspect the exterior doors and windows of enrolled Washington residences.
+            </p>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="vhc-name">Full Name *</label>
+              <input type="text" id="vhc-name" class="drawer-form-input" required placeholder="Jane Doe" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="vhc-address">Washington Residence Address *</label>
+              <input type="text" id="vhc-address" class="drawer-form-input" required placeholder="123 Centennial Dr, Washington, IL" />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="vhc-depart">Departure Date *</label>
+                <input type="date" id="vhc-depart" class="drawer-form-input" required />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="vhc-return">Return Date *</label>
+                <input type="date" id="vhc-return" class="drawer-form-input" required />
+              </div>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="vhc-phone">Emergency Contact Phone *</label>
+              <input type="tel" id="vhc-phone" class="drawer-form-input" required placeholder="(309) 555-0192" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="vhc-lights">Lights, Timers &amp; Keyholder Info</label>
+              <textarea id="vhc-lights" class="drawer-form-textarea" placeholder="Timers on living room lamp; keyholder neighbor John at (309) 555-1234."></textarea>
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Generate Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 2: Safe Medication Disposal -->
+    <div class="action-drawer-backdrop" id="drawer-drug-disposal" role="dialog" aria-modal="true" aria-labelledby="drug-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-emerald" style="font-size: 0.72rem;">FREE COMMUNITY DROP-OFF</span>
+            <h3 id="drug-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Safe Medication Disposal</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <div style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            A permanent, secure prescription drug disposal kiosk is located in the lobby of the Washington Police Department at <strong>115 W. Jefferson St</strong>. This service is free, anonymous, and requires no paperwork or registration.
+          </div>
+          <div style="background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px; margin-bottom: var(--space-4);">
+            <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 0.90rem;">Accepted Items:</div>
+            <ul style="color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; padding-left: 18px; margin-bottom: 14px;">
+              <li>Prescription medications (Schedule II–V controlled and non-controlled substances)</li>
+              <li>Over-the-counter pills, capsules, tablets, and patches</li>
+              <li>Vitamins, nutritional supplements, and pet medications</li>
+            </ul>
+            <div style="font-weight: 700; color: #DC2626; margin-bottom: 8px; font-size: 0.90rem;">Items NOT Accepted:</div>
+            <ul style="color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; padding-left: 18px; margin: 0;">
+              <li>Needles, syringes, EpiPens, and sharps (dispose via Tazewell County Health Dept)</li>
+              <li>Inhalers, aerosol spray cans, and mercury thermometers</li>
+              <li>Hydrogen peroxide, lotions, and bulk liquid containers</li>
+            </ul>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="flex: 1; justify-content: center;">Call Dispatch (309) 444-2313</a>
+            <button type="button" class="btn-editorial-primary" data-close-drawer style="flex: 1; justify-content: center;">Close Window</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 3: Police Records & FOIA -->
+    <div class="action-drawer-backdrop" id="drawer-police-records" role="dialog" aria-modal="true" aria-labelledby="records-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-neutral" style="font-size: 0.72rem;">STATUTORY PUBLIC RECORDS</span>
+            <h3 id="records-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Police Records &amp; FOIA</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Police Records FOIA Request">
+            <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              <strong style="color: var(--text-primary);">Filing Options:</strong> Records requests under 5 ILCS 140 may be submitted at the headquarters records window (Mon–Fri 8:00 AM – 4:30 PM), by fax to <strong>(309) 444-7511</strong>, or generated using this form.
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="foia-name">Requester Name *</label>
+              <input type="text" id="foia-name" class="drawer-form-input" required placeholder="Alex Taylor" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="foia-email">Email Address *</label>
+              <input type="email" id="foia-email" class="drawer-form-input" required placeholder="alex@example.com" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="foia-case">Incident / Case Report # (if known)</label>
+              <input type="text" id="foia-case" class="drawer-form-input" placeholder="e.g. 26-WPD-01492" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="foia-desc">Description of Records Requested *</label>
+              <textarea id="foia-desc" class="drawer-form-textarea" required placeholder="Specify date, location, names, and documents requested."></textarea>
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Generate FOIA Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 4: Anonymous Crime Tip -->
+    <div class="action-drawer-backdrop" id="drawer-anonymous-tip" role="dialog" aria-modal="true" aria-labelledby="tip-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-rose" style="font-size: 0.72rem;">100% CONFIDENTIAL</span>
+            <h3 id="tip-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Anonymous Crime Tip</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Anonymous Crime Tip">
+            <div style="padding: 10px 14px; background: rgba(220, 38, 38, 0.08); border: 1px solid rgba(220, 38, 38, 0.2); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              <strong style="color: #DC2626;">Emergency Notice:</strong> For active crimes or immediate threats, <strong>dial 911</strong>. Anonymous tips may also be phoned to Greater Peoria Crime Stoppers at <strong>(309) 673-9000</strong>.
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="tip-type">Category of Activity *</label>
+              <select id="tip-type" class="drawer-form-select" required>
+                <option value="suspicious">Suspicious Activity / Persons</option>
+                <option value="narcotics">Illegal Narcotics Activity</option>
+                <option value="theft">Theft / Burglary Information</option>
+                <option value="vandalism">Vandalism / Property Damage</option>
+                <option value="traffic">Dangerous Driving / Speeding Pattern</option>
+                <option value="other">Other Information</option>
+              </select>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="tip-loc">Location / Address / Neighborhood *</label>
+              <input type="text" id="tip-loc" class="drawer-form-input" required placeholder="Street address or intersection" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="tip-details">Tip Details *</label>
+              <textarea id="tip-details" class="drawer-form-textarea" required placeholder="Describe what you observed: times, vehicles, license plates, suspect descriptions, etc."></textarea>
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Submit Tip</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 5: Child Safety Seat Inspection -->
+    <div class="action-drawer-backdrop" id="drawer-child-seat" role="dialog" aria-modal="true" aria-labelledby="seat-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-emerald" style="font-size: 0.72rem;">FREE APPOINTMENT</span>
+            <h3 id="seat-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Child Safety Seat Check</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Child Seat Inspection Appointment">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="css-name">Parent / Guardian Name *</label>
+              <input type="text" id="css-name" class="drawer-form-input" required placeholder="Sarah Miller" />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="css-phone">Phone Number *</label>
+                <input type="tel" id="css-phone" class="drawer-form-input" required placeholder="(309) 555-9831" />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="css-date">Preferred Date *</label>
+                <input type="date" id="css-date" class="drawer-form-input" required />
+              </div>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="css-car">Vehicle Make, Model &amp; Car Seat Brand *</label>
+              <input type="text" id="css-car" class="drawer-form-input" required placeholder="e.g. 2024 Toyota Highlander / Graco 4Ever DLX" />
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Request Appointment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 6: Commend an Officer -->
+    <div class="action-drawer-backdrop" id="drawer-commendation" role="dialog" aria-modal="true" aria-labelledby="commend-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-amber" style="font-size: 0.72rem;">OFFICER COMMENDATION</span>
+            <h3 id="commend-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Commend an Officer</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Officer Commendation">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="com-name">Your Name</label>
+              <input type="text" id="com-name" class="drawer-form-input" placeholder="Optional (Leave blank to remain anonymous)" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="com-officer">Officer Name or Badge # (if known)</label>
+              <input type="text" id="com-officer" class="drawer-form-input" placeholder="e.g. Officer Jenkins or Badge #12" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="com-date">Date &amp; Approximate Location *</label>
+              <input type="text" id="com-date" class="drawer-form-input" required placeholder="e.g. Yesterday at Washington Square" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="com-story">Commendation Details *</label>
+              <textarea id="com-story" class="drawer-form-textarea" required placeholder="Describe the officer's assistance and service..."></textarea>
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Submit Commendation</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         DIGNIFIED CIVIC FOOTER
+         ======================================================================== -->
+    <footer class="civic-footer" role="contentinfo">
+      <div class="container">
+        
+        <div class="civic-footer-telemetry">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+            <div>
+              <div style="font-family: var(--font-body); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;">
+                WPD COMMUNICATIONS &amp; DISPATCH CENTER
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.74rem; color: #94A3B8;">
+                TAZEWELL COUNTY CONSOLIDATED 911 • CONTINUOUS 24/7/365 DISPATCH
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="padding: 8px 18px; font-size: 0.84rem;">
+              Emergency: Dial 911
+            </a>
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="padding: 8px 18px; font-size: 0.84rem; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3);">
+              24/7 Dispatch: (309) 444-2313
+            </a>
+          </div>
+        </div>
+
+        <div class="civic-footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+              <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Emblem" width="48" height="48" style="border-radius: 50%;" />
+              <div>
+                <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 700; color: #FFFFFF; line-height: 1.2;">
+                  Washington Police
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.70rem; color: var(--mtw-police-gold, #C5A880);">
+                  CITY OF WASHINGTON, IL • EST. 1825
+                </div>
+              </div>
+            </div>
+            <p style="font-family: var(--font-editorial, 'Spectral', serif); font-style: italic; font-size: 0.95rem; color: var(--mtw-police-gold, #C5A880); margin-bottom: 12px;">
+              “Serve with Honor, Protect with Purpose, Lead with Integrity.”
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px; font-size: 0.80rem; color: #CBD5E1; line-height: 1.6;">
+              <div><strong style="color: #FFFFFF;">Headquarters:</strong> 115 W. Jefferson St, Washington, IL 61571</div>
+              <div><strong style="color: #FFFFFF;">Records Window:</strong> Mon–Fri 8:00 AM – 4:30 PM</div>
+              <div><strong style="color: var(--accent-emerald, #10B981);">Patrol Operations:</strong> Continuous 24/7/365</div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Department Pages</h4>
+            <ul class="civic-footer-links">
+              <li><a href="index.html" class="civic-footer-link">Home Overview</a></li>
+              <li><a href="services.html" class="civic-footer-link">Resident Services &amp; Action Center</a></li>
+              <li><a href="districts.html" class="civic-footer-link">Patrol Districts &amp; GIS Map</a></li>
+              <li><a href="community.html" class="civic-footer-link">Community Programs &amp; Academy</a></li>
+              <li><a href="teams.html" class="civic-footer-link">Specialized Divisions &amp; SWAT</a></li>
+              <li><a href="operations.html" class="civic-footer-link">Patrol Operations &amp; Shift Schedule</a></li>
+              <li><a href="recruitment.html" class="civic-footer-link">Careers &amp; Officer Recruitment</a></li>
+              <li><a href="leadership.html" class="civic-footer-link">Department Leadership &amp; Ethics</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Resident Services</h4>
+            <ul class="civic-footer-links">
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-vacation-check" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Vacation House Watch</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-drug-disposal" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Safe Medication Disposal</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-police-records" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Police FOIA Records</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-anonymous-tip" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Submit Anonymous Crime Tip</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-child-seat" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Child Safety Seat Check</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-commendation" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Commend an Officer</button></li>
+              <li><a href="https://www.buycrash.com" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Crash Report Portal (BuyCrash)</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Civic Partners</h4>
+            <ul class="civic-footer-links">
+              <li><a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-footer-link">City of Washington Official Portal</a></li>
+              <li><a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Board of Police Commissioners</a></li>
+              <li><a href="https://www.tazewellcountysheriff.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Tazewell County Sheriff</a></li>
+              <li><a href="https://washingtonfd.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Washington Fire &amp; EMS</a></li>
+              <li><a href="https://isp.illinois.gov/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Illinois State Police (District 8)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="civic-footer-bottom">
+          <div>
+            © 2026 City of Washington, Illinois Police Department. 115 W. Jefferson St, Washington, IL 61571.
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <span>WCAG 2.2 AA Certified</span>
+            <span>•</span>
+            <span>Illinois FOIA (5 ILCS 140)</span>
+            <span>•</span>
+            <span>TC3 911 Dispatch Interfaced</span>
+            <button type="button" class="civic-btn-top" id="footer-back-to-top" aria-label="Scroll back to top">TOP</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js?v=20260918-multipage-v1"></script>
+  <script src="js/agentation-loader.js"></script>
+</body>
+</html>
