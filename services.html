@@ -309,7 +309,8 @@
               <button type="button" id="services-search-clear" class="services-search-clear" aria-label="Clear search text" style="display: none;">CLEAR</button>
             </div>
             <div class="services-filter-pills" role="tablist" aria-label="Filter resident services by category">
-              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (11)</button>
+              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (14)</button>
+              <button type="button" class="services-filter-pill" data-filter="walkin" role="tab" aria-selected="false">Walk-In &amp; Station</button>
               <button type="button" class="services-filter-pill" data-filter="permits" role="tab" aria-selected="false">Permits &amp; Payments</button>
               <button type="button" class="services-filter-pill" data-filter="portals" role="tab" aria-selected="false">Resident Portals</button>
               <button type="button" class="services-filter-pill" data-filter="records" role="tab" aria-selected="false">Records &amp; Legal</button>
@@ -408,30 +409,100 @@
               </div>
             </div>
 
-            <!-- 2. Safe Medication Disposal -->
-            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-drug-disposal" data-category="safety" data-keywords="safe medication disposal drop box prescription drugs pills medicine pharmacy waste 115 w jefferson" role="button" tabindex="0" aria-haspopup="dialog">
+            <!-- 5. Safe Medication & Prescription Drug Drop Box (Walk-In) -->
+            <div class="civic-service-card spotlight-card" data-category="walkin safety" data-keywords="safe medication disposal drop box prescription drugs pills medicine pharmacy waste 115 w jefferson walk-in lobby kiosk 24/7" role="region" aria-label="Safe Medication and Drug Drop Box">
               <div>
-                <div class="feature-card-header">
-                  <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE PUBLIC SAFETY SERVICE</span>
-                  <span class="feature-status-badge">
-                    <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
-                    24/7 LOBBY DROP BOX
-                  </span>
-                </div>
-                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Safe Medication &amp; Prescription Disposal</h2>
-                <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
-                  <strong class="prog-lead">Permanent lobby collection kiosk:</strong> Dispose of expired, unused, or unwanted prescription and over-the-counter medications safely and anonymously in the secure drop box inside the Washington Police Headquarters lobby at 115 W. Jefferson St.
+                <div class="civic-service-card-tag">WALK-IN CIVIC FACILITY</div>
+                <h3 class="civic-service-card-title">Safe Medication &amp; Drug Drop Box</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Permanent lobby collection kiosk:</strong> Safely and anonymously dispose of expired, unused, or unwanted prescription medications, pills, ointments, and pet medicine. Protects youth and prevents groundwater contamination. <em>(Sharps, liquids, and inhalers not accepted).</em>
                 </p>
-                <ul class="feature-specs-list">
-                  <li class="feature-spec-item">Permanent Drop Box at 115 W. Jefferson St</li>
-                  <li class="feature-spec-item">100% Anonymous with No Questions Asked</li>
-                  <li class="feature-spec-item">Prevents Youth Misuse &amp; Groundwater Contamination</li>
-                </ul>
+                <div class="service-access-box">
+                  <div class="service-access-row">
+                    <span class="service-access-label">Location:</span>
+                    <span class="service-access-value">WPD Lobby, 115 W. Jefferson St</span>
+                  </div>
+                  <div class="service-access-row">
+                    <span class="service-access-label">Access:</span>
+                    <span class="service-access-value">24/7/365 Kiosk (Always Open)</span>
+                  </div>
+                </div>
               </div>
-              <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">View Disposal Guidelines</span>
-                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Free Community Drop-Off</span>
+              <a href="https://www.ci.washington.il.us/department/index.php?structureid=17" target="_blank" rel="noopener noreferrer" class="civic-service-card-action">
+                Station Drop-Off Info ↗
+              </a>
+            </div>
+
+            <!-- 6. WFD Medical Sharps & Needle Disposal (Walk-In Partnership) -->
+            <div class="civic-service-card spotlight-card" data-category="walkin safety" data-keywords="sharps needles syringes lancets epipens disposal washington fire department station 1 wfd tazewell health walk-in" role="region" aria-label="WFD Medical Sharps and Needle Disposal">
+              <div>
+                <div class="civic-service-card-tag">COMMUNITY PARTNERSHIP</div>
+                <h3 class="civic-service-card-title">WFD Medical Sharps &amp; Needle Disposal</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Safe public sharps destruction:</strong> Medical needles, syringes, lancets, and auto-injectors must NOT be placed in household trash or the police lobby drop box. Bring sealed, rigid, puncture-proof containers to Washington Fire Department Station 1 in coordination with the Tazewell County Health Department.
+                </p>
+                <div class="service-access-box">
+                  <div class="service-access-row">
+                    <span class="service-access-label">Location:</span>
+                    <span class="service-access-value">WFD Station 1, 200 N. Wilmor Rd</span>
+                  </div>
+                  <div class="service-access-row">
+                    <span class="service-access-label">Access:</span>
+                    <span class="service-access-value">Mon – Fri, 8:00 AM – 5:00 PM</span>
+                  </div>
+                </div>
               </div>
+              <a href="https://washingtonfd.com/" target="_blank" rel="noopener noreferrer" class="civic-service-card-action">
+                WFD Disposal Guidelines ↗
+              </a>
+            </div>
+
+            <!-- 7. Solicitor Permits & Consumer Protection (Walk-In / Direct City) -->
+            <div class="civic-service-card spotlight-card" data-category="walkin records" data-keywords="solicitor peddler permits license commercial door to door regulations code chapter 116 city clerk photo badge" role="region" aria-label="Commercial Solicitor Permits and Regulations">
+              <div>
+                <div class="civic-service-card-tag">MUNICIPAL REGULATIONS</div>
+                <h3 class="civic-service-card-title">Solicitor Permits &amp; Consumer Protection</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Municipal Code Chapter 116 compliance:</strong> All commercial door-to-door solicitors are legally required to undergo background vetting, obtain a City license, and visibly display an official photo badge. Permitted 9 AM to dusk only; prohibited at homes with "No Solicitors" signs.
+                </p>
+                <div class="service-access-box">
+                  <div class="service-access-row">
+                    <span class="service-access-label">Location:</span>
+                    <span class="service-access-value">City Clerk's Office, 301 Walnut St</span>
+                  </div>
+                  <div class="service-access-row">
+                    <span class="service-access-label">Access:</span>
+                    <span class="service-access-value">Mon – Fri, 8:00 AM – 4:30 PM</span>
+                  </div>
+                </div>
+              </div>
+              <a href="https://www.ci.washington.il.us/" target="_blank" rel="noopener noreferrer" class="civic-service-card-action">
+                City Solicitor Code &amp; Registry ↗
+              </a>
+            </div>
+
+            <!-- 8. Station Records Counter & Impound Tow Releases (Walk-In) -->
+            <div class="civic-service-card spotlight-card" data-category="walkin records" data-keywords="station records counter window tow release impound bond background check notary police administration walk-in" role="region" aria-label="Station Records Counter and Impound Tow Releases">
+              <div>
+                <div class="civic-service-card-tag">STATION COUNTER SERVICE</div>
+                <h3 class="civic-service-card-title">Station Records Counter &amp; Tow Releases</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">In-person administrative services:</strong> Visit the department records counter for certified document authentication, administrative tow release receipts (proof of ownership, valid registration &amp; insurance required), background checks, and in-person payments.
+                </p>
+                <div class="service-access-box">
+                  <div class="service-access-row">
+                    <span class="service-access-label">Location:</span>
+                    <span class="service-access-value">Police HQ Counter, 115 W. Jefferson St</span>
+                  </div>
+                  <div class="service-access-row">
+                    <span class="service-access-label">Access:</span>
+                    <span class="service-access-value">Mon – Fri, 8:00 AM – 4:30 PM</span>
+                  </div>
+                </div>
+              </div>
+              <a href="https://www.ci.washington.il.us/department/index.php?structureid=17" target="_blank" rel="noopener noreferrer" class="civic-service-card-action">
+                Administrative Counter Info ↗
+              </a>
             </div>
 
             <!-- 3. Police Records & FOIA -->

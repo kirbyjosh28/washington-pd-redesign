@@ -377,7 +377,8 @@
       cards.forEach(card => {
         const cat = card.getAttribute('data-category') || '';
         const keywords = ((card.getAttribute('data-keywords') || '') + ' ' + card.innerText).toLowerCase();
-        const matchesCat = (activeCategory === 'all' || cat === activeCategory);
+        const catList = cat.toLowerCase().split(/\s+/);
+        const matchesCat = (activeCategory === 'all' || catList.includes(activeCategory.toLowerCase()));
         const matchesQuery = (!query || keywords.includes(query));
 
         if (matchesCat && matchesQuery) {

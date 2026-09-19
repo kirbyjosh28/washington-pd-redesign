@@ -10947,3 +10947,53 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   }
 }
 
+/* ==========================================================================
+   WALK-IN & PHYSICAL STATION SERVICES ARCHITECTURE
+   Consistent 4-field card pattern: Service, Location, Hours, Direct Link
+   ========================================================================== */
+
+.service-access-box {
+  background: var(--bg-surface-subtle, #F8FAFC);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 12px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+[data-theme="dark"] .service-access-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
+.service-access-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.service-access-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #8A6D3B);
+  min-width: 68px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .service-access-label {
+  color: var(--mtw-police-gold, #C5A880);
+}
+
+.service-access-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+

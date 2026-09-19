@@ -50,15 +50,62 @@ async function runServiceCenterVerification() {
   if (permitsFilterPill) {
     await permitsFilterPill.click();
     await page.waitForTimeout(300);
-    const visibleCards = await page.$$eval('#services-grid-container > div', cards =>
+    const visibleCards = await page.$$eval('#services-grid-container > .civic-service-card, #services-grid-container > .civic-service-card-feature', cards =>
       cards.filter(c => c.style.display !== 'none').length
     );
     console.log(`PASS: Permits & Payments filter pill works (visible cards: ${visibleCards})`);
+  } else {
+    console.error('FAIL: Permits & Payments filter pill missing');
+    totalErrors++;
+  }
+
+  // 3b. Test Walk-In & Station Filter Pill
+  console.log('Testing Walk-In & Station Filter Pill...');
+  const walkinFilterPill = await page.$('.services-filter-pill[data-filter="walkin"]');
+  if (walkinFilterPill) {
+    await walkinFilterPill.click();
+    await page.waitForTimeout(300);
+    const visibleWalkin = await page.$$eval('#services-grid-container > .civic-service-card, #services-grid-container > .civic-service-card-feature', cards =>
+      cards.filter(c => c.style.display !== 'none').length
+    );
+    console.log(`PASS: Walk-In filter pill works (visible walk-in cards: ${visibleWalkin})`);
+    if (visibleWalkin !== 4) {
+      console.error(`FAIL: Expected 4 walk-in cards, found ${visibleWalkin}`);
+      totalErrors++;
+    }
+
+    // Verify presence of 4-field card pattern and direct links
+    const walkinLinks = await page.$$eval('#services-grid-container > .civic-service-card, #services-grid-container > .civic-service-card-feature', cards =>
+      cards.filter(c => c.style.display !== 'none')
+           .map(c => {
+             const title = c.querySelector('.civic-service-card-title')?.innerText.trim();
+             const accessBox = !!c.querySelector('.service-access-box');
+             const link = c.querySelector('a.civic-service-card-action')?.href;
+             return { title, accessBox, link };
+           })
+    );
+    console.log('Walk-in service cards validated:', walkinLinks);
+
+    const hasWfd = walkinLinks.some(c => c.link && c.link.includes('washingtonfd.com'));
+    const hasCity = walkinLinks.some(c => c.link && c.link.includes('ci.washington.il.us'));
+    const allHaveAccessBox = walkinLinks.every(c => c.accessBox);
+
+    if (hasWfd && hasCity && allHaveAccessBox) {
+      console.log('PASS: All 4 walk-in cards have standardized access boxes and direct verified city links');
+    } else {
+      console.error('FAIL: Missing access boxes or expected external links in walk-in cards');
+      totalErrors++;
+    }
+
     // Reset filter
     await page.click('.services-filter-pill[data-filter="all"]');
     await page.waitForTimeout(200);
+    const totalVisible = await page.$$eval('#services-grid-container > .civic-service-card, #services-grid-container > .civic-service-card-feature', cards =>
+      cards.filter(c => c.style.display !== 'none').length
+    );
+    console.log(`PASS: All Services filter reset verified (total cards: ${totalVisible})`);
   } else {
-    console.error('FAIL: Permits & Payments filter pill missing');
+    console.error('FAIL: Walk-In & Station filter pill missing');
     totalErrors++;
   }
 
