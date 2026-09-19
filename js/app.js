@@ -16,7 +16,8 @@
       initKineticTypography,
       init3DCardTilts,
       initInteractiveCopyButtons,
-      initCardCursorSpotlight
+      initCardCursorSpotlight,
+      initFaqKnowledgeBase
     ];
 
     inits.forEach(fn => {
@@ -1204,6 +1205,165 @@
         });
       }
     });
+  }
+
+  /* --------------------------------------------------------------------------
+     14. Interactive Resident Knowledge Base Controller
+     Instant search (<16ms), category filter pills, accessible accordion, deep-links
+     -------------------------------------------------------------------------- */
+  function initFaqKnowledgeBase() {
+    const faqSection = document.getElementById('faq');
+    if (!faqSection) return;
+
+    const searchInput = document.getElementById('faq-search-input');
+    const clearBtn = document.getElementById('faq-search-clear');
+    const liveCounter = document.getElementById('faq-result-count');
+    const filterPills = faqSection.querySelectorAll('.faq-filter-pill');
+    const cards = Array.from(faqSection.querySelectorAll('.faq-card'));
+    const emptyState = document.getElementById('faq-empty-state');
+    const emptyResetBtn = document.getElementById('faq-empty-reset');
+
+    let currentCategory = 'all';
+    let currentQuery = '';
+
+    function filterKnowledgeBase() {
+      let visibleCount = 0;
+      const q = currentQuery.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || 'all';
+        const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+        const text = card.innerText.toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+        const matchesQuery = !q || text.includes(q) || keywords.includes(q);
+
+        if (matchesCat && matchesQuery) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (liveCounter) {
+        if (q || currentCategory !== 'all') {
+          liveCounter.textContent = `Showing ${visibleCount} of ${cards.length} verified questions`;
+        } else {
+          liveCounter.textContent = `Showing all ${cards.length} verified questions`;
+        }
+      }
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      if (clearBtn) {
+        clearBtn.style.display = q ? 'block' : 'none';
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        filterKnowledgeBase();
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchInput.focus();
+        }
+        currentQuery = '';
+        filterKnowledgeBase();
+      });
+    }
+
+    if (emptyResetBtn) {
+      emptyResetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentQuery = '';
+        currentCategory = 'all';
+        filterPills.forEach(p => p.classList.toggle('is-active', p.getAttribute('data-filter') === 'all'));
+        filterKnowledgeBase();
+      });
+    }
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('is-active'));
+        pill.classList.add('is-active');
+        currentCategory = pill.getAttribute('data-filter') || 'all';
+        filterKnowledgeBase();
+      });
+    });
+
+    // Accordion Toggle
+    faqSection.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.faq-trigger');
+      if (!trigger) return;
+
+      const card = trigger.closest('.faq-card');
+      if (!card) return;
+
+      const isOpen = card.classList.contains('is-open');
+      card.classList.toggle('is-open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Keyboard Arrow Navigation for Accordion
+    faqSection.addEventListener('keydown', (e) => {
+      const trigger = e.target.closest('.faq-trigger');
+      if (!trigger) return;
+
+      const visibleCards = Array.from(faqSection.querySelectorAll('.faq-card')).filter(c => c.style.display !== 'none');
+      const triggers = visibleCards.map(c => c.querySelector('.faq-trigger')).filter(Boolean);
+      const idx = triggers.indexOf(trigger);
+      if (idx === -1) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = triggers[(idx + 1) % triggers.length];
+        if (next) next.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = triggers[(idx - 1 + triggers.length) % triggers.length];
+        if (prev) prev.focus();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        if (triggers[0]) triggers[0].focus();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        if (triggers[triggers.length - 1]) triggers[triggers.length - 1].focus();
+      }
+    });
+
+    // Deep-linking via URL hash (e.g. services.html#faq-snow-emergency)
+    function handleFaqDeepLink() {
+      const hash = window.location.hash;
+      if (!hash || !hash.startsWith('#faq-')) return;
+
+      const targetCard = document.querySelector(hash);
+      if (targetCard && targetCard.classList.contains('faq-card')) {
+        targetCard.style.display = '';
+        targetCard.classList.add('is-open', 'is-active-hash');
+        const trigger = targetCard.querySelector('.faq-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+
+        setTimeout(() => {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+
+        setTimeout(() => {
+          targetCard.classList.remove('is-active-hash');
+        }, 3000);
+      }
+    }
+
+    handleFaqDeepLink();
+    window.addEventListener('hashchange', handleFaqDeepLink);
   }
 
   function escapeHtml(str) {
