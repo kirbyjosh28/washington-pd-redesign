@@ -6764,80 +6764,230 @@ body:has(.site-header) main {
 }
 
 @media (max-width: 768px) {
+  .skiper-gooey-liquid {
+    display: none !important;
+  }
   .skiper-goo-anchor {
     height: 38px;
   }
   .skiper-goo-card {
-    width: min(360px, calc(100vw - 20px));
-    height: 560px;
-    right: -2px;
+    display: none !important;
   }
   .skiper-gooey-panel {
     top: 48px;
-    right: -2px;
-    width: min(360px, calc(100vw - 20px));
-    padding: 14px 16px 18px;
-    max-height: calc(100vh - 65px);
+    right: 20px;
+    width: min(350px, calc(100vw - 28px));
+    padding: 12px 14px 20px;
+    border-radius: 20px;
+    max-height: calc(100vh - 74px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background: var(--mtw-police-navy, #0B1B36);
-    box-shadow: 0 20px 48px rgba(11, 27, 54, 0.90);
+    overscroll-behavior: contain;
+    background: rgba(11, 27, 54, 0.96) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(197, 168, 128, 0.35) !important;
+    box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.60), 0 4px 16px rgba(11, 27, 54, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transform: translateY(-8px) scale(0.98);
+    transition: opacity 0.20s cubic-bezier(0.2, 0, 0, 1), transform 0.20s cubic-bezier(0.2, 0, 0, 1);
+  }
+  .skiper-gooey-menu-wrapper.is-open .skiper-gooey-panel {
+    opacity: 1;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1);
+  }
+  /* Apple HIG Sheet Grabber Handle */
+  .skiper-gooey-panel::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 4px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.30);
+    margin: 0 auto 10px;
   }
   .skiper-panel-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
     padding-bottom: 10px;
     margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .skiper-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skiper-live-dot {
+    width: 7px;
+    height: 7px;
   }
   .skiper-title {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
     white-space: nowrap;
   }
   .skiper-header-meta {
-    width: 100%;
-    justify-content: flex-start;
+    display: flex;
+    align-items: center;
     gap: 6px;
   }
   .skiper-tag {
-    font-size: 0.66rem;
+    font-size: 0.60rem;
+    padding: 3px 6px;
+    border-radius: 5px;
   }
   .skiper-bento-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 14px;
-  }
-  .skiper-col-label {
-    font-size: 0.70rem;
-    margin-bottom: 6px;
-  }
-  .skiper-item-desc {
-    display: block;
-    font-size: 0.70rem;
-    color: rgba(255, 255, 255, 0.65);
-    margin-top: 1px;
-  }
-  .skiper-item {
-    padding: 6px 10px;
-  }
-  .skiper-item-name {
-    font-size: 0.88rem;
   }
   .skiper-bento-col {
     height: auto;
   }
+  .skiper-col-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--mtw-police-gold, #E5C378);
+    margin-bottom: 6px;
+  }
+  .skiper-col-divider {
+    margin: 10px 0 8px;
+  }
+  /* Apple HIG Inset Grouped List for Department Portals */
+  .skiper-panel-links {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .skiper-item {
+    padding: 9px 12px;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.15s ease, transform 0.15s cubic-bezier(0.2, 0, 0, 1);
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+  .skiper-item:last-child {
+    border-bottom: none;
+  }
+  .skiper-item:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.07);
+  }
+  .skiper-item:active {
+    background: rgba(255, 255, 255, 0.14);
+    transform: scale(0.98);
+  }
+  /* Apple HIG Disclosure Arrow */
+  .skiper-item::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-top: 1.75px solid rgba(255, 255, 255, 0.35);
+    border-right: 1.75px solid rgba(255, 255, 255, 0.35);
+    transform: rotate(45deg);
+    margin-left: 8px;
+    flex-shrink: 0;
+    transition: border-color 0.15s ease;
+  }
+  .skiper-item:active::after {
+    border-color: var(--mtw-police-gold, #E5C378);
+  }
+  .skiper-item-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+  .skiper-item-desc {
+    display: block;
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.62);
+    margin-top: 1px;
+  }
+  /* External Municipal Links */
+  .skiper-external-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .skiper-ext-item {
+    padding: 10px 14px;
+    min-height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.80rem;
+    transition: background-color 0.15s ease, transform 0.15s cubic-bezier(0.2, 0, 0, 1);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .skiper-ext-item:hover {
+    transform: none;
+  }
+  .skiper-ext-item:active {
+    background: rgba(255, 255, 255, 0.14);
+    transform: scale(0.98);
+  }
+  /* Online Resident Services Grid */
   .skiper-services-grid {
     flex: none;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
   .skiper-action-card {
     flex: none;
     padding: 10px 14px;
+    padding-right: 28px;
+    min-height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    text-align: left;
+    transition: background-color 0.15s ease, transform 0.15s cubic-bezier(0.2, 0, 0, 1), border-color 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .skiper-action-card:hover {
+    transform: none;
+  }
+  .skiper-action-card:active {
+    background: rgba(197, 168, 128, 0.16);
+    border-color: rgba(197, 168, 128, 0.40);
+    transform: scale(0.98);
+  }
+  .skiper-action-card::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-top: 1.75px solid rgba(197, 168, 128, 0.65);
+    border-right: 1.75px solid rgba(197, 168, 128, 0.65);
   }
   .skiper-action-title {
     font-size: 0.88rem;
+    font-weight: 700;
   }
   .skiper-action-sub {
-    font-size: 0.70rem;
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.62);
+    margin-top: 1px;
   }
 }
 
