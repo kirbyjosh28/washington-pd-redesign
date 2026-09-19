@@ -16,7 +16,8 @@
       initKineticTypography,
       init3DCardTilts,
       initInteractiveCopyButtons,
-      initCardCursorSpotlight
+      initCardCursorSpotlight,
+      initFaqInteractiveEngine
     ];
 
     inits.forEach(fn => {
@@ -1117,6 +1118,32 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+  }
+
+  function initFaqInteractiveEngine() {
+    const filterButtons = document.querySelectorAll('.civic-faq-filter-btn');
+    const faqItems = document.querySelectorAll('.civic-faq-item');
+    if (!filterButtons.length || !faqItems.length) return;
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-faq-filter');
+        
+        filterButtons.forEach(b => {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+
+        faqItems.forEach(item => {
+          const category = item.getAttribute('data-faq-category');
+          if (filter === 'all' || category === filter) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
   }
 
   function initCardCursorSpotlight() {

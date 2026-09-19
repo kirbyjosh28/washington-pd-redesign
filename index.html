@@ -36,11 +36,11 @@
         
         <!-- Left: Floating Official Brand (Extracted Transparent Seal + Department Text) -->
         <div class="civic-floating-left">
-          <a href="index.html" class="civic-float-brand" aria-label="Washington Police Department Home" title="Washington Police Department">
-            <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" />
+          <a href="index.html" class="civic-float-brand" aria-label="Washington Police Department Home" title="City of Washington Police Department">
+            <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" width="44" height="44" />
             <div class="civic-float-brand-text">
-              <span class="civic-brand-title">Washington Police</span>
-              <span class="civic-brand-dept">Department</span>
+              <span class="civic-float-city-tag">City of Washington</span>
+              <span class="civic-brand-title">Police Department</span>
             </div>
           </a>
         </div>
@@ -496,9 +496,14 @@
           
           <!-- LEFT COLUMN: Official Emblem & Department Headquarters Image -->
           <div class="hero-editorial-media-col scroll-reveal">
-            <!-- Official Washington PD Logo (Standalone, Extracted from Background) -->
-            <div class="hero-editorial-seal-card hero-editorial-logo-wrap">
-              <img src="assets/wpd_official_seal.png" alt="City of Washington Police Department Official Seal" class="hero-editorial-standalone-logo" width="240" height="240" />
+            <!-- Official Washington PD Logo (Executive Bezel Plaque) -->
+            <div class="hero-editorial-seal-card double-bezel spotlight-card">
+              <div class="double-bezel-inner hero-seal-inner">
+                <span class="hero-seal-eyebrow">MUNICIPAL POLICE JURISDICTION • EST. 1825</span>
+                <img src="assets/wpd_official_seal.png" alt="City of Washington Police Department Official Seal" class="hero-editorial-standalone-logo" width="220" height="220" />
+                <div class="hero-seal-title">Washington Police Department</div>
+                <div class="hero-seal-tag">TAZEWELL COUNTY • ILLINOIS</div>
+              </div>
             </div>
 
             <div class="hero-editorial-image-frame double-bezel" style="padding: 8px;">
@@ -531,10 +536,10 @@
               <a href="tel:3094442313" class="btn-editorial-secondary" title="24/7 Police Dispatch">
                 Non-Emergency: (309) 444-2313
               </a>
-              <a href="#services" class="btn-editorial-secondary">
+              <a href="services.html" class="btn-editorial-secondary">
                 Resident Services
               </a>
-              <a href="#districts" class="btn-editorial-secondary">
+              <a href="districts.html" class="btn-editorial-secondary">
                 District Map
               </a>
             </div>
@@ -589,25 +594,73 @@
             </a>
           </article>
 
-          <!-- Non-Emergency Pathway Card -->
+          <!-- Non-Emergency Pathway Card with Upgraded Phone-Tree Directory -->
           <article class="civic-pathway-card civic-pathway-card-non-emergency">
             <div>
-              <div style="display: flex; align-items: center; margin-bottom: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
                 <span class="chip chip-blue" style="font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em;">NON-EMERGENCY ASSISTANCE</span>
+                <span class="chip chip-neutral" style="font-size: 0.68rem; font-family: var(--font-mono);">CONTINUOUS 24/7/365</span>
               </div>
               <h2 class="civic-card-title" style="font-size: 1.65rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
                 24/7 Police Dispatch Line
               </h2>
-              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                Contact our on-duty dispatcher for crimes not in progress, past property damage, noise disturbances, animal control calls, or to speak directly with a patrol officer.
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+                Contact on-duty dispatch for crimes not in progress, past property damage, noise disturbances, animal control, or to speak directly with a patrol officer at <strong>(309) 444-2313</strong>.
               </p>
-              <ul style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 28px; padding-left: 20px; line-height: 1.7;">
-                <li>Routine officer dispatch to your Washington location</li>
-                <li>File an incident report or speak with a shift supervisor</li>
-                <li>Available 24 hours a day, 7 days a week, 365 days a year</li>
-              </ul>
+
+              <!-- Phone-Tree Directory Component -->
+              <div class="wpd-phone-tree-box">
+                <div class="wpd-phone-tree-header">
+                  <span class="wpd-phone-tree-title">Automated Phone-Tree Directory</span>
+                  <span class="wpd-verify-pending" title="Routing structure to be verified by WPD Communications">PENDING FINAL VERIFICATION</span>
+                </div>
+                <div class="wpd-phone-tree-grid">
+                  <div class="wpd-phone-tree-item">
+                    <span class="wpd-keypad-pill">1</span>
+                    <div>
+                      <div class="wpd-phone-tree-label">On-Duty Patrol Dispatch</div>
+                      <div class="wpd-phone-tree-desc">24/7 Tazewell Consolidated Dispatcher for active officer response</div>
+                    </div>
+                  </div>
+                  <div class="wpd-phone-tree-item">
+                    <span class="wpd-keypad-pill">2</span>
+                    <div>
+                      <div class="wpd-phone-tree-label">Police Records &amp; FOIA Bureau</div>
+                      <div class="wpd-phone-tree-desc">Mon–Fri 8:00 AM – 4:30 PM • Incident reports &amp; background checks</div>
+                    </div>
+                  </div>
+                  <div class="wpd-phone-tree-item">
+                    <span class="wpd-keypad-pill">3</span>
+                    <div>
+                      <div class="wpd-phone-tree-label">Chief of Police &amp; Administration</div>
+                      <div class="wpd-phone-tree-desc">Mon–Fri 8:00 AM – 4:30 PM • Executive command &amp; commendations</div>
+                    </div>
+                  </div>
+                  <div class="wpd-phone-tree-item">
+                    <span class="wpd-keypad-pill">4</span>
+                    <div>
+                      <div class="wpd-phone-tree-label">Parking Enforcement &amp; Permits</div>
+                      <div class="wpd-phone-tree-desc">Overnight parking waivers, ordinance questions &amp; ticket inquiry</div>
+                    </div>
+                  </div>
+                  <div class="wpd-phone-tree-item">
+                    <span class="wpd-keypad-pill">5</span>
+                    <div>
+                      <div class="wpd-phone-tree-label">Criminal Investigations (CIU)</div>
+                      <div class="wpd-phone-tree-desc">Detective Bureau • Active case follow-up &amp; detective assignment</div>
+                    </div>
+                  </div>
+                  <div class="wpd-phone-tree-item">
+                    <span class="wpd-keypad-pill">0</span>
+                    <div>
+                      <div class="wpd-phone-tree-label">Station Desk Operator</div>
+                      <div class="wpd-phone-tree-desc">General department telecommunications assistance</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-align: center;">
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-align: center; margin-top: 8px;">
               Call (309) 444-2313
             </a>
           </article>
@@ -804,6 +857,72 @@
 
         </div>
 
+    <!-- ========================================================================
+         DIGITAL POLICE SERVICE CENTER FAST-ACTION STRIP
+         Instant civic workflows: Parking Permits, Payments, Bicycle Registry & FOIA
+         ======================================================================== -->
+    <section class="page-section" style="padding-top: 0; padding-bottom: var(--space-12);" aria-label="Digital Police Services Quick Actions">
+      <div class="container">
+        <div style="background: radial-gradient(circle at 50% 0%, rgba(20, 38, 70, 0.7) 0%, rgba(11, 27, 54, 0.95) 100%); border: 1px solid rgba(197, 168, 128, 0.35); border-radius: var(--radius-lg, 16px); padding: var(--space-8); box-shadow: 0 20px 40px -15px rgba(11, 27, 54, 0.35);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <div class="hero-editorial-eyebrow" style="color: var(--mtw-police-gold, #C5A880);">MUNICIPAL DIGITAL ACTION CENTER</div>
+              <h3 style="font-family: var(--font-title); font-size: clamp(1.5rem, 2.4vw, 2rem); color: #FFFFFF; margin-top: 4px; font-weight: 700;">
+                Direct Police Services &amp; Online Actions
+              </h3>
+              <p style="color: #94A3B8; font-size: 0.92rem; max-width: 680px; margin-top: 6px;">
+                Complete essential requests immediately without visiting the station or waiting on hold.
+              </p>
+            </div>
+            <a href="services.html" class="btn-editorial-primary" style="text-decoration: none;">
+              Full Services Directory &amp; FAQ ↗
+            </a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3);">
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-parking-permits" style="justify-content: flex-start; text-align: left; padding: 14px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <strong style="color: var(--mtw-police-gold, #C5A880); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;">Overnight Exemption</strong>
+                <span style="font-weight: 700; font-size: 0.92rem;">Parking Permits</span>
+              </span>
+            </button>
+
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-online-payments" style="justify-content: flex-start; text-align: left; padding: 14px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <strong style="color: #34D399; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;">Direct E-Pay Gateway</strong>
+                <span style="font-weight: 700; font-size: 0.92rem;">Pay Citation / Ticket</span>
+              </span>
+            </button>
+
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-bicycle-registration" style="justify-content: flex-start; text-align: left; padding: 14px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <strong style="color: #60A5FA; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;">Property Protection</strong>
+                <span style="font-weight: 700; font-size: 0.92rem;">Register Bicycle</span>
+              </span>
+            </button>
+
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-police-records" style="justify-content: flex-start; text-align: left; padding: 14px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <strong style="color: #E2E8F0; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;">Illinois 5 ILCS 140</strong>
+                <span style="font-weight: 700; font-size: 0.92rem;">Police FOIA Records</span>
+              </span>
+            </button>
+
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-vacation-check" style="justify-content: flex-start; text-align: left; padding: 14px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <strong style="color: #34D399; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;">Perimeter Checks</strong>
+                <span style="font-weight: 700; font-size: 0.92rem;">Vacation House Watch</span>
+              </span>
+            </button>
+
+            <button type="button" class="btn-editorial-secondary" data-open-drawer="drawer-anonymous-tip" style="justify-content: flex-start; text-align: left; padding: 14px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <strong style="color: #F87171; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;">100% Confidential</strong>
+                <span style="font-weight: 700; font-size: 0.92rem;">Anonymous Crime Tip</span>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1099,6 +1218,198 @@
       </div>
     </div>
   </div>
+
+  <!-- Drawer 7: Parking Permits & Exemption Requests -->
+  <div class="action-drawer-backdrop" id="drawer-parking-permits" role="dialog" aria-modal="true" aria-labelledby="permits-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-gold" style="font-size: 0.72rem;">MUNICIPAL PERMIT PORTAL</span>
+          <h3 id="permits-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Overnight Parking Permit</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Overnight Parking Permit Request">
+          <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            <strong style="color: var(--text-primary);">Ordinance Notice:</strong> Overnight on-street parking is prohibited between 2:00 AM – 6:00 AM without an approved temporary exemption permit. Permits are invalid during declared snow emergencies.
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="park-name">Resident / Applicant Full Name *</label>
+            <input type="text" id="park-name" class="drawer-form-input" required placeholder="e.g. Michael Henderson" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="park-phone">Phone Number *</label>
+              <input type="tel" id="park-phone" class="drawer-form-input" required placeholder="(309) 555-4821" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="park-address">Street Address in Washington *</label>
+              <input type="text" id="park-address" class="drawer-form-input" required placeholder="1420 Kingsbury Rd" />
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="park-plate">License Plate &amp; State *</label>
+              <input type="text" id="park-plate" class="drawer-form-input" required placeholder="IL • 782 9142" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="park-vehicle">Vehicle Make &amp; Model *</label>
+              <input type="text" id="park-vehicle" class="drawer-form-input" required placeholder="2023 Honda CR-V (Silver)" />
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="park-dates">Dates Requested (Max 3 Nights) *</label>
+              <input type="text" id="park-dates" class="drawer-form-input" required placeholder="Tonight through Sunday" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="park-reason">Reason for Exemption *</label>
+              <select id="park-reason" class="drawer-form-select" required>
+                <option value="overnight-guests">Out-of-Town Overnight Guests</option>
+                <option value="driveway-work">Driveway Paving / Construction</option>
+                <option value="disabled-vehicle">Temporary Mechanical Breakdown</option>
+                <option value="special-event">Family Event / Gathering</option>
+                <option value="other">Other Legitimate Hardship</option>
+              </select>
+            </div>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">Submit Permit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 8: Online Municipal Payments -->
+  <div class="action-drawer-backdrop" id="drawer-online-payments" role="dialog" aria-modal="true" aria-labelledby="pay-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-emerald" style="font-size: 0.72rem;">SECURE PAYMENT GATEWAY</span>
+          <h3 id="pay-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Online Payments &amp; Citations</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Citation Lookup &amp; Payment">
+          <div style="padding: 10px 14px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            <strong style="color: var(--accent-emerald);">Direct Municipal Gateway:</strong> Parking tickets, ordinance violations, and administrative records fees can be paid with Visa, MasterCard, Discover, or e-Check through the official City of Washington billing system.
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="pay-type">Payment Category *</label>
+            <select id="pay-type" class="drawer-form-select" required>
+              <option value="parking">Parking Violation Ticket (WPD)</option>
+              <option value="ordinance">Municipal Code Ordinance Citation</option>
+              <option value="animal">Animal Control Impound / Violation Fee</option>
+              <option value="records">Police FOIA / Administrative Record Fee</option>
+              <option value="alarm">False Alarm Regulatory Fee</option>
+            </select>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="pay-ticket">Citation / Ticket Number *</label>
+              <input type="text" id="pay-ticket" class="drawer-form-input" required placeholder="e.g. PK-2026-4820" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="pay-plate">Vehicle License Plate (if vehicle) *</label>
+              <input type="text" id="pay-plate" class="drawer-form-input" required placeholder="IL • ABC 1234" />
+            </div>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="pay-payer">Cardholder / Payer Name *</label>
+            <input type="text" id="pay-payer" class="drawer-form-input" required placeholder="Jane Doe" />
+          </div>
+          <div style="padding: 12px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; margin-bottom: var(--space-4); font-size: 0.82rem; color: var(--text-secondary);">
+            Payment assistance &amp; in-person questions: Contact City Collector at <strong>(309) 444-3196</strong> or visit City Hall, 301 Walnut St.
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">Proceed to Payment Gateway ↗</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 9: Bicycle Identification & Registration -->
+  <div class="action-drawer-backdrop" id="drawer-bicycle-registration" role="dialog" aria-modal="true" aria-labelledby="bike-drawer-title">
+    <div class="action-drawer">
+      <div class="sheet-grabber" aria-hidden="true"></div>
+      <div class="action-drawer-header">
+        <div>
+          <span class="chip chip-blue" style="font-size: 0.72rem;">CRIME PREVENTION REGISTRY</span>
+          <h3 id="bike-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Bicycle Identification &amp; Registration</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+      </div>
+      <div class="action-drawer-body">
+        <form class="wpd-drawer-form" data-form-title="Bicycle Registry Submission">
+          <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+            <strong style="color: var(--text-primary);">Protect Your Property:</strong> Registering your bicycle with WPD enters your serial number and ownership details into the departmental property database. If recovered following theft or loss, officers can return it immediately.
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="bike-owner">Owner Full Name *</label>
+            <input type="text" id="bike-owner" class="drawer-form-input" required placeholder="Robert Chen" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-phone">Phone Number *</label>
+              <input type="tel" id="bike-phone" class="drawer-form-input" required placeholder="(309) 555-7729" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-email">Email Address *</label>
+              <input type="email" id="bike-email" class="drawer-form-input" required placeholder="robert@example.com" />
+            </div>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="bike-address">Residential Address *</label>
+            <input type="text" id="bike-address" class="drawer-form-input" required placeholder="405 Kingsbury Rd, Washington, IL" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-make">Make &amp; Model *</label>
+              <input type="text" id="bike-make" class="drawer-form-input" required placeholder="e.g. Trek Marlin 6 Gen 3" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-serial">Serial Number (Bottom Bracket) *</label>
+              <input type="text" id="bike-serial" class="drawer-form-input" required placeholder="e.g. WTU234G9876S" />
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-color">Primary Color(s) *</label>
+              <input type="text" id="bike-color" class="drawer-form-input" required placeholder="Matte Navy / Orange decals" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-style">Bicycle Type *</label>
+              <select id="bike-style" class="drawer-form-select" required>
+                <option value="mountain">Mountain Bike</option>
+                <option value="road">Road / Gravel Bike</option>
+                <option value="hybrid">Hybrid / Commuter</option>
+                <option value="ebike">Electric Bike (E-Bike)</option>
+                <option value="bmx">BMX / Freestyle</option>
+                <option value="youth">Youth / Kids Bicycle</option>
+              </select>
+            </div>
+          </div>
+          <div class="drawer-form-group">
+            <label class="drawer-form-label" for="bike-features">Distinguishing Marks / Accessories</label>
+            <textarea id="bike-features" class="drawer-form-textarea" placeholder="Rear luggage rack, water bottle cage, kickstand, handlebar phone mount, scratch on top tube..."></textarea>
+          </div>
+          <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+            <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+            <button type="submit" class="btn-editorial-primary">Register Bicycle with WPD</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ========================================================================
        DIGNIFIED CIVIC EDITORIAL FOOTER (CONTENTINFO)

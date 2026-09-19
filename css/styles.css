@@ -10730,3 +10730,596 @@ img.civic-editorial-img,
     border-radius: 9999px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   STAKEHOLDER ENHANCEMENTS & DIGITAL SERVICE CENTER SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Scalable City-Wide Header Branding Lockup */
+.civic-float-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.civic-float-city-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #8A6D3B);
+}
+
+.civic-float-logo-img {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.5px rgba(197, 168, 128, 0.45), 0 2px 8px rgba(11, 27, 54, 0.10);
+  object-fit: contain;
+}
+
+/* 2. Executive Hero Seal Plaque */
+.hero-editorial-seal-card {
+  position: relative;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid rgba(197, 168, 128, 0.40);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(11, 27, 54, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  padding: 24px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-editorial-seal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(11, 27, 54, 0.12), 0 0 0 1px rgba(197, 168, 128, 0.6) inset;
+}
+
+.hero-seal-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-seal-eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #8A6D3B);
+  background: rgba(197, 168, 128, 0.15);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.hero-seal-title {
+  font-family: var(--font-title, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.hero-seal-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-muted, #64748B);
+}
+
+/* 3. Upgraded 24/7 Dispatch Pathway & Phone-Tree Directory */
+.wpd-phone-tree-box {
+  margin-top: 24px;
+  background: rgba(11, 27, 54, 0.03);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.10));
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.wpd-phone-tree-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.10));
+}
+
+.wpd-phone-tree-title {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary, #0B1B36);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wpd-phone-tree-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.wpd-phone-tree-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.wpd-phone-tree-item:hover {
+  border-color: rgba(197, 168, 128, 0.5);
+  transform: translateY(-1px);
+}
+
+.wpd-keypad-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--mtw-navy-dark, #0B1B36);
+  color: var(--mtw-police-gold, #C5A880);
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.wpd-phone-tree-details {
+  flex: 1;
+}
+
+.wpd-phone-tree-opt-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  line-height: 1.3;
+}
+
+.wpd-phone-tree-opt-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary, #64748B);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .wpd-phone-tree-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 4. 3-Tier Leadership Rank Hierarchy */
+.wpd-rank-tier {
+  margin-bottom: 48px;
+}
+
+.wpd-rank-tier-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.12));
+}
+
+.wpd-rank-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.wpd-rank-tier-badge-gold {
+  background: rgba(197, 168, 128, 0.15);
+  color: #8A6D3B;
+  border: 1px solid rgba(197, 168, 128, 0.40);
+}
+
+.wpd-rank-tier-badge-blue {
+  background: rgba(37, 99, 235, 0.10);
+  color: #1D4ED8;
+  border: 1px solid rgba(37, 99, 235, 0.30);
+}
+
+.wpd-rank-tier-badge-navy {
+  background: rgba(11, 27, 54, 0.08);
+  color: #0B1B36;
+  border: 1px solid rgba(11, 27, 54, 0.20);
+}
+
+.wpd-rank-tier-title {
+  font-family: var(--font-title, serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  margin: 0;
+}
+
+.wpd-rank-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.wpd-rank-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 1100px) {
+  .wpd-rank-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wpd-rank-grid-2,
+  .wpd-rank-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wpd-rank-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.10));
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(11, 27, 54, 0.04);
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.wpd-rank-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(11, 27, 54, 0.08);
+  border-color: rgba(197, 168, 128, 0.50);
+}
+
+.wpd-rank-insignia {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--mtw-police-gold, #8A6D3B);
+  margin-bottom: 10px;
+}
+
+.wpd-rank-card-name {
+  font-family: var(--font-title, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  margin: 0 0 4px;
+}
+
+.wpd-rank-card-role {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-blue, #2563EB);
+  margin-bottom: 12px;
+}
+
+.wpd-rank-card-desc {
+  font-size: 0.90rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #475569);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.wpd-rank-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  font-size: 0.80rem;
+  color: var(--text-muted, #64748B);
+}
+
+.wpd-rank-verification-badge {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #B45309;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  margin-top: 8px;
+}
+
+/* 5. In-Person & Walk-In Police Services Section */
+.in-person-services-section {
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.12));
+}
+
+.in-person-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .in-person-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .in-person-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.in-person-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.10));
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(11, 27, 54, 0.04);
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.in-person-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(11, 27, 54, 0.08);
+  border-color: rgba(197, 168, 128, 0.50);
+}
+
+.in-person-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.in-person-title {
+  font-family: var(--font-title, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  margin: 0 0 8px;
+}
+
+.in-person-desc {
+  font-size: 0.90rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #475569);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.in-person-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.in-person-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary, #334155);
+}
+
+.in-person-info-item strong {
+  color: var(--text-primary, #0B1B36);
+  font-weight: 700;
+  min-width: 80px;
+}
+
+.in-person-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+}
+
+/* 6. Interactive & Actionable FAQ System */
+.civic-faq-section {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.12));
+}
+
+.civic-faq-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.civic-faq-filter-btn {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 700;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.12));
+  color: var(--text-secondary, #475569);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.civic-faq-filter-btn:hover {
+  background: rgba(11, 27, 54, 0.04);
+  color: var(--text-primary, #0B1B36);
+}
+
+.civic-faq-filter-btn.active {
+  background: var(--mtw-navy-dark, #0B1B36);
+  color: #FFFFFF;
+  border-color: var(--mtw-navy-dark, #0B1B36);
+  box-shadow: 0 4px 12px rgba(11, 27, 54, 0.15);
+}
+
+.civic-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.civic-faq-item {
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.10));
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(11, 27, 54, 0.03);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.civic-faq-item:hover {
+  border-color: rgba(197, 168, 128, 0.45);
+}
+
+.civic-faq-item[open] {
+  border-color: rgba(197, 168, 128, 0.60);
+  box-shadow: 0 8px 24px rgba(11, 27, 54, 0.06);
+}
+
+.civic-faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  list-style: none;
+}
+
+.civic-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.civic-faq-summary:focus-visible {
+  outline: 2px solid var(--mtw-police-gold, #8A6D3B);
+  outline-offset: -2px;
+}
+
+.civic-faq-question-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.civic-faq-category-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: rgba(11, 27, 54, 0.06);
+  color: var(--text-secondary, #475569);
+}
+
+.civic-faq-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(11, 27, 54, 0.04);
+  color: var(--text-secondary, #64748B);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+.civic-faq-item[open] .civic-faq-chevron {
+  transform: rotate(180deg);
+  background: var(--mtw-navy-dark, #0B1B36);
+  color: var(--mtw-police-gold, #C5A880);
+}
+
+.civic-faq-content {
+  padding: 0 24px 24px;
+  color: var(--text-secondary, #334155);
+  font-size: 0.95rem;
+  line-height: 1.68;
+}
+
+.civic-faq-action-row {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(197, 168, 128, 0.08);
+  border: 1px solid rgba(197, 168, 128, 0.30);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.civic-faq-action-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+}
+
+.civic-faq-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+

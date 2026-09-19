@@ -160,6 +160,54 @@ async function runVerification() {
     console.log(`  ✓ HTTP ${status} | ${frameStats.fps} FPS | Title: "${title.slice(0, 45)}..."`);
     console.log(`  ✓ Desktop & Mobile screenshots saved | Bento items: ${portalLinksCount} portals, ${serviceCardsCount} services | Drawer check: ${isDrawerActive ? 'PASS' : 'FAIL'}`);
 
+    // Specific page feature checks
+    if (slug === 'services') {
+      const faqItemsCount = await page.locator('.civic-faq-item').count();
+      if (faqItemsCount < 8) {
+        pageErrors.push(`Expected at least 8 FAQ items on services.html, found ${faqItemsCount}`);
+      }
+      const inPersonCardsCount = await page.locator('.in-person-card').count();
+      if (inPersonCardsCount < 5) {
+        pageErrors.push(`Expected at least 5 in-person service cards, found ${inPersonCardsCount}`);
+      }
+      const permitsDrawer = await page.locator('#drawer-parking-permits').count();
+      const paymentsDrawer = await page.locator('#drawer-online-payments').count();
+      const bikeDrawer = await page.locator('#drawer-bicycle-registration').count();
+      if (!permitsDrawer || !paymentsDrawer || !bikeDrawer) {
+        pageErrors.push('Missing new digital service action drawers on services.html');
+      }
+
+      // Test FAQ filter clicking
+      const parkingFilterBtn = page.locator('.civic-faq-filter-btn[data-faq-filter="parking"]');
+      if (await parkingFilterBtn.count() > 0) {
+        await parkingFilterBtn.click();
+        await page.waitForTimeout(100);
+        const visibleFaqs = await page.locator('.civic-faq-item:not([style*="display: none"])').count();
+        if (visibleFaqs === 0) {
+          pageErrors.push('FAQ filter for parking returned 0 visible items');
+        }
+      }
+    }
+
+    if (slug === 'leadership') {
+      const chiefTier = await page.locator('.wpd-rank-tier').count();
+      const rankCards = await page.locator('.wpd-rank-card').count();
+      if (chiefTier < 3 || rankCards < 6) {
+        pageErrors.push(`Expected 3 rank tiers and >=6 rank cards on leadership.html, found ${chiefTier} tiers and ${rankCards} cards`);
+      }
+    }
+
+    if (slug === 'index') {
+      const phoneTreeItems = await page.locator('.wpd-phone-tree-item').count();
+      if (phoneTreeItems < 5) {
+        pageErrors.push(`Expected >=5 phone-tree directory items on index.html, found ${phoneTreeItems}`);
+      }
+      const heroSealTitle = await page.locator('.hero-seal-title').count();
+      if (heroSealTitle === 0) {
+        pageErrors.push('Missing .hero-seal-title in hero seal plaque on index.html');
+      }
+    }
+
     results.push({
       name: p.name,
       file: p.file,
