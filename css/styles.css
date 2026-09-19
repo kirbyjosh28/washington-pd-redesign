@@ -7345,11 +7345,11 @@ body:has(.site-header) main {
 }
 
 .hero-editorial-standalone-logo {
-  width: clamp(210px, 22vw, 260px);
-  height: clamp(210px, 22vw, 260px);
+  width: clamp(280px, 26vw, 360px);
+  height: clamp(280px, 26vw, 360px);
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 8px 26px rgba(11, 27, 54, 0.16));
+  filter: drop-shadow(0 10px 30px rgba(11, 27, 54, 0.18));
   transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), filter 0.25s ease;
   user-select: none;
   display: block;
@@ -7366,8 +7366,8 @@ body:has(.site-header) main {
     padding: 4px 0 2px 0 !important;
   }
   .hero-editorial-standalone-logo {
-    width: clamp(110px, 30vw, 140px) !important;
-    height: clamp(110px, 30vw, 140px) !important;
+    width: clamp(150px, 42vw, 190px) !important;
+    height: clamp(150px, 42vw, 190px) !important;
   }
   .hero-editorial-image-inner {
     aspect-ratio: 16 / 9.5 !important;
