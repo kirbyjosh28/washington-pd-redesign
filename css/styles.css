@@ -9628,6 +9628,273 @@ img.civic-editorial-img,
   align-items: center;
 }
 
+/* ── 2. Tier 2: Executive Deputy Chiefs Grid ── */
+.wpd-deputy-section {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.wpd-deputy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: var(--space-5);
+  align-items: stretch;
+}
+
+.wpd-deputy-card {
+  padding: 8px;
+  height: 100%;
+}
+
+.wpd-deputy-inner {
+  padding: 32px 28px !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.wpd-deputy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.wpd-deputy-name {
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.wpd-deputy-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.wpd-deputy-bio {
+  font-size: 0.90rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.wpd-deputy-scope-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 8px;
+}
+
+.wpd-deputy-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.wpd-scope-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-body);
+}
+
+.wpd-deputy-footer {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.wpd-deputy-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.84rem;
+}
+
+/* ── 3. Tier 3: Frontline Supervisory Cadre (Sergeants) Grid ── */
+.wpd-sergeant-section {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.wpd-sergeant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-6);
+  align-items: stretch;
+}
+
+.wpd-sergeant-card {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-radius: 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.wpd-sergeant-card .civic-service-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.wpd-sergeant-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.wpd-sergeant-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.wpd-sergeant-duties {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+.wpd-sergeant-duties li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.wpd-sergeant-duties li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue, #2563EB);
+  font-size: 1.1rem;
+  line-height: 1;
+  top: 1px;
+}
+
+.wpd-sergeant-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ── 4. Statutory Supervisory Quality Assurance Banner ── */
+.wpd-accountability-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  margin-top: var(--space-6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.wpd-accountability-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 820px;
+}
+
+.wpd-accountability-icon-wrap {
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.wpd-accountability-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-emerald, #059669);
+  margin-bottom: 4px;
+}
+
+.wpd-accountability-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.wpd-accountability-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.wpd-accountability-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.wpd-accountability-actions .btn-editorial-primary,
+.wpd-accountability-actions .btn-editorial-secondary {
+  min-height: 44px;
+  white-space: nowrap;
+  text-align: center;
+  justify-content: center;
+}
+
 /* Mobile Collapse for Leadership Section */
 @media (max-width: 992px) {
   .wpd-leadership-header {
@@ -9742,6 +10009,66 @@ img.civic-editorial-img,
     min-height: 44px !important;
     font-size: 0.84rem !important;
     padding: 10px 14px !important;
+  }
+
+  /* Deputy Chiefs responsive */
+  .wpd-deputy-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: var(--space-3) !important;
+  }
+
+  .wpd-deputy-card {
+    padding: 4px !important;
+  }
+
+  .wpd-deputy-inner {
+    padding: 20px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .wpd-deputy-footer {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .wpd-deputy-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Sergeants responsive */
+  .wpd-sergeant-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: var(--space-3) !important;
+  }
+
+  .wpd-sergeant-card {
+    padding: 20px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Accountability strip responsive */
+  .wpd-accountability-strip {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 20px 18px !important;
+    gap: 18px !important;
+  }
+
+  .wpd-accountability-content {
+    flex-direction: row !important;
+  }
+
+  .wpd-accountability-actions {
+    width: 100% !important;
+  }
+
+  .wpd-accountability-actions .btn-editorial-primary,
+  .wpd-accountability-actions .btn-editorial-secondary {
+    width: 100% !important;
   }
 }
 
