@@ -1143,60 +1143,35 @@
       const panel = wrapper.querySelector('.skiper-gooey-panel');
       if (!trigger || !panel) return;
 
-      let closeTimer = null;
-      let lastOpenViaHover = 0;
-
       function openMenu() {
-        if (closeTimer) {
-          clearTimeout(closeTimer);
-          closeTimer = null;
-        }
         wrapper.classList.add('is-open');
         trigger.setAttribute('aria-expanded', 'true');
       }
 
       function closeMenu() {
-        if (closeTimer) {
-          clearTimeout(closeTimer);
-          closeTimer = null;
-        }
-        lastOpenViaHover = 0;
         wrapper.classList.remove('is-open');
         trigger.setAttribute('aria-expanded', 'false');
       }
 
-      // Click toggle
+      // Explicit Click Toggle (Persistent — No hover trigger)
       trigger.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
-        // If it was opened via hover within the last 500ms, keep it open on click
-        if (Date.now() - lastOpenViaHover < 500 && wrapper.classList.contains('is-open')) {
-          return;
-        }
         const isOpen = wrapper.classList.contains('is-open');
         if (isOpen) {
           closeMenu();
         } else {
+          // Close any other open dropdowns first
+          document.querySelectorAll('.skiper-gooey-menu-wrapper.is-open').forEach(w => {
+            w.classList.remove('is-open');
+            const b = w.querySelector('.skiper-goo-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
           openMenu();
         }
       });
 
-      // Desktop hover with gentle exit debounce
-      wrapper.addEventListener('mouseenter', () => {
-        if (window.innerWidth > 768) {
-          if (!wrapper.classList.contains('is-open')) {
-            lastOpenViaHover = Date.now();
-            openMenu();
-          }
-        }
-      });
-
-      wrapper.addEventListener('mouseleave', () => {
-        if (window.innerWidth > 768) {
-          closeTimer = setTimeout(closeMenu, 200);
-        }
-      });
-
-      // Close when clicking any link inside
+      // Close when navigating or activating an action item inside panel
       panel.querySelectorAll('a, button').forEach(item => {
         item.addEventListener('click', () => {
           closeMenu();
