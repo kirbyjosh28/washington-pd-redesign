@@ -10793,8 +10793,8 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
 
 .strip-action-btn {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
+  border: 1px solid rgba(197, 168, 128, 0.32);
+  color: var(--mtw-police-gold, #F5D77F);
   font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.78rem;
   font-weight: 700;
@@ -10809,36 +10809,55 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   white-space: nowrap;
 }
 
+.strip-action-btn > span {
+  color: var(--mtw-police-gold, #F5D77F);
+  transition: color 0.18s ease;
+}
+
 .strip-action-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: var(--mtw-police-gold, #C5A880);
+  background: rgba(197, 168, 128, 0.22);
+  border-color: var(--mtw-police-gold, #F5D77F);
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28), 0 0 10px rgba(197, 168, 128, 0.25);
+}
+
+.strip-action-btn:hover > span {
+  color: #FFFFFF;
 }
 
 .strip-action-btn:active {
   transform: scale(0.97);
 }
 
-.strip-btn-gold {
-  color: var(--mtw-police-gold, #F5D77F);
+.strip-btn-gold,
+.strip-btn-emerald,
+.strip-btn-blue,
+.strip-btn-rose {
+  color: var(--mtw-police-gold, #F5D77F) !important;
   border-color: rgba(197, 168, 128, 0.35);
 }
 
-.strip-btn-emerald {
-  color: #34D399;
-  border-color: rgba(52, 211, 153, 0.30);
+.strip-btn-gold > span,
+.strip-btn-emerald > span,
+.strip-btn-blue > span,
+.strip-btn-rose > span {
+  color: var(--mtw-police-gold, #F5D77F) !important;
 }
 
-.strip-btn-blue {
-  color: #60A5FA;
-  border-color: rgba(96, 165, 250, 0.30);
+.strip-btn-gold:hover,
+.strip-btn-emerald:hover,
+.strip-btn-blue:hover,
+.strip-btn-rose:hover {
+  color: #FFFFFF !important;
+  border-color: var(--mtw-police-gold, #F5D77F) !important;
 }
 
-.strip-btn-rose {
-  color: #F87171;
-  border-color: rgba(248, 113, 113, 0.30);
+.strip-btn-gold:hover > span,
+.strip-btn-emerald:hover > span,
+.strip-btn-blue:hover > span,
+.strip-btn-rose:hover > span {
+  color: #FFFFFF !important;
 }
 
 /* Verified Tyler Technologies Municipal Payment Card */
