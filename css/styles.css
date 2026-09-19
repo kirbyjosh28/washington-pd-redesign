@@ -9667,6 +9667,20 @@ img.civic-editorial-img,
   background: #0B1B36;
 }
 
+.wpd-deputy-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 27, 54, 0.15) 0%,
+    transparent 18%,
+    transparent 68%,
+    rgba(11, 27, 54, 0.50) 100%
+  );
+}
+
 .wpd-deputy-img {
   width: 100%;
   height: 100%;
@@ -9684,6 +9698,7 @@ img.civic-editorial-img,
   position: absolute;
   bottom: 14px;
   left: 14px;
+  z-index: 2;
   background: rgba(11, 27, 54, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
