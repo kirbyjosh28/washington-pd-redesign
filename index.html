@@ -171,20 +171,6 @@
             <stop offset="50%" stop-color="#122545" stop-opacity="0.12" />
             <stop offset="100%" stop-color="#0B1B36" stop-opacity="0.28" />
           </linearGradient>
-
-          <!-- 3D Ribbon Drop Shadow Filter (Casts soft shadow onto underlying fold) -->
-          <filter id="ribbonCastShadow" x="-10%" y="-10%" width="120%" height="130%">
-            <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0B1B36" flood-opacity="0.18" />
-          </filter>
-
-          <!-- Glowing Specular Rim Filter -->
-          <filter id="silkRimGlow" x="-25%" y="-25%" width="150%" height="150%">
-            <feGaussianBlur stdDeviation="3.5" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
         </defs>
 
         <!-- ====================================================================
@@ -195,106 +181,168 @@
         <path d="M1650,-50 L1650,750 C1420,850 1180,720 980,560 C780,400 580,320 380,440 C220,540 80,780 -50,920 L-50,-50 Z"
               fill="url(#silkHeroFoldA)" />
 
-        <!-- Hero Primary Sweeping Ribbon (Overlapping 3D Satin Crest) -->
-        <g filter="url(#ribbonCastShadow)">
-          <path d="M-50,680 C180,520 420,380 680,410 C960,450 1200,680 1420,640 C1540,620 1610,540 1650,480 L1650,1450 C1450,1520 1180,1380 920,1220 C660,1060 380,1180 -50,1320 Z"
-                fill="url(#silkHeroFoldB)" />
-        </g>
+        <!-- Hero Primary Sweeping Ribbon: Soft 3D Cast Shadow Strokes (Hardware-Accelerated) -->
+        <path d="M1650,1450 C1450,1520 1180,1380 920,1220 C660,1060 380,1180 -50,1320"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M1650,1450 C1450,1520 1180,1380 920,1220 C660,1060 380,1180 -50,1320"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
 
-        <!-- Hero Primary Gold Specular Rim Line (The signature razor-sharp illuminated edge) -->
+        <!-- Hero Primary Sweeping Ribbon (Overlapping 3D Satin Crest) -->
+        <path d="M-50,680 C180,520 420,380 680,410 C960,450 1200,680 1420,640 C1540,620 1610,540 1650,480 L1650,1450 C1450,1520 1180,1380 920,1220 C660,1060 380,1180 -50,1320 Z"
+              fill="url(#silkHeroFoldB)" />
+
+        <!-- Hero Primary Gold Specular Rim Line (Zero-Filter Vector Glow Stack) -->
         <path d="M-50,680 C180,520 420,380 680,410 C960,450 1200,680 1420,640 C1540,620 1610,540 1650,480"
-              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="7" stroke-opacity="0.22" stroke-linecap="round" />
         <path d="M-50,680 C180,520 420,380 680,410 C960,450 1200,680 1420,640 C1540,620 1610,540 1650,480"
-              fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.9" />
+              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3" stroke-linecap="round" />
+        <path d="M-50,680 C180,520 420,380 680,410 C960,450 1200,680 1420,640 C1540,620 1610,540 1650,480"
+              fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.95" stroke-linecap="round" />
 
         <!-- Hero Parabolic S-Curve Counter-Fold (Echoing screenshot's upper-right loop) -->
         <path d="M1650,-50 C1380,180 1240,420 1080,480 C920,540 780,460 620,440 C440,420 220,560 -50,720"
-              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2" filter="url(#silkRimGlow)" />
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="4" stroke-opacity="0.25" stroke-linecap="round" />
+        <path d="M1650,-50 C1380,180 1240,420 1080,480 C920,540 780,460 620,440 C440,420 220,560 -50,720"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2" stroke-linecap="round" />
+
         <path d="M1650,1450 C1450,1520 1180,1380 920,1220 C660,1060 380,1180 -50,1320"
-              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.5" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="6" stroke-opacity="0.20" stroke-linecap="round" />
+        <path d="M1650,1450 C1450,1520 1180,1380 920,1220 C660,1060 380,1180 -50,1320"
+              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.4" stroke-linecap="round" />
 
         <!-- ====================================================================
              2. SERVICES & CIVIC GATEWAYS (1400 – 3000px)
              Volumetric undulating drapery framing the resident action cards
              ==================================================================== -->
-        <g filter="url(#ribbonCastShadow)">
-          <path d="M1650,1580 C1340,1750 1080,1980 780,1920 C480,1860 220,1650 -50,1780 L-50,2950 C240,2820 540,2960 840,2880 C1140,2800 1380,2580 1650,2720 Z"
-                fill="url(#silkWaveServices)" />
-        </g>
+        <!-- Services 3D Cast Shadow Strokes -->
+        <path d="M-50,2950 C240,2820 540,2960 840,2880 C1140,2800 1380,2580 1650,2720"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M-50,2950 C240,2820 540,2960 840,2880 C1140,2800 1380,2580 1650,2720"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
+
+        <path d="M1650,1580 C1340,1750 1080,1980 780,1920 C480,1860 220,1650 -50,1780 L-50,2950 C240,2820 540,2960 840,2880 C1140,2800 1380,2580 1650,2720 Z"
+              fill="url(#silkWaveServices)" />
+
         <!-- Services Upper Gold Rim Crest -->
         <path d="M1650,1580 C1340,1750 1080,1980 780,1920 C480,1860 220,1650 -50,1780"
-              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.8" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" />
         <path d="M1650,1580 C1340,1750 1080,1980 780,1920 C480,1860 220,1650 -50,1780"
-              fill="none" stroke="#FFF8E7" stroke-width="1.1" stroke-opacity="0.85" />
+              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.8" stroke-linecap="round" />
+        <path d="M1650,1580 C1340,1750 1080,1980 780,1920 C480,1860 220,1650 -50,1780"
+              fill="none" stroke="#FFF8E7" stroke-width="1.1" stroke-opacity="0.9" stroke-linecap="round" />
+
         <!-- Services Lower Rim Crest -->
         <path d="M-50,2950 C240,2820 540,2960 840,2880 C1140,2800 1380,2580 1650,2720"
-              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2.2" filter="url(#silkRimGlow)" />
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="4" stroke-opacity="0.28" stroke-linecap="round" />
+        <path d="M-50,2950 C240,2820 540,2960 840,2880 C1140,2800 1380,2580 1650,2720"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2.2" stroke-linecap="round" />
 
         <!-- ====================================================================
              3. PATROL DISTRICTS & INTERACTIVE MAP (3000 – 5400px)
              Continuous sweeping ribbon diagonal echoing screenshot's center fold
              ==================================================================== -->
-        <g filter="url(#ribbonCastShadow)">
-          <path d="M-50,3120 C280,3280 620,3520 920,3440 C1220,3360 1440,3080 1650,3240 L1650,4550 C1380,4720 1060,4580 780,4760 C480,4940 220,5280 -50,5380 Z"
-                fill="url(#silkWaveDistricts)" />
-        </g>
+        <!-- Districts 3D Cast Shadow Strokes -->
+        <path d="M1650,4550 C1380,4720 1060,4580 780,4760 C480,4940 220,5280 -50,5380"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M1650,4550 C1380,4720 1060,4580 780,4760 C480,4940 220,5280 -50,5380"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
+
+        <path d="M-50,3120 C280,3280 620,3520 920,3440 C1220,3360 1440,3080 1650,3240 L1650,4550 C1380,4720 1060,4580 780,4760 C480,4940 220,5280 -50,5380 Z"
+              fill="url(#silkWaveDistricts)" />
+
         <!-- Districts Main Gold Rim Crest -->
         <path d="M-50,3120 C280,3280 620,3520 920,3440 C1220,3360 1440,3080 1650,3240"
-              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="7" stroke-opacity="0.22" stroke-linecap="round" />
         <path d="M-50,3120 C280,3280 620,3520 920,3440 C1220,3360 1440,3080 1650,3240"
-              fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.9" />
+              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3" stroke-linecap="round" />
+        <path d="M-50,3120 C280,3280 620,3520 920,3440 C1220,3360 1440,3080 1650,3240"
+              fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.95" stroke-linecap="round" />
+
         <!-- Districts Intermediate Parabolic Sweep -->
         <path d="M-50,4180 C320,4380 740,4220 1080,4380 C1340,4500 1520,4420 1650,4350"
-              fill="none" stroke="url(#platinumRimGrad)" stroke-width="1.8" opacity="0.85" filter="url(#silkRimGlow)" />
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="3.5" stroke-opacity="0.25" stroke-linecap="round" />
+        <path d="M-50,4180 C320,4380 740,4220 1080,4380 C1340,4500 1520,4420 1650,4350"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="1.8" opacity="0.9" stroke-linecap="round" />
+
         <!-- Districts Lower Rim Crest -->
         <path d="M1650,4550 C1380,4720 1060,4580 780,4760 C480,4940 220,5280 -50,5380"
-              fill="none" stroke="url(#goldRimGrad3)" stroke-width="2.6" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" />
+        <path d="M1650,4550 C1380,4720 1060,4580 780,4760 C480,4940 220,5280 -50,5380"
+              fill="none" stroke="url(#goldRimGrad3)" stroke-width="2.6" stroke-linecap="round" />
 
         <!-- ====================================================================
              4. COMMUNITY, UNITS & SHIFT OPERATIONS (5400 – 8800px)
              Majestic ribbon waves with deep volumetric shading
              ==================================================================== -->
-        <g filter="url(#ribbonCastShadow)">
-          <path d="M1650,5550 C1350,5820 1050,5680 820,5920 C580,6150 340,6520 -50,6680 L-50,7950 C260,7780 640,7950 960,7720 C1280,7500 1480,7220 1650,7380 Z"
-                fill="url(#silkWaveOps)" />
-        </g>
+        <!-- Units 3D Cast Shadow Strokes -->
+        <path d="M-50,7950 C260,7780 640,7950 960,7720 C1280,7500 1480,7220 1650,7380"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M-50,7950 C260,7780 640,7950 960,7720 C1280,7500 1480,7220 1650,7380"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
+
+        <path d="M1650,5550 C1350,5820 1050,5680 820,5920 C580,6150 340,6520 -50,6680 L-50,7950 C260,7780 640,7950 960,7720 C1280,7500 1480,7220 1650,7380 Z"
+              fill="url(#silkWaveOps)" />
+
         <!-- Units Upper Gold Rim -->
         <path d="M1650,5550 C1350,5820 1050,5680 820,5920 C580,6150 340,6520 -50,6680"
-              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.8" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" />
         <path d="M1650,5550 C1350,5820 1050,5680 820,5920 C580,6150 340,6520 -50,6680"
-              fill="none" stroke="#FFF9EC" stroke-width="1.1" stroke-opacity="0.85" />
+              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.8" stroke-linecap="round" />
+        <path d="M1650,5550 C1350,5820 1050,5680 820,5920 C580,6150 340,6520 -50,6680"
+              fill="none" stroke="#FFF9EC" stroke-width="1.1" stroke-opacity="0.9" stroke-linecap="round" />
+
         <!-- Shift Operations Intermediate Wave -->
         <path d="M-50,7300 C340,7120 720,7340 1080,7180 C1360,7050 1520,7250 1650,7180"
-              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2" filter="url(#silkRimGlow)" />
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="3.5" stroke-opacity="0.25" stroke-linecap="round" />
+        <path d="M-50,7300 C340,7120 720,7340 1080,7180 C1360,7050 1520,7250 1650,7180"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2" stroke-linecap="round" />
+
         <!-- Shift Operations Lower Rim -->
         <path d="M-50,7950 C260,7780 640,7950 960,7720 C1280,7500 1480,7220 1650,7380"
-              fill="none" stroke="url(#goldRimGrad1)" stroke-width="2.6" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" />
+        <path d="M-50,7950 C260,7780 640,7950 960,7720 C1280,7500 1480,7220 1650,7380"
+              fill="none" stroke="url(#goldRimGrad1)" stroke-width="2.6" stroke-linecap="round" />
 
         <!-- ====================================================================
              5. CAREERS & RECRUITMENT (8800 – 9700px)
              Framing the dark recruitment bento card with an exquisite 3D ribbon
              ==================================================================== -->
-        <g filter="url(#ribbonCastShadow)">
-          <path d="M-50,8550 C280,8720 680,8980 980,8890 C1280,8800 1460,8520 1650,8680 L1650,9850 C1360,10020 1040,9900 760,10120 C480,10350 220,10650 -50,10720 Z"
-                fill="url(#silkWaveRecruitment)" />
-        </g>
+        <!-- Recruitment 3D Cast Shadow Strokes -->
+        <path d="M1650,9850 C1360,10020 1040,9900 760,10120 C480,10350 220,10650 -50,10720"
+              fill="none" stroke="#0B1B36" stroke-width="26" stroke-opacity="0.06" stroke-linecap="round" />
+        <path d="M1650,9850 C1360,10020 1040,9900 760,10120 C480,10350 220,10650 -50,10720"
+              fill="none" stroke="#0B1B36" stroke-width="12" stroke-opacity="0.10" stroke-linecap="round" />
+
+        <path d="M-50,8550 C280,8720 680,8980 980,8890 C1280,8800 1460,8520 1650,8680 L1650,9850 C1360,10020 1040,9900 760,10120 C480,10350 220,10650 -50,10720 Z"
+              fill="url(#silkWaveRecruitment)" />
+
         <!-- Recruitment Radiant Gold Rim Crest (Wraps over recruitment section) -->
         <path d="M-50,8550 C280,8720 680,8980 980,8890 C1280,8800 1460,8520 1650,8680"
-              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3.2" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="7" stroke-opacity="0.25" stroke-linecap="round" />
         <path d="M-50,8550 C280,8720 680,8980 980,8890 C1280,8800 1460,8520 1650,8680"
-              fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.95" />
+              fill="none" stroke="url(#goldRimGrad1)" stroke-width="3.2" stroke-linecap="round" />
+        <path d="M-50,8550 C280,8720 680,8980 980,8890 C1280,8800 1460,8520 1650,8680"
+              fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-opacity="0.95" stroke-linecap="round" />
+
         <!-- Recruitment Lower Parabolic Rim -->
         <path d="M1650,9850 C1360,10020 1040,9900 760,10120 C480,10350 220,10650 -50,10720"
-              fill="none" stroke="url(#goldRimGrad3)" stroke-width="2.5" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="5" stroke-opacity="0.22" stroke-linecap="round" />
+        <path d="M1650,9850 C1360,10020 1040,9900 760,10120 C480,10350 220,10650 -50,10720"
+              fill="none" stroke="url(#goldRimGrad3)" stroke-width="2.5" stroke-linecap="round" />
 
         <!-- ====================================================================
              6. LEADERSHIP & FOOTER (9700 – 10700px)
              Grand finale fluid silk flourish fading into municipal footer
              ==================================================================== -->
         <path d="M-50,9450 C380,9280 780,9500 1140,9360 C1420,9240 1560,9450 1650,9380"
-              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2" filter="url(#silkRimGlow)" />
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="3.5" stroke-opacity="0.25" stroke-linecap="round" />
+        <path d="M-50,9450 C380,9280 780,9500 1140,9360 C1420,9240 1560,9450 1650,9380"
+              fill="none" stroke="url(#platinumRimGrad)" stroke-width="2" stroke-linecap="round" />
+
         <path d="M-50,10380 C360,10520 840,10560 1280,10400 C1460,10340 1580,10380 1650,10420"
-              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.2" opacity="0.8" filter="url(#silkRimGlow)" />
+              fill="none" stroke="#D4AF37" stroke-width="5" stroke-opacity="0.2" stroke-linecap="round" />
+        <path d="M-50,10380 C360,10520 840,10560 1280,10400 C1460,10340 1580,10380 1650,10420"
+              fill="none" stroke="url(#goldRimGrad2)" stroke-width="2.2" opacity="0.85" stroke-linecap="round" />
       </svg>
     </div>
 

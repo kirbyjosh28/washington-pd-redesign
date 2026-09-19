@@ -72,13 +72,20 @@ body, #wpd-experience-root {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  contain: layout paint size;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* Atmospheric Volumetric Lighting (Soft, deep silk shadows & champagne light) */
+/* Atmospheric Volumetric Lighting (High-Performance Zero-Blur Gradient Falloffs) */
 .silk-ambient-glow {
   position: absolute;
   pointer-events: none;
   border-radius: 50%;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .silk-glow-hero-navy {
@@ -86,8 +93,7 @@ body, #wpd-experience-root {
   right: -100px;
   width: 1050px;
   height: 900px;
-  background: radial-gradient(circle at 65% 35%, rgba(11, 27, 54, 0.14) 0%, rgba(11, 27, 54, 0.04) 55%, transparent 75%);
-  filter: blur(55px);
+  background: radial-gradient(circle at 65% 35%, rgba(11, 27, 54, 0.16) 0%, rgba(11, 27, 54, 0.08) 30%, rgba(11, 27, 54, 0.02) 55%, transparent 72%);
 }
 
 .silk-glow-hero-gold {
@@ -95,8 +101,7 @@ body, #wpd-experience-root {
   left: clamp(20px, 15vw, 240px);
   width: 750px;
   height: 650px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(197, 168, 128, 0.05) 50%, transparent 70%);
-  filter: blur(48px);
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.13) 0%, rgba(197, 168, 128, 0.06) 30%, rgba(197, 168, 128, 0.01) 55%, transparent 70%);
 }
 
 .silk-glow-mid-navy {
@@ -104,8 +109,7 @@ body, #wpd-experience-root {
   left: -120px;
   width: 1050px;
   height: 950px;
-  background: radial-gradient(circle at 45% 45%, rgba(11, 27, 54, 0.13) 0%, rgba(11, 27, 54, 0.03) 55%, transparent 72%);
-  filter: blur(60px);
+  background: radial-gradient(circle at 45% 45%, rgba(11, 27, 54, 0.15) 0%, rgba(11, 27, 54, 0.07) 32%, rgba(11, 27, 54, 0.01) 58%, transparent 72%);
 }
 
 .silk-glow-ops-gold {
@@ -113,8 +117,7 @@ body, #wpd-experience-root {
   right: -100px;
   width: 900px;
   height: 800px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.09) 0%, rgba(11, 27, 54, 0.05) 50%, transparent 70%);
-  filter: blur(55px);
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.11) 0%, rgba(11, 27, 54, 0.05) 35%, transparent 68%);
 }
 
 .silk-glow-recruitment-navy {
@@ -122,8 +125,7 @@ body, #wpd-experience-root {
   left: -140px;
   width: 1100px;
   height: 1000px;
-  background: radial-gradient(circle at 40% 50%, rgba(11, 27, 54, 0.14) 0%, rgba(212, 175, 55, 0.06) 45%, transparent 72%);
-  filter: blur(65px);
+  background: radial-gradient(circle at 40% 50%, rgba(11, 27, 54, 0.15) 0%, rgba(11, 27, 54, 0.07) 30%, rgba(212, 175, 55, 0.03) 52%, transparent 72%);
 }
 
 /* Sculptural 3D Wave SVG Layer */
@@ -134,6 +136,9 @@ body, #wpd-experience-root {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 [data-theme="dark"] body,
