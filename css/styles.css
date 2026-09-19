@@ -432,6 +432,12 @@ body, #wpd-experience-root {
   border-radius: 50%;
   animation: pulsePip 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
 }
+.status-pip-white {
+  background-color: #FFFFFF;
+}
+.status-pip-white::after {
+  background-color: rgba(255, 255, 255, 0.45);
+}
 .status-pip-emerald {
   background-color: var(--accent-emerald);
 }

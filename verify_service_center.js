@@ -268,20 +268,21 @@ async function runServiceCenterVerification() {
   await homePage.goto(`${BASE_URL}/index.html?agentation=0`, { waitUntil: 'networkidle' });
 
   const homeStrip = await homePage.$('.civic-floating-action-strip');
-  if (homeStrip) {
-    console.log('PASS: .civic-floating-action-strip is present on index.html');
-    // Test clicking parking permits on index.html
-    await homePage.click('.civic-floating-action-strip [data-open-drawer="drawer-parking-permits"]');
+  if (!homeStrip) {
+    console.log('PASS: .civic-floating-action-strip is cleanly absent from index.html per user feedback');
+    // Test clicking parking permits from civic footer on index.html
+    await homePage.click('.civic-footer [data-open-drawer="drawer-parking-permits"]');
     await homePage.waitForTimeout(400);
     const homeDrawerActive = await homePage.$eval('#drawer-parking-permits', el => el.classList.contains('active'));
-    console.log(`PASS: drawer-parking-permits opens on index.html directly: ${homeDrawerActive}`);
+    console.log(`PASS: drawer-parking-permits opens on index.html via footer action: ${homeDrawerActive}`);
     await homePage.click('#drawer-parking-permits [data-close-drawer]');
+    await homePage.waitForTimeout(300);
   } else {
-    console.error('FAIL: .civic-floating-action-strip missing on index.html');
+    console.error('FAIL: .civic-floating-action-strip was NOT removed from index.html');
     totalErrors++;
   }
 
-  await homePage.screenshot({ path: path.join(ARTIFACTS_DIR, 'verified_index_action_strip_desktop.png') });
+  await homePage.screenshot({ path: path.join(ARTIFACTS_DIR, 'verified_index_desktop.png') });
   await homeContext.close();
 
   await browser.close();
