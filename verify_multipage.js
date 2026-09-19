@@ -79,6 +79,10 @@ async function runVerification() {
       });
     });
 
+    // Scroll back to top for pristine hero/header screenshot
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(200);
+
     // Capture desktop screenshot
     const slug = p.file.replace('.html', '');
     const desktopScreenshotPath = path.join(ARTIFACTS_DIR, `verified_multipage_${slug}_desktop.png`);
