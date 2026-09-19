@@ -65,6 +65,69 @@
   <main id="main-content">
 
     <!-- ========================================================================
+         CIVIC NAVY ARCHITECTURAL BACKGROUND DESIGN
+         Atmospheric Police Navy Mesh • GIS Topographic Elevation • Coordinate Grid
+         ======================================================================== -->
+    <div class="civic-navy-bg-canvas" aria-hidden="true">
+      <div class="navy-bg-gradient-hero"></div>
+      <div class="navy-bg-gradient-left"></div>
+      <div class="navy-bg-gradient-mid"></div>
+      <div class="navy-bg-gradient-lower"></div>
+      
+      <!-- Architectural Geometric Backdrop Accents (Visible Navy Pop) -->
+      <div class="navy-bg-geo-shape shape-hero-angle"></div>
+      <div class="navy-bg-geo-shape shape-hero-badge-glow"></div>
+      <div class="navy-bg-geo-shape shape-mid-diamond"></div>
+      <div class="navy-bg-geo-shape shape-lower-ribbon"></div>
+
+      <!-- GIS Topographic & Municipal Sector Elevation Vectors -->
+      <svg class="navy-bg-topo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 3600" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="navyLineGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0B1B36" stop-opacity="0.18" />
+            <stop offset="50%" stop-color="#0B1B36" stop-opacity="0.06" />
+            <stop offset="100%" stop-color="#0B1B36" stop-opacity="0.14" />
+          </linearGradient>
+          <linearGradient id="navyLineGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0B1B36" stop-opacity="0.14" />
+            <stop offset="60%" stop-color="#C5A880" stop-opacity="0.10" />
+            <stop offset="100%" stop-color="#0B1B36" stop-opacity="0.05" />
+          </linearGradient>
+        </defs>
+        
+        <!-- Smooth Topographic Elevation Contours -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M-100,180 C300,80 600,280 1000,140 C1300,40 1500,200 1700,120" stroke="url(#navyLineGrad1)" stroke-width="1.8" />
+          <path d="M-100,260 C250,160 650,360 1050,220 C1350,120 1550,280 1700,200" stroke="url(#navyLineGrad1)" stroke-width="1.2" stroke-dasharray="6 4" />
+          <path d="M-100,340 C200,240 700,440 1100,300 C1400,200 1600,360 1700,280" stroke="url(#navyLineGrad2)" stroke-width="1.4" />
+          
+          <path d="M-100,1100 C400,980 750,1250 1200,1050 C1450,950 1600,1180 1700,1120" stroke="url(#navyLineGrad1)" stroke-width="1.5" />
+          <path d="M-100,1180 C350,1060 800,1330 1250,1130 C1500,1030 1650,1260 1700,1200" stroke="url(#navyLineGrad2)" stroke-width="1.2" />
+          <path d="M-100,1850 C300,1720 700,1980 1150,1820 C1450,1720 1600,1920 1700,1860" stroke="url(#navyLineGrad1)" stroke-width="1.6" stroke-dasharray="8 6" />
+
+          <path d="M-100,2500 C450,2380 850,2650 1300,2460 C1500,2380 1650,2550 1700,2500" stroke="url(#navyLineGrad2)" stroke-width="1.5" />
+          <path d="M-100,2580 C400,2460 900,2730 1350,2540 C1550,2460 1680,2630 1700,2580" stroke="url(#navyLineGrad1)" stroke-width="1.2" />
+        </g>
+
+        <!-- Tactical Municipal GIS Crosshair Coordinate Points -->
+        <g stroke="#0B1B36" stroke-opacity="0.26" stroke-width="1.5">
+          <path d="M1420,120 L1440,120 M1430,110 L1430,130" />
+          <path d="M160,340 L180,340 M170,330 L170,350" />
+          <path d="M1480,1020 L1500,1020 M1490,1010 L1490,1030" />
+          <path d="M120,1720 L140,1720 M130,1710 L130,1730" />
+          <path d="M1450,2420 L1470,2420 M1460,2410 L1460,2430" />
+        </g>
+
+        <!-- Subtle GPS Geographic Stamp -->
+        <text x="1350" y="148" fill="#0B1B36" fill-opacity="0.32" font-family="monospace" font-size="11" font-weight="700" letter-spacing="1">40°42'13&quot;N 89°27'03&quot;W</text>
+        <text x="175" y="368" fill="#0B1B36" fill-opacity="0.28" font-family="monospace" font-size="11" font-weight="700" letter-spacing="1">TAZEWELL COUNTY GIS // SECTOR GRID</text>
+      </svg>
+
+      <!-- Precision Municipal Coordinate Grid -->
+      <div class="navy-bg-grid-overlay"></div>
+    </div>
+
+    <!-- ========================================================================
          EDITORIAL SPLIT HERO BANNER
          Inspired by Mapping The Way (.hero-banner & .post-card architecture)
          ======================================================================== -->
