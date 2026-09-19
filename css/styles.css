@@ -6889,20 +6889,10 @@ body:has(.site-header) main {
     background: rgba(255, 255, 255, 0.14);
     transform: scale(0.98);
   }
-  /* Apple HIG Disclosure Arrow */
+  /* Apple HIG Inset Grouped List Item (Clean Zero-Icon Typography) */
   .skiper-item::after {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-top: 1.75px solid rgba(255, 255, 255, 0.35);
-    border-right: 1.75px solid rgba(255, 255, 255, 0.35);
-    transform: rotate(45deg);
-    margin-left: 8px;
-    flex-shrink: 0;
-    transition: border-color 0.15s ease;
-  }
-  .skiper-item:active::after {
-    border-color: var(--mtw-police-gold, #E5C378);
+    display: none !important;
+    content: none !important;
   }
   .skiper-item-name {
     font-size: 0.88rem;
@@ -6937,7 +6927,7 @@ body:has(.site-header) main {
     background: rgba(255, 255, 255, 0.14);
     transform: scale(0.98);
   }
-  /* Online Resident Services Grid */
+  /* Online Resident Services Grid (Clean Zero-Icon Cards) */
   .skiper-services-grid {
     flex: none;
     display: flex;
@@ -6947,7 +6937,6 @@ body:has(.site-header) main {
   .skiper-action-card {
     flex: none;
     padding: 10px 14px;
-    padding-right: 28px;
     min-height: 48px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.04);
@@ -6970,15 +6959,8 @@ body:has(.site-header) main {
     transform: scale(0.98);
   }
   .skiper-action-card::after {
-    content: '';
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    width: 6px;
-    height: 6px;
-    border-top: 1.75px solid rgba(197, 168, 128, 0.65);
-    border-right: 1.75px solid rgba(197, 168, 128, 0.65);
+    display: none !important;
+    content: none !important;
   }
   .skiper-action-title {
     font-size: 0.88rem;
@@ -7149,7 +7131,9 @@ body:has(.site-header) main {
     background: var(--mtw-navy, #0B1B36) !important;
     color: #FFFFFF !important;
     border: 1px solid var(--mtw-navy, #0B1B36) !important;
-    padding: 0 9px !important;
+    padding: 0 14px !important;
+    gap: 0 !important;
+    justify-content: center !important;
   }
   [data-theme="dark"] .civic-float-pill-btn.civic-float-menu {
     background: var(--mtw-police-gold, #C5A880) !important;
@@ -7161,6 +7145,21 @@ body:has(.site-header) main {
     font-size: 0.70rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.06em !important;
+  }
+  /* Zero Icons on Mobile: eliminate chevrons, arrows, and glyph wrappers */
+  .skiper-chevron,
+  .dept-btn-icon-wrapper,
+  .dept-btn-icon,
+  .external-link-arrow,
+  .civic-nav-arrow,
+  .sketch-arrow,
+  .skiper-item-icon,
+  .dropdown-item-icon,
+  .btn-icon-pill,
+  .footer-link-icon,
+  .action-card-icon,
+  .district-search-icon {
+    display: none !important;
   }
   .hero-editorial-section {
     padding-top: calc(70px + env(safe-area-inset-top, 6px)) !important;
@@ -7209,7 +7208,8 @@ body:has(.site-header) main {
     font-size: 0.74rem !important;
   }
   .civic-float-pill-btn.civic-float-menu {
-    padding: 0 12px !important;
+    padding: 0 14px !important;
+    gap: 0 !important;
   }
   .civic-float-menu .float-btn-menu-text {
     font-size: 0.72rem !important;
@@ -10722,6 +10722,11 @@ img.civic-editorial-img,
 
   .dept-btn-in-btn {
     width: 100%;
-    justify-content: space-between;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0 !important;
+    padding: 12px 20px !important;
+    min-height: 44px !important;
+    border-radius: 9999px !important;
   }
 }
