@@ -6732,85 +6732,41 @@ body:has(.site-header) main {
   width: 100%;
 }
 
-.hero-editorial-seal-card {
+/* ── Hero Left Column Standalone Official Logo (Extracted from background) ── */
+.hero-editorial-seal-card,
+.hero-editorial-logo-wrap {
   display: flex;
-  align-items: center;
-  gap: 18px;
-  background: var(--mtw-police-navy, #0B1B36);
-  border: 1.5px solid rgba(197, 168, 128, 0.40);
-  border-radius: 18px;
-  padding: 16px 20px;
-  box-shadow: 0 10px 24px -4px rgba(11, 27, 54, 0.20), 0 2px 6px rgba(11, 27, 54, 0.08);
-  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.hero-editorial-seal-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--mtw-police-gold, #C5A880);
-  box-shadow: 0 16px 36px -4px rgba(11, 27, 54, 0.28), 0 4px 10px rgba(11, 27, 54, 0.12);
-}
-
-.hero-seal-badge-frame {
-  width: 66px;
-  height: 66px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #FFFFFF;
-  padding: 3px;
-  box-shadow: 0 0 0 2px rgba(197, 168, 128, 0.60), 0 4px 14px rgba(0, 0, 0, 0.35);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0 4px 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
-.hero-seal-badge-img {
-  width: 100%;
-  height: 100%;
+.hero-editorial-standalone-logo {
+  width: 140px;
+  height: 140px;
+  max-width: 100%;
   object-fit: contain;
-  border-radius: 50%;
+  filter: drop-shadow(0 6px 18px rgba(11, 27, 54, 0.14));
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), filter 0.25s ease;
+  user-select: none;
   display: block;
 }
 
-.hero-seal-badge-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
+.hero-editorial-standalone-logo:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: drop-shadow(0 10px 24px rgba(11, 27, 54, 0.22));
 }
 
-.hero-seal-badge-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.66rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--mtw-police-gold, #C5A880);
-}
-
-.hero-seal-badge-title {
-  font-family: var(--font-title);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.25;
-  margin: 0;
-}
-
-.hero-seal-badge-motto {
-  font-family: var(--font-editorial);
-  font-size: 0.82rem;
-  font-style: italic;
-  color: #E2CA90;
-  line-height: 1.35;
-}
-
-.hero-seal-badge-sub {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
-  color: #94A3B8;
-  margin-top: 2px;
+@media (max-width: 680px) {
+  .hero-editorial-standalone-logo {
+    width: 110px;
+    height: 110px;
+  }
 }
 
 .hero-editorial-content {
