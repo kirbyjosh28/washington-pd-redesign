@@ -248,6 +248,7 @@
     initServicesFilter();
     initDistrictMap();
     initActionDrawers();
+    initSkiperGooeyMenu();
     initFooterActions();
     initCardCursorSpotlight();
   }
@@ -1112,6 +1113,102 @@
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
       });
+    });
+  }
+
+  function initSkiperGooeyMenu() {
+    const wrappers = document.querySelectorAll('.skiper-gooey-menu-wrapper');
+    if (!wrappers.length) return;
+
+    wrappers.forEach(wrapper => {
+      const trigger = wrapper.querySelector('.skiper-goo-btn');
+      const panel = wrapper.querySelector('.skiper-gooey-panel');
+      if (!trigger || !panel) return;
+
+      let closeTimer = null;
+      let lastOpenViaHover = 0;
+
+      function openMenu() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        wrapper.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeMenu() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        lastOpenViaHover = 0;
+        wrapper.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      // Click toggle
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // If it was opened via hover within the last 500ms, keep it open on click
+        if (Date.now() - lastOpenViaHover < 500 && wrapper.classList.contains('is-open')) {
+          return;
+        }
+        const isOpen = wrapper.classList.contains('is-open');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Desktop hover with gentle exit debounce
+      wrapper.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 768) {
+          if (!wrapper.classList.contains('is-open')) {
+            lastOpenViaHover = Date.now();
+            openMenu();
+          }
+        }
+      });
+
+      wrapper.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 768) {
+          closeTimer = setTimeout(closeMenu, 200);
+        }
+      });
+
+      // Close when clicking any link inside
+      panel.querySelectorAll('a, button').forEach(item => {
+        item.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.skiper-gooey-menu-wrapper')) {
+        document.querySelectorAll('.skiper-gooey-menu-wrapper.is-open').forEach(w => {
+          w.classList.remove('is-open');
+          const btn = w.querySelector('.skiper-goo-btn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.skiper-gooey-menu-wrapper.is-open').forEach(w => {
+          w.classList.remove('is-open');
+          const btn = w.querySelector('.skiper-goo-btn');
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.focus();
+          }
+        });
+      }
     });
   }
 

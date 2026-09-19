@@ -92,15 +92,26 @@ async function runVerification() {
     const mobileScreenshotPath = path.join(ARTIFACTS_DIR, `verified_multipage_${slug}_mobile.png`);
     await page.screenshot({ path: mobileScreenshotPath, fullPage: false });
 
-    // Test Navigation Drawer opening and closing on mobile
-    const menuBtn = page.locator('.civic-float-menu');
+    // Test Skiper46 Gooey Menu opening on mobile
+    const menuBtn = page.locator('#global-menu-toggle');
     await menuBtn.click();
-    await page.waitForTimeout(250);
+    await page.waitForTimeout(300);
+
+    const gooeyNav = page.locator('#skiperGooeyNav');
+    const isGooeyOpen = await gooeyNav.evaluate(el => el.classList.contains('is-open'));
+    if (!isGooeyOpen) {
+      pageErrors.push('Skiper46 Gooey Menu failed to open');
+    }
+
+    // Test Navigation Drawer opening via Skiper46 footer button
+    const drawerBtn = page.locator('.skiper-full-drawer-btn');
+    await drawerBtn.click();
+    await page.waitForTimeout(300);
 
     const drawer = page.locator('#drawer-nav-menu');
     const isDrawerActive = await drawer.evaluate(el => el.classList.contains('active'));
     if (!isDrawerActive) {
-      pageErrors.push('Navigation Drawer failed to open');
+      pageErrors.push('Navigation Drawer failed to open from gooey menu');
     }
 
     // Close drawer

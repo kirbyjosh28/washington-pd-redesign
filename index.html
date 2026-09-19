@@ -54,9 +54,114 @@
             <span class="float-btn-911-beacon"></span>
             <span class="float-btn-main">DIAL 911</span>
           </a>
-          <button type="button" class="civic-float-pill-btn civic-float-menu" id="global-menu-toggle" data-open-drawer="drawer-nav-menu" aria-label="Open departmental navigation menu" aria-expanded="false" aria-haspopup="true" title="Department Navigation Menu">
-            <span class="float-btn-menu-text">MENU</span>
-          </button>
+
+          <!-- Skiper46 Gooey Navigation Menu Trigger & Morphing Dropdown -->
+          <div class="skiper-gooey-menu-wrapper" id="skiperGooeyNav">
+            <!-- Hidden SVG Gooey Filter Definitions -->
+            <svg class="skiper-goo-defs" aria-hidden="true">
+              <defs>
+                <filter id="skiper46-goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="5.2" result="blur"/>
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -8" result="goo"/>
+                  <feBlend in="SourceGraphic" in2="goo"/>
+                </filter>
+              </defs>
+            </svg>
+
+            <!-- Liquid Morphing Silhouette Layer -->
+            <div class="skiper-gooey-liquid" aria-hidden="true">
+              <div class="skiper-goo-anchor"></div>
+              <div class="skiper-goo-card"></div>
+            </div>
+
+            <!-- Crisp Interactive Foreground Trigger -->
+            <button type="button" class="civic-float-pill-btn civic-float-menu skiper-goo-btn" id="global-menu-toggle" aria-label="Open departmental navigation menu" aria-expanded="false" aria-haspopup="true" title="Department Navigation Menu">
+              <span class="float-btn-menu-text">MENU</span>
+              <svg class="skiper-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <!-- Morphing Dropdown Panel -->
+            <div class="skiper-gooey-panel" id="skiperGooeyPanel" role="menu" aria-label="Department Navigation">
+              <div class="skiper-panel-header">
+                <div class="skiper-panel-heading">
+                  <span class="skiper-live-dot" aria-hidden="true"></span>
+                  <span class="skiper-title">DEPARTMENT DIRECTORY</span>
+                </div>
+                <span class="skiper-tag">8 PORTALS</span>
+              </div>
+
+              <nav class="skiper-panel-links" role="none">
+                <a href="index.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">🏛️</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Executive Home</span>
+                    <span class="skiper-item-desc">Command center & dispatch</span>
+                  </div>
+                </a>
+                <a href="services.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">📋</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Resident Services</span>
+                    <span class="skiper-item-desc">House watch & online records</span>
+                  </div>
+                </a>
+                <a href="districts.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">🗺️</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Patrol Districts</span>
+                    <span class="skiper-item-desc">Interactive GIS beat map</span>
+                  </div>
+                </a>
+                <a href="community.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">🤝</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Community Outreach</span>
+                    <span class="skiper-item-desc">Citizens Academy & youth</span>
+                  </div>
+                </a>
+                <a href="teams.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">🛡️</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Specialized Divisions</span>
+                    <span class="skiper-item-desc">SWAT, K-9 & Detectives</span>
+                  </div>
+                </a>
+                <a href="operations.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">🚔</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Patrol Operations</span>
+                    <span class="skiper-item-desc">Shift schedules & patrol fleet</span>
+                  </div>
+                </a>
+                <a href="recruitment.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">🎖️</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Careers & Recruitment</span>
+                    <span class="skiper-item-desc">Lateral entry & benefits</span>
+                  </div>
+                </a>
+                <a href="leadership.html" class="skiper-item" role="menuitem">
+                  <span class="skiper-item-icon">⚖️</span>
+                  <div class="skiper-item-text">
+                    <span class="skiper-item-name">Leadership & Governance</span>
+                    <span class="skiper-item-desc">Command staff & oversight</span>
+                  </div>
+                </a>
+              </nav>
+
+              <div class="skiper-panel-footer">
+                <button type="button" class="skiper-full-drawer-btn" data-open-drawer="drawer-nav-menu" role="menuitem">
+                  <span>Open Full Slide-out Drawer</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
