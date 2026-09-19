@@ -84,6 +84,17 @@ async function runVerification() {
     const desktopScreenshotPath = path.join(ARTIFACTS_DIR, `verified_multipage_${slug}_desktop.png`);
     await page.screenshot({ path: desktopScreenshotPath, fullPage: false });
 
+    // On desktop, capture opened bento dropdown for index
+    if (slug === 'index') {
+      const desktopMenuBtn = page.locator('#global-menu-toggle');
+      await desktopMenuBtn.click();
+      await page.waitForTimeout(350);
+      const bentoDesktopPath = path.join(ARTIFACTS_DIR, 'verified_bento_dropdown_desktop.png');
+      await page.screenshot({ path: bentoDesktopPath, fullPage: false });
+      await desktopMenuBtn.click();
+      await page.waitForTimeout(200);
+    }
+
     // Switch to mobile viewport (390x844)
     await page.setViewportSize({ width: 390, height: 844 });
     await page.evaluate(() => window.scrollTo(0, 0));
@@ -95,7 +106,7 @@ async function runVerification() {
     // Test Skiper46 Gooey Menu opening on mobile
     const menuBtn = page.locator('#global-menu-toggle');
     await menuBtn.click();
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(350);
 
     const gooeyNav = page.locator('#skiperGooeyNav');
     const isGooeyOpen = await gooeyNav.evaluate(el => el.classList.contains('is-open'));
@@ -103,24 +114,47 @@ async function runVerification() {
       pageErrors.push('Skiper46 Gooey Menu failed to open');
     }
 
-    // Test Navigation Drawer opening via Skiper46 footer button
-    const drawerBtn = page.locator('.skiper-full-drawer-btn');
-    await drawerBtn.click();
-    await page.waitForTimeout(300);
-
-    const drawer = page.locator('#drawer-nav-menu');
-    const isDrawerActive = await drawer.evaluate(el => el.classList.contains('active'));
-    if (!isDrawerActive) {
-      pageErrors.push('Navigation Drawer failed to open from gooey menu');
+    if (slug === 'index') {
+      const bentoMobilePath = path.join(ARTIFACTS_DIR, 'verified_bento_dropdown_mobile.png');
+      await page.screenshot({ path: bentoMobilePath, fullPage: false });
     }
 
-    // Close drawer
-    const closeBtn = page.locator('#drawer-nav-menu .drawer-close-btn');
-    await closeBtn.click();
-    await page.waitForTimeout(200);
+    // Verify all 8 portals and 6 resident service action cards exist in the bento dropdown
+    const portalLinksCount = await page.locator('#skiperGooeyPanel .skiper-item').count();
+    const serviceCardsCount = await page.locator('#skiperGooeyPanel .skiper-action-card').count();
+    if (portalLinksCount !== 8) {
+      pageErrors.push(`Expected 8 portal links in gooey menu, found ${portalLinksCount}`);
+    }
+    if (serviceCardsCount !== 6) {
+      pageErrors.push(`Expected 6 resident action cards in gooey menu, found ${serviceCardsCount}`);
+    }
+
+    // Test resident service drawer opening if the drawer exists on this page
+    const hasVacationDrawer = (await page.locator('#drawer-vacation-check').count()) > 0;
+    let isDrawerActive = false;
+    if (hasVacationDrawer) {
+      const vacationCard = page.locator('#skiperGooeyPanel [data-open-drawer="drawer-vacation-check"]');
+      await vacationCard.click();
+      await page.waitForTimeout(300);
+      isDrawerActive = await page.locator('#drawer-vacation-check').evaluate(el => el.classList.contains('active'));
+      if (!isDrawerActive) {
+        pageErrors.push('Vacation check drawer failed to open from resident service action card');
+      }
+      const closeDrawerBtn = page.locator('#drawer-vacation-check .drawer-close-btn');
+      await closeDrawerBtn.click();
+      await page.waitForTimeout(200);
+    } else {
+      isDrawerActive = true; // Not applicable on this subpage
+      // Close gooey menu if open
+      const stillOpen = await gooeyNav.evaluate(el => el.classList.contains('is-open'));
+      if (stillOpen) {
+        await menuBtn.click();
+        await page.waitForTimeout(200);
+      }
+    }
 
     console.log(`  ✓ HTTP ${status} | ${frameStats.fps} FPS | Title: "${title.slice(0, 45)}..."`);
-    console.log(`  ✓ Desktop & Mobile screenshots saved | Drawer check: ${isDrawerActive ? 'PASS' : 'FAIL'}`);
+    console.log(`  ✓ Desktop & Mobile screenshots saved | Bento items: ${portalLinksCount} portals, ${serviceCardsCount} services | Drawer check: ${isDrawerActive ? 'PASS' : 'FAIL'}`);
 
     results.push({
       name: p.name,

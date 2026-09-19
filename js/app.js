@@ -941,8 +941,26 @@
 
         const firstInput = targetDrawer.querySelector('input:not([type="hidden"]), select, textarea, button:not([disabled])');
         if (firstInput) setTimeout(() => firstInput.focus(), 150);
+      } else if (drawerId && drawerId !== 'drawer-nav-menu') {
+        window.location.href = `services.html?drawer=${encodeURIComponent(drawerId)}`;
       }
     });
+
+    // Auto-open drawer if requested in URL parameter (e.g. services.html?drawer=drawer-vacation-check)
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const requested = urlParams.get('drawer') || urlParams.get('openDrawer');
+      if (requested) {
+        const target = document.getElementById(requested);
+        if (target) {
+          setTimeout(() => {
+            target.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            activeDrawer = target;
+          }, 200);
+        }
+      }
+    } catch (_) {}
 
     // Event delegation for close buttons and backdrop clicks
     document.addEventListener('click', (e) => {
