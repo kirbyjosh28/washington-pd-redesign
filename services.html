@@ -24,11 +24,11 @@
       
       <!-- Left: Floating Official Brand (Extracted Transparent Seal + Department Text) -->
       <div class="civic-floating-left">
-        <a href="index.html" class="civic-float-brand" aria-label="Washington Police Department Home" title="City of Washington Police Department">
-          <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" width="44" height="44" />
+        <a href="index.html" class="civic-float-brand" aria-label="Washington Police Department Home" title="Washington Police Department">
+          <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" />
           <div class="civic-float-brand-text">
-            <span class="civic-float-city-tag">City of Washington</span>
-            <span class="civic-brand-title">Police Department</span>
+            <span class="civic-brand-title">Washington Police</span>
+            <span class="civic-brand-dept">Department</span>
           </div>
         </a>
       </div>
@@ -305,87 +305,69 @@
           <!-- Search & Filter Controls -->
           <div class="services-control-bar">
             <div class="services-search-wrapper">
-              <input type="text" id="services-search-input" class="services-search-input" placeholder="Search digital services, parking permits, payments, bicycle registry, crash reports, FOIA..." aria-label="Search resident services directory" autocomplete="off" />
+              <input type="text" id="services-search-input" class="services-search-input" placeholder="Search services, vacation house checks, medication drop box, crash reports, records..." aria-label="Search resident services directory" autocomplete="off" />
               <button type="button" id="services-search-clear" class="services-search-clear" aria-label="Clear search text" style="display: none;">CLEAR</button>
             </div>
             <div class="services-filter-pills" role="tablist" aria-label="Filter resident services by category">
-              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Digital Services (10)</button>
-              <button type="button" class="services-filter-pill" data-filter="permits" role="tab" aria-selected="false">Permits &amp; Payments</button>
-              <button type="button" class="services-filter-pill" data-filter="records" role="tab" aria-selected="false">Records &amp; Reports</button>
+              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (8)</button>
+              <button type="button" class="services-filter-pill" data-filter="portals" role="tab" aria-selected="false">Resident Portals</button>
+              <button type="button" class="services-filter-pill" data-filter="records" role="tab" aria-selected="false">Records &amp; Legal</button>
               <button type="button" class="services-filter-pill" data-filter="safety" role="tab" aria-selected="false">Safety &amp; Prevention</button>
             </div>
           </div>
 
-          <!-- Digital Services Grid -->
+          <!-- Services Grid -->
           <div class="civic-services-grid" id="services-grid-container">
             
-            <!-- 1. Parking Permits -->
-            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-parking-permits" data-category="permits" data-keywords="parking permits permission overnight street residential temporary vehicle plate pass" role="button" tabindex="0" aria-haspopup="dialog">
+            <!-- 1. Vacation House Check -->
+            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-vacation-check" data-category="portals" data-keywords="vacation house check residential property travel away inspection patrol officer security home" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="feature-card-header">
-                  <span class="civic-service-card-tag" style="margin-bottom: 0;">DIGITAL PERMIT WORKFLOW</span>
-                  <span class="feature-status-badge">
-                    <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
-                    INSTANT DIGITAL APPLICATION
-                  </span>
+                  <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE RESIDENTIAL SERVICE</span>
                 </div>
-                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Overnight &amp; Street Parking Permits</h2>
+                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Vacation House Watch &amp; Property Check</h2>
                 <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
-                  <strong class="prog-lead">Overnight street parking waiver:</strong> Washington municipal code restricts on-street parking between 2:00 AM and 6:00 AM. Apply directly online for overnight guest parking exemptions, residential driveway overflow waivers, or temporary vehicle permits.
+                  <strong class="prog-lead">Residential exterior security checks:</strong> Request perimeter security checks of your residence while you are traveling away from Washington. When call volume permits, uniformed officers inspect visible exterior doors, windows, and property integrity.
                 </p>
                 <ul class="feature-specs-list">
-                  <li class="feature-spec-item">Instant Digital Submission with Confirmation Code</li>
-                  <li class="feature-spec-item">Enforces 2:00 AM – 6:00 AM Municipal Parking Code</li>
-                  <li class="feature-spec-item">Directly Relayed to On-Duty Night Watch Patrol Units</li>
+                  <li class="feature-spec-item">Free Service for Washington Residents</li>
+                  <li class="feature-spec-item">Periodic Exterior Property Checks</li>
+                  <li class="feature-spec-item">Direct Telecommunications Enrollment</li>
                 </ul>
               </div>
               <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Apply for Parking Permit</span>
-                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Digital Municipal Action</span>
+                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Request Vacation Check</span>
+                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Free Residential Service</span>
               </div>
             </div>
 
-            <!-- 2. Online Municipal Payments -->
-            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-online-payments" data-category="permits" data-keywords="payments pay ticket citation fine ordinance violation false alarm records fee credit card" role="button" tabindex="0" aria-haspopup="dialog">
+            <!-- 2. Safe Medication Disposal -->
+            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-drug-disposal" data-category="safety" data-keywords="safe medication disposal drop box prescription drugs pills medicine pharmacy waste 115 w jefferson" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="feature-card-header">
-                  <span class="civic-service-card-tag" style="margin-bottom: 0;">SECURE MUNICIPAL PAYMENTS</span>
+                  <span class="civic-service-card-tag" style="margin-bottom: 0;">FREE PUBLIC SAFETY SERVICE</span>
                   <span class="feature-status-badge">
                     <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
-                    OFFICIAL PAYMENT GATEWAY
+                    24/7 LOBBY DROP BOX
                   </span>
                 </div>
-                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Online Municipal Citation &amp; Fee Payments</h2>
+                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Safe Medication &amp; Prescription Disposal</h2>
                 <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
-                  <strong class="prog-lead">Direct digital payments:</strong> Pay municipal ordinance citations, parking violation notices, false alarm billings, and administrative records processing fees through the City of Washington's secure payment system.
+                  <strong class="prog-lead">Permanent lobby collection kiosk:</strong> Dispose of expired, unused, or unwanted prescription and over-the-counter medications safely and anonymously in the secure drop box inside the Washington Police Headquarters lobby at 115 W. Jefferson St.
                 </p>
                 <ul class="feature-specs-list">
-                  <li class="feature-spec-item">Search by Citation Number or Vehicle License Plate</li>
-                  <li class="feature-spec-item">Avoid Late Penalty Assessments with 14-Day Online Settlement</li>
-                  <li class="feature-spec-item">Instant Electronic Confirmation &amp; Printable PDF Receipt</li>
+                  <li class="feature-spec-item">Permanent Drop Box at 115 W. Jefferson St</li>
+                  <li class="feature-spec-item">100% Anonymous with No Questions Asked</li>
+                  <li class="feature-spec-item">Prevents Youth Misuse &amp; Groundwater Contamination</li>
                 </ul>
               </div>
               <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Access Payment Portal</span>
-                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Secure E-Pay Gateway</span>
+                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">View Disposal Guidelines</span>
+                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Free Community Drop-Off</span>
               </div>
             </div>
 
-            <!-- 3. Bicycle Identification & Registration -->
-            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-bicycle-registration" data-category="permits" data-keywords="bicycle bike registration serial number identification property theft recovery" role="button" tabindex="0" aria-haspopup="dialog">
-              <div>
-                <div class="civic-service-card-tag">PROPERTY RECOVERY REGISTRY</div>
-                <h3 class="civic-service-card-title">Bicycle Identification &amp; Registration</h3>
-                <p class="civic-service-card-desc prog-copy">
-                  <strong class="prog-lead">Free anti-theft registration:</strong> Record your bicycle make, model, frame color, and serial number in the WPD property recovery database so officers can promptly return recovered bikes.
-                </p>
-              </div>
-              <div class="civic-service-card-action">
-                Register Bicycle Online
-              </div>
-            </div>
-
-            <!-- 4. Police Records & FOIA -->
+            <!-- 3. Police Records & FOIA -->
             <div class="civic-service-card spotlight-card" data-open-drawer="drawer-police-records" data-category="records" data-keywords="police records foia statutory public freedom information incident accident report" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="civic-service-card-tag">STATUTORY PUBLIC RECORDS</div>
@@ -399,41 +381,27 @@
               </div>
             </div>
 
-            <!-- 5. Accident & Crash Reports -->
+            <!-- 4. Accident & Crash Reports -->
             <a href="https://www.buycrash.com" target="_blank" rel="noopener noreferrer" class="civic-service-card spotlight-card" data-category="records" data-keywords="accident crash reports buycrash collision traffic records state portal online" style="text-decoration: none;">
               <div>
                 <div class="civic-service-card-tag">STATE TRAFFIC PORTAL</div>
                 <h3 class="civic-service-card-title">Accident &amp; Crash Reports</h3>
                 <p class="civic-service-card-desc prog-copy">
-                  <strong class="prog-lead">Certified traffic collision records:</strong> Look up and order official State of Illinois traffic crash reports online via BuyCrash.
+                  <strong class="prog-lead">Certified traffic collision records:</strong> Look up and order official State of Illinois traffic crash reports online.
                 </p>
               </div>
               <div class="civic-service-card-action">
-                Search Crash Portal ↗
+                Search Crash Portal
               </div>
             </a>
 
-            <!-- 6. Vacation House Watch -->
-            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-vacation-check" data-category="safety" data-keywords="vacation house check residential property travel away inspection patrol officer security home" role="button" tabindex="0" aria-haspopup="dialog">
-              <div>
-                <div class="civic-service-card-tag">RESIDENTIAL PATROL SERVICE</div>
-                <h3 class="civic-service-card-title">Vacation House Watch</h3>
-                <p class="civic-service-card-desc prog-copy">
-                  <strong class="prog-lead">Residential exterior security checks:</strong> Request perimeter security checks of your residence while you are traveling away from Washington.
-                </p>
-              </div>
-              <div class="civic-service-card-action">
-                Request Vacation Check
-              </div>
-            </div>
-
-            <!-- 7. Submit an Anonymous Tip -->
+            <!-- 5. Submit an Anonymous Tip -->
             <div class="civic-service-card spotlight-card" data-open-drawer="drawer-anonymous-tip" data-category="safety" data-keywords="anonymous crime tip confidential narcotics drugs report investigation tip411" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="civic-service-card-tag">100% CONFIDENTIAL</div>
                 <h3 class="civic-service-card-title">Anonymous Crime Tip</h3>
                 <p class="civic-service-card-desc prog-copy">
-                  <strong class="prog-lead">Secure encrypted transmission:</strong> Submit confidential intelligence regarding narcotics, suspicious persons, or open cases safely.
+                  <strong class="prog-lead">Secure encrypted transmission:</strong> Submit confidential intelligence regarding narcotics or open investigations safely.
                 </p>
               </div>
               <div class="civic-service-card-action">
@@ -441,13 +409,13 @@
               </div>
             </div>
 
-            <!-- 8. Child Safety Seat Inspection -->
+            <!-- 6. Child Safety Seat Inspection -->
             <div class="civic-service-card spotlight-card" data-open-drawer="drawer-child-seat" data-category="safety" data-keywords="child safety seat car seat inspection certified technician installation family appointment" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="civic-service-card-tag">CERTIFIED INSPECTION</div>
                 <h3 class="civic-service-card-title">Child Seat Inspection</h3>
                 <p class="civic-service-card-desc prog-copy">
-                  <strong class="prog-lead">State-certified technicians:</strong> Book a free infant or child car seat installation check with certified police technicians.
+                  <strong class="prog-lead">State-certified safety technicians:</strong> Book a free infant or child car seat installation check with certified officers.
                 </p>
               </div>
               <div class="civic-service-card-action">
@@ -455,7 +423,7 @@
               </div>
             </div>
 
-            <!-- 9. Commend an Officer -->
+            <!-- 7. Commend an Officer -->
             <div class="civic-service-card spotlight-card" data-open-drawer="drawer-commendation" data-category="safety" data-keywords="commend officer recognition feedback compliment contact command staff leadership" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="civic-service-card-tag">COMMUNITY FEEDBACK</div>
@@ -469,7 +437,7 @@
               </div>
             </div>
 
-            <!-- 10. CodeRED Emergency Alerts -->
+            <!-- 8. CodeRED Emergency Alerts -->
             <a href="https://public.coderedweb.com/CNE/en-US/BF8738F9B6E9" target="_blank" rel="noopener noreferrer" class="civic-service-card spotlight-card" data-category="safety" data-keywords="codered alerts emergency notification weather tornado severe boil order road closure phone" style="text-decoration: none;">
               <div>
                 <div class="civic-service-card-tag">CITIZEN ENROLLMENT</div>
@@ -479,7 +447,7 @@
                 </p>
               </div>
               <div class="civic-service-card-action">
-                Enroll in CodeRED ↗
+                Enroll in CodeRED
               </div>
             </a>
 
@@ -489,417 +457,9 @@
           <div id="services-empty-state" class="services-empty-state" style="display: none;">
             <h3 style="font-family: var(--font-title); font-size: 1.3rem; margin-bottom: 8px; color: var(--text-primary);">No Matching Services Found</h3>
             <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto;">
-              We couldn't find any departmental services matching your search. Try searching for "parking", "payment", "bicycle", "vacation", or "records".
+              We couldn't find any departmental services matching your search. Try searching for "vacation", "medication", "crash", or "records".
             </p>
             <button type="button" class="btn-editorial-secondary" id="services-clear-search">Reset Filter</button>
-          </div>
-
-          <!-- ══════════════════════════════════════════════════════════════════════
-               IN-PERSON & WALK-IN POLICE SERVICES SECTION
-               Consistent 6-point card pattern showing location, hours & actions
-               ══════════════════════════════════════════════════════════════════════ -->
-          <div class="in-person-services-section">
-            <div class="section-header" style="text-align: left; margin-bottom: var(--space-6);">
-              <div class="hero-editorial-eyebrow">HEADQUARTERS &amp; COLLABORATIVE FACILITIES</div>
-              <h2 class="hero-editorial-title" style="font-size: clamp(1.8rem, 2.8vw, 2.3rem); margin-top: 4px;">
-                In-Person &amp; Walk-In Services
-              </h2>
-              <p class="hero-editorial-lead" style="max-width: 780px;">
-                Essential public safety services that cannot currently be completed online and require physical presentation, identity verification, or drop-off at Washington facilities.
-              </p>
-            </div>
-
-            <div class="in-person-grid">
-              
-              <!-- 1. Safe Medication Drop Box -->
-              <article class="in-person-card spotlight-card">
-                <div class="in-person-card-header">
-                  <span class="chip chip-emerald" style="font-size: 0.70rem;">24/7 LOBBY KIOSK</span>
-                  <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
-                </div>
-                <h3 class="in-person-title">Safe Medication Drop Box</h3>
-                <p class="in-person-desc">
-                  Permanent secure collection kiosk for expired, unwanted, or unused prescription pills and over-the-counter medicine. 100% anonymous with no questions asked.
-                </p>
-                <ul class="in-person-info-list">
-                  <li class="in-person-info-item">
-                    <strong>Location:</strong> WPD Headquarters Lobby • 115 W. Jefferson St
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Hours:</strong> 24 Hours a Day, 7 Days a Week, 365 Days a Year
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Rules:</strong> Accepted: Pills, capsules, patches. Prohibited: Needles, liquids, inhalers.
-                  </li>
-                </ul>
-                <div class="in-person-card-footer">
-                  <button type="button" class="btn-editorial-primary" data-open-drawer="drawer-drug-disposal" style="width: 100%; justify-content: center;">
-                    View Drop Box Guidelines
-                  </button>
-                </div>
-              </article>
-
-              <!-- 2. WFD Sharps Disposal -->
-              <article class="in-person-card spotlight-card">
-                <div class="in-person-card-header">
-                  <span class="chip chip-gold" style="font-size: 0.70rem;">FIRE DEPT PARTNERSHIP</span>
-                  <span class="status-pip status-pip-amber" aria-hidden="true"></span>
-                </div>
-                <h3 class="in-person-title">WFD Sharps &amp; Needle Disposal</h3>
-                <p class="in-person-desc">
-                  Safe disposal program for medical sharps, syringes, and lancets in partnership with the Washington Fire Department. Prevents puncture injuries to sanitation workers.
-                </p>
-                <ul class="in-person-info-list">
-                  <li class="in-person-info-item">
-                    <strong>Location:</strong> Washington Fire Station 1 • 200 N. Wilmor Rd
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Hours:</strong> Mon–Fri 8:00 AM – 4:00 PM (Business Hours)
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Container:</strong> Must be in rigid, puncture-proof FDA sharps container or sealed heavy plastic jug.
-                  </li>
-                </ul>
-                <div class="in-person-card-footer">
-                  <a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-decoration: none;">
-                    WFD Community Health Guide ↗
-                  </a>
-                </div>
-              </article>
-
-              <!-- 3. Solicitor Information & Permitting -->
-              <article class="in-person-card spotlight-card">
-                <div class="in-person-card-header">
-                  <span class="chip chip-blue" style="font-size: 0.70rem;">CITY CLERK ORDNANCE</span>
-                  <span class="status-pip status-pip-blue" aria-hidden="true"></span>
-                </div>
-                <h3 class="in-person-title">Solicitor Information &amp; Permitting</h3>
-                <p class="in-person-desc">
-                  All door-to-door commercial solicitors in Washington must undergo a police background check and possess an official City-issued photo identification badge.
-                </p>
-                <ul class="in-person-info-list">
-                  <li class="in-person-info-item">
-                    <strong>Location:</strong> City Hall City Clerk • 301 Walnut St &amp; WPD Records
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Hours:</strong> Mon–Fri 8:00 AM – 4:30 PM
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Resident Tip:</strong> Solicitors must display their badge. If suspicious or unpermitted, call dispatch at (309) 444-2313.
-                  </li>
-                </ul>
-                <div class="in-person-card-footer">
-                  <a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-decoration: none;">
-                    City Solicitor Licensing Portal ↗
-                  </a>
-                </div>
-              </article>
-
-              <!-- 4. Civilian Fingerprinting -->
-              <article class="in-person-card spotlight-card">
-                <div class="in-person-card-header">
-                  <span class="chip chip-blue" style="font-size: 0.70rem;">RECORDS BUREAU</span>
-                </div>
-                <h3 class="in-person-title">Civilian Fingerprinting Services</h3>
-                <p class="in-person-desc">
-                  Non-criminal ink and electronic fingerprinting for employment screening, professional state licensing, concealed carry applications, or adoption background checks.
-                </p>
-                <ul class="in-person-info-list">
-                  <li class="in-person-info-item">
-                    <strong>Location:</strong> HQ Records Window • 115 W. Jefferson St
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Hours:</strong> Tuesdays &amp; Thursdays • 9:00 AM – 12:00 PM
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Bring:</strong> Valid government photo ID, fingerprint cards, and administrative fee.
-                  </li>
-                </ul>
-                <div class="in-person-card-footer">
-                  <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-decoration: none;">
-                    Call Records: (309) 444-2313
-                  </a>
-                </div>
-              </article>
-
-              <!-- 5. Property & Evidence Retrieval -->
-              <article class="in-person-card spotlight-card">
-                <div class="in-person-card-header">
-                  <span class="chip chip-gold" style="font-size: 0.70rem;">EVIDENCE CUSTODY</span>
-                </div>
-                <h3 class="in-person-title">Property &amp; Evidence Return</h3>
-                <p class="in-person-desc">
-                  Safekeeping and recovered personal property release following case disposition, judicial adjudication, or completed forensic examination by investigating officers.
-                </p>
-                <ul class="in-person-info-list">
-                  <li class="in-person-info-item">
-                    <strong>Location:</strong> Evidence Bureau • 115 W. Jefferson St
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Hours:</strong> Mon–Fri By Appointment Only
-                  </li>
-                  <li class="in-person-info-item">
-                    <strong>Required:</strong> Police report case number, valid photo ID, proof of ownership.
-                  </li>
-                </ul>
-                <div class="in-person-card-footer">
-                  <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-decoration: none;">
-                    Schedule Property Return
-                  </a>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-          <!-- ══════════════════════════════════════════════════════════════════════
-               INTERACTIVE & ACTIONABLE FAQ SECTION
-               Categorized, expandable accordions with direct service action buttons
-               ══════════════════════════════════════════════════════════════════════ -->
-          <div class="civic-faq-section" id="faq">
-            <div class="section-header" style="text-align: left; margin-bottom: var(--space-6);">
-              <div class="hero-editorial-eyebrow">INSTANT CITIZEN KNOWLEDGE BASE</div>
-              <h2 class="hero-editorial-title" style="font-size: clamp(1.8rem, 2.8vw, 2.3rem); margin-top: 4px;">
-                Frequently Asked Questions &amp; Service Navigator
-              </h2>
-              <p class="hero-editorial-lead" style="max-width: 780px;">
-                Find quick answers to common questions about municipal ordinances, permits, dispatch procedures, and immediately initiate the corresponding digital service.
-              </p>
-            </div>
-
-            <!-- Category Filter Bar -->
-            <div class="civic-faq-filter-bar" role="tablist" aria-label="Filter FAQ questions by topic">
-              <button type="button" class="civic-faq-filter-btn active" data-faq-filter="all" role="tab" aria-selected="true">All Questions (10)</button>
-              <button type="button" class="civic-faq-filter-btn" data-faq-filter="parking" role="tab" aria-selected="false">Parking &amp; Traffic</button>
-              <button type="button" class="civic-faq-filter-btn" data-faq-filter="records" role="tab" aria-selected="false">Records &amp; Reports</button>
-              <button type="button" class="civic-faq-filter-btn" data-faq-filter="safety" role="tab" aria-selected="false">Community Safety</button>
-              <button type="button" class="civic-faq-filter-btn" data-faq-filter="dispatch" role="tab" aria-selected="false">Dispatch &amp; 911</button>
-            </div>
-
-            <!-- FAQ Accordion List -->
-            <div class="civic-faq-list">
-              
-              <!-- Q1: Overnight Parking -->
-              <details class="civic-faq-item" data-faq-category="parking">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Parking &amp; Traffic</span>
-                    <span>How do I request an overnight street parking waiver in Washington?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    City of Washington Ordinance prohibits on-street parking between <strong>2:00 AM and 6:00 AM</strong>. If you have overnight guests, driveway paving, or an unexpected vehicle emergency, you can request temporary permission online or by contacting dispatch. Vehicles must still follow snow emergency declarations.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Ready to submit a parking exemption?</span>
-                    <button type="button" class="btn-editorial-primary civic-faq-action-btn" data-open-drawer="drawer-parking-permits">
-                      Apply for Parking Permit
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q2: Paying Tickets & Citations -->
-              <details class="civic-faq-item" data-faq-category="parking">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Parking &amp; Traffic</span>
-                    <span>Where and how can I pay a parking ticket or municipal ordinance citation?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Municipal ordinance citations and parking tickets can be paid online via our secure e-pay gateway, by mail with a check/money order, or in person at the City Hall City Collector window (301 Walnut St) during business hours. Payments made within 14 days avoid late penalty fees.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Pay your citation online:</span>
-                    <button type="button" class="btn-editorial-primary civic-faq-action-btn" data-open-drawer="drawer-online-payments">
-                      Access Online Payments
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q3: Bicycle Registration -->
-              <details class="civic-faq-item" data-faq-category="safety">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Community Safety</span>
-                    <span>How do I register my bicycle to protect against theft and help officers recover it?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    The Washington Police Department maintains a free municipal property recovery registry. Recording your bicycle's serial number, manufacturer, and frame description allows officers to instantly verify ownership when abandoned or stolen bicycles are recovered in city parks and neighborhoods.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Protect your bicycle today:</span>
-                    <button type="button" class="btn-editorial-primary civic-faq-action-btn" data-open-drawer="drawer-bicycle-registration">
-                      Register Bicycle Online
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q4: FOIA & Police Records -->
-              <details class="civic-faq-item" data-faq-category="records">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Records &amp; Reports</span>
-                    <span>How do I request official police records or submit an Illinois FOIA request?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Public records requests are governed by the Illinois Freedom of Information Act (5 ILCS 140). Non-commercial requests receive a response within 5 business days. You can submit requests electronically via our secure portal, by email to the FOIA Officer, or in person at the 115 W. Jefferson St records desk.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Initiate a public records request:</span>
-                    <button type="button" class="btn-editorial-primary civic-faq-action-btn" data-open-drawer="drawer-police-records">
-                      Submit Records Request
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q5: State Crash Reports -->
-              <details class="civic-faq-item" data-faq-category="records">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Records &amp; Reports</span>
-                    <span>How can I obtain a copy of an Illinois Motor Vehicle Crash Report?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Washington Police crash reports are digitally transmitted to the State of Illinois repository. Certified crash reports can be searched, purchased, and downloaded 24/7 through the BuyCrash portal using your state agency case number, date of incident, or driver's last name.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Search certified traffic accident records:</span>
-                    <a href="https://www.buycrash.com" target="_blank" rel="noopener noreferrer" class="btn-editorial-primary civic-faq-action-btn">
-                      Order Crash Report Online ↗
-                    </a>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q6: Vacation House Watch -->
-              <details class="civic-faq-item" data-faq-category="safety">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Community Safety</span>
-                    <span>How does the Vacation House Watch program work while I am away?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    When you enroll, patrol officers on all three watches are notified of your absence, authorized keyholders, and emergency contact details. When emergency call volume allows, uniformed officers conduct periodic exterior inspections of doors, windows, and perimeter gates.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Enroll your residence for security checks:</span>
-                    <button type="button" class="btn-editorial-primary civic-faq-action-btn" data-open-drawer="drawer-vacation-check">
-                      Request Vacation House Watch
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q7: Safe Drug & Sharps Disposal -->
-              <details class="civic-faq-item" data-faq-category="safety">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Community Safety</span>
-                    <span>Where can I safely dispose of old medications or medical sharps needles?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Unused prescription pills, capsules, and patches can be dropped into the secure 24/7 kiosk in the Washington Police Headquarters lobby at 115 W. Jefferson St. Medical sharps and needles are NOT accepted in the police lobby; they must be disposed of via the Washington Fire Department sharps program at Fire Station 1 (200 N. Wilmor Rd) in rigid, sealed containers.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">View lobby drop box parameters:</span>
-                    <button type="button" class="btn-editorial-secondary civic-faq-action-btn" data-open-drawer="drawer-drug-disposal">
-                      View Medication Guidelines
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q8: Solicitor Verification -->
-              <details class="civic-faq-item" data-faq-category="parking">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Parking &amp; Traffic</span>
-                    <span>How can I verify if a door-to-door solicitor is legally permitted in Washington?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Any transient merchant or door-to-door solicitor must obtain a permit from the City Clerk following a WPD background check. Permitted solicitors must wear an official photo ID badge visible on their outer garment. If a solicitor refuses to show their permit or violates "No Soliciting" signs, notify dispatch immediately.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Check official municipal permitting registry:</span>
-                    <a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary civic-faq-action-btn">
-                      City Solicitor Registry ↗
-                    </a>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q9: Anonymous Crime Tips -->
-              <details class="civic-faq-item" data-faq-category="safety">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Community Safety</span>
-                    <span>Is my identity truly protected when submitting an anonymous crime tip?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Yes. The online tip submission form is encrypted and strictly strips all identifying metadata including IP addresses. You do not need to provide your name, phone number, or email address. Tips are routed directly to Criminal Investigations detectives for verification.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Provide confidential information to detectives:</span>
-                    <button type="button" class="btn-editorial-primary civic-faq-action-btn" data-open-drawer="drawer-anonymous-tip">
-                      Submit Anonymous Tip
-                    </button>
-                  </div>
-                </div>
-              </details>
-
-              <!-- Q10: 911 vs Non-Emergency Dispatch -->
-              <details class="civic-faq-item" data-faq-category="dispatch">
-                <summary class="civic-faq-summary">
-                  <div class="civic-faq-question-wrap">
-                    <span class="civic-faq-category-tag">Dispatch &amp; 911</span>
-                    <span>When should I dial 911 versus the 24/7 non-emergency dispatch line?</span>
-                  </div>
-                  <span class="civic-faq-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="civic-faq-content">
-                  <p>
-                    Call <strong>911</strong> immediately for crimes in progress, physical violence, weapons, motor vehicle collisions with injuries, medical emergencies, or fires. For crimes not in progress (e.g., past theft, property damage, noise disputes, animal complaints) or to speak with an on-duty patrol officer, dial <strong>(309) 444-2313</strong>.
-                  </p>
-                  <div class="civic-faq-action-row">
-                    <span class="civic-faq-action-label">Connect with on-duty communications:</span>
-                    <a href="tel:3094442313" class="btn-editorial-secondary civic-faq-action-btn">
-                      Call Dispatch (309) 444-2313
-                    </a>
-                  </div>
-                </div>
-              </details>
-
-            </div>
           </div>
 
         </div>
@@ -1162,198 +722,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Drawer 7: Parking Permits & Exemption Requests -->
-    <div class="action-drawer-backdrop" id="drawer-parking-permits" role="dialog" aria-modal="true" aria-labelledby="permits-drawer-title">
-      <div class="action-drawer">
-        <div class="sheet-grabber" aria-hidden="true"></div>
-        <div class="action-drawer-header">
-          <div>
-            <span class="chip chip-gold" style="font-size: 0.72rem;">MUNICIPAL PERMIT PORTAL</span>
-            <h3 id="permits-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Overnight Parking Permit</h3>
-          </div>
-          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
-        </div>
-        <div class="action-drawer-body">
-          <form class="wpd-drawer-form" data-form-title="Overnight Parking Permit Request">
-            <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
-              <strong style="color: var(--text-primary);">Ordinance Notice:</strong> Overnight on-street parking is prohibited between 2:00 AM – 6:00 AM without an approved temporary exemption permit. Permits are invalid during declared snow emergencies.
-            </div>
-            <div class="drawer-form-group">
-              <label class="drawer-form-label" for="park-name">Resident / Applicant Full Name *</label>
-              <input type="text" id="park-name" class="drawer-form-input" required placeholder="e.g. Michael Henderson" />
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="park-phone">Phone Number *</label>
-                <input type="tel" id="park-phone" class="drawer-form-input" required placeholder="(309) 555-4821" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="park-address">Street Address in Washington *</label>
-                <input type="text" id="park-address" class="drawer-form-input" required placeholder="1420 Kingsbury Rd" />
-              </div>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="park-plate">License Plate &amp; State *</label>
-                <input type="text" id="park-plate" class="drawer-form-input" required placeholder="IL • 782 9142" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="park-vehicle">Vehicle Make &amp; Model *</label>
-                <input type="text" id="park-vehicle" class="drawer-form-input" required placeholder="2023 Honda CR-V (Silver)" />
-              </div>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="park-dates">Dates Requested (Max 3 Nights) *</label>
-                <input type="text" id="park-dates" class="drawer-form-input" required placeholder="Tonight through Sunday" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="park-reason">Reason for Exemption *</label>
-                <select id="park-reason" class="drawer-form-select" required>
-                  <option value="overnight-guests">Out-of-Town Overnight Guests</option>
-                  <option value="driveway-work">Driveway Paving / Construction</option>
-                  <option value="disabled-vehicle">Temporary Mechanical Breakdown</option>
-                  <option value="special-event">Family Event / Gathering</option>
-                  <option value="other">Other Legitimate Hardship</option>
-                </select>
-              </div>
-            </div>
-            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
-              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
-              <button type="submit" class="btn-editorial-primary">Submit Permit Request</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Drawer 8: Online Municipal Payments -->
-    <div class="action-drawer-backdrop" id="drawer-online-payments" role="dialog" aria-modal="true" aria-labelledby="pay-drawer-title">
-      <div class="action-drawer">
-        <div class="sheet-grabber" aria-hidden="true"></div>
-        <div class="action-drawer-header">
-          <div>
-            <span class="chip chip-emerald" style="font-size: 0.72rem;">SECURE PAYMENT GATEWAY</span>
-            <h3 id="pay-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Online Payments &amp; Citations</h3>
-          </div>
-          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
-        </div>
-        <div class="action-drawer-body">
-          <form class="wpd-drawer-form" data-form-title="Citation Lookup &amp; Payment">
-            <div style="padding: 10px 14px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
-              <strong style="color: var(--accent-emerald);">Direct Municipal Gateway:</strong> Parking tickets, ordinance violations, and administrative records fees can be paid with Visa, MasterCard, Discover, or e-Check through the official City of Washington billing system.
-            </div>
-            <div class="drawer-form-group">
-              <label class="drawer-form-label" for="pay-type">Payment Category *</label>
-              <select id="pay-type" class="drawer-form-select" required>
-                <option value="parking">Parking Violation Ticket (WPD)</option>
-                <option value="ordinance">Municipal Code Ordinance Citation</option>
-                <option value="animal">Animal Control Impound / Violation Fee</option>
-                <option value="records">Police FOIA / Administrative Record Fee</option>
-                <option value="alarm">False Alarm Regulatory Fee</option>
-              </select>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="pay-ticket">Citation / Ticket Number *</label>
-                <input type="text" id="pay-ticket" class="drawer-form-input" required placeholder="e.g. PK-2026-4820" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="pay-plate">Vehicle License Plate (if vehicle) *</label>
-                <input type="text" id="pay-plate" class="drawer-form-input" required placeholder="IL • ABC 1234" />
-              </div>
-            </div>
-            <div class="drawer-form-group">
-              <label class="drawer-form-label" for="pay-payer">Cardholder / Payer Name *</label>
-              <input type="text" id="pay-payer" class="drawer-form-input" required placeholder="Jane Doe" />
-            </div>
-            <div style="padding: 12px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; margin-bottom: var(--space-4); font-size: 0.82rem; color: var(--text-secondary);">
-              Payment assistance &amp; in-person questions: Contact City Collector at <strong>(309) 444-3196</strong> or visit City Hall, 301 Walnut St.
-            </div>
-            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
-              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
-              <button type="submit" class="btn-editorial-primary">Proceed to Payment Gateway ↗</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Drawer 9: Bicycle Identification & Registration -->
-    <div class="action-drawer-backdrop" id="drawer-bicycle-registration" role="dialog" aria-modal="true" aria-labelledby="bike-drawer-title">
-      <div class="action-drawer">
-        <div class="sheet-grabber" aria-hidden="true"></div>
-        <div class="action-drawer-header">
-          <div>
-            <span class="chip chip-blue" style="font-size: 0.72rem;">CRIME PREVENTION REGISTRY</span>
-            <h3 id="bike-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Bicycle Identification &amp; Registration</h3>
-          </div>
-          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
-        </div>
-        <div class="action-drawer-body">
-          <form class="wpd-drawer-form" data-form-title="Bicycle Registry Submission">
-            <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
-              <strong style="color: var(--text-primary);">Protect Your Property:</strong> Registering your bicycle with WPD enters your serial number and ownership details into the departmental property database. If recovered following theft or loss, officers can return it immediately.
-            </div>
-            <div class="drawer-form-group">
-              <label class="drawer-form-label" for="bike-owner">Owner Full Name *</label>
-              <input type="text" id="bike-owner" class="drawer-form-input" required placeholder="Robert Chen" />
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="bike-phone">Phone Number *</label>
-                <input type="tel" id="bike-phone" class="drawer-form-input" required placeholder="(309) 555-7729" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="bike-email">Email Address *</label>
-                <input type="email" id="bike-email" class="drawer-form-input" required placeholder="robert@example.com" />
-              </div>
-            </div>
-            <div class="drawer-form-group">
-              <label class="drawer-form-label" for="bike-address">Residential Address *</label>
-              <input type="text" id="bike-address" class="drawer-form-input" required placeholder="405 Kingsbury Rd, Washington, IL" />
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="bike-make">Make &amp; Model *</label>
-                <input type="text" id="bike-make" class="drawer-form-input" required placeholder="e.g. Trek Marlin 6 Gen 3" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="bike-serial">Serial Number (Bottom Bracket) *</label>
-                <input type="text" id="bike-serial" class="drawer-form-input" required placeholder="e.g. WTU234G9876S" />
-              </div>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="bike-color">Primary Color(s) *</label>
-                <input type="text" id="bike-color" class="drawer-form-input" required placeholder="Matte Navy / Orange decals" />
-              </div>
-              <div class="drawer-form-group">
-                <label class="drawer-form-label" for="bike-style">Bicycle Type *</label>
-                <select id="bike-style" class="drawer-form-select" required>
-                  <option value="mountain">Mountain Bike</option>
-                  <option value="road">Road / Gravel Bike</option>
-                  <option value="hybrid">Hybrid / Commuter</option>
-                  <option value="ebike">Electric Bike (E-Bike)</option>
-                  <option value="bmx">BMX / Freestyle</option>
-                  <option value="youth">Youth / Kids Bicycle</option>
-                </select>
-              </div>
-            </div>
-            <div class="drawer-form-group">
-              <label class="drawer-form-label" for="bike-features">Distinguishing Marks / Accessories</label>
-              <textarea id="bike-features" class="drawer-form-textarea" placeholder="Rear luggage rack, water bottle cage, kickstand, handlebar phone mount, scratch on top tube..."></textarea>
-            </div>
-            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
-              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
-              <button type="submit" class="btn-editorial-primary">Register Bicycle with WPD</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
 
     <!-- ========================================================================
          DIGNIFIED CIVIC FOOTER
