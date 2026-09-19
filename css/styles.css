@@ -6458,7 +6458,7 @@ body:has(.site-header) main {
   top: 0;
   right: 0;
   width: 620px;
-  height: 575px;
+  height: 485px;
   background: var(--mtw-police-navy, #0B1B36);
   border-radius: 24px;
   transform-origin: top right;
@@ -6704,7 +6704,7 @@ body:has(.site-header) main {
 .skiper-services-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4px;
+  gap: 6px;
 }
 
 .skiper-action-card {
@@ -6714,7 +6714,7 @@ body:has(.site-header) main {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 8px;
-  padding: 5px 9px;
+  padding: 8px 12px;
   cursor: pointer;
   transition: all 0.14s ease;
   color: #FFFFFF;
@@ -6730,7 +6730,7 @@ body:has(.site-header) main {
 
 .skiper-action-title {
   font-family: var(--font-title, sans-serif);
-  font-size: 0.78rem;
+  font-size: 0.80rem;
   font-weight: 700;
   color: #F8FAFC;
 }
@@ -6741,9 +6741,9 @@ body:has(.site-header) main {
 
 .skiper-action-sub {
   font-family: var(--font-body, sans-serif);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.50);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 /* Dispatch Contact Box */
