@@ -305,11 +305,12 @@
           <!-- Search & Filter Controls -->
           <div class="services-control-bar">
             <div class="services-search-wrapper">
-              <input type="text" id="services-search-input" class="services-search-input" placeholder="Search services, vacation house checks, medication drop box, crash reports, records..." aria-label="Search resident services directory" autocomplete="off" />
+              <input type="text" id="services-search-input" class="services-search-input" placeholder="Search services, parking permits, payments, bicycle registry, records, crash reports..." aria-label="Search resident services directory" autocomplete="off" />
               <button type="button" id="services-search-clear" class="services-search-clear" aria-label="Clear search text" style="display: none;">CLEAR</button>
             </div>
             <div class="services-filter-pills" role="tablist" aria-label="Filter resident services by category">
-              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (8)</button>
+              <button type="button" class="services-filter-pill active" data-filter="all" role="tab" aria-selected="true">All Services (11)</button>
+              <button type="button" class="services-filter-pill" data-filter="permits" role="tab" aria-selected="false">Permits &amp; Payments</button>
               <button type="button" class="services-filter-pill" data-filter="portals" role="tab" aria-selected="false">Resident Portals</button>
               <button type="button" class="services-filter-pill" data-filter="records" role="tab" aria-selected="false">Records &amp; Legal</button>
               <button type="button" class="services-filter-pill" data-filter="safety" role="tab" aria-selected="false">Safety &amp; Prevention</button>
@@ -319,7 +320,73 @@
           <!-- Services Grid -->
           <div class="civic-services-grid" id="services-grid-container">
             
-            <!-- 1. Vacation House Check -->
+            <!-- 1. Overnight & Street Parking Permits -->
+            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-parking-permits" data-category="permits" data-keywords="parking permits exemption overnight street camper rv moving van trailer waiver snow emergency ch 72 2am 6am" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="feature-card-header">
+                  <span class="civic-service-card-tag" style="margin-bottom: 0;">MUNICIPAL CODE CH. 72</span>
+                  <span class="feature-status-badge">
+                    <span class="status-pip status-pip-amber" aria-hidden="true"></span>
+                    ONLINE EXEMPTIONS
+                  </span>
+                </div>
+                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Overnight &amp; Street Parking Permits</h2>
+                <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
+                  <strong class="prog-lead">Temporary municipal street exemptions:</strong> Request official exemptions from the 2:00 AM – 6:00 AM street parking restriction for overnight guests, driveway paving, 24-hour RV/camper pre-cooling &amp; staging, moving trailers, contractors, or emergency breakdowns.
+                </p>
+                <ul class="feature-specs-list">
+                  <li class="feature-spec-item">Overnight 2 AM – 6 AM &amp; 24-Hr RV Staging Waivers</li>
+                  <li class="feature-spec-item">Moving Vans, Utility Trailers &amp; Contractor Permits</li>
+                  <li class="feature-spec-item">Instant Electronic Registration &amp; Dispatch Logging</li>
+                </ul>
+              </div>
+              <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Request Parking Permit</span>
+                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Free Municipal Permit</span>
+              </div>
+            </div>
+
+            <!-- 2. Online Municipal Payments (Tyler Tech) -->
+            <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-online-payments" data-category="permits" data-keywords="payments online tyler technologies municipal parking tickets violations citations impound bond tow fee fine credit card" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="feature-card-header">
+                  <span class="civic-service-card-tag" style="margin-bottom: 0;">OFFICIAL CITY GATEWAY</span>
+                  <span class="feature-status-badge">
+                    <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+                    TYLER TECHNOLOGIES
+                  </span>
+                </div>
+                <h2 class="civic-service-card-title" style="font-size: 1.6rem; margin-top: 8px;">Online Municipal Payments &amp; Citations</h2>
+                <p class="civic-service-card-desc prog-copy" style="font-size: 0.95rem; max-width: 600px;">
+                  <strong class="prog-lead">Direct city payment portal:</strong> Rapid, secure online settlement for parking violation citations, municipal code notices of violation, and vehicle impound tow bond releases through the official City of Washington Tyler Technologies gateway.
+                </p>
+                <ul class="feature-specs-list">
+                  <li class="feature-spec-item">Online Card Payments (Visa, MC, Amex, Discover)</li>
+                  <li class="feature-spec-item">24/7 Automated Phone IVR Payments: (877) 813-6421</li>
+                  <li class="feature-spec-item">In-Person &amp; 24/7 City Hall Drive-Up Drop Box Available</li>
+                </ul>
+              </div>
+              <div class="feature-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+                <span class="btn-editorial-primary" style="padding: 10px 22px; font-size: 0.95rem;">Pay Citations Online</span>
+                <span class="feature-card-meta" style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Tyler Tech Portal ↗</span>
+              </div>
+            </div>
+
+            <!-- 3. Bicycle Identification & Registration -->
+            <div class="civic-service-card spotlight-card" data-open-drawer="drawer-bicycle-registration" data-category="safety" data-keywords="bicycle bike identification registration serial number property recovery theft prevention security frame" role="button" tabindex="0" aria-haspopup="dialog">
+              <div>
+                <div class="civic-service-card-tag">FREE CRIME PREVENTION</div>
+                <h3 class="civic-service-card-title">Bicycle Identification Registry</h3>
+                <p class="civic-service-card-desc prog-copy">
+                  <strong class="prog-lead">Protect personal bicycles:</strong> Register your bicycle make, model, frame color, and bottom bracket serial number with department records for rapid property recovery if lost or stolen.
+                </p>
+              </div>
+              <div class="civic-service-card-action">
+                Register Bicycle
+              </div>
+            </div>
+
+            <!-- 4. Vacation House Check -->
             <div class="civic-service-card-feature spotlight-card" data-open-drawer="drawer-vacation-check" data-category="portals" data-keywords="vacation house check residential property travel away inspection patrol officer security home" role="button" tabindex="0" aria-haspopup="dialog">
               <div>
                 <div class="feature-card-header">
@@ -723,6 +790,251 @@
       </div>
     </div>
 
+    <!-- Drawer 7: Overnight & Street Parking Permits -->
+    <div class="action-drawer-backdrop" id="drawer-parking-permits" role="dialog" aria-modal="true" aria-labelledby="parking-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-amber" style="font-size: 0.72rem;">MUNICIPAL CODE CH. 72 EXEMPTION</span>
+            <h3 id="parking-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Overnight &amp; Street Parking Permit</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Parking Exemption Permit">
+            <div class="snow-emergency-alert">
+              <span class="snow-alert-title">⚠ Statutory Snow Emergency Condition</span>
+              Pursuant to City Code § 72.03, all on-street parking exemptions are <strong>strictly suspended</strong> upon the declaration of a winter snow emergency. Vehicles must be removed from municipal roadways within 6 hours of declaration.
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              Washington City Ordinance prohibits parking on city streets between <strong>2:00 AM and 6:00 AM</strong>. Register your vehicle below for an authorized temporary waiver.
+            </p>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="prk-reason">Exemption Reason *</label>
+              <select id="prk-reason" class="drawer-form-input" required>
+                <option value="" disabled selected>Select exemption circumstance...</option>
+                <option value="overnight-guest">Overnight Guest / Paving / Driveway Full (2 AM – 6 AM)</option>
+                <option value="rv-staging">RV / Motorhome / Camper Staging (24-Hour Pre-Cooling &amp; Loading)</option>
+                <option value="moving-van">Moving Van / Utility Trailer / Pod Storage Container</option>
+                <option value="contractor">Active Construction / Trade Contractor Work</option>
+                <option value="disabled-vehicle">Emergency Breakdown / Disabled Vehicle Grace</option>
+              </select>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="prk-address">Street Address Parked In Front Of *</label>
+              <input type="text" id="prk-address" class="drawer-form-input" required placeholder="e.g. 308 N. Main St, Washington, IL" />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="prk-plate">License Plate # *</label>
+                <input type="text" id="prk-plate" class="drawer-form-input" required placeholder="e.g. IL 894-3291" style="text-transform: uppercase;" />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="prk-state">Registration State *</label>
+                <input type="text" id="prk-state" class="drawer-form-input" required value="IL" style="text-transform: uppercase;" />
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="prk-vehicle">Vehicle Make &amp; Model *</label>
+                <input type="text" id="prk-vehicle" class="drawer-form-input" required placeholder="e.g. Ford F-150 / Jayco Camper" />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="prk-color">Vehicle Color *</label>
+                <input type="text" id="prk-color" class="drawer-form-input" required placeholder="e.g. Silver / White" />
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="prk-start">Start Date *</label>
+                <input type="date" id="prk-start" class="drawer-form-input" required />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="prk-nights">Duration (Nights)</label>
+                <select id="prk-nights" class="drawer-form-input">
+                  <option value="1">1 Night (Standard)</option>
+                  <option value="2">2 Nights</option>
+                  <option value="3">3 Nights (Max Residential Waiver)</option>
+                </select>
+              </div>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="prk-phone">Resident Contact Phone *</label>
+              <input type="tel" id="prk-phone" class="drawer-form-input" required placeholder="(309) 555-0199" />
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Issue Exemption Permit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 8: Verified Online Municipal Payments -->
+    <div class="action-drawer-backdrop" id="drawer-online-payments" role="dialog" aria-modal="true" aria-labelledby="payments-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-emerald" style="font-size: 0.72rem;">OFFICIAL CITY PAYMENT GATEWAY</span>
+            <h3 id="payments-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Online Municipal Payments</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <div class="tyler-payment-box">
+            <div class="tyler-payment-header">
+              <span class="tyler-badge">TYLER TECH SECURE PORTAL</span>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #10B981; font-weight: 700;">24/7 ENCRYPTED</span>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; color: var(--text-primary);">Pay Citations &amp; Fines Online</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+              The City of Washington utilizes Tyler Technologies Municipal Online Payments for fast, encrypted settlement of parking tickets, municipal code notices of violation, and tow bond releases.
+            </p>
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 14px;">
+              CARD PROCESSING FEE: $1.25 + 3% • VISA, MASTERCARD, AMEX, DISCOVER
+            </div>
+            <a href="https://washingtonil.municipalonlinepayments.com/" target="_blank" rel="noopener noreferrer" class="btn-editorial-primary" style="display: inline-flex; width: 100%; justify-content: center; padding: 12px; font-size: 0.92rem; text-decoration: none;">
+              Open Official City Payment Portal ↗
+            </a>
+          </div>
+
+          <div style="background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
+            <div style="font-family: var(--font-mono); font-size: 0.70rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mtw-police-gold, #C5A880); margin-bottom: 6px;">
+              ALTERNATIVE 24/7 PAYMENT METHODS
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 1.7; color: var(--text-secondary);">
+              <li><strong>Automated Phone IVR:</strong> Call Toll-Free <a href="tel:8778136421" style="color: var(--accent-blue, #2563EB); font-weight: 700;">(877) 813-6421</a> 24/7 with your citation number.</li>
+              <li><strong>24/7 Drive-Up Drop Box:</strong> Located outside City Hall on N. Elm St (Checks/money orders only).</li>
+              <li><strong>In-Person Window:</strong> City Hall, 301 Walnut St, Washington, IL (Mon–Fri 8:00 AM – 4:30 PM).</li>
+            </ul>
+          </div>
+
+          <form class="wpd-drawer-form" data-form-title="Citation Inquiry Receipt">
+            <div style="font-family: var(--font-mono); font-size: 0.70rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">
+              GENERATE CITATION INQUIRY LOG
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="pay-type">Payment Obligation Type *</label>
+              <select id="pay-type" class="drawer-form-input" required>
+                <option value="parking">Parking Violation Citation ($25–$100)</option>
+                <option value="ordinance">Municipal Code Notice of Violation</option>
+                <option value="tow-bond">Vehicle Impound Tow Bond Release</option>
+                <option value="records-fee">Police FOIA / Report Duplication Fee</option>
+              </select>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="pay-citation">Citation or Notice Number *</label>
+              <input type="text" id="pay-citation" class="drawer-form-input" required placeholder="e.g. PK-2026-08412 or NOV-1942" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="pay-plate">Registered License Plate</label>
+              <input type="text" id="pay-plate" class="drawer-form-input" placeholder="e.g. IL 742-9901" style="text-transform: uppercase;" />
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Close</button>
+              <button type="submit" class="btn-editorial-primary">Generate Inquiry Slip</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer 9: Bicycle Identification & Registration -->
+    <div class="action-drawer-backdrop" id="drawer-bicycle-registration" role="dialog" aria-modal="true" aria-labelledby="bike-drawer-title">
+      <div class="action-drawer">
+        <div class="sheet-grabber" aria-hidden="true"></div>
+        <div class="action-drawer-header">
+          <div>
+            <span class="chip chip-blue" style="font-size: 0.72rem;">FREE PROPERTY RECOVERY SERVICE</span>
+            <h3 id="bike-drawer-title" style="font-size: 1.2rem; font-weight: 800; margin-top: 4px;">Bicycle Identification &amp; Registration</h3>
+          </div>
+          <button type="button" class="drawer-close-btn" data-close-drawer aria-label="Close dialog" title="Close">CLOSE</button>
+        </div>
+        <div class="action-drawer-body">
+          <form class="wpd-drawer-form" data-form-title="Bicycle Property Registration">
+            <div style="padding: 10px 14px; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.5;">
+              <strong style="color: var(--text-primary);">Recovery Protection:</strong> In the event your bicycle is lost, stolen, or recovered by patrol officers, having its serial number cataloged in department records enables rapid return of property.
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-owner">Owner Full Name *</label>
+              <input type="text" id="bike-owner" class="drawer-form-input" required placeholder="John Smith" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-phone">Phone Number *</label>
+              <input type="tel" id="bike-phone" class="drawer-form-input" required placeholder="(309) 555-0144" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-address">Washington Address *</label>
+              <input type="text" id="bike-address" class="drawer-form-input" required placeholder="e.g. 412 Wilmor Rd, Washington, IL" />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="bike-make">Make / Brand *</label>
+                <input type="text" id="bike-make" class="drawer-form-input" required placeholder="e.g. Trek, Giant, Schwinn" />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="bike-model">Model Name</label>
+                <input type="text" id="bike-model" class="drawer-form-input" placeholder="e.g. FX 3 Disc" />
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="bike-serial">Frame Serial Number *</label>
+                <input type="text" id="bike-serial" class="drawer-form-input" required placeholder="Under bottom bracket (e.g. WTU1234567X)" style="text-transform: uppercase;" />
+              </div>
+              <div class="drawer-form-group">
+                <label class="drawer-form-label" for="bike-color">Primary Color *</label>
+                <input type="text" id="bike-color" class="drawer-form-input" required placeholder="e.g. Matte Blue / Black" />
+              </div>
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-speeds">Bicycle Type &amp; Speeds</label>
+              <input type="text" id="bike-speeds" class="drawer-form-input" placeholder="e.g. 21-speed adult hybrid / 7-speed child BMX" />
+            </div>
+            <div class="drawer-form-group">
+              <label class="drawer-form-label" for="bike-notes">Distinguishing Features / Accessories</label>
+              <textarea id="bike-notes" class="drawer-form-textarea" placeholder="e.g. Rear cargo rack, water bottle cage, scratches on right fork..."></textarea>
+            </div>
+            <div class="action-drawer-footer" style="padding-left: 0; padding-right: 0;">
+              <button type="button" class="btn-editorial-secondary" data-close-drawer>Cancel</button>
+              <button type="submit" class="btn-editorial-primary">Register Bicycle</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         PERSISTENT CIVIC FLOATING ACTION STRIP
+         Zero-scroll access to high-frequency resident services
+         ======================================================================== -->
+    <nav class="civic-floating-action-strip" aria-label="Quick Police Services Action Bar">
+      <div class="strip-label-capsule">
+        <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+        <span>Police Services</span>
+      </div>
+      <div class="strip-action-pills">
+        <button type="button" class="strip-action-btn strip-btn-gold" data-open-drawer="drawer-parking-permits">
+          <span>Parking Permits</span>
+        </button>
+        <button type="button" class="strip-action-btn strip-btn-emerald" data-open-drawer="drawer-online-payments">
+          <span>Pay Citation</span>
+        </button>
+        <button type="button" class="strip-action-btn strip-btn-blue" data-open-drawer="drawer-bicycle-registration">
+          <span>Bicycle Registry</span>
+        </button>
+        <button type="button" class="strip-action-btn" data-open-drawer="drawer-police-records">
+          <span>FOIA / Records</span>
+        </button>
+        <button type="button" class="strip-action-btn strip-btn-rose" data-open-drawer="drawer-anonymous-tip">
+          <span>Crime Tip</span>
+        </button>
+      </div>
+    </nav>
+
     <!-- ========================================================================
          DIGNIFIED CIVIC FOOTER
          ======================================================================== -->
@@ -792,6 +1104,9 @@
           <div>
             <h4 class="civic-footer-col-title">Resident Services</h4>
             <ul class="civic-footer-links">
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-parking-permits" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Parking Permits &amp; Exemptions</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-online-payments" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Online Citations &amp; Payments</button></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-bicycle-registration" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Bicycle Identification Registry</button></li>
               <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-vacation-check" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Vacation House Watch</button></li>
               <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-drug-disposal" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Safe Medication Disposal</button></li>
               <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-police-records" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Police FOIA Records</button></li>

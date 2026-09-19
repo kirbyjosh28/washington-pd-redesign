@@ -8211,7 +8211,7 @@ body:has(.site-header) main {
   background: var(--mtw-police-navy-dark, #060F1E);
   color: #F8FAFC;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 56px 0 36px;
+  padding: 56px 0 84px;
   margin-top: var(--space-16);
 }
 
@@ -10225,7 +10225,7 @@ img.civic-editorial-img,
 
   /* Mobile Footer Compact Space-Saver */
   .civic-footer {
-    padding: 24px 0 16px !important;
+    padding: 24px 0 74px !important;
     margin-top: var(--space-4) !important;
   }
 
@@ -10730,3 +10730,201 @@ img.civic-editorial-img,
     border-radius: 9999px !important;
   }
 }
+
+/* ==========================================================================
+   PERSISTENT FLOATING ACTION STRIP & DIGITAL SERVICE CENTER ENHANCEMENTS
+   Strictly preserving Civic Navy, Insignia Gold, and haptic double-bezel tone
+   ========================================================================== */
+
+.civic-floating-action-strip {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(11, 27, 54, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 168, 128, 0.40);
+  border-radius: 9999px;
+  box-shadow: 0 16px 36px -10px rgba(11, 27, 54, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  pointer-events: auto;
+}
+
+.civic-floating-action-strip.is-hidden {
+  transform: translateX(-50%) translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hide floating action strip when any drawer or the navigation menu is open */
+body:has(.action-drawer-backdrop.active) .civic-floating-action-strip,
+body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) translateY(30px) !important;
+}
+
+.strip-label-capsule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px 0 6px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #C5A880);
+  white-space: nowrap;
+}
+
+.strip-action-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.strip-action-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.strip-action-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--mtw-police-gold, #C5A880);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.strip-action-btn:active {
+  transform: scale(0.97);
+}
+
+.strip-btn-gold {
+  color: var(--mtw-police-gold, #F5D77F);
+  border-color: rgba(197, 168, 128, 0.35);
+}
+
+.strip-btn-emerald {
+  color: #34D399;
+  border-color: rgba(52, 211, 153, 0.30);
+}
+
+.strip-btn-blue {
+  color: #60A5FA;
+  border-color: rgba(96, 165, 250, 0.30);
+}
+
+.strip-btn-rose {
+  color: #F87171;
+  border-color: rgba(248, 113, 113, 0.30);
+}
+
+/* Verified Tyler Technologies Municipal Payment Card */
+.tyler-payment-box {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.tyler-payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-2);
+}
+
+.tyler-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.14);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Snow Emergency Warning Banner in Parking Drawer */
+.snow-emergency-alert {
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.28);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.snow-alert-title {
+  color: #DC2626;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Mobile Responsiveness for Floating Action Strip */
+@media (max-width: 768px) {
+  .civic-floating-action-strip {
+    bottom: 12px;
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    border-radius: 16px;
+    padding: 6px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .civic-floating-action-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .strip-label-capsule {
+    display: none;
+  }
+
+  .strip-action-pills {
+    gap: 6px;
+  }
+
+  .strip-action-btn {
+    min-height: 44px;
+    padding: 8px 12px;
+    font-size: 0.74rem;
+  }
+}
+
