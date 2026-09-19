@@ -86,14 +86,15 @@ async function runServiceCenterVerification() {
     );
     console.log('Walk-in service cards validated:', walkinLinks);
 
-    const hasWfd = walkinLinks.some(c => c.link && c.link.includes('washingtonfd.com'));
-    const hasCity = walkinLinks.some(c => c.link && c.link.includes('ci.washington.il.us'));
+    const hasTazewell = walkinLinks.some(c => c.link && c.link.includes('tazewellhealth.org'));
+    const hasMunicode = walkinLinks.some(c => c.link && c.link.includes('municode.com'));
+    const hasCityPayment = walkinLinks.some(c => c.link && c.link.includes('ci.washington.il.us/egov/apps/payment'));
     const allHaveAccessBox = walkinLinks.every(c => c.accessBox);
 
-    if (hasWfd && hasCity && allHaveAccessBox) {
-      console.log('PASS: All 4 walk-in cards have standardized access boxes and direct verified city links');
+    if (hasTazewell && hasMunicode && hasCityPayment && allHaveAccessBox) {
+      console.log('PASS: All 4 walk-in cards have standardized access boxes and direct verified municipal endpoints');
     } else {
-      console.error('FAIL: Missing access boxes or expected external links in walk-in cards');
+      console.error('FAIL: Missing access boxes or expected direct municipal links in walk-in cards:', walkinLinks);
       totalErrors++;
     }
 
