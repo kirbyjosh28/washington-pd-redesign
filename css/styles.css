@@ -9648,7 +9648,8 @@ img.civic-editorial-img,
 }
 
 .wpd-deputy-inner {
-  padding: 32px 28px !important;
+  padding: 0 !important;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -9656,6 +9657,51 @@ img.civic-editorial-img,
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.wpd-deputy-photo-frame {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #0B1B36;
+}
+
+.wpd-deputy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wpd-deputy-card:hover .wpd-deputy-img {
+  transform: scale(1.03);
+}
+
+.wpd-deputy-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(11, 27, 54, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.wpd-deputy-body {
+  padding: clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .wpd-deputy-header {
@@ -10023,8 +10069,16 @@ img.civic-editorial-img,
   }
 
   .wpd-deputy-inner {
-    padding: 20px 18px !important;
+    padding: 0 !important;
     border-radius: 16px !important;
+  }
+
+  .wpd-deputy-photo-frame {
+    height: 260px !important;
+  }
+
+  .wpd-deputy-body {
+    padding: 18px 16px !important;
   }
 
   .wpd-deputy-footer {
