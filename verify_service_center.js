@@ -25,13 +25,13 @@ async function runServiceCenterVerification() {
 
   await page.goto(`${BASE_URL}/services.html?agentation=0`, { waitUntil: 'networkidle' });
 
-  // 1. Check Floating Action Strip
+  // 1. Check Floating Action Strip is Cleanly Absent (Retired per user feedback)
   const strip = await page.$('.civic-floating-action-strip');
-  if (!strip) {
-    console.error('FAIL: .civic-floating-action-strip not found on services.html');
+  if (strip) {
+    console.error('FAIL: .civic-floating-action-strip should NOT be present on services.html');
     totalErrors++;
   } else {
-    console.log('PASS: .civic-floating-action-strip is present on services.html');
+    console.log('PASS: .civic-floating-action-strip is cleanly absent from services.html per user feedback');
   }
 
   // 2. Check Service Cards in Grid
@@ -123,9 +123,9 @@ async function runServiceCenterVerification() {
     await page.waitForTimeout(200);
   }
 
-  // 5. Test Floating Action Strip: Parking Permits Drawer
-  console.log('Testing Floating Action Strip -> Parking Permits Drawer...');
-  const parkingBtn = await page.$('.civic-floating-action-strip [data-open-drawer="drawer-parking-permits"]');
+  // 5. Test Primary Service Cards: Parking Permits Drawer
+  console.log('Testing Service Cards -> Parking Permits Drawer...');
+  const parkingBtn = await page.$('.service-action-card [data-open-drawer="drawer-parking-permits"], [data-open-drawer="drawer-parking-permits"]');
   if (parkingBtn) {
     await parkingBtn.click();
     await page.waitForTimeout(400);
@@ -172,9 +172,9 @@ async function runServiceCenterVerification() {
     await page.waitForTimeout(300);
   }
 
-  // 6. Test Floating Action Strip: Online Payments Drawer (Tyler Tech Gateway)
-  console.log('Testing Floating Action Strip -> Online Payments Drawer...');
-  const payBtn = await page.$('.civic-floating-action-strip [data-open-drawer="drawer-online-payments"]');
+  // 6. Test Primary Service Cards: Online Payments Drawer (Tyler Tech Gateway)
+  console.log('Testing Service Cards -> Online Payments Drawer...');
+  const payBtn = await page.$('.service-action-card [data-open-drawer="drawer-online-payments"], [data-open-drawer="drawer-online-payments"]');
   if (payBtn) {
     await payBtn.click();
     await page.waitForTimeout(400);
@@ -199,9 +199,9 @@ async function runServiceCenterVerification() {
     await page.waitForTimeout(300);
   }
 
-  // 7. Test Floating Action Strip: Bicycle Registry Drawer
-  console.log('Testing Floating Action Strip -> Bicycle Registry Drawer...');
-  const bikeBtn = await page.$('.civic-floating-action-strip [data-open-drawer="drawer-bicycle-registration"]');
+  // 7. Test Primary Service Cards: Bicycle Registry Drawer
+  console.log('Testing Service Cards -> Bicycle Registry Drawer...');
+  const bikeBtn = await page.$('.service-action-card [data-open-drawer="drawer-bicycle-registration"], [data-open-drawer="drawer-bicycle-registration"]');
   if (bikeBtn) {
     await bikeBtn.click();
     await page.waitForTimeout(400);
@@ -226,12 +226,12 @@ async function runServiceCenterVerification() {
     await page.waitForTimeout(300);
   }
 
-  // Take full desktop screenshot of services.html with floating action strip visible
+  // Take full desktop screenshot of services.html
   await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'verified_services_action_strip_desktop.png') });
   await desktopContext.close();
 
   // -------------------------------------------------------------
-  // Test 2: Mobile Viewport Services & Action Strip (390x844)
+  // Test 2: Mobile Viewport Services (390x844)
   // -------------------------------------------------------------
   console.log('\n--- Test 2: Mobile Viewport Verification (390x844) ---');
   const mobileContext = await browser.newContext({
@@ -244,16 +244,10 @@ async function runServiceCenterVerification() {
 
   const mobileStrip = await mobilePage.$('.civic-floating-action-strip');
   if (mobileStrip) {
-    const isVisible = await mobileStrip.isVisible();
-    console.log(`PASS: Mobile floating action strip visible: ${isVisible}`);
-
-    // Check touch target height of buttons
-    const btnHeight = await mobilePage.$eval('.strip-action-btn', el => el.getBoundingClientRect().height);
-    console.log(`PASS: Mobile action button touch target height: ${btnHeight}px (>= 44px HIG target)`);
-
-    // Verify no mobile icons
-    const svgCount = await mobilePage.$$eval('.strip-action-btn svg, .strip-action-btn img', els => els.length);
-    console.log(`PASS: Mobile floating action buttons icon count: ${svgCount} (zero-icon rule enforced)`);
+    console.error('FAIL: Mobile floating action strip should NOT be present');
+    totalErrors++;
+  } else {
+    console.log('PASS: Mobile floating action strip is cleanly absent on services.html per user feedback');
   }
 
   await mobilePage.screenshot({ path: path.join(ARTIFACTS_DIR, 'verified_services_action_strip_mobile.png') });

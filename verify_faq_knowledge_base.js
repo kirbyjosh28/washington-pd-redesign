@@ -54,14 +54,13 @@ async function runFaqKnowledgeBaseVerification() {
   await homePage.click('#drawer-parking-permits .drawer-close-btn');
   await homePage.waitForTimeout(300);
 
-  // Card 2: Citations
-  await homePage.click('#quick-resolver [data-open-drawer="drawer-online-payments"]');
-  await homePage.waitForTimeout(400);
-  const paymentOpen = await homePage.$eval('#drawer-online-payments', el => el.classList.contains('active'));
-  console.log(`PASS: Card 2 direct trigger opens drawer-online-payments: ${paymentOpen}`);
-  if (!paymentOpen) totalErrors++;
-  await homePage.click('#drawer-online-payments .drawer-close-btn');
-  await homePage.waitForTimeout(300);
+  // Card 2: Citations (Direct link to City payment portal per user directive)
+  const card2Href = await homePage.$eval('#quick-resolver .resolver-card:nth-child(2) a.resolver-action-btn', el => el.href);
+  console.log(`PASS: Card 2 points directly to verified City payment portal: ${card2Href}`);
+  if (!card2Href.includes('ci.washington.il.us/egov/apps/payment/center.egov?view=form;page=1;id=21')) {
+    console.error('FAIL: Card 2 payment link incorrect:', card2Href);
+    totalErrors++;
+  }
 
   // Card 4: Vacation House Watch
   await homePage.click('#quick-resolver [data-open-drawer="drawer-vacation-check"]');
