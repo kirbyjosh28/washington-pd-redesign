@@ -6573,9 +6573,8 @@ body:has(.site-header) main {
 .skiper-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 10px;
-  border-radius: 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
   text-decoration: none;
   color: #FFFFFF;
   transition: all 0.16s ease;
@@ -6585,20 +6584,13 @@ body:has(.site-header) main {
 
 .skiper-item:hover,
 .skiper-item:focus-visible {
-  background: rgba(255, 255, 255, 0.10);
-  transform: translateX(3px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
   outline: none;
 }
 
 .skiper-item-icon {
-  font-size: 1.15rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
+  display: none;
 }
 
 .skiper-item-text {
@@ -6662,7 +6654,7 @@ body:has(.site-header) main {
   }
   .skiper-goo-card {
     width: 290px;
-    height: 495px;
+    height: 405px;
     right: -2px;
   }
   .skiper-gooey-panel {
