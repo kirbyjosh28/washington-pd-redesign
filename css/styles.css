@@ -39,7 +39,7 @@ body, #wpd-experience-root {
   overflow-x: clip;
   width: 100%;
   max-width: 100vw;
-  background-color: #F1F4F8 !important;
+  background-color: #FAFBFD !important;
   color: var(--graphite-dark, #1E1E1E) !important;
 }
 
@@ -47,7 +47,7 @@ body, #wpd-experience-root {
   position: relative;
   overflow-x: clip;
   width: 100%;
-  background: #F1F4F8;
+  background: #FAFBFD;
 }
 
 /* Ensure all interactive sections render crisp and elevated above decorative background */
@@ -59,8 +59,9 @@ body, #wpd-experience-root {
 }
 
 /* ==========================================================================
-   POLICE COMMAND NAVY ARCHITECTURAL BACKGROUND DESIGN
-   Atmospheric Depth • GIS Topographic Linework • Geometric Polygons
+   SCULPTURAL SILK RIBBON WAVE CANVAS (CLEAN WHITE / NAVY / GOLD)
+   Directly inspired by 3D fluid metallic drapery with glowing specular rim lights.
+   Zero grids • Pure organic curvature • Volumetric lighting & gold crests.
    ========================================================================== */
 .civic-navy-bg-canvas {
   position: absolute;
@@ -73,126 +74,66 @@ body, #wpd-experience-root {
   overflow: hidden;
 }
 
-/* 1. Atmospheric Police Navy Gradients */
-.navy-bg-gradient-hero {
-  position: absolute;
-  top: 0;
-  right: -50px;
-  width: 960px;
-  height: 820px;
-  background: radial-gradient(circle at 65% 25%, rgba(11, 27, 54, 0.22) 0%, rgba(11, 27, 54, 0.08) 50%, transparent 75%);
-  filter: blur(36px);
-  pointer-events: none;
-}
-
-.navy-bg-gradient-left {
-  position: absolute;
-  top: 260px;
-  left: -120px;
-  width: 780px;
-  height: 750px;
-  background: radial-gradient(circle at 45% 45%, rgba(11, 27, 54, 0.18) 0%, rgba(197, 168, 128, 0.12) 45%, transparent 75%);
-  filter: blur(40px);
-  pointer-events: none;
-}
-
-.navy-bg-gradient-mid {
-  position: absolute;
-  top: 1200px;
-  right: -100px;
-  width: 950px;
-  height: 900px;
-  background: radial-gradient(circle at 55% 45%, rgba(11, 27, 54, 0.18) 0%, rgba(11, 27, 54, 0.05) 55%, transparent 75%);
-  filter: blur(50px);
-  pointer-events: none;
-}
-
-.navy-bg-gradient-lower {
-  position: absolute;
-  top: 2150px;
-  left: -100px;
-  width: 960px;
-  height: 850px;
-  background: radial-gradient(circle at 40% 50%, rgba(11, 27, 54, 0.16) 0%, transparent 70%);
-  filter: blur(45px);
-  pointer-events: none;
-}
-
-/* 2. Geometric Architectural Shapes (Visible Navy Pop) */
-.navy-bg-geo-shape {
+/* Atmospheric Volumetric Lighting (Soft, deep silk shadows & champagne light) */
+.silk-ambient-glow {
   position: absolute;
   pointer-events: none;
-}
-
-.shape-hero-angle {
-  top: -40px;
-  right: -40px;
-  width: 560px;
-  height: 560px;
-  background: linear-gradient(135deg, rgba(11, 27, 54, 0.22) 0%, rgba(11, 27, 54, 0.07) 55%, transparent 85%);
-  border: 1.5px solid rgba(11, 27, 54, 0.18);
-  border-radius: 48px;
-  transform: rotate(24deg);
-  box-shadow: inset 0 0 0 1px rgba(197, 168, 128, 0.28), 0 24px 60px -15px rgba(11, 27, 54, 0.18);
-}
-
-.shape-hero-badge-glow {
-  top: 300px;
-  left: clamp(10px, 12vw, 160px);
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(11, 27, 54, 0.24) 0%, rgba(197, 168, 128, 0.16) 45%, transparent 70%);
-  filter: blur(32px);
   border-radius: 50%;
 }
 
-.shape-mid-diamond {
-  top: 1350px;
-  left: -80px;
-  width: 420px;
-  height: 420px;
-  background: linear-gradient(145deg, rgba(11, 27, 54, 0.15) 0%, transparent 80%);
-  border: 1.5px solid rgba(11, 27, 54, 0.15);
-  border-radius: 40px;
-  transform: rotate(45deg);
-  box-shadow: inset 0 0 0 1px rgba(197, 168, 128, 0.20);
+.silk-glow-hero-navy {
+  top: -80px;
+  right: -100px;
+  width: 1050px;
+  height: 900px;
+  background: radial-gradient(circle at 65% 35%, rgba(11, 27, 54, 0.14) 0%, rgba(11, 27, 54, 0.04) 55%, transparent 75%);
+  filter: blur(55px);
 }
 
-.shape-lower-ribbon {
-  top: 2380px;
-  right: -120px;
-  width: 660px;
-  height: 400px;
-  background: linear-gradient(130deg, rgba(11, 27, 54, 0.16) 0%, transparent 80%);
-  border: 1.5px solid rgba(197, 168, 128, 0.25);
-  border-radius: 40px;
-  transform: rotate(-15deg);
+.silk-glow-hero-gold {
+  top: 240px;
+  left: clamp(20px, 15vw, 240px);
+  width: 750px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(197, 168, 128, 0.05) 50%, transparent 70%);
+  filter: blur(48px);
 }
 
-/* 3. Topographic Linework (Full Height Flow) */
-.navy-bg-topo-svg {
+.silk-glow-mid-navy {
+  top: 2100px;
+  left: -120px;
+  width: 1050px;
+  height: 950px;
+  background: radial-gradient(circle at 45% 45%, rgba(11, 27, 54, 0.13) 0%, rgba(11, 27, 54, 0.03) 55%, transparent 72%);
+  filter: blur(60px);
+}
+
+.silk-glow-ops-gold {
+  top: 4800px;
+  right: -100px;
+  width: 900px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.09) 0%, rgba(11, 27, 54, 0.05) 50%, transparent 70%);
+  filter: blur(55px);
+}
+
+.silk-glow-recruitment-navy {
+  top: 7600px;
+  left: -140px;
+  width: 1100px;
+  height: 1000px;
+  background: radial-gradient(circle at 40% 50%, rgba(11, 27, 54, 0.14) 0%, rgba(212, 175, 55, 0.06) 45%, transparent 72%);
+  filter: blur(65px);
+}
+
+/* Sculptural 3D Wave SVG Layer */
+.civic-silk-waves-svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-/* 4. Fine Police Navy Coordinate Grid Overlay */
-.navy-bg-grid-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: 
-    linear-gradient(to right, rgba(11, 27, 54, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 27, 54, 0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 98%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 98%);
 }
 
 [data-theme="dark"] body,
