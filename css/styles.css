@@ -9699,26 +9699,81 @@ img.civic-editorial-img,
    MULTI-PAGE ARCHITECTURAL SYSTEM (Better UI & High-End Visual Design)
    ========================================================================== */
 
-/* ── 1. Floating Header Brand Pill ── */
+/* ── 1. Comprehensive Civic Floating Header & Navigation ── */
+.site-header.civic-floating-bar {
+  position: fixed !important;
+  top: 16px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+
+.site-header .container.civic-floating-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  max-width: min(1480px, calc(100vw - 32px)) !important;
+  margin: 0 auto !important;
+  padding: 0 16px !important;
+  pointer-events: none !important;
+}
+
+.civic-floating-capsule {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1440px !important;
+  gap: 10px !important;
+  padding: 6px 10px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(226, 221, 210, 0.95) !important;
+  border-radius: 9999px !important;
+  box-shadow: 
+    0 4px 14px rgba(11, 27, 54, 0.05),
+    0 12px 36px -4px rgba(11, 27, 54, 0.12),
+    0 24px 48px -12px rgba(11, 27, 54, 0.06) !important;
+  height: 68px !important;
+  box-sizing: border-box !important;
+  pointer-events: auto !important;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="dark"] .civic-floating-capsule {
+  background: rgba(15, 23, 42, 0.94) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.50) !important;
+}
+
+/* Brand Capsule */
 .civic-float-brand {
-  height: 56px;
-  padding: 0 16px 0 10px;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  background: rgba(11, 27, 54, 0.04);
-  border: 1px solid rgba(11, 27, 54, 0.08);
-  color: var(--mtw-navy, #0B1B36);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease;
-  user-select: none;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  padding: 4px 14px 4px 6px !important;
+  background: rgba(11, 27, 54, 0.03) !important;
+  border: 1px solid rgba(11, 27, 54, 0.06) !important;
+  border-radius: 9999px !important;
+  height: 54px !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease !important;
 }
 
 .civic-float-brand:hover {
-  transform: translateY(-2px);
-  background: rgba(11, 27, 54, 0.08);
-  border-color: var(--mtw-police-gold, #C5A880);
+  transform: translateY(-1px) !important;
+  background: rgba(11, 27, 54, 0.06) !important;
+  border-color: var(--mtw-police-gold, #C5A880) !important;
 }
 
 .civic-float-brand:active {
@@ -9726,27 +9781,282 @@ img.civic-editorial-img,
 }
 
 .civic-float-brand-seal {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(11, 27, 54, 0.15));
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 5px rgba(11, 27, 54, 0.16)) !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.civic-float-brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.15 !important;
 }
 
 .civic-float-brand-name {
-  font-family: var(--font-title, sans-serif);
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--mtw-navy, #0B1B36);
+  font-family: var(--font-title, sans-serif) !important;
+  font-size: 0.92rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--mtw-navy, #0B1B36) !important;
+  white-space: nowrap !important;
 }
 
-@media (max-width: 640px) {
-  .civic-float-brand-name {
-    display: none;
+[data-theme="dark"] .civic-float-brand-name {
+  color: #F8FAFC !important;
+}
+
+.civic-float-brand-state {
+  font-size: 0.58rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--mtw-police-gold, #8A6D3B) !important;
+  white-space: nowrap !important;
+}
+
+[data-theme="dark"] .civic-float-brand-state {
+  color: var(--mtw-police-gold, #C5A880) !important;
+}
+
+/* Primary Desktop Navigation Links */
+.civic-float-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  padding: 4px 6px !important;
+  background: rgba(11, 27, 54, 0.03) !important;
+  border: 1px solid rgba(11, 27, 54, 0.05) !important;
+  border-radius: 9999px !important;
+  height: 52px !important;
+  box-sizing: border-box !important;
+}
+
+[data-theme="dark"] .civic-float-nav {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.civic-nav-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 13px !important;
+  height: 42px !important;
+  border-radius: 9999px !important;
+  font-family: var(--font-body, -apple-system, sans-serif) !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  color: var(--text-secondary, #475569) !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.01em !important;
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+.civic-nav-item:hover {
+  color: var(--mtw-navy, #0B1B36) !important;
+  background: rgba(11, 27, 54, 0.06) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-theme="dark"] .civic-nav-item:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.civic-nav-item:active {
+  transform: scale(0.96) !important;
+}
+
+/* Active Nav State */
+.civic-nav-item.is-active,
+.civic-nav-item[aria-current="page"] {
+  color: #FFFFFF !important;
+  background: var(--mtw-police-navy, #0B1B36) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(11, 27, 54, 0.20) !important;
+}
+
+[data-theme="dark"] .civic-nav-item.is-active,
+[data-theme="dark"] .civic-nav-item[aria-current="page"] {
+  background: var(--mtw-police-gold, #C5A880) !important;
+  color: #0B1B36 !important;
+}
+
+/* Right: Utilities & Actions Cluster */
+.civic-float-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+}
+
+.civic-float-icon {
+  width: 15px !important;
+  height: 15px !important;
+  stroke: currentColor !important;
+  flex-shrink: 0 !important;
+}
+
+/* Dispatch Phone */
+.civic-float-phone {
+  background: rgba(11, 27, 54, 0.04) !important;
+  color: var(--mtw-navy, #0B1B36) !important;
+  border: 1px solid rgba(11, 27, 54, 0.08) !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.80rem !important;
+  font-weight: 700 !important;
+  gap: 6px !important;
+  height: 52px !important;
+  padding: 0 14px !important;
+}
+
+.civic-float-phone:hover {
+  background: #FFFFFF !important;
+  border-color: var(--mtw-police-gold, #C5A880) !important;
+  box-shadow: 0 2px 10px rgba(11, 27, 54, 0.08) !important;
+}
+
+[data-theme="dark"] .civic-float-phone {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: #F8FAFC !important;
+}
+
+/* 911 Emergency */
+.civic-float-911 {
+  background: var(--mtw-primary-crimson, #D31245) !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  font-size: 0.86rem !important;
+  letter-spacing: 0.05em !important;
+  padding: 0 16px !important;
+  gap: 8px !important;
+  height: 52px !important;
+  box-shadow: 0 4px 14px rgba(211, 18, 69, 0.35) !important;
+}
+
+.civic-float-911:hover {
+  background: #B50E3A !important;
+  box-shadow: 0 6px 20px rgba(211, 18, 69, 0.45) !important;
+}
+
+/* Directory / Menu Pill */
+.civic-float-menu {
+  background: var(--mtw-police-navy, #0B1B36) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  padding: 0 16px !important;
+  font-size: 0.80rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  gap: 6px !important;
+  height: 52px !important;
+  box-shadow: 0 2px 8px rgba(11, 27, 54, 0.18) !important;
+}
+
+.civic-float-menu:hover {
+  background: #152B52 !important;
+  border-color: var(--mtw-police-gold, #C5A880) !important;
+}
+
+/* ── Responsive Adaptations ── */
+@media (max-width: 1220px) {
+  .civic-float-nav {
+    gap: 1px !important;
+    padding: 3px !important;
+  }
+  .civic-nav-item {
+    padding: 0 9px !important;
+    font-size: 0.80rem !important;
+  }
+  .civic-float-brand-state {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  .civic-float-nav {
+    display: none !important;
+  }
+  .civic-floating-capsule {
+    width: auto !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .civic-floating-bar {
+    top: 8px !important;
+  }
+  .site-header .container.civic-floating-container {
+    padding: 0 8px !important;
+  }
+  .civic-floating-capsule {
+    height: 54px !important;
+    padding: 4px 6px !important;
+    gap: 4px !important;
+    width: auto !important;
+    justify-content: center !important;
   }
   .civic-float-brand {
-    padding: 0 10px;
+    height: 44px !important;
+    padding: 0 10px 0 4px !important;
+    gap: 6px !important;
+  }
+  .civic-float-brand-seal {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .civic-float-brand-name {
+    font-size: 0.78rem !important;
+  }
+  .civic-float-brand-state {
+    display: none !important;
+  }
+  .civic-float-phone {
+    height: 44px !important;
+    padding: 0 10px !important;
+    font-size: 0.72rem !important;
+  }
+  .civic-float-icon {
+    display: none !important;
+  }
+  .civic-float-911 {
+    height: 44px !important;
+    padding: 0 12px !important;
+    font-size: 0.76rem !important;
+  }
+  .civic-float-menu {
+    height: 44px !important;
+    padding: 0 12px !important;
+    font-size: 0.74rem !important;
+  }
+  .civic-float-menu svg {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .civic-float-brand-name {
+    display: none !important;
+  }
+  .civic-float-phone-label {
+    display: none !important;
+  }
+  .civic-float-phone {
+    padding: 0 10px !important;
+  }
+  .civic-float-phone .civic-float-icon {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
 

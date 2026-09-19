@@ -255,7 +255,7 @@
   function initActiveNavLinks() {
     let currentFile = window.location.pathname.split('/').pop() || 'index.html';
     if (currentFile === '' || currentFile === '/') currentFile = 'index.html';
-    document.querySelectorAll('.civic-nav-link').forEach(link => {
+    document.querySelectorAll('.civic-nav-link, .civic-nav-item').forEach(link => {
       const href = link.getAttribute('href');
       if (href && (href === currentFile || href.split('#')[0] === currentFile)) {
         link.classList.add('is-active');
