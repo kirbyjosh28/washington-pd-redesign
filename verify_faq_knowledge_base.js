@@ -62,14 +62,13 @@ async function runFaqKnowledgeBaseVerification() {
     totalErrors++;
   }
 
-  // Card 4: Vacation House Watch
-  await homePage.click('#quick-resolver [data-open-drawer="drawer-vacation-check"]');
-  await homePage.waitForTimeout(400);
-  const vacationOpen = await homePage.$eval('#drawer-vacation-check', el => el.classList.contains('active'));
-  console.log(`PASS: Card 4 direct trigger opens drawer-vacation-check: ${vacationOpen}`);
-  if (!vacationOpen) totalErrors++;
-  await homePage.click('#drawer-vacation-check .drawer-close-btn');
-  await homePage.waitForTimeout(300);
+  // Card 4: Vacation House Watch (Direct link to City Vacation Home Check form per user directive)
+  const card4Href = await homePage.$eval('#quick-resolver .resolver-card:nth-child(4) a.resolver-action-btn', el => el.href);
+  console.log(`PASS: Card 4 points directly to verified City Vacation Home Check form: ${card4Href}`);
+  if (!card4Href.includes('ci.washington.il.us/egov/apps/action/center.egov?view=form;page=1;id=15')) {
+    console.error('FAIL: Card 4 vacation form link incorrect:', card4Href);
+    totalErrors++;
+  }
 
   // 4. Verify Card 3 BuyCrash Direct Link
   const buycrashLink = await homePage.$eval('#quick-resolver a[href*="buycrash"]', el => el.href);
