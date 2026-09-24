@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/styles.css?v=20260918-multipage-v1" />
+  <link rel="stylesheet" href="css/tokens.css?v=20260924-v2-clean" />
+  <link rel="stylesheet" href="css/styles.css?v=20260924-v2-clean" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -40,6 +40,11 @@
           <span class="float-btn-911-beacon"></span>
           <span class="float-btn-main">DIAL 911</span>
         </a>
+        <button type="button" class="civic-float-pill-btn civic-float-search" id="wpdCommandTrigger" aria-label="Open Civic Command Search (Press ⌘K or /)" title="Civic Search (⌘K)">
+          <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span class="float-btn-search-text">SEARCH</span>
+          <kbd class="civic-kbd-shortcut">⌘K</kbd>
+        </button>
         <!-- Skiper46 Gooey Navigation Menu Trigger & Morphing Dropdown -->
         <div class="skiper-gooey-menu-wrapper" id="skiperGooeyNav">
           <!-- Hidden SVG Gooey Filter Definitions -->
@@ -77,6 +82,17 @@
               <div class="skiper-header-meta">
                 <span class="skiper-tag">8 PORTALS</span>
                 <span class="skiper-tag skiper-tag-gold">ONLINE SERVICES</span>
+              </div>
+            </div>
+
+            <div class="skiper-telemetry-strip" id="skiperStationTelemetry">
+              <div class="skiper-telemetry-item">
+                <span class="telemetry-pip skiper-lobby-pip telemetry-pip-open" aria-hidden="true"></span>
+                <span class="skiper-lobby-text">Records Lobby: Mon–Fri 8:00 AM – 4:30 PM CST</span>
+              </div>
+              <div class="skiper-telemetry-item">
+                <span class="telemetry-pip telemetry-pip-standard" aria-hidden="true"></span>
+                <span>Winter Parking: Standard (§ 10-1-19 at 2"+ snow)</span>
               </div>
             </div>
 
@@ -153,40 +169,39 @@
               <div class="skiper-bento-col skiper-services-col">
                 <div class="skiper-col-label">ONLINE RESIDENT SERVICES</div>
                 <div class="skiper-services-grid">
-                  <button type="button" class="skiper-action-card" data-open-drawer="drawer-vacation-check" role="menuitem">
-                    <span class="skiper-action-title">Vacation Watch</span>
-                    <span class="skiper-action-sub">Patrol checks while away</span>
-                  </button>
-                  <button type="button" class="skiper-action-card" data-open-drawer="drawer-police-records" role="menuitem">
-                    <span class="skiper-action-title">Records &amp; FOIA</span>
-                    <span class="skiper-action-sub">Police reports &amp; records</span>
+                  <a href="https://www.ci.washington.il.us/egov/apps/action/center.egov?view=form;page=1;id=15" target="_blank" rel="noopener noreferrer" class="skiper-action-card" role="menuitem">
+                    <span class="skiper-action-title">Vacation Watch ↗</span>
+                    <span class="skiper-action-sub">Official City Form #15</span>
+                  </a>
+                  <a href="https://www.ci.washington.il.us/egov/apps/action/center.egov?view=form;page=1;id=179" target="_blank" rel="noopener noreferrer" class="skiper-action-card" role="menuitem">
+                    <span class="skiper-action-title">Records &amp; FOIA ↗</span>
+                    <span class="skiper-action-sub">Official City Form #179</span>
+                  </a>
+                  <button type="button" class="skiper-action-card" data-open-drawer="drawer-parking-permits" role="menuitem">
+                    <span class="skiper-action-title">Parking Permit →</span>
+                    <span class="skiper-action-sub">Overnight waiver (§ 72.02)</span>
                   </button>
                   <button type="button" class="skiper-action-card" data-open-drawer="drawer-anonymous-tip" role="menuitem">
-                    <span class="skiper-action-title">Submit Crime Tip</span>
-                    <span class="skiper-action-sub">Confidential intelligence</span>
-                  </button>
-                  <button type="button" class="skiper-action-card" data-open-drawer="drawer-drug-disposal" role="menuitem">
-                    <span class="skiper-action-title">Medication Drop Box</span>
-                    <span class="skiper-action-sub">Safe prescription disposal</span>
+                    <span class="skiper-action-title">Submit Crime Tip →</span>
+                    <span class="skiper-action-sub">100% confidential</span>
                   </button>
                   <button type="button" class="skiper-action-card" data-open-drawer="drawer-child-seat" role="menuitem">
-                    <span class="skiper-action-title">Car Seat Check</span>
+                    <span class="skiper-action-title">Car Seat Check →</span>
                     <span class="skiper-action-sub">Certified inspector visit</span>
                   </button>
                   <button type="button" class="skiper-action-card" data-open-drawer="drawer-commendation" role="menuitem">
-                    <span class="skiper-action-title">Commend Officer</span>
+                    <span class="skiper-action-title">Commend Officer →</span>
                     <span class="skiper-action-sub">Recognize excellence</span>
                   </button>
                 </div>
-
-
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Background Canvas -->
   <div id="wpd-experience-root">
@@ -201,10 +216,10 @@
         <defs>
           <linearGradient id="goldRimGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#C5A880" stop-opacity="0.5" />
-            <stop offset="25%" stop-color="#F5E4B8" stop-opacity="0.95" />
-            <stop offset="45%" stop-color="#FFF9EC" stop-opacity="1" />
+            <stop offset="25%" stop-color="#E2E8F0" stop-opacity="0.95" />
+            <stop offset="45%" stop-color="#FFFFFF" stop-opacity="1" />
             <stop offset="65%" stop-color="#D4AF37" stop-opacity="0.95" />
-            <stop offset="85%" stop-color="#E2C98A" stop-opacity="0.9" />
+            <stop offset="85%" stop-color="#E2E8F0" stop-opacity="0.9" />
             <stop offset="100%" stop-color="#9E7D4B" stop-opacity="0.4" />
           </linearGradient>
           <linearGradient id="silkWaveDistricts" x1="90%" y1="10%" x2="10%" y2="90%">
@@ -216,7 +231,7 @@
           <linearGradient id="platinumRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
             <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.95" />
-            <stop offset="50%" stop-color="#FFFDF7" stop-opacity="1" />
+            <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1" />
             <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.8" />
             <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.25" />
           </linearGradient>
@@ -280,6 +295,48 @@
           </div>
         </div>
       </header>
+      <!-- ========================================================================
+           INSTANT ADDRESS-TO-PATROL BEAT GIS RESOLVER
+           Instant street lookup matching Washington addresses to District 1, 2, or 3
+           ======================================================================== -->
+      <section class="page-section address-resolver-section" id="address-resolver" aria-label="Address to Patrol Beat Resolver">
+        <div class="container">
+          <div class="address-resolver-card spotlight-card">
+            <div class="address-resolver-header">
+              <div class="eyebrow" style="color: var(--mtw-police-gold, #8A6D3B); font-size: 0.72rem; letter-spacing: 0.1em; font-weight: 800; margin-bottom: 4px;">INSTANT ADDRESS-TO-PATROL BEAT RESOLVER • 24/7 PATROL ASSIGNMENT</div>
+              <h2 style="font-size: clamp(1.4rem, 2.4vw, 1.85rem); font-weight: 700; color: var(--text-primary); margin: 0 0 6px 0;">Find Your Patrol District &amp; Assigned Sector Officer</h2>
+              <p class="prog-copy" style="max-width: 720px; font-size: 0.92rem; margin: 0; color: var(--text-secondary);">
+                Enter your Washington street or residence to identify your operational beat, primary sector cruiser car (101, 102, or 103), on-duty supervisor, and direct dispatch routing.
+              </p>
+            </div>
+
+            <div class="address-search-box">
+              <div class="address-search-inner">
+                <svg class="address-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <input type="text" id="addressResolverInput" class="address-search-input" placeholder="Type your street name (e.g. Devonshire, Centennial, Wilmor, Jefferson, Peoria)..." autocomplete="off" spellcheck="false" aria-label="Enter street name" />
+                <button type="button" id="addressResolverClear" class="address-search-clear" aria-label="Clear street input" title="Clear">✕</button>
+              </div>
+              <div class="address-suggestions-dropdown" id="addressResolverSuggestions" style="display: none;"></div>
+            </div>
+
+            <div class="address-quick-chips">
+              <span class="address-quick-chip-label">Quick Select:</span>
+              <button type="button" class="address-quick-chip" data-street="Devonshire Rd">Devonshire Rd (District 1)</button>
+              <button type="button" class="address-quick-chip" data-street="West Jefferson St">W. Jefferson St / Square (District 1)</button>
+              <button type="button" class="address-quick-chip" data-street="Centennial Dr">Centennial Dr (District 2)</button>
+              <button type="button" class="address-quick-chip" data-street="Freedom Pkwy">Freedom Pkwy (District 2)</button>
+              <button type="button" class="address-quick-chip" data-street="North Wilmor Rd">N. Wilmor Rd / 5 Points (District 3)</button>
+              <button type="button" class="address-quick-chip" data-street="Newcastle Rd">Newcastle Rd / Central (District 3)</button>
+            </div>
+
+            <!-- Dynamic Result Card -->
+            <div id="addressResolverResult" style="display: none;"></div>
+          </div>
+        </div>
+      </section>
 
       <!-- Map Section -->
       <section class="page-section" id="districts" aria-labelledby="districts-heading" style="padding-top: 0;">
@@ -573,9 +630,9 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/data.js"></script>
+  <script src="js/data.js?v=20260924-v2-clean"></script>
   <script src="js/wpd-districts.js"></script>
-  <script src="js/app.js?v=20260918-multipage-v1"></script>
+  <script src="js/app.js?v=20260924-v2-clean"></script>
   <script src="js/agentation-loader.js"></script>
 </body>
 </html>

@@ -4,67 +4,82 @@
    ========================================================================== */
 
 :root {
-  /* ── Rothfinder Architecture Design Tokens ── */
-  --color-bone: #fbf7ef;         /* Exact Rothfinder canvas background */
-  --color-black: #000000;        /* Exact Rothfinder pure obsidian ink */
-  --color-sand: #c3b591;         /* Warm archival sand */
-  --color-ltbeige: #ebe3d4;      /* Soft architectural beige */
-  --color-forest: #2a5b40;       /* Rich evergreen */
-  --color-lime: #3ab91a;         /* High-visibility active accent */
-  --color-periwinkle: #899bff;   /* Electric interactive periwinkle */
-  --color-charcoal: #141413;     /* Deep slate charcoal */
+  /* ── Unified Modern Civic Design Tokens (Zero Off-White) ── */
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
 
-  /* ── Canvas & Surface Colors (Rothfinder Bone Foundation) ── */
-  --bg-app: var(--color-bone);
-  --bg-surface: #FFFFFF;
-  --bg-surface-subtle: #F5EFE4;  /* Warm architectural surface */
-  --bg-surface-elevated: #FFFFFF;
-  --bg-surface-sand: #EBE3D4;
-  --bg-overlay: rgba(15, 23, 42, 0.6);
-  --bg-glass: rgba(251, 247, 239, 0.92);
-  --bg-glass-scrolled: rgba(251, 247, 239, 0.98);
+  --color-bone: #F8FAFC;         /* Deprecated: mapped to clean slate-50 */
+  --color-black: #0F172A;        /* Crisp obsidian ink */
+  --color-sand: #E2E8F0;         /* Deprecated: mapped to neutral border */
+  --color-ltbeige: #F1F5F9;      /* Deprecated: mapped to clean subtle surface */
+  --color-forest: #059669;       /* Rich evergreen */
+  --color-lime: #10B981;         /* High-visibility active accent */
+  --color-periwinkle: #6366F1;   /* Electric interactive periwinkle */
+  --color-charcoal: #0F172A;     /* Deep slate charcoal */
 
-  /* ── Living Conceptual Sketch Design Tokens ── */
-  --paper-ground: #FAF6ED;          /* Warm sketchbook cream paper */
-  --paper-ground-subtle: #F3ECE0;   /* Lightly shaded notebook page */
-  --paper-surface: #FFFDF8;         /* Primary sketch card surface */
-  --paper-surface-warm: #FBF8F1;    /* Secondary drawing area */
-  --graphite-dark: #1E1E1E;         /* 4B dark graphite stroke */
-  --graphite-medium: #424242;       /* 2B medium graphite stroke */
-  --graphite-light: #737373;        /* HB light pencil stroke */
-  --graphite-faint: #A3A3A3;        /* Faint construction line */
-  --graphite-smudge: rgba(30, 30, 30, 0.11); /* Soft pencil smudge shadow */
-  --graphite-hatch: rgba(30, 30, 30, 0.08);  /* Diagonal pencil hatching */
-  --graphite-wash: rgba(30, 30, 30, 0.04);   /* Soft graphite wash */
+  /* ── Canvas & Surface Colors (Crisp White & Cool Slate) ── */
+  --bg-app: #F8FAFC;               /* Clean neutral canvas (zero off-white/yellow tint) */
+  --bg-surface: #FFFFFF;           /* Pure white card surface */
+  --bg-surface-subtle: #F1F5F9;    /* Clean cool slate-100 surface */
+  --bg-surface-elevated: #FFFFFF;  /* Elevated white surface */
+  --bg-surface-sand: #F1F5F9;      /* Unified with subtle slate */
+  --bg-overlay: rgba(15, 23, 42, 0.65);
+  --bg-glass: rgba(255, 255, 255, 0.90);
+  --bg-glass-scrolled: rgba(255, 255, 255, 0.96);
+
+  /* ── Drafting & Surface Tokens ── */
+  --paper-ground: #F8FAFC;          /* Clean slate foundation */
+  --paper-ground-subtle: #F1F5F9;   /* Clean slate sub-surface */
+  --paper-surface: #FFFFFF;         /* Crisp white card surface */
+  --paper-surface-warm: #F8FAFC;    /* Unified neutral drawing area */
+  --graphite-dark: #0F172A;         /* Slate-900 high contrast ink */
+  --graphite-medium: #334155;       /* Slate-700 medium text */
+  --graphite-light: #64748B;        /* Slate-500 muted text */
+  --graphite-faint: #94A3B8;        /* Slate-400 subtle dividers */
+  --graphite-smudge: rgba(15, 23, 42, 0.06);
+  --graphite-hatch: rgba(15, 23, 42, 0.04);
+  --graphite-wash: rgba(15, 23, 42, 0.02);
   
   --marker-amber: #D97706;          /* Architectural marker highlighter */
-  --marker-amber-wash: rgba(217, 119, 6, 0.12); /* Translucent marker wash */
-  --marker-blue: #2563EB;           /* Fountain pen drafting blue */
-  --marker-blue-wash: rgba(37, 99, 235, 0.10);  /* Translucent drafting wash */
-  --marker-crimson: #DC2626;        /* Emergency red ink */
-  --marker-crimson-wash: rgba(220, 38, 38, 0.14); /* Red ink wash */
+  --marker-amber-wash: rgba(217, 119, 6, 0.10);
+  --marker-blue: #2563EB;           /* Drafting blue */
+  --marker-blue-wash: rgba(37, 99, 235, 0.08);
+  --marker-crimson: #DC2626;        /* Emergency red */
+  --marker-crimson-wash: rgba(220, 38, 38, 0.10);
 
-  --font-editorial: 'Spectral', Georgia, 'Times New Roman', serif;
-  --font-title: 'Spectral', Georgia, 'Times New Roman', serif;
-  --font-serif-body: 'Spectral', Georgia, serif;
+  /* ── Typography Stack (Plus Jakarta Sans Authority) ── */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sketch: 'Spectral', Georgia, serif;
+  --font-title: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Spectral', Georgia, serif;
+  --font-serif-body: 'Spectral', Georgia, serif;
+  --font-sketch: 'Plus Jakarta Sans', sans-serif;
   --font-note: 'Plus Jakarta Sans', sans-serif;
-  --font-hand: 'Spectral', Georgia, serif;
+  --font-hand: 'Plus Jakarta Sans', sans-serif;
   --font-draft: 'JetBrains Mono', monospace;
-  --font-display: var(--font-title);
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* ── Mapping The Way / Civic Editorial Tokens ── */
-  --mtw-bg-tertiary: #F1EDE2;      /* Warm limestone / tertiary-200 */
-  --mtw-neutral-dark: #231F20;     /* Deep charcoal / obsidian text */
-  --mtw-primary-crimson: #D31245;  /* Authority / alert crimson */
+  --mtw-bg-tertiary: #F1F5F9;      /* Clean slate-100 instead of warm limestone #F1EDE2 */
+  --mtw-limestone: #F1F5F9;
+  --mtw-neutral-dark: #0F172A;     /* Crisp obsidian slate text */
+  --mtw-primary-crimson: #DC2626;  /* Authority / alert crimson */
   --mtw-police-navy: #0B1B36;      /* Official command navy */
   --mtw-police-navy-dark: #060F1E;
-  --mtw-police-gold: #C5A880;      /* Insignia / seal gold */
+  --mtw-police-gold: #C5A880;      /* Insignia gold */
   --mtw-card-bg: #FFFFFF;
-  --mtw-card-border: rgba(35, 31, 32, 0.09);
-  --mtw-card-shadow: 0 2px 6px rgba(11, 27, 54, 0.04), 0 10px 24px -4px rgba(11, 27, 54, 0.08), 0 20px 40px -8px rgba(11, 27, 54, 0.04);
-  --mtw-card-shadow-hover: 0 4px 10px rgba(11, 27, 54, 0.06), 0 16px 36px -4px rgba(11, 27, 54, 0.14), 0 32px 64px -8px rgba(11, 27, 54, 0.08);
+  --mtw-card-border: rgba(15, 23, 42, 0.08);
+  --mtw-card-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 24px -4px rgba(15, 23, 42, 0.06);
+  --mtw-card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.08), 0 16px 36px -4px rgba(15, 23, 42, 0.10);
 
   /* Fluid Editorial Typography */
   --text-hero: clamp(2.6rem, 5vw + 1rem, 5rem);
@@ -72,31 +87,31 @@
   --text-h2: clamp(1.65rem, 2.2vw + 0.5rem, 2.5rem);
   --text-h3: clamp(1.25rem, 1.4vw + 0.4rem, 1.75rem);
   
-  --sketch-ink-black: #111111;
-  --sketch-ink-shadow: #0A0A0A;
-  --sketch-solid-shadow: #000000;
+  --sketch-ink-black: #0F172A;
+  --sketch-ink-shadow: #0A0F1D;
+  --sketch-solid-shadow: #0B1B36;
   
-  /* ── Streamline Sketch Style Tokens ── */
-  --sketch-radius-1: 255px 15px 225px 15px/15px 225px 15px 255px;
-  --sketch-radius-2: 15px 225px 15px 255px/255px 15px 225px 15px;
-  --sketch-radius-pill: 255px 25px 225px 25px/25px 225px 25px 255px;
-  --sketch-border-width: 1.8px;
-  --sketch-ink: var(--sketch-ink-black, #111111);
-  --sketch-hard-shadow: 3px 3px 0px var(--sketch-ink-black, #111111);
-  --sketch-hard-shadow-hover: 5px 5px 0px var(--sketch-ink-black, #111111);
-  --sketch-subtle-hatch: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(17, 17, 17, 0.04) 5px, rgba(17, 17, 17, 0.04) 6px);
+  /* ── Streamline Style Tokens ── */
+  --sketch-radius-1: 16px;
+  --sketch-radius-2: 20px;
+  --sketch-radius-pill: 9999px;
+  --sketch-border-width: 1px;
+  --sketch-ink: #0F172A;
+  --sketch-hard-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --sketch-hard-shadow-hover: 0 6px 16px rgba(15, 23, 42, 0.12);
+  --sketch-subtle-hatch: transparent;
   
   /* ── Borders & Structural Highlights ── */
-  --border-subtle: rgba(0, 0, 0, 0.12);
-  --border-medium: rgba(0, 0, 0, 0.28);
-  --border-strong: #000000;
-  --border-focus: #000000;
-  --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.16);
+  --border-strong: #0F172A;
+  --border-focus: #0B1B36;
+  --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
   
   /* ── Text & Typography Contrast System ── */
-  --text-primary: #000000;       /* Exact Rothfinder pure black text */
-  --text-secondary: #2E3338;     /* High contrast slate charcoal */
-  --text-muted: #575D65;         /* Crisp muted metadata */
+  --text-primary: #0F172A;       /* Slate-900 pure dark text */
+  --text-secondary: #334155;     /* Slate-700 high contrast */
+  --text-muted: #64748B;         /* Slate-500 crisp metadata */
   --text-inverse: #FFFFFF;
   
   /* ── Better Stack & 21st.dev Brand / Functional Colors ── */

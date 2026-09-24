@@ -252,6 +252,9 @@
     initSkiperGooeyMenu();
     initFooterActions();
     initCardCursorSpotlight();
+    initStationTelemetry();
+    initCommandPalette();
+    initAddressResolver();
   }
 
   function initActiveNavLinks() {
@@ -921,6 +924,7 @@
         lastActiveTrigger = null;
       }
     }
+    window.closeAllDrawers = closeAllDrawers;
 
     // Event delegation for opening action drawers
     document.addEventListener('click', (e) => {
@@ -948,7 +952,7 @@
       }
     });
 
-    // Auto-open drawer if requested in URL parameter (e.g. services.html?drawer=drawer-vacation-check)
+    // Auto-open drawer if requested in URL parameter (e.g. services.html?drawer=drawer-parking-permits)
     try {
       const urlParams = new URLSearchParams(window.location.search);
       const requested = urlParams.get('drawer') || urlParams.get('openDrawer');
@@ -1050,6 +1054,14 @@
       }
     });
 
+    // Set minimum date today for all drawer date inputs
+    try {
+      const todayIso = new Date().toISOString().split('T')[0];
+      document.querySelectorAll('.wpd-drawer-form input[type="date"]').forEach(dInput => {
+        dInput.setAttribute('min', todayIso);
+      });
+    } catch (_) {}
+
     // Input auto-formatting: Phone number mask (XXX) XXX-XXXX
     document.addEventListener('input', (e) => {
       const input = e.target;
@@ -1074,32 +1086,36 @@
       if (!form) return;
 
       e.preventDefault();
-      const receiptCode = `WPD-REQ-${Math.floor(1000 + Math.random() * 9000)}`;
+      const rand1 = Math.floor(1000 + Math.random() * 9000);
+      const rand2 = Math.floor(1000 + Math.random() * 9000);
+      const receiptCode = `WPD-2026-${rand1}-${rand2}`;
       const drawerBody = form.closest('.action-drawer-body');
       const formTitle = form.getAttribute('data-form-title') || 'Request';
+      const nowCST = new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', dateStyle: 'medium', timeStyle: 'short' });
 
       if (drawerBody) {
         drawerBody.innerHTML = `
-          <div style="text-align: center; padding: var(--space-8) var(--space-4);">
-            <div style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: var(--accent-emerald-subtle); color: var(--accent-emerald); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 auto var(--space-4);">SUMMARY RECORDED</div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2);">${escapeHtml(formTitle)} Summary</h3>
-            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--space-4); line-height: 1.6;">
-              Your request record has been formatted. For time-sensitive matters or to verify immediate dispatch entry, contact the communications center at <strong>(309) 444-2313</strong>.
+          <div class="civic-receipt-card" style="text-align: center; padding: var(--space-6) var(--space-4);">
+            <div style="display: inline-block; padding: 6px 16px; border-radius: 20px; background: var(--accent-emerald-subtle, rgba(5,150,105,0.12)); color: var(--accent-emerald, #059669); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 auto var(--space-4);">CIVIC RECORD CONFIRMED</div>
+            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2);">${escapeHtml(formTitle)} Recorded</h3>
+            <p style="color: var(--text-secondary); font-size: 0.90rem; margin-bottom: var(--space-4); line-height: 1.6;">
+              Your submission has been logged into the Washington Police departmental dispatch record on <strong>${nowCST} CST</strong>. If this is an active parking exemption, please save or print this official confirmation reference.
             </p>
-            <div style="background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-6); font-family: var(--font-mono); font-size: 0.88rem;">
-              <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px;">Request Reference Number</div>
-              <div style="font-weight: 800; font-size: 1.3rem; color: var(--text-primary); letter-spacing: 0.04em;" id="receipt-code-display">${receiptCode}</div>
+            <div style="background: var(--bg-surface-subtle, #F8FAFC); border: 1px solid var(--border-subtle, rgba(11,27,54,0.12)); border-radius: var(--radius-lg, 14px); padding: var(--space-4); margin-bottom: var(--space-6); font-family: var(--font-mono, monospace); font-size: 0.88rem;">
+              <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em;">Official CAD Tracking Reference</div>
+              <div style="font-weight: 800; font-size: 1.3rem; color: var(--text-primary); letter-spacing: 0.06em;" id="receipt-code-display">${receiptCode}</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Washington Police Dispatch • 115 W. Jefferson St</div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-4);">
-              <a href="tel:3094442313" class="btn-editorial-primary" style="width: 100%; justify-content: center; text-decoration: none;">
-                Call Dispatch (309) 444-2313
-              </a>
+              <button type="button" class="btn-editorial-primary" id="btn-print-receipt-summary" style="width: 100%; justify-content: center;">
+                Print / Save Receipt
+              </button>
               <button type="button" class="btn-editorial-secondary" id="btn-copy-receipt-code" style="width: 100%; justify-content: center;">
-                Copy Reference Number
+                Copy Reference Code
               </button>
-              <button type="button" class="btn-editorial-secondary" id="btn-print-receipt-summary" style="width: 100%; justify-content: center;">
-                Print / Save Summary
-              </button>
+              <a href="tel:3094442313" class="btn-editorial-secondary" style="width: 100%; justify-content: center; text-decoration: none;">
+                Verify via Dispatch: (309) 444-2313
+              </a>
               <button type="button" class="btn-editorial-secondary" id="btn-submit-another" style="width: 100%; justify-content: center;">
                 Submit Another Request
               </button>
@@ -1364,6 +1380,466 @@
 
     handleFaqDeepLink();
     window.addEventListener('hashchange', handleFaqDeepLink);
+  }
+
+  /* --------------------------------------------------------------------------
+     14. Ambient Station Telemetry (Central Time Lobby Hours & Snow Status)
+     -------------------------------------------------------------------------- */
+  function initStationTelemetry() {
+    function updateLobbyTelemetry() {
+      try {
+        const now = new Date();
+        const options = { timeZone: 'America/Chicago', hour12: false, weekday: 'short', hour: '2-digit', minute: '2-digit' };
+        const parts = new Intl.DateTimeFormat('en-US', options).formatToParts(now);
+        const partObj = {};
+        parts.forEach(p => { partObj[p.type] = p.value; });
+
+        const weekday = partObj.weekday; // 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+        const hour = parseInt(partObj.hour, 10);
+        const minute = parseInt(partObj.minute, 10);
+        const currentMinutes = hour * 60 + minute;
+
+        const isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].includes(weekday);
+        const isOpen = isWeekday && (currentMinutes >= 8 * 60 && currentMinutes < 16 * 60 + 30); // 8:00 AM - 4:30 PM CST
+
+        const pipElements = document.querySelectorAll('.skiper-lobby-pip');
+        const textElements = document.querySelectorAll('.skiper-lobby-text');
+        const footerStatusElements = document.querySelectorAll('.civic-footer-lobby-status');
+
+        pipElements.forEach(pip => {
+          pip.className = 'telemetry-pip ' + (isOpen ? 'telemetry-pip-open' : 'telemetry-pip-closed');
+        });
+
+        textElements.forEach(text => {
+          text.textContent = isOpen 
+            ? 'Records Lobby: OPEN until 4:30 PM CST' 
+            : 'Records Lobby: CLOSED (24/7 Patrol Active)';
+        });
+
+        footerStatusElements.forEach(el => {
+          el.textContent = isOpen
+            ? 'Records Lobby: Open until 4:30 PM CST · Mon–Fri'
+            : 'Records Lobby: Closed · 24/7 Police Patrol Active';
+        });
+      } catch (err) {
+        console.warn('Telemetry calculation error:', err);
+      }
+    }
+
+    updateLobbyTelemetry();
+    setInterval(updateLobbyTelemetry, 60000);
+  }
+
+  /* --------------------------------------------------------------------------
+     15. Universal Civic Command Palette (⌘K / Ctrl+K / /)
+     -------------------------------------------------------------------------- */
+  function initCommandPalette() {
+    let dialog = document.getElementById('wpdCommandDialog');
+    if (!dialog) {
+      dialog = document.createElement('dialog');
+      dialog.id = 'wpdCommandDialog';
+      dialog.className = 'wpd-command-dialog';
+      dialog.setAttribute('aria-label', 'Civic Command Palette & Service Search');
+      dialog.innerHTML = `
+        <div class="wpd-command-shell">
+          <div class="wpd-command-header">
+            <svg class="wpd-command-search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="wpdCommandInput" class="wpd-command-input" placeholder="Search city services, permits, records, dispatch, or pages..." autocomplete="off" spellcheck="false" aria-label="Search civic services and navigation" />
+            <div class="wpd-command-header-actions">
+              <kbd class="wpd-command-key-hint">ESC</kbd>
+              <button type="button" class="wpd-command-close-btn" id="wpdCommandClose" aria-label="Close search">✕</button>
+            </div>
+          </div>
+          <div class="wpd-command-filter-bar">
+            <button type="button" class="wpd-filter-chip is-active" data-cat="all">All Services</button>
+            <button type="button" class="wpd-filter-chip" data-cat="city">City Portals ↗</button>
+            <button type="button" class="wpd-filter-chip" data-cat="wpd">WPD Forms →</button>
+            <button type="button" class="wpd-filter-chip" data-cat="nav">Navigation</button>
+          </div>
+          <div class="wpd-command-body" id="wpdCommandResults" role="listbox"></div>
+          <div class="wpd-command-footer">
+            <span class="wpd-command-footer-hint"><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+            <span class="wpd-command-footer-hint"><kbd>↵</kbd> Select</span>
+            <span class="wpd-command-footer-hint"><kbd>ESC</kbd> Close</span>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(dialog);
+    }
+
+    const input = dialog.querySelector('#wpdCommandInput');
+    const resultsContainer = dialog.querySelector('#wpdCommandResults');
+    const closeBtn = dialog.querySelector('#wpdCommandClose');
+    const filterChips = dialog.querySelectorAll('.wpd-filter-chip');
+
+    let selectedIndex = 0;
+    let currentFilter = 'all';
+    let filteredItems = [];
+
+    const searchData = (typeof WPD_COMMAND_SEARCH_INDEX !== 'undefined') ? WPD_COMMAND_SEARCH_INDEX : [];
+
+    function renderResults(query = '') {
+      const q = query.trim().toLowerCase();
+      filteredItems = searchData.filter(item => {
+        if (currentFilter === 'city' && item.type !== 'city-portal') return false;
+        if (currentFilter === 'wpd' && item.type !== 'wpd-drawer') return false;
+        if (currentFilter === 'nav' && item.type !== 'nav-link' && item.type !== 'phone') return false;
+
+        if (!q) return true;
+        const haystack = `${item.title} ${item.keywords || ''} ${item.desc || ''} ${item.category || ''}`.toLowerCase();
+        return q.split(/\s+/).every(token => haystack.includes(token));
+      });
+
+      if (filteredItems.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="wpd-command-empty">
+            <p>No matching municipal services found for "<strong>${escapeHtml(query)}</strong>"</p>
+            <span class="wpd-command-empty-sub">Try searching for "parking", "foia", "ticket", "bike", or call dispatch at (309) 444-2313.</span>
+          </div>
+        `;
+        return;
+      }
+
+      selectedIndex = 0;
+      let html = '';
+      let lastCat = '';
+
+      filteredItems.forEach((item, idx) => {
+        if (item.category !== lastCat) {
+          lastCat = item.category;
+          html += `<div class="wpd-command-group-heading">${escapeHtml(lastCat)}</div>`;
+        }
+        const isSelected = idx === selectedIndex;
+        let badgeClass = 'badge-city';
+        if (item.type === 'wpd-drawer') badgeClass = 'badge-wpd';
+        else if (item.type === 'partner-portal') badgeClass = 'badge-partner';
+        else if (item.type === 'phone') badgeClass = 'badge-phone';
+        else if (item.type === 'nav-link') badgeClass = 'badge-nav';
+
+        html += `
+          <div class="wpd-command-item ${isSelected ? 'is-selected' : ''}" role="option" aria-selected="${isSelected}" data-index="${idx}">
+            <div class="wpd-command-item-main">
+              <div class="wpd-command-item-title">${escapeHtml(item.title)}</div>
+              <div class="wpd-command-item-desc">${escapeHtml(item.desc)}</div>
+            </div>
+            <span class="wpd-command-badge ${badgeClass}">${escapeHtml(item.badge)}</span>
+          </div>
+        `;
+      });
+
+      resultsContainer.innerHTML = html;
+      updateSelectedAria();
+    }
+
+    function updateSelectedAria() {
+      const items = resultsContainer.querySelectorAll('.wpd-command-item');
+      items.forEach((el, idx) => {
+        const isSelected = idx === selectedIndex;
+        el.classList.toggle('is-selected', isSelected);
+        el.setAttribute('aria-selected', isSelected);
+        if (isSelected) {
+          el.scrollIntoView({ block: 'nearest' });
+        }
+      });
+    }
+
+    function executeItem(item) {
+      if (!item) return;
+      closePalette();
+
+      if (item.type === 'city-portal' || item.type === 'partner-portal') {
+        window.open(item.action, '_blank', 'noopener,noreferrer');
+      } else if (item.type === 'phone') {
+        window.location.href = item.action;
+      } else if (item.type === 'nav-link') {
+        window.location.href = item.action;
+      } else if (item.type === 'wpd-drawer') {
+        const drawerEl = document.getElementById(item.action);
+        if (drawerEl) {
+          setTimeout(() => {
+            if (typeof window.closeAllDrawers === 'function') {
+              window.closeAllDrawers();
+            } else {
+              document.querySelectorAll('.action-drawer-backdrop.active').forEach(b => b.classList.remove('active'));
+            }
+            drawerEl.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            const firstInput = drawerEl.querySelector('input:not([type="hidden"]), select, textarea, button:not([disabled])');
+            if (firstInput) setTimeout(() => firstInput.focus(), 100);
+          }, 100);
+        } else {
+          window.location.href = `services.html?drawer=${encodeURIComponent(item.action)}`;
+        }
+      }
+    }
+
+    let canCloseOnBackdrop = false;
+
+    function openPalette() {
+      canCloseOnBackdrop = false;
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute('open', 'true');
+      }
+      document.body.classList.add('command-palette-open');
+      input.value = '';
+      currentFilter = 'all';
+      filterChips.forEach(c => c.classList.toggle('is-active', c.getAttribute('data-cat') === 'all'));
+      renderResults();
+      setTimeout(() => {
+        canCloseOnBackdrop = true;
+        input.focus();
+      }, 100);
+    }
+
+    function closePalette() {
+      canCloseOnBackdrop = false;
+      if (typeof dialog.close === 'function') {
+        dialog.close();
+      } else {
+        dialog.removeAttribute('open');
+      }
+      document.body.classList.remove('command-palette-open');
+    }
+
+    // Trigger button listeners
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('#wpdCommandTrigger, [data-open-command-palette]');
+      if (trigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        openPalette();
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closePalette);
+
+    dialog.addEventListener('click', (e) => {
+      if (!canCloseOnBackdrop) return;
+      if (e.target === dialog) {
+        const rect = dialog.getBoundingClientRect();
+        const isInDialog = (
+          rect.top <= e.clientY &&
+          e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX &&
+          e.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+          closePalette();
+        }
+      }
+    });
+
+    input.addEventListener('input', (e) => {
+      renderResults(e.target.value);
+    });
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        currentFilter = chip.getAttribute('data-cat');
+        renderResults(input.value);
+      });
+    });
+
+    resultsContainer.addEventListener('click', (e) => {
+      const itemEl = e.target.closest('.wpd-command-item');
+      if (itemEl) {
+        const idx = parseInt(itemEl.getAttribute('data-index'), 10);
+        executeItem(filteredItems[idx]);
+      }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (filteredItems.length > 0) {
+          selectedIndex = (selectedIndex + 1) % filteredItems.length;
+          updateSelectedAria();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (filteredItems.length > 0) {
+          selectedIndex = (selectedIndex - 1 + filteredItems.length) % filteredItems.length;
+          updateSelectedAria();
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (filteredItems[selectedIndex]) {
+          executeItem(filteredItems[selectedIndex]);
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        closePalette();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      const isCmdK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
+      const isSlash = e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes((document.activeElement && document.activeElement.tagName) || '');
+
+      if (isCmdK || isSlash) {
+        e.preventDefault();
+        if (dialog.open) {
+          closePalette();
+        } else {
+          openPalette();
+        }
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     16. Instant Address-to-Patrol Beat GIS Resolver (districts.html)
+     -------------------------------------------------------------------------- */
+  function initAddressResolver() {
+    const resolverSection = document.getElementById('address-resolver');
+    if (!resolverSection) return;
+
+    const input = document.getElementById('addressResolverInput');
+    const clearBtn = document.getElementById('addressResolverClear');
+    const suggestionsBox = document.getElementById('addressResolverSuggestions');
+    const resultCard = document.getElementById('addressResolverResult');
+    const quickChips = resolverSection.querySelectorAll('.address-quick-chip');
+
+    if (!input || !resultCard) return;
+
+    const streets = (typeof WPD_DATA !== 'undefined' && WPD_DATA.streets) ? WPD_DATA.streets : [];
+    const districts = (typeof WPD_DATA !== 'undefined' && WPD_DATA.districts) ? WPD_DATA.districts : {};
+
+    function resolveStreet(streetObj) {
+      if (!streetObj) return;
+      const distInfo = districts[streetObj.district] || {};
+      const sectorCar = distInfo.sectorCar || `Sector Car 10${streetObj.district}`;
+      const supervisor = distInfo.supervisor || 'Patrol Shift Supervisor';
+      const color = distInfo.color || '#2563EB';
+
+      input.value = streetObj.name;
+      if (suggestionsBox) suggestionsBox.style.display = 'none';
+
+      resultCard.innerHTML = `
+        <div class="resolved-beat-card" style="border-left: 4px solid ${color};">
+          <div class="resolved-beat-header">
+            <div>
+              <span class="resolved-beat-tag" style="background: ${color}18; color: ${color}; border: 1px solid ${color}40;">
+                DISTRICT ${streetObj.district} SECTOR
+              </span>
+              <h3 class="resolved-beat-title" style="margin-top: 6px; font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">${escapeHtml(distInfo.name || `District ${streetObj.district}`)}</h3>
+            </div>
+            <div class="resolved-unit-pill">
+              <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
+              <strong>${escapeHtml(sectorCar)}</strong>
+            </div>
+          </div>
+          <div class="resolved-beat-details">
+            <div class="resolved-detail-item">
+              <span class="resolved-detail-label">Matched Street / Area:</span>
+              <strong class="resolved-detail-val">${escapeHtml(streetObj.name)} (${escapeHtml(streetObj.area || 'Washington, IL')})</strong>
+            </div>
+            <div class="resolved-detail-item">
+              <span class="resolved-detail-label">Patrol Shift Supervisor:</span>
+              <strong class="resolved-detail-val">${escapeHtml(supervisor)}</strong>
+            </div>
+            <div class="resolved-detail-item">
+              <span class="resolved-detail-label">Sector Coverage Focus:</span>
+              <strong class="resolved-detail-val">${escapeHtml(distInfo.priority || '24/7 Residential and Commercial Patrol')}</strong>
+            </div>
+          </div>
+          <div class="resolved-beat-actions">
+            <button type="button" class="btn-editorial-primary" id="btn-resolver-jump-map" data-target-district="${streetObj.district}">
+              Focus Sector on Tactical Map ↓
+            </button>
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="text-decoration: none;">
+              Call Dispatch (309) 444-2313
+            </a>
+            <a href="tel:911" class="btn-editorial-secondary" style="text-decoration: none; color: #DC2626; border-color: rgba(220,38,38,0.3);">
+              Emergency: 911
+            </a>
+          </div>
+        </div>
+      `;
+      resultCard.style.display = 'block';
+
+      const mapJumpBtn = resultCard.querySelector('#btn-resolver-jump-map');
+      if (mapJumpBtn) {
+        mapJumpBtn.addEventListener('click', () => {
+          const mapSection = document.getElementById('districts');
+          if (mapSection) {
+            mapSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          const legendBtn = document.querySelector(`[data-district-jump="${streetObj.district}"]`);
+          if (legendBtn) {
+            setTimeout(() => legendBtn.click(), 300);
+          }
+        });
+      }
+    }
+
+    function searchStreets(q) {
+      if (!q || q.length < 2) {
+        if (suggestionsBox) suggestionsBox.style.display = 'none';
+        return;
+      }
+      const cleanQ = q.trim().toLowerCase().replace(/^\d+\s+/, '');
+      const matches = streets.filter(s => s.name.toLowerCase().includes(cleanQ) || (s.area && s.area.toLowerCase().includes(cleanQ)));
+
+      if (matches.length > 0 && suggestionsBox) {
+        suggestionsBox.innerHTML = matches.slice(0, 6).map((m, idx) => `
+          <button type="button" class="address-suggestion-item" data-idx="${idx}">
+            <span class="suggestion-name">${escapeHtml(m.name)}</span>
+            <span class="suggestion-district" style="color: ${districts[m.district] ? districts[m.district].color : 'var(--mtw-police-gold)'};">
+              District ${m.district} • ${escapeHtml(m.area || '')}
+            </span>
+          </button>
+        `).join('');
+        suggestionsBox.style.display = 'block';
+
+        suggestionsBox.querySelectorAll('.address-suggestion-item').forEach((btn, i) => {
+          btn.addEventListener('click', () => {
+            resolveStreet(matches[i]);
+          });
+        });
+      } else if (suggestionsBox) {
+        suggestionsBox.innerHTML = `
+          <div class="address-suggestion-empty">No Washington street matched "${escapeHtml(q)}". Try typing Main, Jefferson, Centennial, or Wilmor.</div>
+        `;
+        suggestionsBox.style.display = 'block';
+      }
+    }
+
+    input.addEventListener('input', (e) => {
+      searchStreets(e.target.value);
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        if (suggestionsBox) suggestionsBox.style.display = 'none';
+        resultCard.style.display = 'none';
+        input.focus();
+      });
+    }
+
+    quickChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const streetName = chip.getAttribute('data-street');
+        const match = streets.find(s => s.name.toLowerCase() === streetName.toLowerCase());
+        if (match) {
+          resolveStreet(match);
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.address-search-box') && suggestionsBox) {
+        suggestionsBox.style.display = 'none';
+      }
+    });
   }
 
   function escapeHtml(str) {
