@@ -37,10 +37,11 @@
 
   /* ── Apple Champagne Gold Design Tokens ── */
   --apple-gold: #D4AF37;
-  --apple-gold-light: rgba(212, 175, 55, 0.08);
-  --apple-gold-border: rgba(212, 175, 55, 0.25);
-  --apple-gold-glow: rgba(212, 175, 55, 0.18);
+  --apple-gold-light: rgba(212, 175, 55, 0.12);
+  --apple-gold-border: rgba(212, 175, 55, 0.32);
+  --apple-gold-glow: rgba(212, 175, 55, 0.22);
   --apple-gold-text: #B45309;
+  --apple-gold-hover: #F5D77F;
 
   /* ── Studio Surface & Foundation Tokens ── */
   --paper-ground: #FFFFFF;          /* Pure studio white foundation */
