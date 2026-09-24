@@ -25,9 +25,9 @@
   --color-periwinkle: #6366F1;   /* Electric interactive periwinkle */
   --color-charcoal: #0F172A;     /* Deep slate charcoal */
 
-  /* ── Canvas & Surface Colors (Pure Apple Studio White & Frosted Glass) ── */
-  --bg-app: #FFFFFF;               /* Pure Apple Studio White Canvas (Zero parchment/off-white) */
-  --bg-surface: #FFFFFF;           /* Crisp pure white card surface */
+  /* ── Canvas & Surface Colors (Luminous Civic Sky & Pure Floating Cards) ── */
+  --bg-app: #EDF4FD;               /* Cool civic blue sky canvas foundation */
+  --bg-surface: #FFFFFF;           /* Crisp pure white floating card surface */
   --bg-surface-subtle: #F8FAFC;    /* Clean studio slate-50 surface */
   --bg-surface-elevated: #FFFFFF;  /* Elevated white surface */
   --bg-surface-sand: #F8FAFC;      /* Studio neutral surface */
@@ -44,7 +44,7 @@
   --apple-gold-hover: #F5D77F;
 
   /* ── Studio Surface & Foundation Tokens ── */
-  --paper-ground: #FFFFFF;          /* Pure studio white foundation */
+  --paper-ground: #EDF4FD;          /* Cool civic blue foundation */
   --paper-ground-subtle: #F8FAFC;   /* Studio neutral sub-surface */
   --paper-surface: #FFFFFF;         /* Pure white card surface */
   --paper-surface-warm: #FFFFFF;    /* Pure white surface */
@@ -86,8 +86,8 @@
   --mtw-police-gold: #D4AF37;      /* Refined champagne gold */
   --mtw-card-bg: #FFFFFF;
   --mtw-card-border: rgba(15, 23, 42, 0.08);
-  --mtw-card-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 24px -4px rgba(15, 23, 42, 0.06);
-  --mtw-card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.08), 0 16px 36px -4px rgba(15, 23, 42, 0.10);
+  --mtw-card-shadow: 0 4px 12px -2px rgba(11, 27, 54, 0.07), 0 16px 36px -4px rgba(11, 27, 54, 0.13), 0 32px 64px -8px rgba(11, 27, 54, 0.12);
+  --mtw-card-shadow-hover: 0 12px 28px -3px rgba(11, 27, 54, 0.12), 0 28px 60px -8px rgba(11, 27, 54, 0.22), 0 54px 96px -14px rgba(11, 27, 54, 0.18);
 
   /* Fluid Editorial Typography */
   --text-hero: clamp(2.6rem, 5vw + 1rem, 5rem);
