@@ -16,44 +16,51 @@
   --color-slate-800: #1E293B;
   --color-slate-900: #0F172A;
 
-  --color-bone: #F8FAFC;         /* Deprecated: mapped to clean slate-50 */
+  --color-bone: #FFFFFF;         /* Pure Apple white */
   --color-black: #0F172A;        /* Crisp obsidian ink */
-  --color-sand: #E2E8F0;         /* Deprecated: mapped to neutral border */
-  --color-ltbeige: #F1F5F9;      /* Deprecated: mapped to clean subtle surface */
+  --color-sand: #E2E8F0;         /* Neutral hairline border */
+  --color-ltbeige: #F8FAFC;      /* Clean subtle studio surface */
   --color-forest: #059669;       /* Rich evergreen */
   --color-lime: #10B981;         /* High-visibility active accent */
   --color-periwinkle: #6366F1;   /* Electric interactive periwinkle */
   --color-charcoal: #0F172A;     /* Deep slate charcoal */
 
-  /* ── Canvas & Surface Colors (Crisp White & Cool Slate) ── */
-  --bg-app: #F8FAFC;               /* Clean neutral canvas (zero off-white/yellow tint) */
-  --bg-surface: #FFFFFF;           /* Pure white card surface */
-  --bg-surface-subtle: #F1F5F9;    /* Clean cool slate-100 surface */
+  /* ── Canvas & Surface Colors (Pure Apple Studio White & Frosted Glass) ── */
+  --bg-app: #FFFFFF;               /* Pure Apple Studio White Canvas (Zero parchment/off-white) */
+  --bg-surface: #FFFFFF;           /* Crisp pure white card surface */
+  --bg-surface-subtle: #F8FAFC;    /* Clean studio slate-50 surface */
   --bg-surface-elevated: #FFFFFF;  /* Elevated white surface */
-  --bg-surface-sand: #F1F5F9;      /* Unified with subtle slate */
+  --bg-surface-sand: #F8FAFC;      /* Studio neutral surface */
   --bg-overlay: rgba(15, 23, 42, 0.65);
-  --bg-glass: rgba(255, 255, 255, 0.90);
-  --bg-glass-scrolled: rgba(255, 255, 255, 0.96);
+  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass-scrolled: rgba(255, 255, 255, 0.95);
 
-  /* ── Drafting & Surface Tokens ── */
-  --paper-ground: #F8FAFC;          /* Clean slate foundation */
-  --paper-ground-subtle: #F1F5F9;   /* Clean slate sub-surface */
-  --paper-surface: #FFFFFF;         /* Crisp white card surface */
-  --paper-surface-warm: #F8FAFC;    /* Unified neutral drawing area */
+  /* ── Apple Champagne Gold Design Tokens ── */
+  --apple-gold: #D4AF37;
+  --apple-gold-light: rgba(212, 175, 55, 0.08);
+  --apple-gold-border: rgba(212, 175, 55, 0.25);
+  --apple-gold-glow: rgba(212, 175, 55, 0.18);
+  --apple-gold-text: #B45309;
+
+  /* ── Studio Surface & Foundation Tokens ── */
+  --paper-ground: #FFFFFF;          /* Pure studio white foundation */
+  --paper-ground-subtle: #F8FAFC;   /* Studio neutral sub-surface */
+  --paper-surface: #FFFFFF;         /* Pure white card surface */
+  --paper-surface-warm: #FFFFFF;    /* Pure white surface */
   --graphite-dark: #0F172A;         /* Slate-900 high contrast ink */
   --graphite-medium: #334155;       /* Slate-700 medium text */
   --graphite-light: #64748B;        /* Slate-500 muted text */
   --graphite-faint: #94A3B8;        /* Slate-400 subtle dividers */
-  --graphite-smudge: rgba(15, 23, 42, 0.06);
-  --graphite-hatch: rgba(15, 23, 42, 0.04);
-  --graphite-wash: rgba(15, 23, 42, 0.02);
+  --graphite-smudge: rgba(15, 23, 42, 0.04);
+  --graphite-hatch: rgba(15, 23, 42, 0.02);
+  --graphite-wash: rgba(15, 23, 42, 0.01);
   
   --marker-amber: #D97706;          /* Architectural marker highlighter */
-  --marker-amber-wash: rgba(217, 119, 6, 0.10);
+  --marker-amber-wash: rgba(217, 119, 6, 0.08);
   --marker-blue: #2563EB;           /* Drafting blue */
-  --marker-blue-wash: rgba(37, 99, 235, 0.08);
+  --marker-blue-wash: rgba(37, 99, 235, 0.06);
   --marker-crimson: #DC2626;        /* Emergency red */
-  --marker-crimson-wash: rgba(220, 38, 38, 0.10);
+  --marker-crimson-wash: rgba(220, 38, 38, 0.08);
 
   /* ── Typography Stack (Plus Jakarta Sans Authority) ── */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -69,13 +76,13 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* ── Mapping The Way / Civic Editorial Tokens ── */
-  --mtw-bg-tertiary: #F1F5F9;      /* Clean slate-100 instead of warm limestone #F1EDE2 */
-  --mtw-limestone: #F1F5F9;
+  --mtw-bg-tertiary: #F8FAFC;      /* Clean studio slate-50 */
+  --mtw-limestone: #F8FAFC;
   --mtw-neutral-dark: #0F172A;     /* Crisp obsidian slate text */
   --mtw-primary-crimson: #DC2626;  /* Authority / alert crimson */
   --mtw-police-navy: #0B1B36;      /* Official command navy */
   --mtw-police-navy-dark: #060F1E;
-  --mtw-police-gold: #C5A880;      /* Insignia gold */
+  --mtw-police-gold: #D4AF37;      /* Refined champagne gold */
   --mtw-card-bg: #FFFFFF;
   --mtw-card-border: rgba(15, 23, 42, 0.08);
   --mtw-card-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 24px -4px rgba(15, 23, 42, 0.06);
@@ -370,9 +377,9 @@
   --shadow-float: 0 24px 56px -12px rgba(0, 0, 0, 0.8);
   --shadow-dropdown: 0 20px 45px -8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
 
-  /* ── Streamline Sketch Style Dark Tokens ── */
-  --sketch-ink: #F0EEE9;
-  --sketch-hard-shadow: 3px 3px 0px rgba(240, 238, 233, 0.85);
-  --sketch-hard-shadow-hover: 5px 5px 0px rgba(240, 238, 233, 0.95);
+  /* ── Modern Studio Dark Tokens ── */
+  --sketch-ink: #F8FAFC;
+  --sketch-hard-shadow: 3px 3px 0px rgba(15, 23, 42, 0.85);
+  --sketch-hard-shadow-hover: 5px 5px 0px rgba(15, 23, 42, 0.95);
   --sketch-subtle-hatch: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.04) 5px, rgba(255, 255, 255, 0.04) 6px);
 }
