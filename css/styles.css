@@ -83,9 +83,11 @@ body, #wpd-experience-root {
 /* Ensure all interactive sections render crisp and elevated above decorative background */
 #main-content > section,
 #main-content > footer,
+.civic-footer,
+footer[role="contentinfo"],
 #main-content > div:not(.civic-navy-bg-canvas) {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -8301,6 +8303,8 @@ body:has(.site-header) main {
 
 /* ── Dignified Editorial Footer ── */
 .civic-footer {
+  position: relative;
+  z-index: 10;
   background: var(--mtw-police-navy-dark, #060F1E);
   color: #F8FAFC;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
