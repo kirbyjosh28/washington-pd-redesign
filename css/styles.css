@@ -1899,28 +1899,33 @@ body:has(.site-header) main {
 }
 .chip-blue {
   background: var(--brand-periwinkle-subtle);
-  color: var(--brand-periwinkle);
+  color: var(--accent-blue-text, #1D4ED8);
   border-color: var(--brand-periwinkle-border);
+  font-weight: 700;
 }
 .chip-emerald {
   background: var(--accent-emerald-subtle);
-  color: var(--accent-emerald);
+  color: var(--accent-emerald-text, #047857);
   border-color: var(--accent-emerald-border);
+  font-weight: 700;
 }
 .chip-amber {
   background: var(--accent-amber-subtle);
-  color: var(--accent-amber);
+  color: var(--police-gold-text, #78350F);
   border-color: var(--accent-amber-border);
+  font-weight: 700;
 }
 .chip-rose {
   background: var(--accent-rose-subtle);
-  color: var(--accent-rose);
+  color: var(--accent-rose-text, #B91C1C);
   border-color: var(--accent-rose-border);
+  font-weight: 700;
 }
 .chip-gold {
-  background: rgba(212, 175, 55, 0.08);
-  color: #B45309;
-  border-color: rgba(212, 175, 55, 0.28);
+  background: rgba(217, 119, 6, 0.10);
+  color: var(--police-gold-text, #78350F);
+  border-color: rgba(180, 83, 9, 0.28);
+  font-weight: 700;
 }
 [data-theme="dark"] .chip-gold {
   background: rgba(212, 175, 55, 0.15);
@@ -5462,27 +5467,27 @@ body:has(.site-header) main {
 }
 
 .wpd-map-marker-pin.pin-square {
-  background: #059669;
+  background: #047857;
   color: #FFFFFF;
-  border-color: #047857;
+  border-color: #065F46;
 }
 
 .wpd-map-marker-pin.pin-school {
-  background: #2563EB;
+  background: #1D4ED8;
   color: #FFFFFF;
-  border-color: #1D4ED8;
+  border-color: #1E40AF;
 }
 
 .wpd-map-marker-pin.pin-civic {
-  background: #7C3AED;
+  background: #6D28D9;
   color: #FFFFFF;
-  border-color: #6D28D9;
+  border-color: #5B21B6;
 }
 
 .wpd-map-marker-pin.pin-retail {
-  background: #D97706;
+  background: #B45309;
   color: #FFFFFF;
-  border-color: #B45309;
+  border-color: #92400E;
 }
 
 .district-info-card {
@@ -6284,7 +6289,7 @@ body:has(.site-header) main {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--mtw-police-gold, #B45309);
+  color: var(--police-gold-text, #78350F);
   white-space: nowrap;
 }
 
@@ -7109,7 +7114,7 @@ body:has(.site-header) main {
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
-    color: var(--mtw-police-gold, #8A6D3B) !important;
+    color: var(--police-gold-text, #78350F) !important;
     white-space: nowrap !important;
   }
   [data-theme="dark"] .civic-brand-dept {
@@ -7465,7 +7470,7 @@ body:has(.site-header) main {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mtw-police-gold, #B45309);
+  color: var(--police-gold-text, #78350F);
   margin-bottom: 14px;
 }
 
@@ -7483,6 +7488,7 @@ body:has(.site-header) main {
   font-size: clamp(1.02rem, 1.25vw, 1.18rem);
   line-height: 1.6;
   color: var(--text-secondary);
+  font-weight: 450;
   max-width: 620px;
   margin: 0 0 20px 0;
 }
@@ -7543,7 +7549,7 @@ body:has(.site-header) main {
 
 .btn-editorial-secondary {
   background: var(--bg-surface, #FFFFFF);
-  color: var(--mtw-police-navy, #0B1B36) !important;
+  color: var(--text-primary, #0B1B36) !important;
   font-family: var(--font-title);
   font-size: 1.05rem;
   font-weight: 700;
@@ -7553,7 +7559,7 @@ body:has(.site-header) main {
   justify-content: center;
   border-radius: 9999px;
   text-decoration: none;
-  border: 1.5px solid rgba(11, 27, 54, 0.18);
+  border: 1.5px solid var(--border-medium, rgba(11, 27, 54, 0.18));
   display: inline-flex;
   align-items: center;
   transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
@@ -7561,11 +7567,23 @@ body:has(.site-header) main {
 }
 
 .btn-editorial-secondary:hover {
-  background: rgba(11, 27, 54, 0.04);
-  border-color: var(--mtw-police-gold, #D4AF37);
-  color: var(--mtw-police-navy, #0B1B36) !important;
+  background: var(--bg-surface-subtle, rgba(11, 27, 54, 0.04));
+  border-color: var(--police-gold-text, #D4AF37);
+  color: var(--text-primary, #0B1B36) !important;
   transform: translateY(-1.5px);
   box-shadow: 0 6px 14px rgba(11, 27, 54, 0.10), 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+[data-theme="dark"] .btn-editorial-secondary {
+  background: var(--bg-surface, #0E1420);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .btn-editorial-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--police-gold-text, #FBBF24);
+  color: #FFFFFF !important;
 }
 
 .hero-editorial-meta-strip {
@@ -7601,13 +7619,13 @@ body:has(.site-header) main {
 }
 
 .meta-pill-label {
-  font-weight: 700;
-  color: var(--mtw-police-navy, #0B1B36);
+  font-weight: 800;
+  color: var(--police-gold-text, #78350F);
 }
 
 .meta-pill-value {
-  font-weight: 500;
-  color: #4A5568;
+  font-weight: 600;
+  color: var(--text-primary, #0F172A);
 }
 
 [data-theme="dark"] .hero-editorial-meta-pill,
@@ -8001,7 +8019,7 @@ body:has(.site-header) main {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--mtw-police-gold, #B45309);
+  color: var(--police-gold-text, #78350F);
   margin-bottom: 10px;
 }
 
@@ -8229,6 +8247,7 @@ body:has(.site-header) main {
 /* ── Full-Width Community Story Banner & Image Cards ── */
 .civic-story-banner {
   position: relative;
+  background-color: #0B1B36;
   border-radius: 20px;
   overflow: hidden;
   min-height: 460px;
@@ -8383,7 +8402,7 @@ body:has(.site-header) main {
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.80rem;
-  color: #64748B;
+  color: #94A3B8;
 }
 
 .civic-btn-top {
@@ -8442,6 +8461,7 @@ body:has(.site-header) main {
 
 /* ── Civic Recruitment Banner (Police Command Navy Bento) ── */
 .civic-recruitment-box {
+  background-color: #0B1B36;
   background: linear-gradient(155deg, #0B1B36 0%, #060F1E 100%);
   border: 1.5px solid rgba(197, 168, 128, 0.40);
   border-radius: 20px;
@@ -8915,7 +8935,7 @@ body:has(.site-header) main {
     0 16px 36px -4px rgba(11, 27, 54, 0.10),
     0 32px 64px -8px rgba(11, 27, 54, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  opacity: 0.42;
+  opacity: 0.88;
   transform: translateY(14px) scale(0.98);
   transition: opacity var(--duration-card, 220ms) var(--ease-smooth),
               transform var(--duration-card, 220ms) var(--ease-spring),
@@ -10053,10 +10073,10 @@ img.civic-editorial-img,
 .wpd-accountability-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent-emerald, #059669);
+  color: var(--accent-emerald-text, #047857);
   margin-bottom: 4px;
 }
 
@@ -10865,7 +10885,7 @@ img.civic-editorial-img,
 }
 
 .civic-breadcrumb-link {
-  color: var(--text-muted, #64748B);
+  color: var(--text-secondary, #1E293B);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.15s ease;
@@ -10876,13 +10896,29 @@ img.civic-editorial-img,
 }
 
 .civic-breadcrumb-separator {
-  color: var(--border-medium, #CBD5E1);
+  color: var(--text-faint, #475569);
   user-select: none;
 }
 
 .civic-breadcrumb-current {
-  color: var(--mtw-police-navy, #0B1B36);
+  color: var(--text-primary, #0F172A);
   font-weight: 800;
+}
+
+[data-theme="dark"] .civic-breadcrumb-link {
+  color: var(--text-secondary, #CBD5E1);
+}
+
+[data-theme="dark"] .civic-breadcrumb-link:hover {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .civic-breadcrumb-separator {
+  color: var(--text-muted, #94A3B8);
+}
+
+[data-theme="dark"] .civic-breadcrumb-current {
+  color: var(--text-primary, #F8FAFC);
 }
 
 /* ── 3. Subpage Hero Banner ── */
@@ -10905,10 +10941,10 @@ img.civic-editorial-img,
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mtw-police-gold, #B45309);
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.12);
+  color: var(--police-gold-text, #78350F);
+  background: rgba(217, 119, 6, 0.10);
+  border: 1px solid rgba(180, 83, 9, 0.30);
+  box-shadow: 0 0 12px rgba(217, 119, 6, 0.10);
   padding: 5px 14px;
   border-radius: 9999px;
   margin-bottom: 16px;
@@ -10919,7 +10955,7 @@ img.civic-editorial-img,
   font-size: clamp(2.4rem, 4.2vw, 3.6rem);
   font-weight: 700;
   line-height: 1.12;
-  color: var(--text-primary, #0B1B36);
+  color: var(--text-primary, #0F172A);
   margin: 0 0 16px;
   letter-spacing: -0.02em;
 }
@@ -10928,7 +10964,8 @@ img.civic-editorial-img,
   font-family: var(--font-body, sans-serif);
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   line-height: 1.65;
-  color: var(--text-secondary, #334155);
+  color: var(--text-secondary, #1E293B);
+  font-weight: 450;
   margin: 0 0 24px;
   max-width: 820px;
 }
@@ -10946,15 +10983,17 @@ img.civic-editorial-img,
   gap: 8px;
   padding: 8px 16px;
   background: var(--bg-surface, #FFFFFF);
-  border: 1px solid rgba(212, 175, 55, 0.28);
+  border: 1px solid rgba(11, 27, 54, 0.14);
   border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba(11, 27, 54, 0.04), 0 0 0 1px rgba(212, 175, 55, 0.10);
+  box-shadow: 0 2px 8px rgba(11, 27, 54, 0.04);
   font-size: 0.84rem;
-  color: var(--text-secondary, #334155);
+  color: var(--text-primary, #0F172A);
+  font-weight: 500;
 }
 
 .subpage-hero-meta-pill strong {
-  color: var(--apple-gold-text, #B45309);
+  color: var(--police-gold-text, #78350F);
+  font-weight: 700;
 }
 
 /* ── 4. Homepage Department Directory Bento Grid ── */
@@ -11057,7 +11096,7 @@ img.civic-editorial-img,
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--mtw-police-gold, #B45309);
+  color: var(--police-gold-text, #78350F);
 }
 
 .dept-card-badge {
@@ -11106,9 +11145,15 @@ img.civic-editorial-img,
   padding: 4px 9px !important;
   border-radius: 6px !important;
   background: rgba(11, 27, 54, 0.05) !important;
-  color: var(--text-secondary, #334155) !important;
-  border: 1px solid rgba(11, 27, 54, 0.08) !important;
+  color: var(--text-secondary, #1E293B) !important;
+  border: 1px solid rgba(11, 27, 54, 0.12) !important;
   white-space: nowrap !important;
+}
+
+.dept-card-navy .dept-chip {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 [data-theme="dark"] .dept-chip {
@@ -11533,7 +11578,7 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--mtw-police-gold, #8A6D3B);
+  color: var(--police-gold-text, #78350F);
   min-width: 68px;
   flex-shrink: 0;
 }
@@ -11574,7 +11619,7 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mtw-police-gold, #8A6D3B);
+  color: var(--police-gold-text, #78350F);
   margin-bottom: 8px;
 }
 
@@ -11586,7 +11631,7 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   font-family: var(--font-title, 'Plus Jakarta Sans', sans-serif);
   font-size: clamp(1.85rem, 3.2vw, 2.5rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary, #0F172A);
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin-bottom: 12px;
@@ -11596,7 +11641,8 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--text-secondary, #1E293B);
+  font-weight: 450;
 }
 
 .resolver-grid {
@@ -11666,9 +11712,9 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mtw-police-gold, #8A6D3B);
-  background: rgba(197, 168, 128, 0.14);
-  border: 1px solid rgba(197, 168, 128, 0.35);
+  color: var(--police-gold-text, #78350F);
+  background: rgba(217, 119, 6, 0.10);
+  border: 1px solid rgba(180, 83, 9, 0.28);
   border-radius: 9999px;
   padding: 4px 10px;
   width: fit-content;
@@ -11794,14 +11840,19 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
 
 .resolver-gateway-text {
   font-size: 0.90rem;
-  color: var(--text-secondary);
+  color: var(--text-primary, #0F172A);
+}
+
+.resolver-gateway-text strong {
+  color: var(--mtw-police-navy, #0B1B36);
+  font-weight: 700;
 }
 
 .resolver-gateway-link {
   font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--mtw-police-gold, #8A6D3B);
+  color: var(--accent-blue-text, #1D4ED8);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -11816,7 +11867,7 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
 
 .resolver-gateway-link:hover {
   text-decoration: underline;
-  color: var(--accent-blue, #2563EB);
+  color: #1E40AF;
 }
 
 /* ==========================================================================
@@ -11946,7 +11997,7 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   font-family: var(--font-mono, monospace);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--text-muted, #64748B);
+  color: var(--text-secondary, #1E293B);
   letter-spacing: 0.04em;
 }
 

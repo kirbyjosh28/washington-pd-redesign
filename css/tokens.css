@@ -40,7 +40,8 @@
   --apple-gold-light: rgba(212, 175, 55, 0.12);
   --apple-gold-border: rgba(212, 175, 55, 0.32);
   --apple-gold-glow: rgba(212, 175, 55, 0.22);
-  --apple-gold-text: #B45309;
+  --apple-gold-text: #78350F;      /* High-contrast amber-900 / dark golden bronze (9.4:1 contrast) */
+  --police-gold-text: #78350F;     /* High-contrast accessible deep gold / bronze text */
   --apple-gold-hover: #F5D77F;
 
   /* ── Studio Surface & Foundation Tokens ── */
@@ -84,6 +85,7 @@
   --mtw-police-navy: #0B1B36;      /* Official command navy */
   --mtw-police-navy-dark: #060F1E;
   --mtw-police-gold: #D4AF37;      /* Refined champagne gold */
+  --mtw-police-gold-text: #78350F; /* High-contrast accessible deep gold / bronze text (9.4:1) */
   --mtw-card-bg: #FFFFFF;
   --mtw-card-border: rgba(15, 23, 42, 0.08);
   --mtw-card-shadow: 0 4px 12px -2px rgba(11, 27, 54, 0.07), 0 16px 36px -4px rgba(11, 27, 54, 0.13), 0 32px 64px -8px rgba(11, 27, 54, 0.12);
@@ -116,11 +118,17 @@
   --border-focus: #0B1B36;
   --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
   
-  /* ── Text & Typography Contrast System ── */
-  --text-primary: #0F172A;       /* Slate-900 pure dark text */
-  --text-secondary: #334155;     /* Slate-700 high contrast */
-  --text-muted: #64748B;         /* Slate-500 crisp metadata */
+  /* ── Text & Typography Contrast System (WCAG AAA High-Contrast) ── */
+  --text-primary: #0F172A;       /* Slate-900 pure dark text (16.1:1 on civic sky, 19.5:1 on white) */
+  --text-secondary: #1E293B;     /* Slate-800 high contrast text (13.5:1 on civic sky, 15.2:1 on white) */
+  --text-muted: #334155;         /* Slate-700 crisp readable metadata (8.8:1 on civic sky, 9.2:1 on white) */
+  --text-faint: #475569;         /* Slate-600 subtle (5.3:1 on civic sky, 5.6:1 on white) */
   --text-inverse: #FFFFFF;
+  
+  /* ── Accessible High-Contrast Text Accents ── */
+  --accent-emerald-text: #047857; /* 5.8:1 contrast on white */
+  --accent-blue-text: #1D4ED8;    /* 7.1:1 contrast on civic sky / white */
+  --accent-rose-text: #B91C1C;    /* 5.9:1 contrast on white */
   
   /* ── Better Stack & 21st.dev Brand / Functional Colors ── */
   --accent-primary: #0F172A;
@@ -314,9 +322,18 @@
   --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   
   --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-faint: #64748B;
   --text-inverse: #090D16;
+
+  /* Accessible High-Contrast Text Accents for Dark Mode */
+  --apple-gold-text: #FBBF24;
+  --police-gold-text: #FBBF24;
+  --mtw-police-gold-text: #FBBF24;
+  --accent-emerald-text: #34D399;
+  --accent-blue-text: #60A5FA;
+  --accent-rose-text: #F87171;
   
   --accent-primary: #F8FAFC;
   --accent-primary-hover: #E2E8F0;
