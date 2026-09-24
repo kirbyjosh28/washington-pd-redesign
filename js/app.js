@@ -54,9 +54,21 @@
     const siteHeader = document.querySelector('.civic-floating-bar');
     if (!siteHeader) return;
 
+    let ticking = false;
+    let lastScrolled = null;
+
     function handleScroll() {
-      const isScrolled = window.scrollY > 15;
-      siteHeader.classList.toggle('scrolled', isScrolled);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 15;
+          if (lastScrolled !== isScrolled) {
+            lastScrolled = isScrolled;
+            siteHeader.classList.toggle('scrolled', isScrolled);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -143,20 +155,27 @@
      5. 3D Card Tilt Engine
      -------------------------------------------------------------------------- */
   function init3DCardTilts() {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
+    if (window.matchMedia) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     }
 
     const cards = document.querySelectorAll(
       '.tilt-card, .bento-card, .civic-service-card, .civic-service-card-feature, .spotlight-card, .wpd-bento-item'
     );
+    if (!cards.length) return;
 
     cards.forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
+      let rect = null;
+      let rafId = null;
+      let clientX = 0;
+      let clientY = 0;
+
+      function updateTilt() {
+        if (!rect) return;
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
 
@@ -164,12 +183,33 @@
         const centerY = rect.height / 2;
         const rotateX = ((y - centerY) / centerY) * -3;
         const rotateY = ((x - centerX) / centerX) * 3;
-        
+
         card.style.transition = 'transform 0.08s ease-out, box-shadow 0.2s ease';
         card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-3px)`;
-      });
+        rafId = null;
+      }
+
+      card.addEventListener('mouseenter', () => {
+        rect = card.getBoundingClientRect();
+      }, { passive: true });
+
+      card.addEventListener('mousemove', (e) => {
+        if (!rect) {
+          rect = card.getBoundingClientRect();
+        }
+        clientX = e.clientX;
+        clientY = e.clientY;
+        if (!rafId) {
+          rafId = requestAnimationFrame(updateTilt);
+        }
+      }, { passive: true });
 
       card.addEventListener('mouseleave', () => {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        rect = null;
         card.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease';
         card.style.transform = '';
       });
@@ -1138,18 +1178,7 @@
   }
 
   function initCardCursorSpotlight() {
-    const cards = document.querySelectorAll('.spotlight-card');
-    if (!cards.length) return;
-
-    cards.forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
+    // Handled with requestAnimationFrame throttling and cached rects in init3DCardTilts
   }
 
   function initSkiperGooeyMenu() {
