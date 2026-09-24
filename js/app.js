@@ -1823,17 +1823,102 @@
       }
     }
 
+    const expandMap = {
+      'st': ['st', 'street'],
+      'rd': ['rd', 'road'],
+      'dr': ['dr', 'drive'],
+      'ave': ['ave', 'avenue'],
+      'ln': ['ln', 'lane'],
+      'ct': ['ct', 'court'],
+      'cir': ['cir', 'circle'],
+      'blvd': ['blvd', 'boulevard'],
+      'pkwy': ['pkwy', 'parkway'],
+      'pl': ['pl', 'place'],
+      'way': ['way'],
+      'trl': ['trl', 'trail'],
+      'n': ['n', 'north'],
+      's': ['s', 'south'],
+      'e': ['e', 'east'],
+      'w': ['w', 'west']
+    };
+    const wordToRoot = {};
+    for (const [root, variants] of Object.entries(expandMap)) {
+      for (const v of variants) {
+        wordToRoot[v] = root;
+      }
+    }
+
+    function tokenize(text) {
+      if (!text) return { norm: '', tokens: [] };
+      const norm = text.toLowerCase()
+        .replace(/^\d+\s*/, '')
+        .replace(/[^\w\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+      const tokens = norm.split(' ').filter(Boolean).map(w => wordToRoot[w] || w);
+      return { norm, tokens };
+    }
+
+    let currentMatches = [];
+    let focusedIndex = -1;
+
     function searchStreets(q) {
-      if (!q || q.length < 2) {
+      if (!q || q.trim().length < 2) {
         if (suggestionsBox) suggestionsBox.style.display = 'none';
+        currentMatches = [];
+        focusedIndex = -1;
         return;
       }
-      const cleanQ = q.trim().toLowerCase().replace(/^\d+\s+/, '');
-      const matches = streets.filter(s => s.name.toLowerCase().includes(cleanQ) || (s.area && s.area.toLowerCase().includes(cleanQ)));
 
-      if (matches.length > 0 && suggestionsBox) {
-        suggestionsBox.innerHTML = matches.slice(0, 6).map((m, idx) => `
-          <button type="button" class="address-suggestion-item" data-idx="${idx}">
+      const { norm: qNorm, tokens: qTokens } = tokenize(q);
+      const rawLower = q.trim().toLowerCase().replace(/^\d+\s+/, '');
+
+      if (!qNorm && !rawLower) {
+        if (suggestionsBox) suggestionsBox.style.display = 'none';
+        currentMatches = [];
+        focusedIndex = -1;
+        return;
+      }
+
+      const scored = [];
+      for (let i = 0; i < streets.length; i++) {
+        const s = streets[i];
+        const sNameLower = s.name.toLowerCase();
+        const { norm: sNorm, tokens: sTokens } = tokenize(s.name);
+        const areaLower = (s.area || '').toLowerCase();
+
+        let score = 0;
+        if (sNameLower === rawLower || sNorm === qNorm) {
+          score = 1000;
+        } else if (sNameLower.startsWith(rawLower) || (qNorm && sNorm.startsWith(qNorm))) {
+          score = 500;
+        } else if (sNameLower.split(' ').some(w => w.startsWith(rawLower)) || (qNorm && sNorm.split(' ').some(w => w.startsWith(qNorm)))) {
+          score = 300;
+        } else if (sNameLower.includes(rawLower) || (qNorm && sNorm.includes(qNorm))) {
+          score = 150;
+        } else {
+          const allTokensMatch = qTokens.length > 0 && qTokens.every(qt =>
+            sTokens.some(st => st.startsWith(qt) || qt.startsWith(st))
+          );
+          if (allTokensMatch) {
+            score = 100;
+          } else if (areaLower.includes(rawLower) || (qNorm && areaLower.includes(qNorm))) {
+            score = 50;
+          }
+        }
+
+        if (score > 0) {
+          scored.push({ s, score });
+        }
+      }
+
+      scored.sort((a, b) => b.score - a.score || a.s.name.localeCompare(b.s.name));
+      currentMatches = scored.slice(0, 8).map(x => x.s);
+      focusedIndex = -1;
+
+      if (currentMatches.length > 0 && suggestionsBox) {
+        suggestionsBox.innerHTML = currentMatches.map((m, idx) => `
+          <button type="button" class="address-suggestion-item" data-idx="${idx}" role="option" aria-selected="false">
             <span class="suggestion-name">${escapeHtml(m.name)}</span>
             <span class="suggestion-district" style="color: ${districts[m.district] ? districts[m.district].color : 'var(--mtw-police-gold)'};">
               District ${m.district} • ${escapeHtml(m.area || '')}
@@ -1841,12 +1926,6 @@
           </button>
         `).join('');
         suggestionsBox.style.display = 'block';
-
-        suggestionsBox.querySelectorAll('.address-suggestion-item').forEach((btn, i) => {
-          btn.addEventListener('click', () => {
-            resolveStreet(matches[i]);
-          });
-        });
       } else if (suggestionsBox) {
         suggestionsBox.innerHTML = `
           <div class="address-suggestion-empty">No Washington street matched "${escapeHtml(q)}". Try typing Main, Jefferson, Centennial, or Wilmor.</div>
@@ -1855,8 +1934,56 @@
       }
     }
 
+    function updateFocusedItem(items) {
+      items.forEach((item, idx) => {
+        if (idx === focusedIndex) {
+          item.classList.add('active-suggestion');
+          item.setAttribute('aria-selected', 'true');
+          item.scrollIntoView({ block: 'nearest' });
+        } else {
+          item.classList.remove('active-suggestion');
+          item.setAttribute('aria-selected', 'false');
+        }
+      });
+    }
+
     input.addEventListener('input', (e) => {
       searchStreets(e.target.value);
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (!suggestionsBox || suggestionsBox.style.display === 'none') {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          searchStreets(input.value);
+          if (currentMatches.length > 0) {
+            resolveStreet(currentMatches[0]);
+          }
+        }
+        return;
+      }
+
+      const items = suggestionsBox.querySelectorAll('.address-suggestion-item');
+      if (items.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        focusedIndex = (focusedIndex + 1) % items.length;
+        updateFocusedItem(items);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        focusedIndex = (focusedIndex - 1 + items.length) % items.length;
+        updateFocusedItem(items);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const targetIdx = focusedIndex >= 0 ? focusedIndex : 0;
+        if (currentMatches[targetIdx]) {
+          resolveStreet(currentMatches[targetIdx]);
+        }
+      } else if (e.key === 'Escape') {
+        suggestionsBox.style.display = 'none';
+        focusedIndex = -1;
+      }
     });
 
     if (clearBtn) {
@@ -1864,6 +1991,8 @@
         input.value = '';
         if (suggestionsBox) suggestionsBox.style.display = 'none';
         resultCard.style.display = 'none';
+        currentMatches = [];
+        focusedIndex = -1;
         input.focus();
       });
     }
@@ -1878,9 +2007,21 @@
       });
     });
 
+    if (suggestionsBox) {
+      suggestionsBox.addEventListener('click', (e) => {
+        const btn = e.target.closest('.address-suggestion-item');
+        if (!btn) return;
+        const idx = parseInt(btn.getAttribute('data-idx'), 10);
+        if (!isNaN(idx) && currentMatches[idx]) {
+          resolveStreet(currentMatches[idx]);
+        }
+      });
+    }
+
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.address-search-box') && suggestionsBox) {
         suggestionsBox.style.display = 'none';
+        focusedIndex = -1;
       }
     });
   }

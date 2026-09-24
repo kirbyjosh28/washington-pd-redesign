@@ -12742,8 +12742,9 @@ body:has(.action-drawer-backdrop.active) .civic-floating-action-strip {
   border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.14));
   border-radius: 12px;
   box-shadow: 0 16px 32px rgba(11, 27, 54, 0.14);
-  max-height: 240px;
+  max-height: 280px;
   overflow-y: auto;
+  overscroll-behavior: contain;
   z-index: 100;
   padding: 6px;
 }
@@ -12761,10 +12762,14 @@ body:has(.action-drawer-backdrop.active) .civic-floating-action-strip {
   align-items: center;
   font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   transition: background 0.12s ease;
+  outline: none;
 }
 
-.address-suggestion-item:hover {
+.address-suggestion-item:hover,
+.address-suggestion-item:focus,
+.address-suggestion-item.active-suggestion {
   background: var(--bg-surface-subtle, #F1F5F9);
+  outline: 2px solid var(--police-gold, #D97706);
 }
 
 .suggestion-name {
