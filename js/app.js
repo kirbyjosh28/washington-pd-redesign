@@ -1193,11 +1193,13 @@
       function openMenu() {
         wrapper.classList.add('is-open');
         trigger.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
       }
 
       function closeMenu() {
         wrapper.classList.remove('is-open');
         trigger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
       }
 
       // Explicit Click Toggle (Persistent — No hover trigger)
@@ -1234,6 +1236,7 @@
           const btn = w.querySelector('.skiper-goo-btn');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
+        document.body.classList.remove('menu-open');
       }
     });
 
@@ -1248,6 +1251,7 @@
             btn.focus();
           }
         });
+        document.body.classList.remove('menu-open');
       }
     });
   }
@@ -1268,26 +1272,31 @@
     const emptyState = document.getElementById('faq-empty-state');
     const emptyResetBtn = document.getElementById('faq-empty-reset');
 
+    // Pre-cache search index in memory to avoid DOM innerText layout thrashing on every keystroke
+    const cardIndex = cards.map(card => ({
+      el: card,
+      category: card.getAttribute('data-category') || 'all',
+      keywords: (card.getAttribute('data-keywords') || '').toLowerCase(),
+      text: (card.textContent || '').toLowerCase()
+    }));
+
     let currentCategory = 'all';
     let currentQuery = '';
+    let searchRaf = null;
 
     function filterKnowledgeBase() {
       let visibleCount = 0;
       const q = currentQuery.trim().toLowerCase();
 
-      cards.forEach(card => {
-        const cat = card.getAttribute('data-category') || 'all';
-        const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-        const text = card.innerText.toLowerCase();
-
-        const matchesCat = (currentCategory === 'all' || cat === currentCategory);
-        const matchesQuery = !q || text.includes(q) || keywords.includes(q);
+      cardIndex.forEach(item => {
+        const matchesCat = (currentCategory === 'all' || item.category === currentCategory);
+        const matchesQuery = !q || item.text.includes(q) || item.keywords.includes(q);
 
         if (matchesCat && matchesQuery) {
-          card.style.display = '';
+          item.el.style.display = '';
           visibleCount++;
         } else {
-          card.style.display = 'none';
+          item.el.style.display = 'none';
         }
       });
 
@@ -1311,7 +1320,12 @@
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         currentQuery = e.target.value;
-        filterKnowledgeBase();
+        if (!searchRaf) {
+          searchRaf = requestAnimationFrame(() => {
+            filterKnowledgeBase();
+            searchRaf = null;
+          });
+        }
       });
     }
 

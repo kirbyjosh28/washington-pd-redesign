@@ -96,15 +96,17 @@ footer[role="contentinfo"],
    Hardware-Accelerated Frosted Glass Layering • Zero Parchment / Grids
    ========================================================================== */
 .civic-navy-bg-canvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  contain: layout paint size;
+  contain: strict;
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -6462,47 +6464,17 @@ body:has(.site-header) main {
   pointer-events: none;
 }
 
-/* Liquid Morphing Silhouette Layer */
+/* High-Performance Hardware-Accelerated Navigation Menu Panel */
 .skiper-gooey-liquid {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  filter: url(#skiper46-goo);
-  z-index: 1001;
+  display: none !important;
 }
 
 .skiper-goo-anchor {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 56px;
-  background: var(--mtw-police-navy, #0B1B36);
-  border-radius: 9999px;
-  box-sizing: border-box;
+  display: none !important;
 }
 
 .skiper-goo-card {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 750px;
-  height: 660px;
-  background: var(--mtw-police-navy, #0B1B36);
-  border-radius: 24px;
-  transform-origin: top right;
-  transform: translateY(0) scale(0.25);
-  opacity: 0;
-  transition: transform 0.42s cubic-bezier(0.34, 1.45, 0.64, 1), opacity 0.22s ease;
-  box-sizing: border-box;
-}
-
-.skiper-gooey-menu-wrapper.is-open .skiper-goo-card {
-  transform: translateY(64px) scale(1);
-  opacity: 1;
+  display: none !important;
 }
 
 /* Trigger Button Integration */
@@ -6516,11 +6488,12 @@ body:has(.site-header) main {
   font-size: 0.84rem;
   font-weight: 700;
   pointer-events: auto !important;
+  transform: translateZ(0);
 }
 
 .skiper-chevron {
   display: inline-block;
-  transition: transform 0.35s cubic-bezier(0.34, 1.45, 0.64, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 0.85;
 }
 
@@ -6528,7 +6501,7 @@ body:has(.site-header) main {
   transform: rotate(180deg);
 }
 
-/* Morphing Dropdown Panel Content (Foreground - Razor Sharp) */
+/* Hardware-Accelerated Dropdown Panel (60fps GPU Composited) */
 .skiper-gooey-panel {
   position: absolute;
   top: 64px;
@@ -6540,18 +6513,20 @@ body:has(.site-header) main {
   z-index: 1004;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-8px);
-  transition: opacity 0.2s ease 0.1s, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+  transform: translate3d(0, -8px, 0) scale(0.98);
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
   color: #FFFFFF;
   background: var(--mtw-police-navy, #0B1B36);
   border: 1px solid rgba(212, 175, 55, 0.55);
-  box-shadow: 0 24px 56px -10px rgba(11, 27, 54, 0.65), 0 0 0 1px rgba(212, 175, 55, 0.22);
+  box-shadow: 0 20px 48px -10px rgba(11, 27, 54, 0.65), 0 0 0 1px rgba(212, 175, 55, 0.22);
+  will-change: transform, opacity;
+  contain: layout style;
 }
 
 .skiper-gooey-menu-wrapper.is-open .skiper-gooey-panel {
   opacity: 1;
   pointer-events: auto !important;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .skiper-panel-header {
@@ -6815,18 +6790,17 @@ body:has(.site-header) main {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    background: rgba(11, 27, 54, 0.96) !important;
-    backdrop-filter: blur(24px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    background: rgba(11, 27, 54, 0.98) !important;
     border: 1px solid rgba(197, 168, 128, 0.35) !important;
     box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.60), 0 4px 16px rgba(11, 27, 54, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    transform: translateY(-8px) scale(0.98);
-    transition: opacity 0.20s cubic-bezier(0.2, 0, 0, 1), transform 0.20s cubic-bezier(0.2, 0, 0, 1);
+    transform: translate3d(0, -8px, 0) scale(0.98);
+    transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    contain: layout style;
   }
   .skiper-gooey-menu-wrapper.is-open .skiper-gooey-panel {
     opacity: 1;
     pointer-events: auto !important;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   /* Apple HIG Sheet Grabber Handle */
   .skiper-gooey-panel::before {
@@ -11323,8 +11297,9 @@ img.civic-editorial-img,
 }
 
 /* Hide floating action strip when any drawer or the navigation menu is open */
-body:has(.action-drawer-backdrop.active) .civic-floating-action-strip,
-body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
+body.menu-open .civic-floating-action-strip,
+body.drawer-open .civic-floating-action-strip,
+body:has(.action-drawer-backdrop.active) .civic-floating-action-strip {
   opacity: 0 !important;
   pointer-events: none !important;
   transform: translateX(-50%) translateY(30px) !important;
@@ -11976,38 +11951,35 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   background: var(--bg-surface, #FFFFFF);
   border: 1px solid rgba(212, 175, 55, 0.24);
   box-shadow: 
-    0 4px 12px -2px rgba(11, 27, 54, 0.06),
-    0 14px 32px -4px rgba(11, 27, 54, 0.11),
-    0 28px 56px -10px rgba(11, 27, 54, 0.08),
+    0 6px 16px -2px rgba(11, 27, 54, 0.08),
+    0 2px 6px rgba(11, 27, 54, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
+  transform: translateY(0);
+  transition: border-color 0.20s ease, box-shadow 0.20s ease;
   overflow: hidden;
   scroll-margin-top: 110px;
+  contain: layout style;
 }
 
 [data-theme="dark"] .faq-card {
   background: rgba(14, 27, 49, 0.60);
   border-color: rgba(197, 168, 128, 0.18);
-  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.35);
 }
 
 .faq-card:hover {
-  transform: translateY(-5px);
   border-color: rgba(212, 175, 55, 0.55);
   box-shadow: 
-    0 10px 24px -3px rgba(11, 27, 54, 0.10),
-    0 22px 48px -6px rgba(11, 27, 54, 0.18),
-    0 42px 76px -12px rgba(11, 27, 54, 0.14),
+    0 10px 24px -3px rgba(11, 27, 54, 0.12),
+    0 4px 10px rgba(11, 27, 54, 0.06),
     0 0 0 1px rgba(212, 175, 55, 0.25);
 }
 
 .faq-card.is-open {
   border-color: var(--apple-gold, #D4AF37);
   box-shadow: 
-    0 10px 24px -3px rgba(11, 27, 54, 0.10),
-    0 24px 52px -6px rgba(11, 27, 54, 0.18),
-    0 44px 80px -12px rgba(11, 27, 54, 0.16),
+    0 12px 28px -3px rgba(11, 27, 54, 0.12),
+    0 4px 10px rgba(11, 27, 54, 0.06),
     0 0 0 1.5px rgba(212, 175, 55, 0.35);
 }
 
@@ -12097,7 +12069,7 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   color: var(--text-secondary);
   font-size: 0.75rem;
   flex-shrink: 0;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, color 0.2s ease;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, color 0.2s ease;
 }
 
 [data-theme="dark"] .faq-chevron {
@@ -12110,15 +12082,20 @@ body:has(.skiper-gooey-menu-wrapper.is-open) .civic-floating-action-strip {
   color: var(--mtw-police-gold, #F5D77F);
 }
 
-/* CSS Grid Smooth Height Transition (Zero layout jump, 60fps hardware accelerated) */
+/* Smooth Hardware-Accelerated Accordion Transition (60fps, Zero Main-Thread Stall) */
 .faq-collapse {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.30s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.26s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.20s ease;
+  will-change: max-height, opacity;
+  contain: layout;
 }
 
 .faq-card.is-open .faq-collapse {
-  grid-template-rows: 1fr;
+  max-height: 550px;
+  opacity: 1;
 }
 
 .faq-collapse-inner {
