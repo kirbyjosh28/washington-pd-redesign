@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="css/tokens.css?v=20260924-streets-complete-v14" />
   <link rel="stylesheet" href="css/styles.css?v=20260924-streets-complete-v14" />
@@ -204,37 +204,6 @@
   </div>
 </header>
 
-    <!-- ========================================================================
-         SERRO EDITORIAL LIVE TELEMETRY TICKER BAR
-         Live 24/7 Status • TC3 Regional 911 Link • ILEAS Region 6 • Civic Zone
-         ======================================================================== -->
-    <div class="telemetry-ticker" role="region" aria-label="Department operational status">
-      <div class="container telemetry-ticker-inner">
-        <div class="telemetry-deck">
-          <span class="telemetry-item">
-            <span class="status-pip live" aria-hidden="true"></span>
-            24/7 Patrol Status: Active
-          </span>
-          <span class="telemetry-item">
-            <span class="status-pip live" aria-hidden="true"></span>
-            TC3 Regional 911 Interfaced
-          </span>
-          <span class="telemetry-item">
-            <span class="status-pip gold" aria-hidden="true"></span>
-            ILEAS Region 6 Rapid Mutual Aid
-          </span>
-          <span class="telemetry-item">
-            <span class="status-pip neutral" aria-hidden="true"></span>
-            Zero-Tracking Civic Telemetry
-          </span>
-        </div>
-        <div class="telemetry-zone">
-          SEC. ZONE // 17-IL-TAZEWELL
-        </div>
-      </div>
-    </div>
-
-
   <!-- Background Canvas -->
   <div id="wpd-experience-root">
     
@@ -299,7 +268,6 @@
       <header class="subpage-hero-banner">
         <div class="container">
           <div class="subpage-hero-inner subpage-hero-centered" style="text-align: center; margin: 0 auto; max-width: 920px;">
-            <span class="serro-hero-kicker">EXECUTIVE COMMAND • STATUTORY CIVILIAN OVERSIGHT • ETHICAL GOVERNANCE</span>
             <h1 class="subpage-hero-title">
               Accountability and Leadership
             </h1>
@@ -650,183 +618,107 @@
   </div>
 
   <!-- Common Civic Footer -->
-    <!-- ========================================================================
-       CANONICAL SERRO EDITORIAL 3-COLUMN CIVIC FOOTER (CONTENTINFO)
-       Dual Circular Verification Seals • Numbered Directory • Statutory Trust
-       ======================================================================== -->
-  <footer class="serro-site-footer" role="contentinfo">
-    <div class="container">
-      
-      <!-- Top Telemetry & Rapid Contact Strip -->
-      <div class="civic-footer-telemetry" style="margin-bottom: 48px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <span class="status-pip live" aria-hidden="true"></span>
-          <div>
-            <div style="font-family: var(--font-body); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary);">
-              WPD COMMUNICATIONS &amp; DISPATCH CENTER
-            </div>
-            <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">
-              TAZEWELL COUNTY CONSOLIDATED 911 • CONTINUOUS 24/7/365 DISPATCH
-            </div>
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="padding: 8px 18px; font-size: 0.84rem;">
-            Emergency: Dial 911
-          </a>
-          <a href="tel:3094442313" class="btn-editorial-secondary" style="padding: 8px 18px; font-size: 0.84rem;">
-            24/7 Dispatch: (309) 444-2313
-          </a>
-        </div>
-      </div>
-
-      <div class="serro-footer-grid">
+  <footer class="civic-footer" role="contentinfo">
+      <div class="container">
         
-        <!-- Column 1: Identity & Dual Circular Verification Seals -->
-        <div class="serro-footer-col-brand">
-          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
-            <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Emblem" width="48" height="48" style="border-radius: 50%;" />
+        <div class="civic-footer-telemetry">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="status-pip status-pip-emerald" aria-hidden="true"></span>
             <div>
-              <div class="serro-footer-brand-title">Washington Police</div>
-              <span class="serro-footer-brand-sub">CITY OF WASHINGTON, IL • EST. 1825</span>
+              <div style="font-family: var(--font-body); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;">
+                WPD COMMUNICATIONS &amp; DISPATCH CENTER
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.74rem; color: #94A3B8;">
+                TAZEWELL COUNTY CONSOLIDATED 911 • CONTINUOUS 24/7/365 DISPATCH
+              </div>
             </div>
           </div>
 
-          <p style="font-family: var(--font-title, 'Newsreader', Georgia, serif); font-style: italic; font-size: 1.05rem; color: var(--mtw-police-gold, #C5A880); margin-bottom: 12px; line-height: 1.4;">
-            “Serve with Honor, Protect with Purpose, Lead with Integrity.”
-          </p>
-
-          <p class="serro-footer-brand-desc">
-            Civil Order Through Constitutional Law. A full-service municipal law enforcement agency providing 24/7 patrol, emergency dispatch, and crime prevention across Tazewell County.
-          </p>
-
-          <!-- Dual Circular Verification Seals (Serro Signature Invariant) -->
-          <div class="serro-footer-seals-deck" aria-label="Department accreditation and dispatch verification seals">
-            <!-- Seal 1: Municipal Police Authority Seal -->
-            <svg class="serro-footer-seal" viewBox="0 0 100 100" aria-label="City of Washington Municipal Police Department Seal">
-              <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.3" />
-              <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
-              <path id="seal-wpd" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-              <text font-family="var(--font-mono, monospace)" font-size="6.8" font-weight="700" letter-spacing="0.14em" fill="currentColor">
-                <textPath href="#seal-wpd" startOffset="50%" text-anchor="middle">
-                  CITY OF WASHINGTON · POLICE DEPT
-                </textPath>
-              </text>
-              <text x="50" y="47" font-family="var(--font-mono, monospace)" font-size="11" font-weight="700" text-anchor="middle" fill="currentColor">
-                WPD
-              </text>
-              <text x="50" y="58" font-family="var(--font-mono, monospace)" font-size="7.0" font-weight="700" letter-spacing="0.08em" text-anchor="middle" opacity="0.75" fill="currentColor">
-                MUNICIPAL CADRE
-              </text>
-              <text x="50" y="67" font-family="var(--font-mono, monospace)" font-size="5.5" font-weight="700" letter-spacing="0.05em" text-anchor="middle" opacity="0.5" fill="currentColor">
-                EST. 1825
-              </text>
-            </svg>
-
-            <!-- Seal 2: TC3 Regional 911 Communications Seal -->
-            <svg class="serro-footer-seal" viewBox="0 0 100 100" aria-label="TC3 Regional 911 Interoperability Seal">
-              <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.3" />
-              <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
-              <path id="seal-tc3" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-              <text font-family="var(--font-mono, monospace)" font-size="6.8" font-weight="700" letter-spacing="0.14em" fill="currentColor">
-                <textPath href="#seal-tc3" startOffset="50%" text-anchor="middle">
-                  TAZEWELL CO · TC3 DISPATCH
-                </textPath>
-              </text>
-              <text x="50" y="47" font-family="var(--font-mono, monospace)" font-size="10.5" font-weight="700" text-anchor="middle" fill="currentColor">
-                TC3
-              </text>
-              <text x="50" y="58" font-family="var(--font-mono, monospace)" font-size="7.0" font-weight="700" letter-spacing="0.08em" text-anchor="middle" opacity="0.75" fill="currentColor">
-                911 INTERFACED
-              </text>
-              <text x="50" y="67" font-family="var(--font-mono, monospace)" font-size="5.5" font-weight="700" letter-spacing="0.05em" text-anchor="middle" opacity="0.5" fill="currentColor">
-                STARCOM21
-              </text>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Column 2: Numbered Directory Navigation -->
-        <div>
-          <div class="serro-footer-col-heading">Navigation Directory</div>
-          <div class="serro-footer-dir-list">
-            <a href="index.html" class="serro-footer-dir-row">
-              <span>Executive Home Overview</span>
-              <span class="serro-footer-dir-num">01</span>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="tel:911" class="btn-editorial-primary btn-editorial-911" style="padding: 8px 18px; font-size: 0.84rem;">
+              Emergency: Dial 911
             </a>
-            <a href="services.html" class="serro-footer-dir-row">
-              <span>Resident Services &amp; Action Center</span>
-              <span class="serro-footer-dir-num">02</span>
-            </a>
-            <a href="districts.html" class="serro-footer-dir-row">
-              <span>Patrol Districts &amp; GIS Map</span>
-              <span class="serro-footer-dir-num">03</span>
-            </a>
-            <a href="community.html" class="serro-footer-dir-row">
-              <span>Community Programs &amp; SRO</span>
-              <span class="serro-footer-dir-num">04</span>
-            </a>
-            <a href="teams.html" class="serro-footer-dir-row">
-              <span>Specialized Tactical Divisions</span>
-              <span class="serro-footer-dir-num">05</span>
-            </a>
-            <a href="leadership.html" class="serro-footer-dir-row">
-              <span>Department Leadership &amp; Governance</span>
-              <span class="serro-footer-dir-num">06</span>
+            <a href="tel:3094442313" class="btn-editorial-secondary" style="padding: 8px 18px; font-size: 0.84rem; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3);">
+              24/7 Dispatch: (309) 444-2313
             </a>
           </div>
         </div>
 
-        <!-- Column 3: Trust, Public Accountability & Statutory Records -->
-        <div>
-          <div class="serro-footer-col-heading">Statutory Accountability</div>
-          <div class="serro-footer-policy-list">
-            <a href="https://www.ci.washington.il.us/egov/apps/action/center.egov?view=form;page=1;id=179" target="_blank" rel="noopener noreferrer" class="serro-footer-policy-link">
-              <span>Illinois FOIA (5 ILCS 140)</span>
-              <span class="serro-policy-tag">STATUTE</span>
-            </a>
-            <a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="serro-footer-policy-link">
-              <span>Civilian Police Commission Oversight</span>
-            </a>
-            <a href="leadership.html" class="serro-footer-policy-link">
-              <span>Officer Conduct &amp; Ethics Standards</span>
-            </a>
-            <a href="teams.html" class="serro-footer-policy-link">
-              <span>ILEAS Region 6 Mutual Aid Pact</span>
-            </a>
-            <a href="services.html" class="serro-footer-policy-link">
-              <span>LEADS / NCIC Data Privacy Notice</span>
-            </a>
-            <a href="https://www.tazewellcountysheriff.com/" target="_blank" rel="noopener noreferrer" class="serro-footer-policy-link">
-              <span>Tazewell County Sheriff Co-Response</span>
-            </a>
-            <a href="recruitment.html" class="serro-footer-policy-link">
-              <span>ILETSB Sworn Officer Standards</span>
-            </a>
+        <div class="civic-footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+              <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Emblem" width="48" height="48" style="border-radius: 50%;" />
+              <div>
+                <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 700; color: #FFFFFF; line-height: 1.2;">
+                  Washington Police
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.70rem; color: var(--mtw-police-gold, #C5A880);">
+                  CITY OF WASHINGTON, IL • EST. 1825
+                </div>
+              </div>
+            </div>
+            <p style="font-family: var(--font-editorial, 'Spectral', serif); font-style: italic; font-size: 0.95rem; color: var(--mtw-police-gold, #C5A880); margin-bottom: 12px;">
+              “Serve with Honor, Protect with Purpose, Lead with Integrity.”
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px; font-size: 0.80rem; color: #CBD5E1; line-height: 1.6;">
+              <div><strong style="color: #FFFFFF;">Headquarters:</strong> 115 W. Jefferson St, Washington, IL 61571</div>
+              <div><strong style="color: #FFFFFF;">Records Window:</strong> Mon–Fri 8:00 AM – 4:30 PM</div>
+              <div><strong style="color: var(--accent-emerald, #10B981);">Patrol Operations:</strong> Continuous 24/7/365</div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Department Pages</h4>
+            <ul class="civic-footer-links">
+              <li><a href="index.html" class="civic-footer-link">Home Overview</a></li>
+              <li><a href="services.html" class="civic-footer-link">Resident Services &amp; Action Center</a></li>
+              <li><a href="districts.html" class="civic-footer-link">Patrol Districts &amp; GIS Map</a></li>
+              <li><a href="community.html" class="civic-footer-link">Community Programs &amp; Academy</a></li>
+              <li><a href="teams.html" class="civic-footer-link">Specialized Divisions &amp; SWAT</a></li>
+              <li><a href="operations.html" class="civic-footer-link">Patrol Operations &amp; Shift Schedule</a></li>
+              <li><a href="recruitment.html" class="civic-footer-link">Careers &amp; Officer Recruitment</a></li>
+              <li><a href="leadership.html" class="civic-footer-link">Department Leadership &amp; Ethics</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Command &amp; Oversight</h4>
+            <ul class="civic-footer-links">
+              <li><a href="leadership.html" class="civic-footer-link">Chief Jeff Stevens Biography</a></li>
+              <li><a href="leadership.html" class="civic-footer-link">Command Staff Organization</a></li>
+              <li><a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Board of Police Commissioners</a></li>
+              <li><button type="button" class="civic-footer-link" data-open-drawer="drawer-commendation" style="background:none; border:none; padding:0; cursor:pointer; font-family:inherit;">Commend a Police Officer</button></li>
+              <li><a href="tel:3094442313" class="civic-footer-link">Executive Line: (309) 444-2313</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="civic-footer-col-title">Civic Partners</h4>
+            <ul class="civic-footer-links">
+              <li><a href="https://www.ci.washington.il.us" target="_blank" rel="noopener noreferrer" class="civic-footer-link">City of Washington Official Portal</a></li>
+              <li><a href="https://www.ci.washington.il.us/department/board.php?structureid=35" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Board of Police Commissioners</a></li>
+              <li><a href="https://www.tazewellcountysheriff.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Tazewell County Sheriff</a></li>
+              <li><a href="https://washingtonfd.com/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Washington Fire &amp; EMS</a></li>
+              <li><a href="https://isp.illinois.gov/" target="_blank" rel="noopener noreferrer" class="civic-footer-link">Illinois State Police (District 8)</a></li>
+            </ul>
           </div>
         </div>
 
-      </div>
-
-      <!-- Bottom Compliance & Legal Ribbon -->
-      <div class="serro-footer-meta-rail">
-        <div>
-          © 2026 City of Washington, Illinois Police Department. 115 W. Jefferson St, Washington, IL 61571.
-        </div>
-        
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-          <span>CJIS TIER-4 SECURED</span>
-          <span>•</span>
-          <span>STARCOM21 NETWORK</span>
-          <span>•</span>
-          <span>WCAG 2.2 AA CERTIFIED</span>
-          <button type="button" class="civic-btn-top" id="footer-back-to-top" aria-label="Scroll back to top">TOP</button>
+        <div class="civic-footer-bottom">
+          <div>
+            © 2026 City of Washington, Illinois Police Department. 115 W. Jefferson St, Washington, IL 61571.
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <span>WCAG 2.2 AA Certified</span>
+            <span>•</span>
+            <span>Illinois FOIA (5 ILCS 140)</span>
+            <span>•</span>
+            <span>TC3 911 Dispatch Interfaced</span>
+            <button type="button" class="civic-btn-top" id="footer-back-to-top" aria-label="Scroll back to top">TOP</button>
+          </div>
         </div>
       </div>
-
-    </div>
-  </footer>
+    </footer>
 
   <script src="js/data.js?v=20260924-streets-complete-v14" defer></script>
   <script src="js/app.js?v=20260924-streets-complete-v14" defer></script>
