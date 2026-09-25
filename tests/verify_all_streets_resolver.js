@@ -7,7 +7,7 @@ const path = require('path');
 const assert = require('assert');
 const fs = require('fs');
 
-const BASE_URL = 'http://localhost:8001/districts.html?agentation=0';
+const BASE_URL = (process.env.BASE_URL || 'http://localhost:8000') + '/districts.html?agentation=0';
 const ARTIFACT_DIR = '/Users/jokird/.gemini/antigravity/brain/907d74f3-89bb-4ecf-91f1-911b6f8db850';
 
 async function run() {

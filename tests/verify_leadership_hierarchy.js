@@ -10,11 +10,12 @@ const fs = require('fs');
   });
   const page = await context.newPage();
 
+  const BASE_URL = process.env.BASE_URL || 'http://localhost:8000';
   const artifactDir = '/Users/jokird/.gemini/antigravity/brain/907d74f3-89bb-4ecf-91f1-911b6f8db850';
 
   // 1. Desktop Test (1710x984)
   console.log('Testing Desktop 1710x984...');
-  await page.goto('http://localhost:8001/leadership.html?agentation=0', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/leadership.html?agentation=0`, { waitUntil: 'networkidle' });
 
   // Verify Chief Jeff Stevens card exists
   const chiefName = await page.textContent('.wpd-leader-name');
@@ -92,7 +93,7 @@ const fs = require('fs');
   // 2. Mobile Viewport Test (390x844 iPhone 14 / modern device)
   console.log('Testing Mobile 390x844...');
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('http://localhost:8001/leadership.html?agentation=0', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/leadership.html?agentation=0`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(500);
 
   const mobileOverflow = await page.evaluate(() => {

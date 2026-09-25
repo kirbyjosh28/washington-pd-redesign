@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 
-const BASE_URL = 'http://localhost:8001';
+const BASE_URL = process.env.BASE_URL || 'http://localhost:8000';
 const ARTIFACTS_DIR = '/Users/jokird/.gemini/antigravity/brain/907d74f3-89bb-4ecf-91f1-911b6f8db850';
 
 async function captureWalkin() {
