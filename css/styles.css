@@ -6574,10 +6574,11 @@ footer[role="contentinfo"],
   transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-.civic-service-card:hover .civic-service-card-action {
-  background: var(--mtw-police-navy, #0B1B36);
-  color: #FFFFFF;
-  border-color: var(--mtw-police-navy, #0B1B36);
+.civic-service-card:hover .civic-service-card-action,
+.civic-service-card-action:hover {
+  background: var(--mtw-police-navy, #0B1B36) !important;
+  color: #FFFFFF !important;
+  border-color: var(--mtw-police-navy, #0B1B36) !important;
 }
 
 [data-theme="dark"] .civic-service-card-action {
