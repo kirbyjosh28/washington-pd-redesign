@@ -4932,19 +4932,19 @@ footer[role="contentinfo"],
 
 /* 2. DIAL 911 Emergency Button (Strictly isolated red with pulsing beacon) */
 .civic-float-pill-btn.civic-float-911 {
-  background: var(--mtw-primary-crimson, #D31245);
+  background: var(--mtw-primary-crimson, #991B1B);
   color: #FFFFFF !important;
   font-weight: 800;
   letter-spacing: 0.06em;
   font-size: 1.02rem;
   padding: 0 20px;
-  box-shadow: 0 6px 18px rgba(211, 18, 69, 0.38);
+  box-shadow: 0 6px 18px rgba(153, 27, 27, 0.38);
   gap: 8px;
 }
 
 .civic-float-pill-btn.civic-float-911:hover {
-  background: #B50E3A;
-  box-shadow: 0 8px 24px rgba(211, 18, 69, 0.52);
+  background: #7F1D1D;
+  box-shadow: 0 8px 24px rgba(153, 27, 27, 0.52);
 }
 
 .float-btn-911-beacon {
@@ -5678,12 +5678,12 @@ footer[role="contentinfo"],
   }
   .civic-float-pill-btn.civic-float-911 {
     display: inline-flex !important;
-    background: linear-gradient(135deg, #D31245 0%, #9B0028 100%) !important;
+    background: linear-gradient(135deg, #991B1B 0%, #7F1D1D 100%) !important;
     color: #FFFFFF !important;
-    border: 1px solid #D31245 !important;
+    border: 1px solid #991B1B !important;
     padding: 0 9px !important;
     gap: 4px !important;
-    box-shadow: 0 2px 8px rgba(211, 18, 69, 0.35) !important;
+    box-shadow: 0 2px 8px rgba(153, 27, 27, 0.35) !important;
   }
   .civic-float-911 .float-btn-main {
     font-size: 0.72rem !important;
@@ -6045,16 +6045,16 @@ footer[role="contentinfo"],
 
 /* Dedicated Emergency 911 Button Style (Strictly the only red on the site) */
 .btn-editorial-911 {
-  background: var(--mtw-primary-crimson, #D31245) !important;
-  border: 1px solid #B50E3A !important;
+  background: var(--mtw-primary-crimson, #991B1B) !important;
+  border: 1px solid #7F1D1D !important;
   color: #FFFFFF !important;
-  box-shadow: 0 4px 14px rgba(211, 18, 69, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(153, 27, 27, 0.35) !important;
 }
 
 .btn-editorial-911:hover {
-  background: #BE0E3D !important;
-  border-color: #9E0A30 !important;
-  box-shadow: 0 6px 20px rgba(211, 18, 69, 0.45) !important;
+  background: #7F1D1D !important;
+  border-color: #6B1717 !important;
+  box-shadow: 0 6px 20px rgba(153, 27, 27, 0.45) !important;
   transform: translateY(-1.5px);
 }
 
@@ -9393,6 +9393,11 @@ img.civic-editorial-img,
   color: var(--text-secondary, #1E293B);
   text-decoration: none;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  min-width: 28px;
+  padding: 2px 4px;
   transition: color 0.15s ease;
 }
 
@@ -10136,6 +10141,10 @@ img.civic-editorial-img,
   font-weight: 700;
 }
 
+[data-theme="dark"] .resolver-gateway-text strong {
+  color: #FFFFFF !important;
+}
+
 .resolver-gateway-link {
   font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.85rem;
@@ -10144,6 +10153,8 @@ img.civic-editorial-img,
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  min-height: 28px;
+  padding: 4px 0;
   gap: 6px;
   white-space: nowrap;
   transition: color 0.18s ease;

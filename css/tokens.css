@@ -81,7 +81,7 @@
   --mtw-bg-tertiary: #F8FAFC;      /* Clean studio slate-50 */
   --mtw-limestone: #F8FAFC;
   --mtw-neutral-dark: #0F172A;     /* Crisp obsidian slate text */
-  --mtw-primary-crimson: #DC2626;  /* Authority / alert crimson */
+  --mtw-primary-crimson: #991B1B;  /* Authority / alert crimson (8.3:1 AAA contrast with white) */
   --mtw-police-navy: #0B1B36;      /* Official command navy */
   --mtw-police-navy-dark: #060F1E;
   --mtw-police-gold: #D4AF37;      /* Refined champagne gold */
@@ -127,7 +127,7 @@
   
   /* ── Accessible High-Contrast Text Accents ── */
   --accent-emerald-text: #047857; /* 5.8:1 contrast on white */
-  --accent-blue-text: #1D4ED8;    /* 7.1:1 contrast on civic sky / white */
+  --accent-blue-text: #1E40AF;    /* 7.8:1 AAA contrast on civic periwinkle / white */
   --accent-rose-text: #B91C1C;    /* 5.9:1 contrast on white */
   
   /* ── Better Stack & 21st.dev Brand / Functional Colors ── */
@@ -373,7 +373,7 @@
   /* ── Mapping The Way / Civic Editorial Dark Tokens ── */
   --mtw-bg-tertiary: #13171F;
   --mtw-neutral-dark: #F8FAFC;
-  --mtw-primary-crimson: #EF4444;
+  --mtw-primary-crimson: #991B1B;
   --mtw-police-navy: #14243F;
   --mtw-police-navy-dark: #0A1220;
   --mtw-police-gold: #F2C94C;
