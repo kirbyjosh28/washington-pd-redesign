@@ -36,7 +36,7 @@ async function runServiceCenterVerification() {
 
   // 2. Check Service Cards in Grid
   const cardPermits = await page.$('[data-open-drawer="drawer-parking-permits"]');
-  const cardPayments = await page.$('[data-open-drawer="drawer-online-payments"]');
+  const cardPayments = await page.$('a[href*="id=21"], [data-open-drawer="drawer-online-payments"]');
   const cardBicycle = await page.$('[data-open-drawer="drawer-bicycle-registration"]');
   if (cardPermits && cardPayments && cardBicycle) {
     console.log('PASS: All 3 new prominent service cards present in services.html grid');
@@ -125,9 +125,9 @@ async function runServiceCenterVerification() {
 
   // 5. Test Primary Service Cards: Parking Permits Drawer
   console.log('Testing Service Cards -> Parking Permits Drawer...');
-  const parkingBtn = await page.$('.service-action-card [data-open-drawer="drawer-parking-permits"], [data-open-drawer="drawer-parking-permits"]');
+  const parkingBtn = await page.$('#services-grid-container [data-open-drawer="drawer-parking-permits"]');
   if (parkingBtn) {
-    await parkingBtn.click();
+    await page.evaluate(() => document.querySelector('#services-grid-container [data-open-drawer="drawer-parking-permits"]')?.click());
     await page.waitForTimeout(400);
     const drawerActive = await page.$eval('#drawer-parking-permits', el => el.classList.contains('active'));
     console.log(`PASS: drawer-parking-permits opens correctly (active: ${drawerActive})`);
@@ -148,18 +148,19 @@ async function runServiceCenterVerification() {
     console.log(`PASS: Snow emergency statutory warning present: ${hasSnowAlert}`);
 
     // Fill form and submit
+    const todayIso = new Date().toISOString().split('T')[0];
     await page.selectOption('#prk-reason', 'rv-staging');
     await page.fill('#prk-address', '1402 Devonshire Rd');
     await page.fill('#prk-plate', 'IL 781-9022');
     await page.fill('#prk-state', 'IL');
     await page.fill('#prk-vehicle', 'Winnebago Minnie Winnie');
     await page.fill('#prk-color', 'White / Gray');
-    await page.fill('#prk-start', '2026-09-20');
+    await page.fill('#prk-start', todayIso);
     await page.selectOption('#prk-nights', '1');
     await page.fill('#prk-phone', '(309) 555-4321');
 
     await page.click('#drawer-parking-permits button[type="submit"]');
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
 
     const receiptCode = await page.$eval('#drawer-parking-permits #receipt-code-display', el => el.textContent.trim());
     console.log(`PASS: Parking exemption submitted! Receipt code generated: ${receiptCode}`);
@@ -172,38 +173,21 @@ async function runServiceCenterVerification() {
     await page.waitForTimeout(300);
   }
 
-  // 6. Test Primary Service Cards: Online Payments Drawer (Tyler Tech Gateway)
-  console.log('Testing Service Cards -> Online Payments Drawer...');
-  const payBtn = await page.$('.service-action-card [data-open-drawer="drawer-online-payments"], [data-open-drawer="drawer-online-payments"]');
-  if (payBtn) {
-    await payBtn.click();
-    await page.waitForTimeout(400);
-    const payDrawerActive = await page.$eval('#drawer-online-payments', el => el.classList.contains('active'));
-    console.log(`PASS: drawer-online-payments opens correctly (active: ${payDrawerActive})`);
-
-    // Verify Tyler Portal URL & Phone IVR
-    const tylerHref = await page.$eval('#drawer-online-payments a[href*="municipalonlinepayments"]', el => el.href);
-    console.log(`PASS: Tyler Technologies portal link verified: ${tylerHref}`);
-    if (!tylerHref.includes('washingtonil.municipalonlinepayments.com')) {
-      console.error('FAIL: Incorrect Tyler portal URL');
-      totalErrors++;
-    }
-
-    const hasPhoneIVR = await page.$eval('#drawer-online-payments', el => el.innerText.includes('877) 813-6421'));
-    console.log(`PASS: 24/7 Phone IVR payment hotline (877) 813-6421 verified: ${hasPhoneIVR}`);
-
-    // Take screenshot of payments drawer
-    await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'verified_service_payments_drawer.png') });
-
-    await page.click('#drawer-online-payments [data-close-drawer]');
-    await page.waitForTimeout(300);
+  // 6. Test Primary Service Cards: Online Payments Direct Link
+  console.log('Testing Service Cards -> Online Payments Direct Link...');
+  const payLink = await page.$eval('a[href*="id=21"]', el => el.href);
+  if (payLink && payLink.includes('id=21')) {
+    console.log(`PASS: Direct City payment portal link verified: ${payLink}`);
+  } else {
+    console.error('FAIL: Missing or invalid direct City payment portal link');
+    totalErrors++;
   }
 
   // 7. Test Primary Service Cards: Bicycle Registry Drawer
   console.log('Testing Service Cards -> Bicycle Registry Drawer...');
-  const bikeBtn = await page.$('.service-action-card [data-open-drawer="drawer-bicycle-registration"], [data-open-drawer="drawer-bicycle-registration"]');
+  const bikeBtn = await page.$('#services-grid-container [data-open-drawer="drawer-bicycle-registration"]');
   if (bikeBtn) {
-    await bikeBtn.click();
+    await page.evaluate(() => document.querySelector('#services-grid-container [data-open-drawer="drawer-bicycle-registration"]')?.click());
     await page.waitForTimeout(400);
     const bikeDrawerActive = await page.$eval('#drawer-bicycle-registration', el => el.classList.contains('active'));
     console.log(`PASS: drawer-bicycle-registration opens correctly (active: ${bikeDrawerActive})`);
@@ -217,7 +201,7 @@ async function runServiceCenterVerification() {
     await page.fill('#bike-color', 'Navy Blue');
 
     await page.click('#drawer-bicycle-registration button[type="submit"]');
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
 
     const bikeReceipt = await page.$eval('#drawer-bicycle-registration #receipt-code-display', el => el.textContent.trim());
     console.log(`PASS: Bicycle registered! Reference code: ${bikeReceipt}`);

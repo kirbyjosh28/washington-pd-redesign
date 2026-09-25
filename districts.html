@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Patrol Districts &amp; GIS Map • City of Washington Police Department</title>
   <meta name="description" content="Official City of Washington Police Department patrol district cartography, Tazewell County GIS sectors, assigned sector units, and neighborhood coverage." />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/wpd_official_seal.png" />
+  <link rel="apple-touch-icon" href="assets/wpd_official_seal.png" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/tokens.css?v=20260924-streets-complete-v14" />
@@ -26,7 +26,7 @@
       <!-- Left: Floating Official Brand (Extracted Transparent Seal + Department Text) -->
       <div class="civic-floating-left">
         <a href="index.html" class="civic-float-brand" aria-label="Washington Police Department Home" title="Washington Police Department">
-          <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" />
+          <img src="assets/wpd_official_seal.png" alt="Official Washington Police Department Seal" class="civic-float-seal-img" width="52" height="52" />
           <div class="civic-float-brand-text">
             <span class="civic-brand-title">Washington Police</span>
             <span class="civic-brand-dept">Department</span>
@@ -275,14 +275,14 @@
       <!-- Subpage Hero -->
       <header class="subpage-hero-banner">
         <div class="container">
-          <div class="subpage-hero-inner">
+          <div class="subpage-hero-inner subpage-hero-centered" style="text-align: center; margin: 0 auto; max-width: 920px;">
             <h1 class="subpage-hero-title">
               Patrol Districts &amp; Sector Coverage
             </h1>
-            <p class="subpage-hero-lead">
+            <p class="subpage-hero-lead" style="margin-left: auto; margin-right: auto;">
               The City of Washington is organized into three dedicated operational patrol sectors spanning 3,592 municipal acres. Explore assigned units, district boundaries, and key landmarks below.
             </p>
-            <div class="subpage-hero-meta-row">
+            <div class="subpage-hero-meta-row" style="justify-content: center;">
               <div class="subpage-hero-meta-pill">
                 <strong>District 1:</strong> Historic Core &amp; East (434 Acres)
               </div>
@@ -627,10 +627,10 @@
       </div>
     </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/data.js?v=20260924-streets-complete-v14"></script>
-  <script src="js/wpd-districts.js?v=20260924-streets-complete-v14"></script>
-  <script src="js/app.js?v=20260924-streets-complete-v14"></script>
-  <script src="js/agentation-loader.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="js/data.js?v=20260924-streets-complete-v14" defer></script>
+  <script src="js/wpd-districts.js?v=20260924-streets-complete-v14" defer></script>
+  <script src="js/app.js?v=20260924-streets-complete-v14" defer></script>
+  <script src="js/agentation-loader.js" defer></script>
 </body>
 </html>

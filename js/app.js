@@ -16,7 +16,6 @@
       initKineticTypography,
       init3DCardTilts,
       initInteractiveCopyButtons,
-      initCardCursorSpotlight,
       initFaqKnowledgeBase
     ];
 
@@ -291,7 +290,6 @@
     initActionDrawers();
     initSkiperGooeyMenu();
     initFooterActions();
-    initCardCursorSpotlight();
     initStationTelemetry();
     initCommandPalette();
     initAddressResolver();
@@ -1175,10 +1173,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
-  }
-
-  function initCardCursorSpotlight() {
-    // Handled with requestAnimationFrame throttling and cached rects in init3DCardTilts
   }
 
   function initSkiperGooeyMenu() {
