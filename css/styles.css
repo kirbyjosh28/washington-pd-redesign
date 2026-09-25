@@ -7212,6 +7212,29 @@ body,
   height: 100%;
 }
 
+[data-theme="dark"] .double-bezel {
+  background: rgba(14, 22, 38, 0.85);
+  border-color: rgba(212, 175, 55, 0.32);
+  box-shadow: 
+    0 10px 24px -4px rgba(0, 0, 0, 0.5),
+    0 4px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .double-bezel:hover {
+  border-color: rgba(245, 215, 127, 0.65);
+  box-shadow: 
+    0 16px 36px -4px rgba(0, 0, 0, 0.6),
+    0 6px 16px rgba(0, 0, 0, 0.4),
+    0 0 0 1.5px rgba(245, 215, 127, 0.45);
+}
+
+[data-theme="dark"] .double-bezel-inner {
+  background: #0E1626 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
 /* ── Apple-Tier Progressive Contrast Typography & Tabular Numerals ── */
 .mono-code,
 .float-btn-phone,
@@ -9644,6 +9667,12 @@ img.civic-editorial-img,
   border: 1px solid rgba(11, 27, 54, 0.08);
 }
 
+[data-theme="dark"] .dept-card-eyebrow {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--mtw-police-gold, #F5D77F) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
 .dept-card-title {
   font-family: var(--font-title, serif);
   font-size: clamp(1.45rem, 1.8vw, 1.75rem);
@@ -9653,12 +9682,20 @@ img.civic-editorial-img,
   line-height: 1.25;
 }
 
+[data-theme="dark"] .dept-card-title {
+  color: #FFFFFF !important;
+}
+
 .dept-card-desc {
   font-family: var(--font-body, sans-serif);
   font-size: 0.94rem;
   line-height: 1.6;
   color: var(--text-secondary, #334155);
   margin: 0 0 14px;
+}
+
+[data-theme="dark"] .dept-card-desc {
+  color: #CBD5E1 !important;
 }
 
 .dept-card-meta-chips {
@@ -9725,7 +9762,25 @@ img.civic-editorial-img,
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-decoration: none !important;
   transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+[data-theme="light"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn,
+[data-theme="light"] .dept-btn-in-btn {
+  background: rgba(11, 27, 54, 0.06) !important;
+  border: 1px solid rgba(11, 27, 54, 0.12) !important;
+  color: var(--mtw-police-navy, #0B1B36) !important;
+}
+
+[data-theme="light"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn > span,
+[data-theme="light"] .dept-btn-in-btn > span {
+  color: var(--mtw-police-navy, #0B1B36) !important;
+}
+
+[data-theme="light"] .dept-btn-icon-wrapper {
+  background: #FFFFFF !important;
+  color: var(--mtw-police-navy, #0B1B36) !important;
 }
 
 .dept-btn-icon-wrapper {
@@ -9747,12 +9802,68 @@ img.civic-editorial-img,
   background: var(--mtw-navy, #0B1B36);
   border-color: var(--mtw-navy, #0B1B36);
   color: #FFFFFF;
+  text-decoration: none !important;
 }
 
 .dept-card:hover .dept-btn-icon-wrapper {
   transform: translate(2px, -2px) scale(1.08);
   background: var(--mtw-police-gold, #D4AF37);
   color: var(--mtw-navy, #0B1B36);
+}
+
+/* Dark Mode Button-in-Button CTA Overrides (WCAG AAA High-Contrast) */
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn > span {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-icon-wrapper {
+  background: var(--mtw-police-gold, #F5D77F) !important;
+  color: #0B1B36 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-icon-wrapper .dept-btn-icon {
+  color: #0B1B36 !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy):hover .dept-btn-in-btn,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:hover,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:focus-visible {
+  background: var(--mtw-police-gold, #F5D77F) !important;
+  border-color: var(--mtw-police-gold, #F5D77F) !important;
+  color: #0B1B36 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(245, 215, 127, 0.3) !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy):hover .dept-btn-in-btn > span,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:hover > span,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:focus-visible > span {
+  color: #0B1B36 !important;
+  text-decoration: none !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy):hover .dept-btn-icon-wrapper,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:hover .dept-btn-icon-wrapper,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:focus-visible .dept-btn-icon-wrapper {
+  background: #0B1B36 !important;
+  color: var(--mtw-police-gold, #F5D77F) !important;
+  transform: translate(2px, -2px) scale(1.08) !important;
+}
+
+[data-theme="dark"] .dept-card:not(.dept-card-navy):hover .dept-btn-icon-wrapper .dept-btn-icon,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:hover .dept-btn-icon-wrapper .dept-btn-icon,
+[data-theme="dark"] .dept-card:not(.dept-card-navy) .dept-btn-in-btn:focus-visible .dept-btn-icon-wrapper .dept-btn-icon {
+  color: var(--mtw-police-gold, #F5D77F) !important;
 }
 
 /* Distinct Police Command Navy Bento Card (Recruitment Highlight) */
