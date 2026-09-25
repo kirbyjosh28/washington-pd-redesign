@@ -92,6 +92,17 @@ footer[role="contentinfo"],
    Deep Civic Navy Gradients • Cobalt & Champagne Gold Ambient Blurs
    Hardware-Accelerated Frosted Glass Layering • Zero Parchment / Grids
    ========================================================================== */
+html,
+body,
+#wpd-experience-root {
+  background-color: #080C14 !important;
+  background-image: url('../assets/civic_wave_bg.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: left top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
 .civic-navy-bg-canvas {
   position: fixed;
   top: 0;
@@ -108,13 +119,11 @@ footer[role="contentinfo"],
   -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  background-color: var(--bg-app, #080C14);
-  background-image: url('../assets/civic_wave_bg.webp');
-  background-image: -webkit-image-set(url('../assets/civic_wave_bg.webp') 1x, url('../assets/civic_wave_bg.jpg') 1x);
-  background-image: image-set(url('../assets/civic_wave_bg.webp') type('image/webp'), url('../assets/civic_wave_bg.jpg') type('image/jpeg'));
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: cover;
+  background-color: #080C14 !important;
+  background-image: url('../assets/civic_wave_bg.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: left top !important;
+  background-size: cover !important;
 }
 
 .civic-silk-waves-svg,
@@ -187,7 +196,12 @@ footer[role="contentinfo"],
 
 [data-theme="dark"] body,
 [data-theme="dark"] #wpd-experience-root {
-  background-color: var(--paper-ground, #16181B) !important;
+  background-color: #080C14 !important;
+  background-image: url('../assets/civic_wave_bg.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-position: left top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
   color: var(--graphite-dark, #E6EDF3) !important;
 }
 
