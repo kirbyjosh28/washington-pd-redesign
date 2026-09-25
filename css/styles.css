@@ -4740,6 +4740,13 @@ body,
   color: var(--mtw-navy, #0B1B36);
 }
 
+[data-theme="dark"] .text-accent-editorial,
+[data-theme="dark"] .editorial-italic,
+[data-theme="dark"] .text-accent-editorial em,
+[data-theme="dark"] .editorial-italic em {
+  color: var(--mtw-police-gold, #F5D77F) !important;
+}
+
 /* ── Floating Sticky Square Command HUD (Antigravity & Better-UI) ── */
 .civic-floating-bar {
   position: fixed;
@@ -10127,19 +10134,21 @@ img.civic-editorial-img,
 }
 
 .resolver-gateway-box {
-  background: var(--bg-surface-subtle, #F8FAFC);
-  border: 1px dashed var(--border-subtle, rgba(11, 27, 54, 0.15));
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.12));
   border-radius: 14px;
-  padding: 16px 24px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  box-shadow: 0 2px 10px rgba(11, 27, 54, 0.05);
 }
 
 [data-theme="dark"] .resolver-gateway-box {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(197, 168, 128, 0.25);
+  background: #0E1626 !important; /* Non-transparent solid deep police navy card */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
 
 @media (max-width: 768px) {
@@ -10153,6 +10162,11 @@ img.civic-editorial-img,
 .resolver-gateway-text {
   font-size: 0.90rem;
   color: var(--text-primary, #0F172A);
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .resolver-gateway-text {
+  color: #E2E8F0 !important;
 }
 
 .resolver-gateway-text strong {
