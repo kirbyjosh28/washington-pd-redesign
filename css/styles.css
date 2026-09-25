@@ -11280,3 +11280,564 @@ img.civic-editorial-img,
 
 
 
+
+/* ==========================================================================
+   SERRO EDITORIAL CIVIC DESIGN SYSTEM ADDITIONS
+   Newsreader Serif Display • Live Telemetry Bar • Unboxed Directives
+   Canonical 3-Column Footer with Dual Circular SVG Verification Seals
+   ========================================================================== */
+
+/* ── Serro Telemetry Ticker Bar ── */
+.telemetry-ticker {
+  background: var(--bg-surface-subtle, #F8FAFC);
+  border-bottom: 1px solid var(--border-strong, rgba(11, 27, 54, 0.12));
+  padding: 8px 0;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: var(--text-muted, #475569);
+  position: relative;
+  z-index: 10;
+}
+
+[data-theme="dark"] .telemetry-ticker {
+  background: #0D131F;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+}
+
+.telemetry-ticker-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.telemetry-deck {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.status-pip {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-pip.live {
+  background-color: #10B981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+  animation: serro-pulse-pip 2.2s infinite ease-in-out;
+}
+
+.status-pip.gold {
+  background-color: var(--mtw-police-gold, #C5A880);
+}
+
+.status-pip.neutral {
+  background-color: var(--text-faint, #64748B);
+}
+
+@keyframes serro-pulse-pip {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.telemetry-zone {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--mtw-police-gold, #C5A880);
+}
+
+/* ── Serro Hero Stage Architecture ── */
+.serro-hero-stage {
+  padding: 56px 0 44px;
+}
+
+.serro-hero-kicker {
+  display: block;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mtw-police-gold, #C5A880);
+  margin-bottom: 12px;
+}
+
+.serro-hero-headline {
+  font-family: var(--font-title, 'Newsreader', Georgia, serif);
+  font-size: clamp(2.35rem, 4.6vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary, #0B1B36);
+  max-width: 980px;
+  margin-bottom: 20px;
+}
+
+.serro-hero-headline em {
+  font-style: italic;
+  color: var(--mtw-police-gold, #C5A880);
+  font-weight: 500;
+}
+
+[data-theme="dark"] .serro-hero-headline {
+  color: #F8FAFC;
+}
+
+.serro-hero-summary {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-muted, #475569);
+  max-width: 820px;
+  margin-bottom: 32px;
+}
+
+[data-theme="dark"] .serro-hero-summary {
+  color: #94A3B8;
+}
+
+.serro-hero-summary strong {
+  color: var(--text-primary, #0B1B36);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .serro-hero-summary strong {
+  color: #F8FAFC;
+}
+
+/* ── 4-Metric Grid ── */
+.serro-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.serro-metric-card {
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  border-radius: 8px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 3px rgba(11, 27, 54, 0.04), 0 6px 16px -2px rgba(11, 27, 54, 0.03);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+[data-theme="dark"] .serro-metric-card {
+  background: #101622;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.serro-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px -2px rgba(11, 27, 54, 0.08);
+}
+
+.serro-metric-label {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint, #64748B);
+  margin-bottom: 6px;
+}
+
+.serro-metric-value {
+  font-family: var(--font-title, 'Newsreader', Georgia, serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary, #0B1B36);
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .serro-metric-value {
+  color: #F8FAFC;
+}
+
+.serro-metric-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted, #475569);
+  line-height: 1.45;
+}
+
+/* ── Numbered Section Headers & Unboxed Directives ── */
+.serro-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+}
+
+[data-theme="dark"] .serro-section-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.serro-section-title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.serro-section-idx {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--mtw-police-gold, #C5A880);
+  letter-spacing: 0.08em;
+}
+
+.serro-section-title {
+  font-family: var(--font-title, 'Newsreader', Georgia, serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary, #0B1B36);
+}
+
+[data-theme="dark"] .serro-section-title {
+  color: #F8FAFC;
+}
+
+.serro-section-meta {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: var(--text-faint, #64748B);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.serro-unboxed-directive {
+  border-left: 3px solid var(--mtw-police-gold, #C5A880);
+  padding: 12px 14px;
+  background: rgba(197, 168, 128, 0.12);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.82rem;
+  color: var(--text-primary, #0B1B36);
+  font-style: italic;
+  line-height: 1.45;
+  margin-top: 14px;
+}
+
+[data-theme="dark"] .serro-unboxed-directive {
+  background: rgba(229, 197, 153, 0.10);
+  color: #F8FAFC;
+}
+
+/* ── Executive Dispatch Banner ── */
+.serro-dispatch-card {
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  border-radius: 8px;
+  padding: 36px 40px;
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  box-shadow: 0 1px 3px rgba(11, 27, 54, 0.04), 0 6px 16px -2px rgba(11, 27, 54, 0.03);
+}
+
+[data-theme="dark"] .serro-dispatch-card {
+  background: #101622;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.serro-dispatch-quote {
+  font-family: var(--font-title, 'Newsreader', Georgia, serif);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-primary, #0B1B36);
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .serro-dispatch-quote {
+  color: #F8FAFC;
+}
+
+.serro-dispatch-signoff {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  color: var(--text-faint, #64748B);
+}
+
+.serro-dispatch-signoff strong {
+  color: var(--text-primary, #0B1B36);
+  display: block;
+  font-size: 0.85rem;
+}
+
+[data-theme="dark"] .serro-dispatch-signoff strong {
+  color: #F8FAFC;
+}
+
+.serro-dispatch-meta-rail {
+  border-left: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+[data-theme="dark"] .serro-dispatch-meta-rail {
+  border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.serro-meta-rail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+}
+
+[data-theme="dark"] .serro-meta-rail-item {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.serro-meta-rail-label {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.70rem;
+  text-transform: uppercase;
+  color: var(--text-faint, #64748B);
+  letter-spacing: 0.05em;
+}
+
+.serro-meta-rail-value {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  color: var(--text-primary, #0B1B36);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .serro-meta-rail-value {
+  color: #F8FAFC;
+}
+
+/* ── Canonical Serro 3-Column Footer with Dual Circular SVG Verification Seals ── */
+.serro-site-footer {
+  border-top: 1px solid var(--border-strong, rgba(11, 27, 54, 0.16));
+  background: var(--bg-surface, #FFFFFF);
+  padding: 68px 0 32px;
+  margin-top: 72px;
+  position: relative;
+  z-index: 10;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+[data-theme="dark"] .serro-site-footer {
+  background: #101622;
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.serro-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.15fr 1fr;
+  gap: 52px;
+}
+
+.serro-footer-brand-title {
+  font-family: var(--font-title, 'Newsreader', Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #0B1B36);
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .serro-footer-brand-title {
+  color: #F8FAFC;
+}
+
+.serro-footer-brand-sub {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--mtw-police-gold, #C5A880);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.serro-footer-brand-desc {
+  font-size: 0.90rem;
+  line-height: 1.55;
+  color: var(--text-muted, #475569);
+  margin-bottom: 24px;
+  max-width: 380px;
+}
+
+[data-theme="dark"] .serro-footer-brand-desc {
+  color: #94A3B8;
+}
+
+/* Dual Circular Verification Seals Deck */
+.serro-footer-seals-deck {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.serro-footer-seal {
+  width: 90px;
+  height: 90px;
+  color: var(--text-primary, #0B1B36);
+  opacity: 0.9;
+  transition: opacity 140ms ease, transform 140ms ease;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .serro-footer-seal {
+  color: #F8FAFC;
+}
+
+.serro-footer-seal:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.serro-footer-col-heading {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint, #64748B);
+  margin-bottom: 18px;
+}
+
+.serro-footer-dir-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.serro-footer-dir-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  border-bottom: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  text-decoration: none;
+  color: var(--text-primary, #0B1B36);
+  font-size: 0.92rem;
+  transition: color 140ms ease, padding-left 140ms ease;
+}
+
+[data-theme="dark"] .serro-footer-dir-row {
+  color: #F8FAFC;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.serro-footer-dir-row:hover {
+  color: var(--mtw-police-gold, #C5A880);
+  padding-left: 4px;
+}
+
+.serro-footer-dir-num {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  color: var(--text-faint, #64748B);
+}
+
+.serro-footer-policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.serro-footer-policy-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 0.88rem;
+  color: var(--text-muted, #475569);
+  padding: 4px 0;
+  transition: color 140ms ease;
+}
+
+[data-theme="dark"] .serro-footer-policy-link {
+  color: #94A3B8;
+}
+
+.serro-footer-policy-link:hover {
+  color: var(--text-primary, #0B1B36);
+}
+
+[data-theme="dark"] .serro-footer-policy-link:hover {
+  color: #F8FAFC;
+}
+
+.serro-footer-policy-link.is-current {
+  color: var(--text-primary, #0B1B36);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .serro-footer-policy-link.is-current {
+  color: #F8FAFC;
+}
+
+.serro-policy-tag {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  padding: 2px 7px;
+  background: var(--bg-surface-subtle, #F8FAFC);
+  border: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.12));
+  border-radius: 9999px;
+  color: var(--mtw-police-gold, #C5A880);
+}
+
+[data-theme="dark"] .serro-policy-tag {
+  background: #0D131F;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.serro-footer-meta-rail {
+  margin-top: 52px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  color: var(--text-faint, #64748B);
+}
+
+[data-theme="dark"] .serro-footer-meta-rail {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .serro-metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .serro-dispatch-card { grid-template-columns: 1fr; }
+  .serro-dispatch-meta-rail { border-left: none; border-top: 1px solid var(--border-subtle, rgba(11, 27, 54, 0.08)); padding-left: 0; padding-top: 24px; }
+  .serro-footer-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 768px) {
+  .serro-metric-grid { grid-template-columns: 1fr; }
+  .serro-footer-meta-rail { flex-direction: column; align-items: flex-start; }
+}

@@ -46,7 +46,7 @@ async function runVerification() {
 
     const title = await page.title();
     const hasFloatingBar = (await page.$('.civic-floating-bar')) !== null;
-    const hasFooter = (await page.$('.civic-footer')) !== null;
+    const hasFooter = (await page.$('.civic-footer, .serro-site-footer')) !== null;
     const hasCanvas = (await page.$('.civic-navy-bg-canvas')) !== null;
 
     if (!hasFloatingBar || !hasFooter || !hasCanvas) {
